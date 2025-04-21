@@ -1,0 +1,1 @@
+sourceset_dependencies='{":shared/androidDebug":[":shared/commonMain"],":shared/androidMain":[":shared/commonMain"],":shared/androidRelease":[":shared/commonMain"],":shared/appleMain":[":shared/nativeMain"],":shared/commonMain":[],":shared/iosArm64Main":[":shared/iosMain"],":shared/iosMain":[":shared/appleMain"],":shared/nativeMain":[":shared/commonMain"]}'

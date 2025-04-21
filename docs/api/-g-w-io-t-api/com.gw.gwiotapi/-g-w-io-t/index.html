@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>GWIoT</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    GWIoTApi
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.0.18        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":shared/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":shared/commonMain"
+                                       data-filter=":shared/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    GWIoTApi
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="GWIoTApi::com.gw.gwiotapi/GWIoT///PointingToDeclaration//491975536">
+  <div class="breadcrumbs"><a href="../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../index.html">com.gw.gwiotapi</a><span class="delimiter">/</span><span class="current">GWIoT</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>GWIo</span><wbr></wbr><span><span>T</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">GWIoT</a> : <a href="../../com.gw.gwiotapi.components.sub/-i-bind-component/index.html">IBindComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-initialize-component/index.html">IInitializeComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-plugin-config-component/index.html">IPluginConfigComponent</a>, <a href="../../com.gw.gwiotapi.components.cross_platform/-i-listener-watch-component/index.html">IListenerWatchComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-plugin-component/index.html">IPluginComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-prop-component/index.html">IPropComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-album-component/index.html">IAlbumComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-user-info-component/index.html">IUserInfoComponent</a>, <a href="../../com.gw.gwiotapi.components.cross_platform/-i-http-service-component/index.html">IHttpServiceComponent</a>, <a href="../../com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/index.html">IDevMangerComponent</a>, <a href="../../com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html">IDevShareComponent</a>, <a href="../../com.gw.gwiotapi.components.cross_platform/-i-account-register-component/index.html">IAccountRegisterComponent</a>, <a href="../../com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html">IAccountManagerComponent</a></div><p class="paragraph">GWIoT是开发者的使用入口，包含应用层开发所需要的所有接口。</p><p class="paragraph">所有的接口均以组件化协议的方式实现，开发者通过对应组件属性找到所需接口进行调用。</p><p class="paragraph">可以通过相关的组件属性xxxComp调用接口，也可以直接通过GWIoT对象调用接口。</p><p class="paragraph">例如，以下调用方式的效果是等同的：</p><p class="paragraph"><i>kotlin</i></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">GWIoT.accountComp.login(account, password)<br>GWioT.login(account, password)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"><i>swift</i></p><div class="sample-container"><pre><code class="block lang-swift" theme="idea">GWIoT.shared.accountComp.login(account: account, password: password) { result, error in<br>    // handle result<br>}<br>GWIoT.shared.login(account: account, password: password) { result, error in<br>    // handle result<br>}<br><br>// or use Concurrency<br>val result = try await GWIoT.shared.login(account: account, password: password)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">更多关于iOS下使用GWIoT说明请查阅<a href="https://example.com/todo">iOS集成使用说明</a></p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1976192948%2FProperties%2F491975536" anchor-label="accountComp" id="1976192948%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="account-comp.html"><span>account</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1976192948%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="account-comp.html">accountComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html">IAccountManagerComponent</a></div><div class="brief "><p class="paragraph">账号管理组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1400755058%2FProperties%2F491975536" anchor-label="albumComp" id="1400755058%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="album-comp.html"><span>album</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1400755058%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="album-comp.html">albumComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-album-component/index.html">IAlbumComponent</a></div><div class="brief "><p class="paragraph">相册组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="349508062%2FProperties%2F491975536" anchor-label="bindComp" id="349508062%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="bind-comp.html"><span>bind</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="349508062%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="bind-comp.html">bindComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-bind-component/index.html">IBindComponent</a></div><div class="brief "><p class="paragraph">绑定设备组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="953602147%2FProperties%2F491975536" anchor-label="devManagerComp" id="953602147%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dev-manager-comp.html"><span>dev</span><wbr></wbr><span>Manager</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="953602147%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="dev-manager-comp.html">devManagerComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/index.html">IDevMangerComponent</a></div><div class="brief "><p class="paragraph">设备管理组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-632211628%2FProperties%2F491975536" anchor-label="httpServiceComp" id="-632211628%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="http-service-comp.html"><span>http</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-632211628%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="http-service-comp.html">httpServiceComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.cross_platform/-i-http-service-component/index.html">IHttpServiceComponent</a></div><div class="brief "><p class="paragraph">网络服务组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1962847829%2FProperties%2F491975536" anchor-label="initializeComp" id="-1962847829%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="initialize-comp.html"><span>initialize</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1962847829%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="initialize-comp.html">initializeComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-initialize-component/index.html">IInitializeComponent</a></div><div class="brief "><p class="paragraph">初始化组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-256726457%2FProperties%2F491975536" anchor-label="listenerComp" id="-256726457%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="listener-comp.html"><span>listener</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-256726457%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="listener-comp.html">listenerComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.cross_platform/-i-listener-watch-component/index.html">IListenerWatchComponent</a></div><div class="brief "><p class="paragraph">监听器组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1148175208%2FProperties%2F491975536" anchor-label="pluginComp" id="1148175208%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="plugin-comp.html"><span>plugin</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1148175208%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="plugin-comp.html">pluginComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-plugin-component/index.html">IPluginComponent</a></div><div class="brief "><p class="paragraph">插件组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-581669768%2FProperties%2F491975536" anchor-label="propComp" id="-581669768%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="prop-comp.html"><span>prop</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-581669768%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="prop-comp.html">propComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-prop-component/index.html">IPropComponent</a></div><div class="brief "><p class="paragraph">获取/设置跟设备有关的属性/物模型/路径组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="906762936%2FProperties%2F491975536" anchor-label="registerComp" id="906762936%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="register-comp.html"><span>register</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="906762936%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="register-comp.html">registerComp</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.cross_platform/-i-account-register-component/index.html">IAccountRegisterComponent</a></div><div class="brief "><p class="paragraph">账号注册服务组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="893644273%2FProperties%2F491975536" anchor-label="solution" id="893644273%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="solution.html"><span><span>solution</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="893644273%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="solution.html">solution</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-solution/index.html">Solution</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1631682050%2FProperties%2F491975536" anchor-label="userInfoComp" id="1631682050%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-info-comp.html"><span>user</span><wbr></wbr><span>Info</span><wbr></wbr><span><span>Comp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1631682050%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="user-info-comp.html"><strike>userInfoComp</strike></a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.components.sub/-i-user-info-component/index.html">IUserInfoComponent</a></div><div class="brief "><p class="paragraph">同步用户信息的组件</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>Copyright © 2025 Gwelltimes. All rights reserved.</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
