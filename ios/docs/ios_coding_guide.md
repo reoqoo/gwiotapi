@@ -127,5 +127,23 @@ switch(gwiot_swiftResult(of: result)) {
 }
 ```
 
+### Observe
+在接口中，有一些属性是`KLiveData<T>`类型, 这代表这个属性是可观察的，即可监听其值的变化，通过`value`获取当前值。
+
+```swift
+// get current value 
+let user = GWIoT.shared.user.value
+
+// observe value change
+GWIoT.shared.user.observe(weakRef: self) { newValue in
+    // handle newValue
+}
+
+// observe forever, will not be released, use it sparingly.
+GWIoT.shared.user.observeForever { newValue in
+    // handle newValue
+}
+```
+
 ### 其他
 这里仅列出部分常用的iOS编码情况，有必要时我们会持续补充，其他请参考demo，有任何问题或者意见欢迎随时联系我们。
