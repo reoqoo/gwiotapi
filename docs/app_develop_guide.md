@@ -101,7 +101,7 @@ val deviceResult = GWIoT.openBind(opts)
 ```
 
 ## 设备管理
-设备管理相关接口为`IDevMangerComponent`，包含支持的产品列表、设备列表、设备详情等接口，每次查询后会更新缓存并LiveData通知。
+设备管理相关接口为`IDevMangerComponent`，包含支持的产品列表、设备列表、设备详情等接口，每次查询后除了当前方法返回结果，同时也会更新相关的缓存List。
 
 ```kotlin
 GWIoT.queryProductList()
@@ -116,5 +116,7 @@ GWIoT.deviceList.observe(lifeCycle) {
 }
 ```
 
+至此，GWIoT接口及使用方式基本介绍完毕，其他更多及更详细的接口及参数说明可以通过[API文档](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)进行查询，后续会按需不断更新SDK，提供更多功能及接口。
 
+如果您有任何问题或建议，欢迎联系我们。
 
