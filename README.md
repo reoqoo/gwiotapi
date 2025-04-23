@@ -8,7 +8,7 @@ GWIoTApi是技威开发的App端物联网设备插件化支持SDK，方便合作
 - [iOS集成说明](ios/README.md)
 - [Android集成说明](android/README.md)
 3. 调用SDK接口实现各模块功能
-- 开发App之前，请阅读[通用集成说明](docs/general_integration_guide.md)，了解SDK初始化、登录注册等关键代码实现，然后参考各端demo了解SDK的使用方式。
+- 开发App之前，请阅读[App开发指南](docs/app_develop_guide)，了解SDK初始化、登录注册等关键代码实现，然后参考各端demo了解SDK的使用方式。
 - [iOS Demo](ios/demo)
 - [Android Demo](android/demo)
 
