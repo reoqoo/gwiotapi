@@ -80,7 +80,7 @@ func login(account: any AccountType, password: String, completionHandler: @escap
 func login(account: any AccountType, password: String) async throws -> GWResult<User>
 ```
 
-这两个方法在Swift里面都可以正常使用，但是在处理结果时，由于在iOS平台无法捕获Kotlin的exception，我们会在内部处理catch异常，并且将其转换成GWResult.Failure返回，
+这两个方法在Swift里面都可以正常使用，但是在处理结果时，由于在iOS平台无法捕获Kotlin的exception，我们会在内部处理catch异常，并且将其转换成`GWResult.Failure`返回，
 所以`completionHandler`中的`error`通常都是空的，不需要处理，使用GWIoT的async throws方法时也不需要`try catch`。另外，我们提供了`gw_iot`前缀的方法来将GWResult转换成Swift的Result方便使用。
 完整例子如下：
 ```swift
@@ -103,5 +103,29 @@ case .failure(let err):
 }
 ```
 
-### 枚举
+### 值枚举
+kotlin中没有值枚举，类似的有`sealed class`，但是导出到OC时，每个值会被转换成OC的Class，SKIE有`onEnum(of:)`方法将其转成枚举的形式方便使用。
+以上提到的GWResult就是其中一个例子，但是对于GWResult的处理建议直接用上述提到的`gwiot_swiftResult(:)`。
+```swift
+// kotlin
+sealed class GWResult<T> {
+    class Success<T>(val data: T?) : GWResult<T>() 
+    class Failure<T>(val err: GWError?) : GWResult<T>()
+}
 
+// swift usage
+let result = try await GWIoT.shared.login()...
+switch(onEnum(of: result)) {
+    case .success(let s): // s is GWResult.Success<User>
+    case .failure(let f): // f is GWResult.Failure
+}
+
+// 由于onEnum(of:)方法只是解析出类型，处理result一般只关注成功的data或者failure的error，所以我们额外增加gwiot_swiftResult方法直接转成Swift的Result。
+switch(gwiot_swiftResult(of: result)) {
+    case.success(let user): 
+    case.failure(let error): 
+}
+```
+
+### 其他
+这里仅列出部分常用的iOS编码情况，有必要时我们会持续补充，其他请参考demo，有任何问题或者意见欢迎随时联系我们。
