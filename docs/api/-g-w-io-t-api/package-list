@@ -1,7 +1,6 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.gw.gwiotapi.components.cross_platform////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/index.html
-$dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/isLogin/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/is-login.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/login/#com.gw.gwiotapi.entities.AccountType#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/login.html
@@ -18,7 +17,6 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountRegisterCompon
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountRegisterComponent/sendResetPasswordCode/#com.gw.gwiotapi.entities.AccountType/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-register-component/send-reset-password-code.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountRegisterComponent/verifyCode/#com.gw.gwiotapi.entities.AccountType#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-register-component/verify-code.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IDevMangerComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/index.html
-$dokka.location:com.gw.gwiotapi.components.cross_platform/IDevMangerComponent/deviceList/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/device-list.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IDevMangerComponent/productList/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/product-list.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IDevMangerComponent/queryDevice/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/query-device.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IDevMangerComponent/queryDeviceList/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/query-device-list.html
