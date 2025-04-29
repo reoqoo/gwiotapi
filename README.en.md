@@ -2,7 +2,7 @@ GWIoTApi is an app-side IoT device plug-in support SDK developed by Jiwei, which
 
 Currently supports iOS and Android.
 
-## 开发流程
+## Development Process
 
 1.  Apply for a developer account from our business or related interface person, log in to the developer platform to create and configure applications and products
 2.  Integrate SDK according to the integration instructions of each platform
@@ -29,6 +29,6 @@ At present, the SDK has implemented various functions/interfaces required for de
 
 ## Interface Documentation
 
-For the complete SDK interface documentation, please refer to:
+SDK完整接口文档请查阅:
 
 [GWIOT API REFERENCE](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)
