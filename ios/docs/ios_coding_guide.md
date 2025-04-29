@@ -128,11 +128,11 @@ switch(gwiot_swiftResult(of: result)) {
 ```
 
 ### Observe
-在接口中，有一些属性可观察类型，即可监听其值的变化，通过`value`获取当前值。
-- `LiveData<T>`,可监听其值的变化，通过`value`获取当前值。
-- `LiveEvent<T>`,SDK内事件通过这个类型来通知，通过`observe`监听事件。
+在接口中，有一些属性是可观察类型。
+- `LiveData<T>`,可监听其值的变化，监听时即触发通知当前值，也通过`value`获取当前值。
+- `LiveEvent<T>`, SDK内事件通过这个类型来通知，和LiveData的区别是不会通知历史值。
 
-> `LiveData<T>`和`LiveEvent<T>`分别类似swift Combine中的CurrentValueSubject和PassthroughSubject
+> `LiveData<T>`和`LiveEvent<T>`分别类似于Swift Combine中的CurrentValueSubject和PassthroughSubject.
 
 ```swift
 // get current value 
