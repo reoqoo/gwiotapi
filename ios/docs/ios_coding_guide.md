@@ -128,7 +128,11 @@ switch(gwiot_swiftResult(of: result)) {
 ```
 
 ### Observe
-在接口中，有一些属性是`KLiveData<T>`类型, 这代表这个属性是可观察的，即可监听其值的变化，通过`value`获取当前值。
+在接口中，有一些属性可观察类型，即可监听其值的变化，通过`value`获取当前值。
+- `LiveData<T>`,可监听其值的变化，通过`value`获取当前值。
+- `LiveEvent<T>`,SDK内事件通过这个类型来通知，通过`observe`监听事件。
+
+> `LiveData<T>`和`LiveEvent<T>`分别类似swift Combine中的CurrentValueSubject和PassthroughSubject
 
 ```swift
 // get current value 
@@ -143,7 +147,21 @@ GWIoT.shared.user.observe(weakRef: self) { newValue in
 GWIoT.shared.user.observeForever { newValue in
     // handle newValue
 }
+
+// observe props changed events
+GWIoT.shared.propsChanged.observe(weakRef: self) { event in
+    guard let event else { return }
+    switch onEnum(of: event) {
+    case .onlineStatusChanged(let ev):
+        print("onlineStatusChanged deviceId: \(ev.deviceId), isOnline: \(ev.isOnline)")
+    case .powerStatusChanged(let ev):
+        print("powerStatusChanged deviceId: \(ev.deviceId), powerStatus: \(ev.powerStatus)")
+    case .propsUpdated(let ev):
+        print("propsUpdated deviceId:\(ev.deviceId), props: \(ev.props)")
+    }
+}
 ```
+
 
 ### 其他
 这里仅列出部分常用的iOS编码情况，有必要时我们会持续补充，其他请参考demo，有任何问题或者意见欢迎随时联系我们。
