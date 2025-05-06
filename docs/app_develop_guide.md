@@ -85,7 +85,10 @@ GWIoT.user.observe(lifeCycle) {
 GWIoT.logout()
 ```
 
-## 绑定设备
+## 设备
+此章节说明如何通过SDK进行设备相关操作，包括设备绑定、设备管理、进入设备插件等。
+
+### 绑定设备
 GWIoT已经集成了添加绑定设备的UI组件，相关接口为`IBindComponent`，App可以直接调用进入。
 
 目前仅支持通过设备二维码进入绑定流程，
@@ -115,6 +118,15 @@ GWIoT.deviceList.observe(lifeCycle) {
     // device list updated
 }
 ```
+
+## 进入设备插件
+SDK内已经集成了设备UI插件，包含直播、回放、设置等主要功能，直接通过`IPluginComponent`的`openPlugin`方法即可进入。
+
+```kotlin
+val opts = PluginOptions(device)
+val result = GWIoT.openPlugin(opts)
+```
+
 
 至此，GWIoT接口及使用方式基本介绍完毕，其他更多及更详细的接口及参数说明可以通过[API文档](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)进行查询，后续会按需不断更新SDK，提供更多功能及接口。
 
