@@ -611,12 +611,7 @@ $dokka.location:com.gw.gwiotapi.listeners/IOnlineStatusListener/onChangeOnlineSt
 $dokka.location:com.gw.gwiotapi.listeners/IPowerStatusListener///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.listeners/-i-power-status-listener/index.html
 $dokka.location:com.gw.gwiotapi.listeners/IPowerStatusListener/onChangePowerStatus/#kotlin.collections.Map[kotlin.String,kotlin.Boolean]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.listeners/-i-power-status-listener/on-change-power-status.html
 $dokka.location:com.gw.gwiotapi.livedata////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/index.html
-$dokka.location:com.gw.gwiotapi.livedata//consume/com.gw.gwiotapi.livedata.LiveData[com.gw.gwiotapi.livedata.Event[TypeParam(bounds=[kotlin.Any])]]#com.gw.gwiotapi.livedata.LifecycleOwner#kotlin.Function1[TypeParam(bounds=[kotlin.Any]),kotlin.Unit]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/consume.html
-$dokka.location:com.gw.gwiotapi.livedata/Event///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-event/index.html
-$dokka.location:com.gw.gwiotapi.livedata/Event/Event/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-event/-event.html
-$dokka.location:com.gw.gwiotapi.livedata/Event/consume/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-event/consume.html
-$dokka.location:com.gw.gwiotapi.livedata/Event/consumed/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-event/consumed.html
-$dokka.location:com.gw.gwiotapi.livedata/Event/peek/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-event/peek.html
+$dokka.location:com.gw.gwiotapi.livedata//consume/com.gw.gwiotapi.livedata.LiveData[com.gw.gwiotapi.livedata.OnceEvent[TypeParam(bounds=[kotlin.Any])]]#com.gw.gwiotapi.livedata.LifecycleOwner#kotlin.Function1[TypeParam(bounds=[kotlin.Any]),kotlin.Unit]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/consume.html
 $dokka.location:com.gw.gwiotapi.livedata/FOREVER///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-f-o-r-e-v-e-r/index.html
 $dokka.location:com.gw.gwiotapi.livedata/FOREVER/addListener/#com.gw.gwiotapi.livedata.NLifecycleListener/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-f-o-r-e-v-e-r/add-listener.html
 $dokka.location:com.gw.gwiotapi.livedata/FOREVER/isObserving/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-f-o-r-e-v-e-r/is-observing.html
@@ -663,6 +658,11 @@ $dokka.location:com.gw.gwiotapi.livedata/NObserver///PointingToDeclaration/-g-w
 $dokka.location:com.gw.gwiotapi.livedata/NObserver/onChanged/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-n-observer/on-changed.html
 $dokka.location:com.gw.gwiotapi.livedata/Observer///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-observer/index.html
 $dokka.location:com.gw.gwiotapi.livedata/Observer/onChanged/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-observer/on-changed.html
+$dokka.location:com.gw.gwiotapi.livedata/OnceEvent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-once-event/index.html
+$dokka.location:com.gw.gwiotapi.livedata/OnceEvent/OnceEvent/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-once-event/-once-event.html
+$dokka.location:com.gw.gwiotapi.livedata/OnceEvent/consume/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-once-event/consume.html
+$dokka.location:com.gw.gwiotapi.livedata/OnceEvent/consumed/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-once-event/consumed.html
+$dokka.location:com.gw.gwiotapi.livedata/OnceEvent/peek/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-once-event/peek.html
 $dokka.location:com.gw.gwiotapi.livedata/Postman///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-postman/index.html
 $dokka.location:com.gw.gwiotapi.livedata/Postman/postValue/#TypeParam(bounds=[kotlin.Any?])#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-postman/post-value.html
 $dokka.location:com.gw.gwiotapi.livedata/WeakEventOwner///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-weak-event-owner/index.html
