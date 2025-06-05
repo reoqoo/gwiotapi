@@ -1,0 +1,80 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    namespace 'com.gwell.gwiotdemo'
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.gwell.gwiotdemo"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libgwmarsxlog.so'
+        pickFirst '**/libavcodec.so'
+        pickFirst '**/libavfilter.so'
+        pickFirst '**/libavformat.so'
+        pickFirst '**/libavutil.so'
+        pickFirst '**/libcrypto.1.1.so'
+        pickFirst '**/libgwbase.so'
+        pickFirst '**/libssl.1.1.so'
+        pickFirst '**/libswresample.so'
+        pickFirst '**/libswscale.so'
+        pickFirst '**/libxml2.so'
+        pickFirst '**/libgwplayer.so'
+
+        pickFirst '**/libaudiodsp_dynamic.so'
+        pickFirst '**/libtxTraeVoip.so'
+        pickFirst '**/libcurl.so'
+        pickFirst '**/libijkffmpeg.so'
+        pickFirst '**/libijkplayer.so'
+        pickFirst '**/libijksdl.so'
+        pickFirst '**/libbleconfig.so'
+        pickFirst '**/libiotvideomulti.so'
+        pickFirst '**/libmbedtls.so'
+    }
+}
+
+dependencies {
+    implementation "com.gwell:gwiotapi:0.0.18.0"
+    var yooseeKitVersion = "google-release-1.1.35"
+    implementation("com.yoosee.gw_plugin_hub:impl_main:${yooseeKitVersion}") {
+        exclude group: 'com.google.android.material'
+        exclude(group: 'androidx.activity', module: 'activity-ktx')
+        exclude(group: 'com.gwell', module: 'gwiotapi')
+    }
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+}
