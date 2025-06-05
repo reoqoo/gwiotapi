@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "Perlu maklumat lokasi untuk mendapatkan lokasi anda untuk menyediakan perkhidmatan tersuai. Adakah dibenarkan untuk menggunakan penyasaran?";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Perlu maklumat lokasi untuk mendapatkan lokasi anda untuk menyediakan perkhidmatan tersuai. Adakah dibenarkan untuk menggunakan penyasaran?";
+"NSLocationAlwaysUsageDescription" = "Perlu maklumat lokasi untuk mendapatkan lokasi anda untuk menyediakan perkhidmatan tersuai. Adakah dibenarkan untuk menggunakan penyasaran?";
+"NSLocationUsageDescription" = "Perlu maklumat lokasi untuk mendapatkan lokasi anda untuk menyediakan perkhidmatan tersuai. Adakah dibenarkan untuk menggunakan penyasaran?";
+"NSPhotoLibraryUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses album untuk menggunakan ciri pengimbasan kod QR";
+"NSPhotoLibraryAddUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses album untuk menyimpan kod QR peranti ke album sistem";
+"NSCameraUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses kamera untuk menggunakan ciri pengimbasan kod QR";
+"NSBluetoothPeripheralUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses Bluetooth untuk mengakses peranti Bluetooth";
+"NSMicrophoneUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses mikrofon untuk menggunakan ciri interkom";
+"NSLocalNetworkUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses rangkaian tempatan untuk sambungan peranti";
+"NSUserNotificationsUsageDescription" = "Reoqoo memerlukan anda memberikan kebenaran untuk pemberitahuan hantaran untuk menerima pemberitahuan hantaran peranti";
+"NSUserTrackingUsageDescription" = "Untuk mencadangkan produk perkakasan cerdas kualiti lebih tinggi kepada anda, kami perlu mendapatkan IDFA anda";
+"NSBluetoothAlwaysUsageDescription" = "Reoqoo memerlukan kebenaran anda untuk mengakses Bluetooth untuk mengakses peranti Bluetooth";

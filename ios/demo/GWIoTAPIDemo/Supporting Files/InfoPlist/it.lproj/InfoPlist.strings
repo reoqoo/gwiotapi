@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "Hai bisogno di informazioni sulla posizione per ottenere la tua posizione per fornire un servizio personalizzato. È consentito utilizzare il targeting?";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Hai bisogno di informazioni sulla posizione per ottenere la tua posizione per fornire un servizio personalizzato. È consentito utilizzare il targeting?";
+"NSLocationAlwaysUsageDescription" = "Hai bisogno di informazioni sulla posizione per ottenere la tua posizione per fornire un servizio personalizzato. È consentito utilizzare il targeting?";
+"NSLocationUsageDescription" = "Hai bisogno di informazioni sulla posizione per ottenere la tua posizione per fornire un servizio personalizzato. È consentito utilizzare il targeting?";
+"NSPhotoLibraryUsageDescription" = "Reoqoo requires your permission to access the photo library in order to use the QR code scanning feature.";
+"NSPhotoLibraryAddUsageDescription" = "Reoqoo requires your permission to access the photo library in order to save device QR codes to the system album.";
+"NSCameraUsageDescription" = "Reoqoo requires your permission to access the camera to use the QR code scanning feature.";
+"NSBluetoothPeripheralUsageDescription" = "Reoqoo requires  your permission to access the Bluetooth in order to access Bluetooth devices.";
+"NSMicrophoneUsageDescription" = "Reoqoo requires your permission to access the microphone to use the intercom feature.";
+"NSLocalNetworkUsageDescription" = "Reoqoo requires your permission to access the local network for device connections.";
+"NSUserNotificationsUsageDescription" = "Reoqoo requires you to grant permission for push notifications in order to receive device push notifications.";
+"NSUserTrackingUsageDescription" = "In order to recommend better intelligent hardware products to you, we need to obtain your IDFA";
+"NSBluetoothAlwaysUsageDescription" = "Reoqoo requires  your permission to access the Bluetooth in order to access Bluetooth devices.";

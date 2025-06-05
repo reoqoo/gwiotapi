@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "Potřebujete informace o poloze, chcete-li, aby vaše místo poskytlo přizpůsobenou službu, je povoleno používat cílení?";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Potřebujete informace o poloze, chcete-li, aby vaše místo poskytlo přizpůsobenou službu, je povoleno používat cílení?";
+"NSLocationAlwaysUsageDescription" = "Potřebujete informace o poloze, chcete-li, aby vaše místo poskytlo přizpůsobenou službu, je povoleno používat cílení?";
+"NSLocationUsageDescription" = "Potřebujete informace o poloze, chcete-li, aby vaše místo poskytlo přizpůsobenou službu, je povoleno používat cílení?";
+"NSPhotoLibraryUsageDescription" = "Reoqoo vyžaduje vaše souhlas s udělením přístupu k albu pro použití funkce skenování QR kódů";
+"NSPhotoLibraryAddUsageDescription" = "Reoqoo vyžaduje vaše svolení k autorizaci použití alba za účelem uložení QR kódu zařízení do systémového alba";
+"NSCameraUsageDescription" = "Reoqoo vyžaduje vaše svolení k autorizaci použití kamery pro použití funkce skenování QR kódu";
+"NSBluetoothPeripheralUsageDescription" = "Reoqoo vyžaduje vaše svolení k autorizaci oprávnění k použití Bluetooth pro přístup k zařízením Bluetooth";
+"NSMicrophoneUsageDescription" = "Reoqoo vyžaduje vaše svolení k použití mikrofonu pro použití funkce interkomu";
+"NSLocalNetworkUsageDescription" = "Reoqoo vyžaduje vaše oprávnění k autorizaci přístupu k lokální síti pro připojení zařízení";
+"NSUserNotificationsUsageDescription" = "Reoqoo vyžaduje vaše svolení k autorizaci funkce push pro přijímání push oznámení zařízení";
+"NSUserTrackingUsageDescription" = "In order to recommend better intelligent hardware products to you, we need to obtain your IDFA";
+"NSBluetoothAlwaysUsageDescription" = "Reoqoo vyžaduje vaše svolení k autorizaci oprávnění k použití Bluetooth pro přístup k zařízením Bluetooth";

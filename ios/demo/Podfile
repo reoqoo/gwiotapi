@@ -1,0 +1,82 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+# 技威私有仓库
+#source 'https://gitlab.gwell.cc/iospublic/gwpodspec.git'
+
+# Comment the next line if you don't want to use dynamic frameworks
+use_frameworks!:linkage => :static
+
+# false: 直接引用本地的代码
+# true: 引用编译后的产物
+is_release = true
+
+require_relative '../GWIoTKit/CommonPods.rb'
+
+def release_mode
+  # 用本地的 Framework
+  pod 'GWIoTKit', :path => '../GWIoTKit/Products/', :subspecs => ['Core', 'RQIAPKit']
+#  pod 'GWIoTKit', :path => '../GWIoTKit/Products/'
+  # 用线上的 Framework
+#  pod 'GWIoTKit', :subspecs => ['Core', 'RQIAPKit']
+end
+
+def debug_mode
+  # 技威私有仓库
+  source 'https://gitlab.gwell.cc/iospublic/gwpodspec.git'
+  common_pods
+end
+
+target 'GWIoTAPIDemo' do
+
+# 第三方公共库
+  pod 'CombineCocoa', '0.4.1'  # 为UIKit系列控件提供 Publisher
+  pod 'CombineExt'  # 为 SwiftCombine 提供扩展功能
+  pod 'R.swift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RTRootNavigationController'
+  pod 'AFNetworking',   '~> 4.0.1'
+  pod 'SDWebImage',     '~> 5.18.2'
+  pod 'lottie-ios',     '~> 4.0'
+  pod 'SSZipArchive'
+  pod 'MJRefresh'
+  pod 'CZImagePreviewer'
+  pod 'MBProgressHUD'
+  pod 'Codextended'
+  pod 'CryptoSwift'
+  pod 'EmptyDataSet-Swift'
+  pod 'FMDB'
+  pod 'Kingfisher'
+  pod 'QTEventBus'
+  pod 'SnapKit'
+  pod 'SwiftyJSON'
+  pod 'Popover'
+  pod 'Then'
+  pod 'Realm'
+  pod 'RealmSwift'
+
+  if is_release
+    release_mode
+  else
+    debug_mode
+  end
+
+end
+
+# 安装完pods库后执行的指令
+post_install do |installer|
+  # 修改pods项目配置
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # 编译最低版本 13.0
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      if target.name == "DophiGoHiLinkIV" || target.name == "DophiGoHiLinkCommon" || target.name == "DophiGoHiLink"
+        # DophiGoHiLink插件宏定义
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = "$(inherited) DH_LAUNCH_FROM_REOQOO=1"
+        config.build_settings['SWIFT_ACTIVE_COMPILATION_CONDITIONS'] = "$(inherited) DH_LAUNCH_FROM_REOQOO"
+      end
+      config.build_settings["BUILD_LIBRARY_FOR_DISTRIBUTION"] = "YES"
+    end
+  end
+end

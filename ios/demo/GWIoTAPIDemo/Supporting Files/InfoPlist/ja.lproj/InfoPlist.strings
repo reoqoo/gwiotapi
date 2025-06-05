@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "カスタマイズされたサービスを提供するためにあなたの場所を取得するために場所情報が必要です，ターゲティングを使用できますか？";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "カスタマイズされたサービスを提供するためにあなたの場所を取得するために場所情報が必要です，ターゲティングを使用できますか？";
+"NSLocationAlwaysUsageDescription" = "カスタマイズされたサービスを提供するためにあなたの場所を取得するために場所情報が必要です，ターゲティングを使用できますか？";
+"NSLocationUsageDescription" = "カスタマイズされたサービスを提供するためにあなたの場所を取得するために場所情報が必要です，ターゲティングを使用できますか？";
+"NSPhotoLibraryUsageDescription" = "QRコードのスキャン機能を利用するには、Reoqooはアルバムへのアクセス権限が必要です";
+"NSPhotoLibraryAddUsageDescription" = "デバイスのQRコードをシステムのアルバムに保存するには、Reoqooはアルバムへのアクセス権限が必要です";
+"NSCameraUsageDescription" = "QRコードのスキャン機能を利用するには、Reoqooはカメラへのアクセス権限が必要です。";
+"NSBluetoothPeripheralUsageDescription" = "Bluetooth機器にアクセスするには、ReoqooはBluetoothへのアクセス権限が必要です。";
+"NSMicrophoneUsageDescription" = "双方向通話機能を利用するには、Reoqooはマイクへのアクセス権限が必要です";
+"NSLocalNetworkUsageDescription" = "デバイスの接続を行なうには、Reoqooはローカルネットワークへのアクセス権限が必要です";
+"NSUserNotificationsUsageDescription" = "デバイスのプッシュ通知を受信するには、Reoqooはプッシュ機能の権限が必要です";
+"NSUserTrackingUsageDescription" = "より高品質なスマートハードウェア製品をお勧めするには、IDFAを取得する必要があります";
+"NSBluetoothAlwaysUsageDescription" = "Bluetooth機器にアクセスするには、ReoqooはBluetoothへのアクセス権限が必要です。";

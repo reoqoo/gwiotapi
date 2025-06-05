@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "需要定位权限来帮助智慧设备在添加过程中连接WiFi和判断App是否进入ap模式（手机与智慧设备的局域网工作模式），是否允许？";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "需要定位权限来帮助智慧设备在添加过程中连接WiFi和判断App是否进入ap模式（手机与智慧设备的局域网工作模式），是否允许？";
+"NSLocationAlwaysUsageDescription" = "需要定位权限来帮助智慧设备在添加过程中连接WiFi和判断App是否进入ap模式（手机与智慧设备的局域网工作模式），是否允许？";
+"NSLocationUsageDescription" = "需要定位权限来帮助智慧设备在添加过程中连接WiFi和判断App是否进入ap模式（手机与智慧设备的局域网工作模式），是否允许？";
+"NSPhotoLibraryUsageDescription" = "Reoqoo需要您允许授权相册访问权限，以便使用二维码扫描功能";
+"NSPhotoLibraryAddUsageDescription" = "Reoqoo需要您允许授权相册使用权限，以便将设备二维码保存到系统相册";
+"NSCameraUsageDescription" = "Reoqoo需要您允许授权相机使用权限，以便使用二维码扫描功能";
+"NSBluetoothPeripheralUsageDescription" = "Reoqoo需要您允许授权蓝牙使用权限，以便访问蓝牙设备";
+"NSMicrophoneUsageDescription" = "Reoqoo需要您允许授权麦克风使用权限，以便使用对讲功能";
+"NSLocalNetworkUsageDescription" = "Reoqoo需要您允许授权本地网络访问权限，以便进行设备连接";
+"NSUserNotificationsUsageDescription" = "Reoqoo需要您允许授权推送功能，以便接受设备推送通知";
+"NSUserTrackingUsageDescription" = "为了向您推荐更优质的智能硬件产品，需要获取您的IDFA";
+"NSBluetoothAlwaysUsageDescription" = "Reoqoo需要您允许授权蓝牙使用权限，以便访问蓝牙设备";

@@ -1,0 +1,13 @@
+"NSLocationWhenInUseUsageDescription" = "Cần thông tin vị trí để có được vị trí của bạn để cung cấp một dịch vụ tùy chỉnh. Được phép sử dụng nhắm mục tiêu?";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Cần thông tin vị trí để có được vị trí của bạn để cung cấp một dịch vụ tùy chỉnh. Được phép sử dụng nhắm mục tiêu?";
+"NSLocationAlwaysUsageDescription" = "Cần thông tin vị trí để có được vị trí của bạn để cung cấp một dịch vụ tùy chỉnh. Được phép sử dụng nhắm mục tiêu?";
+"NSLocationUsageDescription" = "Cần thông tin vị trí để có được vị trí của bạn để cung cấp một dịch vụ tùy chỉnh. Được phép sử dụng nhắm mục tiêu?";
+"NSPhotoLibraryUsageDescription" = "Reoqoo cần bạn cấp quyền truy cập Album để sử dụng tính năng quét mã QR";
+"NSPhotoLibraryAddUsageDescription" = "Reoqoo cần bạn cấp quyền sử dụng Album để lưu mã QR của thiết bị vào Album hệ thống";
+"NSCameraUsageDescription" = "Reoqoo cần bạn cấp quyền sử dụng Camera để sử dụng tính năng quét mã QR";
+"NSBluetoothPeripheralUsageDescription" = "Reoqoo cần bạn cấp quyền sử dụng Bluetooth để truy cập các thiết bị Bluetooth";
+"NSMicrophoneUsageDescription" = "Reoqoo cần bạn cấp quyền sử dụng Micrô để sử dụng tính năng liên lạc nội bộ";
+"NSLocalNetworkUsageDescription" = "Reoqoo cần bạn cấp quyền truy cập mạng cục bộ để kết nối thiết bị";
+"NSUserNotificationsUsageDescription" = "Reoqoo cần bạn cấp quyền tính năng đẩy để chấp nhận thông báo đẩy của thiết bị";
+"NSUserTrackingUsageDescription" = "Để giới thiệu cho bạn các sản phẩm phần cứng thông minh chất lượng cao hơn, IDFA của bạn là cần thiết";
+"NSBluetoothAlwaysUsageDescription" = "Reoqoo cần bạn cấp quyền sử dụng Bluetooth để truy cập các thiết bị Bluetooth";
