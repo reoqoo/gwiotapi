@@ -1,31 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '15.0'
 source 'https://github.com/CocoaPods/Specs.git'
-# 技威私有仓库
-#source 'https://gitlab.gwell.cc/iospublic/gwpodspec.git'
 
 # Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!:linkage => :static
-
-# false: 直接引用本地的代码
-# true: 引用编译后的产物
-is_release = true
-
-require_relative '../GWIoTKit/CommonPods.rb'
-
-def release_mode
-  # 用本地的 Framework
-  pod 'GWIoTKit', :path => '../GWIoTKit/Products/', :subspecs => ['Core', 'RQIAPKit']
-#  pod 'GWIoTKit', :path => '../GWIoTKit/Products/'
-  # 用线上的 Framework
-#  pod 'GWIoTKit', :subspecs => ['Core', 'RQIAPKit']
-end
-
-def debug_mode
-  # 技威私有仓库
-  source 'https://gitlab.gwell.cc/iospublic/gwpodspec.git'
-  common_pods
-end
 
 target 'GWIoTAPIDemo' do
 
@@ -56,11 +34,7 @@ target 'GWIoTAPIDemo' do
   pod 'Realm'
   pod 'RealmSwift'
 
-  if is_release
-    release_mode
-  else
-    debug_mode
-  end
+  pod 'GWIoTKit', :subspecs => ['Core', 'RQIAPKit']
 
 end
 
