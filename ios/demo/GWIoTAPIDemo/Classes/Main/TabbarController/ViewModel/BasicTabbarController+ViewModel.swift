@@ -25,7 +25,7 @@ extension BasicTabbarController {
         init() {
             // 为了使 APP 启动后取一次消息, 以 NOTIFY_USER_MSG_UPDATE 作为首发元素
             let p2pMsg = P2POnlineMsg.init(topic: P2POnlineMsg.TopicType.NOTIFY_USER_MSG_UPDATE.rawValue)
-            Publishers.CombineLatest(RQCore.Agent.shared.$linkStatus, GWIoTBridgeReoqooKit.Bridge.shared.$p2pOnlineMsg.prepend(p2pMsg))
+            Publishers.CombineLatest(RQCore.Agent.shared.$linkStatus, RQCore.Agent.shared.$p2pOnlineMsg.prepend(p2pMsg))
                 .sink(receiveValue: { [weak self] linkStatus, msg in
                     if linkStatus != .online { return }
                     if msg.topicType == P2POnlineMsg.TopicType.NOTIFY_USER_MSG_UPDATE || msg.topicType == P2POnlineMsg.TopicType.UNKNOWN {
@@ -33,7 +33,7 @@ extension BasicTabbarController {
                         self?.fetchH5Banner()
                     }
                 }).store(in: &self.anyCancellables)
-            
+
             // 监听设备绑定成功通知, 查询用户消息, 以弹出首绑推广H5
             NotificationCenter.default.publisher(for: RQDeviceAddition.Agent.didFinishBindNotification).sink { [weak self] _ in
                 self?.fetchH5Msg(ignoreDeviceFirstBind: false)

@@ -6,25 +6,24 @@
 //
 
 import Foundation
-import GWIoTBridgeYooseeKit
 import GWIoTApi
 import RQCore
 
 class GWUserInfo: IUserAccessInfo {
     var accessId: String
-    
+
     var accessToken: String
-    
+
     var area: String
-    
+
     var expireTime: String
-    
+
     var terminalId: String
-    
+
     var userId: String
-    
+
     var regRegion: String
-    
+
     init(accessId: String, accessToken: String, area: String, expireTime: String, terminalId: String, userId: String, regRegion: String) {
         self.accessId = accessId
         self.accessToken = accessToken
@@ -39,7 +38,7 @@ class GWUserInfo: IUserAccessInfo {
 class GWDevice: IDevice {
     var solution: GWIoTApi.Solution
     var deviceId: String
-    
+
     init(solution: GWIoTApi.Solution, deviceId: String) {
         self.solution = solution
         self.deviceId = deviceId
@@ -49,11 +48,11 @@ class GWDevice: IDevice {
 /// 负责对接 YooseeKit 相关业务及充当代理
 class GWIoTAPIDelegate {
     static let shared: GWIoTAPIDelegate = .init()
-    
+
     var anyCancellables: Set<AnyCancellable> = []
-    
+
     private init() {}
-    
+
     func startObserve() {
         // Observe user login / logout
         AccountCenter.shared.$currentUser.sink(
@@ -73,20 +72,34 @@ class GWIoTAPIDelegate {
                     GWIoT.shared.login(accessInfo: userInfo)
                 } else {
                     GWIoT.shared.logout { res, err in
-                        
+
                     }
                 }
             }).store(in: &self.anyCancellables)
+
+        // 监听用户被注销
+        // 监听用户accessToken过期
+        GWIoT.shared.accountEvent.observe(weakRef: self) { event in
+            switch onEnum(of: event) {
+            case .accessTokenExpired:
+                NotificationCenter.default.post(name: User.accessTokenDidExpiredNotification, object: nil)
+            case .accountUnregistered:
+                NotificationCenter.default.post(name: User.accountHasBeenDeletedNotification, object: nil)
+            case .none:
+                break
+            }
+        }
+
     }
-    
-    
+
+
     /// 打开 Yoosee 方案设备监控页
     static func openMonitor(deviceId: String, solution: GWIoTApi.Solution) {
         let device = GWDevice(solution: solution, deviceId: deviceId)
         device.deviceId = deviceId
-        
+
         let opts = OpenPluginOption(device: device)
-        
+
         GWIoT.shared.openHome(opts: opts) { result, err in
             switch(gwiot_handleCb(result, err)) {
             case .success(_): break
@@ -94,14 +107,14 @@ class GWIoTAPIDelegate {
             }
         }
     }
-    
+
     /// 打开 Yoosee 方案设备回放
     static func openPlayback(deviceId: String, solution: GWIoTApi.Solution) {
         let device = GWDevice(solution: .yoosee, deviceId: deviceId)
         device.deviceId = deviceId
-        
+
         let opts = PlaybackOption(device: device)
-        
+
         GWIoT.shared.openPlayback(opts: opts) { result, err in
             switch(gwiot_handleCb(result, err)) {
             case .success(_): break

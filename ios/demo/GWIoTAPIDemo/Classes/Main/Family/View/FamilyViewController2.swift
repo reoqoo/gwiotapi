@@ -88,12 +88,6 @@ class FamilyViewController2: BaseViewController {
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // 展示新手引导
-        self.showBeginnerGuidanceIfNeed(withScene: .homePage_addBtn)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -224,11 +218,6 @@ class FamilyViewController2: BaseViewController {
             self?.showBannerIfNeed(bannerItem)
         }).store(in: &self.anyCancellables)
 
-        // 监听需要弹出浮窗的时机
-        self.vm.floatingPromotionSubject.sink(receiveValue: { [weak self] banner in
-            self?.showFloatingView(banner: banner)
-        }).store(in: &self.anyCancellables)
-
         // 监听设备数量, 当设备列表为空时显示 `添加设备` banner
         DeviceManager.shared.$devices
             .map({ $0.count })
@@ -310,47 +299,6 @@ extension FamilyViewController2 {
         }
         self.activeChild = children.first
         self.collectionView.reloadData()
-    }
-
-    // 展示浮窗
-    public func showFloatingView(banner: IVBBSMgr.Banner) {
-        let floatingView = PromotionalFloatingView.init()
-        self.view.addSubview(floatingView)
-        floatingView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-130)
-        }
-        floatingView.banner = banner
-        floatingView.tapOnImageViewGestureBehaviorObservable.sink(receiveValue: { [weak self] in
-            let vc = VASServiceWebViewController.init(url: $0, device: nil)
-            vc.entrySource = "1"
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }).store(in: &self.anyCancellables)
-    }
-
-    // 按需执行展示新手引导
-    private func showBeginnerGuidanceIfNeed(withScene scene: BeginnerGuidance.Scenes) {
-        guard let guidanceInfosData = AccountCenter.shared.currentUser?.userDefault?.object(forKey: UserDefaults.UserKey.Reoqoo_BeginnerGuidanceInfo.rawValue) as? Data, let guidanceInfos = try? JSON.init(data: guidanceInfosData).decoded(as: [BeginnerGuidance.ShowRecordInfo].self) else {
-            // UserDefaults 中没找到看过新手引导的记录, 就展示
-            self.showBeginnerGuidance(withScene: scene)
-            return
-        }
-        // 如果这个 user 还没看过, 让他看
-        if !guidanceInfos.contains(where: { $0.scene == scene }) {
-            self.showBeginnerGuidance(withScene: scene)
-        }
-    }
-
-    // 展示新手引导
-    private func showBeginnerGuidance(withScene scene: BeginnerGuidance.Scenes) {
-        let record = BeginnerGuidance.ShowRecordInfo.init(scene: scene)
-        record.storeRecord()
-
-        guard let item: BeginnerGuidance.Item = BeginnerGuidance.Item.scene_guidanceItem_mapping[scene] else { return }
-        if scene == .homePage_addBtn {
-            item.target = self.headerView.addButton
-        }
-        BeginnerGuidance.shared.append(item)
     }
 }
 

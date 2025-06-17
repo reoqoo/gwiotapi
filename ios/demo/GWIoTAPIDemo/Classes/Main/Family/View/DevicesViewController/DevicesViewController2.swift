@@ -15,7 +15,7 @@ class DevicesViewController2: BaseViewController {
     lazy var layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = self.cellMargin
     }
-    
+
     private let cellMargin: Double = 16
 
     lazy var collectionView = InfiltrateCollectionView(frame: .zero, collectionViewLayout: layout).then {
@@ -47,12 +47,12 @@ class DevicesViewController2: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         // 2024/2/22 用 EmptyDataSet 显示 emptyView 总是会偏移不居中, 所以不使用 EmptyDataSet 方案了
         self.view.addSubview(self.emptyView)
         self.emptyView.snp.makeConstraints { make in
@@ -71,21 +71,6 @@ class DevicesViewController2: BaseViewController {
                 self?.devices = devs
                 self?.collectionView.reloadData()
             }.store(in: &self.anyCancellables)
-
-        // 监听设备以显示新手引导
-        DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.deviceListSortID, \.deviceId])
-            .map({
-                guard let devs = $0 else { return [] }
-                return Array(devs.sorted(by: \.deviceListSortID, ascending: true))
-            })
-            .throttle(for: 1, scheduler: DispatchQueue.main, latest: true)
-            .debounce(for: 1, scheduler: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] (devs: [DeviceEntity]) in
-                // 刷新完毕后尝试展示新手引导
-                guard let dev = devs.first else { return }
-                let scene: BeginnerGuidance.Scenes = dev.role == .master ? .homePage_deviceCardOwner : .homePage_deviceCardVisitor
-                self?.showBeginnerGuidanceIfNeed(withScene: scene)
-            }).store(in: &self.anyCancellables)
 
         // emptyView 点击了新增设备按钮
         self.emptyView.addDeviceBtnOnClickObservable
@@ -265,7 +250,23 @@ extension DevicesViewController2 {
         let popupView = IVPopupView(property: property, actions: [
             IVPopupAction(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), handler: {}),
             IVPopupAction(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), handler: {
-                DeviceManager.shared.turnOnDevice(deviceId, on: on)
+
+                GWIoT.shared.queryDeviceListCacheFirst { devs, err in
+                    switch gwiot_handleCb(devs, err) {
+                    case .success(let devices):
+                        if let devs = devices as? [GWIoTApi.Device], let dev = devs.first(where: { $0.deviceId == deviceId }) {
+
+                            GWIoT.shared.setPowerStatus(status: on, device: dev) {_,_ in
+
+                            }
+                        }
+                    case .failure(_):
+                        break
+                    }
+                }
+
+
+
             })
         ])
 
@@ -277,8 +278,16 @@ extension DevicesViewController2 {
 
         let deviceId = device.deviceId
         let shareItem: PopoverListView.Item = .init(image: R.image.family_share(), title: String.localization.localized("AA0050", note: "分享设备"), handler: {
-            let gwdev = GWDevice.init(solution: device.solution?.toGWIoTApiSolution ?? .reoqoo, deviceId: deviceId)
-            GWIoT.shared.openDevSharePage(opt: .init(device: gwdev), completionHandler: { _,_ in })
+            GWIoT.shared.queryDeviceListCacheFirst { devs, err in
+                switch gwiot_handleCb(devs, err) {
+                case .success(let devices):
+                    if let devs = devices as? [GWIoTApi.Device], let dev = devs.first(where: { $0.deviceId == deviceId }) {
+                        GWIoT.shared.openDevSharePage(opt: .init(device: dev), completionHandler: { _,_ in })
+                    }
+                case .failure(_):
+                    break
+                }
+            }
         })
         let deleteItem: PopoverListView.Item = .init(image: R.image.family_delete(), title: String.localization.localized("AA0056", note: "删除设备"), handler: {
             let property = ReoqooPopupViewProperty()
@@ -298,32 +307,6 @@ extension DevicesViewController2 {
         listView.tableView.separatorInset = .init(top: 0, left: 48, bottom: 0, right: 16)
         listView.show(fromView: cell, inView: AppEntranceManager.shared.keyWindow!)
         self.longPressMenu = listView
-    }
-
-    // 按需执行展示新手引导
-    private func showBeginnerGuidanceIfNeed(withScene scene: BeginnerGuidance.Scenes) {
-        guard let guidanceInfosData = AccountCenter.shared.currentUser?.userDefault?.object(forKey: UserDefaults.UserKey.Reoqoo_BeginnerGuidanceInfo.rawValue) as? Data, let guidanceInfos = try? JSON.init(data: guidanceInfosData).decoded(as: [BeginnerGuidance.ShowRecordInfo].self) else {
-            // UserDefaults 中没找到看过新手引导的记录, 就展示
-            self.showBeginnerGuidance(withScene: scene)
-            return
-        }
-        // 如果这个 user 还没看过, 让他看
-        if !guidanceInfos.contains(where: { $0.scene == scene }) {
-            self.showBeginnerGuidance(withScene: scene)
-        }
-    }
-
-    // 展示新手引导
-    private func showBeginnerGuidance(withScene scene: BeginnerGuidance.Scenes) {
-        let record = BeginnerGuidance.ShowRecordInfo.init(scene: scene)
-        record.storeRecord()
-        guard let item: BeginnerGuidance.Item = BeginnerGuidance.Item.scene_guidanceItem_mapping[scene] else { return }
-        guard let inView = self.parent?.view else { return }
-        if scene == .homePage_deviceCardOwner || scene == .homePage_deviceCardVisitor {
-            item.inView = inView
-            item.target = self.collectionView.cellForItem(at: .init(item: 0, section: 0))
-        }
-        BeginnerGuidance.shared.append(item)
     }
 
 }

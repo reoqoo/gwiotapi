@@ -14,6 +14,10 @@ import RQApi
 extension User {
     /// 审核期间此 user 提供给 apple 登录, 隐藏云服务入口
     static var SUPERVIP_userId: String = ""
+    /// 用户被注销通知
+    static let accountHasBeenDeletedNotification: Notification.Name = .init(rawValue: "accountHasBeenDeletedNotification")
+    /// accessToken 过期通知
+    static let accessTokenDidExpiredNotification: Notification.Name = .init(rawValue: "accessTokenDidExpiredNotification")
 }
 
 class User: Codable {
@@ -127,7 +131,7 @@ class User: Codable {
                 logInfo("[AccountCenter] 刷新 accesstoken 成功")
             }).store(in: &self.anyCancellables)
     }
-    
+
     /// 在网路请求 tryRefreshToken 成功后执行
     func didUpdateAccessTokenSuccess(_ accessToken: String, expireTime: TimeInterval) {
         self.basicInfo.accessToken = accessToken
@@ -246,7 +250,7 @@ extension User {
         })
         .eraseToAnyPublisher()
     }
-    
+
     /// 绑定 邮箱 / 手机号 发布者
     func bindMobileOrEmailPublisher(accountType: RQApi.AccountType, oneTimeCode: String) -> AnyPublisher<Void, Swift.Error> {
         Deferred {

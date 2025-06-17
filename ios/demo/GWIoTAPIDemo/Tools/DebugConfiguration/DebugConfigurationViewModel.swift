@@ -64,7 +64,7 @@ class DebugConfigurationViewModel: Combine.ObservableObject {
         RQCore.Agent.clearStandardConfiguration()
         
         // 发这个通知会让用户登出, 但是有点非主流, 如果宿主App不接这个 Notification 就无效了
-        NotificationCenter.default.post(name: RQCore.accessTokenDidExpiredNotification, object: nil)
+        NotificationCenter.default.post(name: User.accessTokenDidExpiredNotification, object: nil)
     }
 
     func restoreConfiguration() {
@@ -81,6 +81,6 @@ class DebugConfigurationViewModel: Combine.ObservableObject {
         RQCore.Agent.clearStandardConfiguration()
 
         // 发这个通知会让用户登出, 但是有点非主流, 如果宿主App不接这个 Notification 就无效了
-        NotificationCenter.default.post(name: RQCore.accessTokenDidExpiredNotification, object: nil)
+        NotificationCenter.default.post(name: User.accessTokenDidExpiredNotification, object: nil)
     }
 }

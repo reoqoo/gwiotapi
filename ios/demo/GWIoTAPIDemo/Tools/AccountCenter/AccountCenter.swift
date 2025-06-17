@@ -7,14 +7,14 @@
 
 import Foundation
 import CryptoSwift
-import GWIoTBridgeReoqooKit
 import RQCore
 import RQApi
+import GWIoTApi
 
 class AccountCenter {
 
     static let shared: AccountCenter = .init()
-    
+
     private init() {
         // 监听 user 被注销的通知
         self.observerAccountDidClosed()
@@ -25,7 +25,7 @@ class AccountCenter {
         // 尝试从本地加载 User 信息
         self.tryLoadUserFromLocal()
     }
-    
+
     /// 如果用户登出/未登录, 此值为 nil
     @DidSetPublished private(set) var currentUser: User?
 
@@ -68,7 +68,7 @@ class AccountCenter {
 
         // 登入了
         self.userDidLogin(user: user, isFromLocalData: true)
-        
+
         // 刷新token
         user.tryRefreshToken()
     }
@@ -126,16 +126,14 @@ class AccountCenter {
 
     /// 监听账号被注销通知
     private func observerAccountDidClosed() {
-        NotificationCenter.default.publisher(for: RQCore.accountDidCloseNotification).sink { [weak self] notification in
-            let isManual = notification.userInfo?[RQCore.accountDidCloseNotificationUserInfoKey_IsManual] as? Bool ?? false
-            if !isManual { logInfo("[AccountCenter] 由于账号被注销, 退出当前登录用户") }
+        NotificationCenter.default.publisher(for: User.accountHasBeenDeletedNotification).sink { [weak self] notification in
             self?.userDidCloseAccount()
         }.store(in: &self.anyCancellables)
     }
 
     /// 监听账号密码被修改
     private func observerAccountPasswordDidModify() {
-        GWIoTBridgeReoqooKit.Bridge.shared.$p2pOnlineMsg.sink(receiveValue: { [weak self] in
+        RQCore.Agent.shared.$p2pOnlineMsg.sink(receiveValue: { [weak self] in
             guard $0.topic == "ModifyPwd" else { return }
             logInfo("[AccountCenter] 由于用户密码被修改, 退出当前登录用户")
             self?.logoutCurrentUser()
@@ -144,7 +142,7 @@ class AccountCenter {
 
     /// 监听AccessToken过期
     private func observerAccessTokenDidExpired() {
-        NotificationCenter.default.publisher(for: RQCore.accessTokenDidExpiredNotification).sink { [weak self] _ in
+        NotificationCenter.default.publisher(for: User.accessTokenDidExpiredNotification).sink { [weak self] _ in
             logInfo("[AccountCenter] 收到10026, AccessToken过期, 退出当前登录用户")
             self?.logoutCurrentUser()
         }.store(in: &self.anyCancellables)
@@ -157,7 +155,7 @@ extension AccountCenter {
     func logoutCurrentUser() {
         self.logoutRequestPublisher().sink(receiveCompletion: {
             guard case let .failure(err) = $0 else { return }
-            
+
         }, receiveValue: {
 
         }).store(in: &self.anyCancellables)

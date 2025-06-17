@@ -33,7 +33,7 @@ extension FamilyViewController2 {
             /// 这里监听p2p的在线消息（设备分享）
             // 为了使 APP 启动后取一次消息, 以 NOTIFY_USER_MSG_UPDATE 作为首发元素
             let p2pMsg = P2POnlineMsg.init(topic: P2POnlineMsg.TopicType.NOTIFY_USER_MSG_UPDATE.rawValue)
-            Publishers.CombineLatest(RQCore.Agent.shared.$linkStatus, GWIoTBridgeReoqooKit.Bridge.shared.$p2pOnlineMsg.prepend(p2pMsg))
+            Publishers.CombineLatest(RQCore.Agent.shared.$linkStatus, RQCore.Agent.shared.$p2pOnlineMsg.prepend(p2pMsg))
                 .sink(receiveValue: { [weak self] linkStatus, onlineMsg in
                     if linkStatus != .online { return }
                     switch onlineMsg.topicType {

@@ -51,24 +51,6 @@ class BasicTabbarController: UITabBarController {
         self.tabBar.layer.shadowColor = UIColor.black.cgColor
         self.tabBar.shadowImage = UIImage()
         self.tabBar.backgroundImage = UIImage()
-
-        // 监听公告, 弹出H5
-        self.vm.promotionH5PopupEventSubject.sink(receiveValue: { [weak self] notice in
-            guard let urlStr = notice.url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL.init(string: urlStr) else { return }
-            // 将公告置为已读
-            RQCore.Agent.shared.ivBBSMgr.updateNoticeStatus(true, tag: notice.tag, responseHandler: nil)
-            logInfo("展示公告H5弹窗: ", url)
-            self?.presentH5(url)
-        }).store(in: &self.anyCancellables)
-
-        // 监听用户消息, 弹出H5
-        self.vm.usrMsgEventSubject.sink(receiveValue: { [weak self] msg in
-            guard let data = msg.model as? IVUserMessageMgr.PopupH5TagData, let urlStr = data.url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL.init(string: urlStr) else { return }
-            logInfo("展示用户消息H5弹窗: ", msg.msgId, url)
-            // 将用户消息置为已读
-            RQCore.Agent.shared.ivUserMsgMgr.updateUserMessageStatus(1, msgId: msg.msgId, responseHandler: nil)
-            self?.presentH5(url)
-        }).store(in: &self.anyCancellables)
     }
 
     // 因为使用了 RTRootNavigationController, 返回按钮在此处定义
@@ -78,16 +60,5 @@ class BasicTabbarController: UITabBarController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         self.selectedViewController?.supportedInterfaceOrientations ?? .portrait
-    }
-
-    /// 弹出 H5 推广弹窗
-    func presentH5(_ url: URL) {
-        let vc = PromotionalWebViewController.init(url: url)
-        self.present(vc, animated: true)
-        vc.jumpBehaviorObservable.sink(receiveValue: { [weak self] url in
-            let vc = VASServiceWebViewController.init(url: url, device: nil)
-            vc.entrySource = "2"
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }).store(in: &self.anyCancellables)
     }
 }

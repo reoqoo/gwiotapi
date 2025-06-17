@@ -17,41 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        // 迁移操作自动按需执行
-        MigrateHelper.migrate()
-
         // Override point for customization after application launch.
         self.sdkInit(withAppliction: application, withLaunchingOptions: launchOptions)
-        
-        // 旧固件一键呼叫调试
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            let alarmType: DHAlarmType = .typeKeyCall
-//            let targetViewType: DHTargetViewType = .voip
-//
-//            let event_id = "10831359249910868011697766034498"
-//            let alarmMsg = DHAlarmMessage.init()
-//            alarmMsg.alarmType = alarmType
-//            alarmMsg.alarmId = event_id
-//            // 如果是一键呼叫事件, 需要传 keyCallContent 参数, 否则会跳转到事件页
-//            alarmMsg.keyCallContent = "alarmId=" + event_id + "&alarmType=" + String(alarmType.rawValue) + "&code=" + "" + "&pts=" + String(Int(Date().timeIntervalSince1970))
-//            
-//            guard let dev = DeviceManager2.fetchDevice("12885484243"), let vc = AppEntranceManager.shared.tabbarViewController else { return }
-//            DophiGoApiManager.noticeDophigoDevice(dev, alarm: alarmMsg, targetVC: vc, targetViewType: targetViewType)
-//        }
-
-        // 模拟收到一键呼叫推送
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            let dict = ["push_data":
-//                            ["deviceId": "38654705667",
-//                             "pushContent": ["Type": "event", "alarmId": "128855036031717155102", "alarmType": 2, "flag": 0, "value": "",],
-//                             "pushTime": Date().timeIntervalSince1970 * 1000 - 500,
-//                             "pushType": 274877906944,]
-//            ]
-//            // 前台收到推送
-//            GWIoT.shared.receivePushNotification(noti: .init(userInfo: dict))
-//            // 点击推送
-//            GWIoT.shared.clickPushNotification(noti: .init(userInfo: dict))
-//        }
 
         return true
     }
@@ -132,21 +99,7 @@ extension AppDelegate {
         opts.language = gwLang
         
         let servicesEnv: HostConfig.Env = UIApplication.UserDefaults.isTestEnv ? .test : .prod
-        opts.hostConfig = .init(
-            env: servicesEnv,
-            prodHost: HostConfig.Host(
-                iot: "|list.iotvideo.cloudlinks.cn",
-                base: "https://openapi.reoqoo.com",
-                plugin: "https://openapi-plugin.reoqoo.com",
-                h5: "https://trade.reoqoo.com"
-            ),
-            testHost: HostConfig.Host(
-                iot: "|list.iotvideo.cloudlinks.cn",
-                base: "https://openapi-test.reoqoo.com",
-                plugin: "https://openapi-plugin-test.reoqoo.com",
-                h5: "https://trade-test.reoqoo.com"
-            )
-        )
+        opts.hostConfig = .init(env: servicesEnv)
 
         if let watermarkPath = Bundle.main.path(forResource: "watermark_reo_logo", ofType: "png") {
             opts.albumConfig = .init(watermarkConfig: .init(filePath: watermarkPath, position: nil, horizontalMargin: 0, verticalMargin: 0, widthScale: 0, heightScale: 0))

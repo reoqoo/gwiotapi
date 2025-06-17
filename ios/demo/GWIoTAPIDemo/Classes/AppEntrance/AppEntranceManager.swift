@@ -8,7 +8,6 @@
 import UIKit
 import RQWebServices
 import GWIoTApi
-import RQCore
 
 /// 由于 app 需要支援 iOS13 以下版本, 而 iOS13 采用的是 SceneDelegate 管理 UI 生命周期, iOS13以下系统直接由 AppDelegate.window 管理 根 window 生命周期, 所以设计此单例以集中管理两种情况的存在. 也以便应对日后可能出现的 ipad 适配 及 多窗口需求
 /// 提供的功能:
@@ -42,7 +41,7 @@ class AppEntranceManager {
         }).store(in: &self.anyCancellables)
 
         // 监听账号被注销事件, 弹个 MBPHUD
-        NotificationCenter.default.publisher(for: RQCore.accountDidCloseNotification)
+        NotificationCenter.default.publisher(for: User.accountHasBeenDeletedNotification)
             .sink(receiveValue: { _ in
                 MBProgressHUD.showHUD_DispatchOnMainThread(text: String.localization.localized("AA0522", note: "账号已注销"))
             }).store(in: &self.anyCancellables)

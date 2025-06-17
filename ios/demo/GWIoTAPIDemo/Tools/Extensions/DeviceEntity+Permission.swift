@@ -27,7 +27,7 @@ extension RQCore.DeviceEntity {
         Deferred {
             Future { [weak self] promise in
                 guard let self else { return }
-                GWIoT.shared.getCloudPlaybackPermission(device: ReoqooDevice(solution: self.solution?.toGWIoTApiSolution ?? .reoqoo, deviceId: self.deviceId)) { res, error in
+                GWIoT.shared.getCloudPlaybackPermission(device: ReoqooDevice(solution: self.solution == .yoosee ? .yoosee : .reoqoo, deviceId: self.deviceId)) { res, error in
                     switch gwiot_handleCb(res, error) {
 
                     case .success(let support):

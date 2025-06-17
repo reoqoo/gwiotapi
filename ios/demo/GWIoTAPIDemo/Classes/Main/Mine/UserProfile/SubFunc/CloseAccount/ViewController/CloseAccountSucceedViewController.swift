@@ -118,7 +118,7 @@ class CloseAccountSucceedViewController: BaseViewController {
         }
 
         self.nextStepButton.tapPublisher.sink(receiveValue: { _ in
-            NotificationCenter.default.post(name: RQCore.accountDidCloseNotification, object: nil, userInfo: [RQCore.accountDidCloseNotificationUserInfoKey_IsManual: true])
+            NotificationCenter.default.post(name: User.accountHasBeenDeletedNotification, object: nil, userInfo: nil)
         }).store(in: &self.anyCancellables)
     }
     

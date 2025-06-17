@@ -41,13 +41,11 @@
 		C4CB600B2DF02C710098E3F5 /* UserSelectHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F322DF02C710098E3F5 /* UserSelectHeaderViewController.swift */; };
 		C4CB600D2DF02C710098E3F5 /* DebugConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F912DF02C710098E3F5 /* DebugConfigurationViewModel.swift */; };
 		C4CB600E2DF02C710098E3F5 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE32DF02C710098E3F5 /* ScrollableTabBar.swift */; };
-		C4CB600F2DF02C710098E3F5 /* MigrationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F8B2DF02C710098E3F5 /* MigrationHelper.swift */; };
 		C4CB60112DF02C710098E3F5 /* InputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FDF2DF02C710098E3F5 /* InputAccessoryView.swift */; };
 		C4CB60132DF02C710098E3F5 /* ReoqooPopupViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE12DF02C710098E3F5 /* ReoqooPopupViewProperty.swift */; };
 		C4CB60152DF02C710098E3F5 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA32DF02C710098E3F5 /* Collection+.swift */; };
 		C4CB60172DF02C710098E3F5 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E942DF02C710098E3F5 /* PasswordInputView.swift */; };
 		C4CB60182DF02C710098E3F5 /* RegionSelectionViewController+TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB82DF02C710098E3F5 /* RegionSelectionViewController+TableViewCell.swift */; };
-		C4CB60192DF02C710098E3F5 /* BeginnerGuidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FCD2DF02C710098E3F5 /* BeginnerGuidance.swift */; };
 		C4CB601A2DF02C710098E3F5 /* CloseAccountSucceedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F2D2DF02C710098E3F5 /* CloseAccountSucceedViewController.swift */; };
 		C4CB601B2DF02C710098E3F5 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FAA2DF02C710098E3F5 /* String+Utils.swift */; };
 		C4CB601C2DF02C710098E3F5 /* AccountCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F8D2DF02C710098E3F5 /* AccountCenter.swift */; };
@@ -77,10 +75,8 @@
 		C4CB603A2DF02C710098E3F5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E932DF02C710098E3F5 /* AgreementView.swift */; };
 		C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA92DF02C710098E3F5 /* String+Localization.swift */; };
 		C4CB603D2DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F182DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift */; };
-		C4CB603F2DF02C710098E3F5 /* PromotionalFloatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FC62DF02C710098E3F5 /* PromotionalFloatingView.swift */; };
 		C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F282DF02C710098E3F5 /* CloseAccountFlowItem.swift */; };
 		C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F2C2DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift */; };
-		C4CB60442DF02C710098E3F5 /* PromotionalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FC72DF02C710098E3F5 /* PromotionalWebViewController.swift */; };
 		C4CB60462DF02C710098E3F5 /* QRCodeScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB02DF02C710098E3F5 /* QRCodeScanningViewController.swift */; };
 		C4CB60472DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F012DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift */; };
 		C4CB60482DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EAA2DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift */; };
@@ -147,7 +143,6 @@
 		C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F0E2DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift */; };
 		C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA62DF02C710098E3F5 /* DeviceStatus+.swift */; };
 		C4CB60982DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF72DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift */; };
-		C4CB60992DF02C710098E3F5 /* BeginnerGuidance+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FC92DF02C710098E3F5 /* BeginnerGuidance+Model.swift */; };
 		C4CB609A2DF02C710098E3F5 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F372DF02C710098E3F5 /* UserProfileTableViewController.swift */; };
 		C4CB609B2DF02C710098E3F5 /* UIApplication+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FAB2DF02C710098E3F5 /* UIApplication+Info.swift */; };
 		C4CB609C2DF02C710098E3F5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9E2DF02C710098E3F5 /* UIColor+.swift */; };
@@ -156,7 +151,6 @@
 		C4CB60A02DF02C710098E3F5 /* SystemMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF82DF02C710098E3F5 /* SystemMessageViewController.swift */; };
 		C4CB60A12DF02C710098E3F5 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF62DF02C710098E3F5 /* MessageCenterViewController.swift */; };
 		C4CB60A22DF02C710098E3F5 /* RegionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB62DF02C710098E3F5 /* RegionSelectionButton.swift */; };
-		C4CB60A32DF02C710098E3F5 /* BeginnerGuidance+BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FCB2DF02C710098E3F5 /* BeginnerGuidance+BubbleView.swift */; };
 		C4CB60A42DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EFF2DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift */; };
 		C4CB60A52DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EB32DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift */; };
 		C4CB60A62DF02C710098E3F5 /* APNSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F092DF02C710098E3F5 /* APNSSettingViewController.swift */; };
@@ -314,7 +308,6 @@
 		C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C4CB5F882DF02C710098E3F5 /* receive_call.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = receive_call.mp3; sourceTree = "<group>"; };
 		C4CB5F892DF02C710098E3F5 /* Reoqoo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reoqoo-Bridging-Header.h"; sourceTree = "<group>"; };
-		C4CB5F8B2DF02C710098E3F5 /* MigrationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationHelper.swift; sourceTree = "<group>"; };
 		C4CB5F8D2DF02C710098E3F5 /* AccountCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCenter.swift; sourceTree = "<group>"; };
 		C4CB5F8E2DF02C710098E3F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4CB5F902DF02C710098E3F5 /* DebugConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugConfigurationView.swift; sourceTree = "<group>"; };
@@ -350,11 +343,6 @@
 		C4CB5FBA2DF02C710098E3F5 /* RegionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionSelectionViewController.swift; sourceTree = "<group>"; };
 		C4CB5FBC2DF02C710098E3F5 /* RegionSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionSelectionViewModel.swift; sourceTree = "<group>"; };
 		C4CB5FC02DF02C710098E3F5 /* GWIoTAPIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GWIoTAPIDelegate.swift; sourceTree = "<group>"; };
-		C4CB5FC62DF02C710098E3F5 /* PromotionalFloatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionalFloatingView.swift; sourceTree = "<group>"; };
-		C4CB5FC72DF02C710098E3F5 /* PromotionalWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionalWebViewController.swift; sourceTree = "<group>"; };
-		C4CB5FC92DF02C710098E3F5 /* BeginnerGuidance+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeginnerGuidance+Model.swift"; sourceTree = "<group>"; };
-		C4CB5FCB2DF02C710098E3F5 /* BeginnerGuidance+BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BeginnerGuidance+BubbleView.swift"; sourceTree = "<group>"; };
-		C4CB5FCD2DF02C710098E3F5 /* BeginnerGuidance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerGuidance.swift; sourceTree = "<group>"; };
 		C4CB5FCF2DF02C710098E3F5 /* ReoqooAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReoqooAlertViewController.swift; sourceTree = "<group>"; };
 		C4CB5FD12DF02C710098E3F5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C4CB5FD22DF02C710098E3F5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
@@ -1094,14 +1082,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4CB5F8C2DF02C710098E3F5 /* 版本升级迁移助手 */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5F8B2DF02C710098E3F5 /* MigrationHelper.swift */,
-			);
-			path = "版本升级迁移助手";
-			sourceTree = "<group>";
-		};
 		C4CB5F8F2DF02C710098E3F5 /* AccountCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,41 +1239,6 @@
 			path = SDKDelegate;
 			sourceTree = "<group>";
 		};
-		C4CB5FC82DF02C710098E3F5 /* 运营弹窗UI */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5FC62DF02C710098E3F5 /* PromotionalFloatingView.swift */,
-				C4CB5FC72DF02C710098E3F5 /* PromotionalWebViewController.swift */,
-			);
-			path = "运营弹窗UI";
-			sourceTree = "<group>";
-		};
-		C4CB5FCA2DF02C710098E3F5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5FC92DF02C710098E3F5 /* BeginnerGuidance+Model.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C4CB5FCC2DF02C710098E3F5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5FCB2DF02C710098E3F5 /* BeginnerGuidance+BubbleView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C4CB5FCE2DF02C710098E3F5 /* 新手引导 */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5FCA2DF02C710098E3F5 /* Model */,
-				C4CB5FCC2DF02C710098E3F5 /* View */,
-				C4CB5FCD2DF02C710098E3F5 /* BeginnerGuidance.swift */,
-			);
-			path = "新手引导";
-			sourceTree = "<group>";
-		};
 		C4CB5FD02DF02C710098E3F5 /* AlertSeries */ = {
 			isa = PBXGroup;
 			children = (
@@ -1349,8 +1294,6 @@
 		C4CB5FE62DF02C710098E3F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C4CB5FC82DF02C710098E3F5 /* 运营弹窗UI */,
-				C4CB5FCE2DF02C710098E3F5 /* 新手引导 */,
 				C4CB5FD02DF02C710098E3F5 /* AlertSeries */,
 				C4CB5FD42DF02C710098E3F5 /* BaseViewControllerSeries */,
 				C4CB5FD62DF02C710098E3F5 /* CollectionViewLayout */,
@@ -1371,7 +1314,6 @@
 		C4CB5FE72DF02C710098E3F5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				C4CB5F8C2DF02C710098E3F5 /* 版本升级迁移助手 */,
 				C4CB5F8F2DF02C710098E3F5 /* AccountCenter */,
 				C4CB5F922DF02C710098E3F5 /* DebugConfiguration */,
 				C4CB5FAF2DF02C710098E3F5 /* Extensions */,
@@ -1539,13 +1481,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1567,13 +1505,11 @@
 				C4CB600B2DF02C710098E3F5 /* UserSelectHeaderViewController.swift in Sources */,
 				C4CB600D2DF02C710098E3F5 /* DebugConfigurationViewModel.swift in Sources */,
 				C4CB600E2DF02C710098E3F5 /* ScrollableTabBar.swift in Sources */,
-				C4CB600F2DF02C710098E3F5 /* MigrationHelper.swift in Sources */,
 				C4CB60112DF02C710098E3F5 /* InputAccessoryView.swift in Sources */,
 				C4CB60132DF02C710098E3F5 /* ReoqooPopupViewProperty.swift in Sources */,
 				C4CB60152DF02C710098E3F5 /* Collection+.swift in Sources */,
 				C4CB60172DF02C710098E3F5 /* PasswordInputView.swift in Sources */,
 				C4CB60182DF02C710098E3F5 /* RegionSelectionViewController+TableViewCell.swift in Sources */,
-				C4CB60192DF02C710098E3F5 /* BeginnerGuidance.swift in Sources */,
 				C4CB601A2DF02C710098E3F5 /* CloseAccountSucceedViewController.swift in Sources */,
 				C4CB601B2DF02C710098E3F5 /* String+Utils.swift in Sources */,
 				C4CB601C2DF02C710098E3F5 /* AccountCenter.swift in Sources */,
@@ -1603,10 +1539,8 @@
 				C4CB603A2DF02C710098E3F5 /* AgreementView.swift in Sources */,
 				C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */,
 				C4CB603D2DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift in Sources */,
-				C4CB603F2DF02C710098E3F5 /* PromotionalFloatingView.swift in Sources */,
 				C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */,
 				C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */,
-				C4CB60442DF02C710098E3F5 /* PromotionalWebViewController.swift in Sources */,
 				C4CB60462DF02C710098E3F5 /* QRCodeScanningViewController.swift in Sources */,
 				C4CB60472DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift in Sources */,
 				C4CB60482DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift in Sources */,
@@ -1673,7 +1607,6 @@
 				C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */,
 				C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */,
 				C4CB60982DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift in Sources */,
-				C4CB60992DF02C710098E3F5 /* BeginnerGuidance+Model.swift in Sources */,
 				C4CB609A2DF02C710098E3F5 /* UserProfileTableViewController.swift in Sources */,
 				C4CB609B2DF02C710098E3F5 /* UIApplication+Info.swift in Sources */,
 				C4CB609C2DF02C710098E3F5 /* UIColor+.swift in Sources */,
@@ -1682,7 +1615,6 @@
 				C4CB60A02DF02C710098E3F5 /* SystemMessageViewController.swift in Sources */,
 				C4CB60A12DF02C710098E3F5 /* MessageCenterViewController.swift in Sources */,
 				C4CB60A22DF02C710098E3F5 /* RegionSelectionButton.swift in Sources */,
-				C4CB60A32DF02C710098E3F5 /* BeginnerGuidance+BubbleView.swift in Sources */,
 				C4CB60A42DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift in Sources */,
 				C4CB60A52DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift in Sources */,
 				C4CB60A62DF02C710098E3F5 /* APNSSettingViewController.swift in Sources */,
