@@ -34,4 +34,10 @@
         android:onClick="startMonitor"
         android:text="开启监控" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getDeviceList"
+        android:text="获取设备列表" />
+
 </LinearLayout>
