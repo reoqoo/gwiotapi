@@ -1481,9 +1481,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1703,6 +1707,19 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GWIoTAPIDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Reoqoo requires your permission to access the photo library in order to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Reoqoo requires your permission to access the Bluetooth in order to access Bluetooth devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Reoqoo requires your permission to access the Bluetooth in order to access Bluetooth devices.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Reoqoo requires your permission to access the camera to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reoqoo requires your permission to access the local network for device connections.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To successfully added equipment, you need allow the use of the Location Services for getting Wi-Fi information.Please turn on Location Services.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Reoqoo requires your permission to access the microphone to use the intercom feature.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Reoqoo requires your permission to access the photo library in order to save device QR codes to the system album.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Reoqoo requires your permission to access the photo library in order to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "In order to recommend better intelligent hardware products to you, we need to obtain your IDFA";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1741,6 +1758,19 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GWIoTAPIDemo/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Reoqoo requires your permission to access the photo library in order to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Reoqoo requires your permission to access the Bluetooth in order to access Bluetooth devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Reoqoo requires your permission to access the Bluetooth in order to access Bluetooth devices.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Reoqoo requires your permission to access the camera to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Reoqoo requires your permission to access the local network for device connections.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Require location authorization to help smart devices to connect with Wifi during connection process and confirm whether the App enters into ap mode or not( LAN working mode of mobile phone and smart devices) enable or not?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To successfully added equipment, you need allow the use of the Location Services for getting Wi-Fi information.Please turn on Location Services.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Reoqoo requires your permission to access the microphone to use the intercom feature.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Reoqoo requires your permission to access the photo library in order to save device QR codes to the system album.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Reoqoo requires your permission to access the photo library in order to use the QR code scanning feature.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "In order to recommend better intelligent hardware products to you, we need to obtain your IDFA";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
