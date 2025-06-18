@@ -20,6 +20,10 @@ end
 ## Launch the demo
 1. After registered from our dev webside, you would get the `AppID` `AppToken` `AppName`.
 2. Edit the `AppInfo.swift` file in `GWIoTAPIDemo`, replace `AppID` `AppToken` `AppName`.
+3. For the `In App Purchase` function, you need to add a record with `URLTypes` in your App `Info.plist`, like below:
+![D41C5D19-01E4-4640-9FAF-C9E06F819832.png](D41C5D19-01E4-4640-9FAF-C9E06F819832.png)
+syntax: `gw` + `your appID`  
+example: `gw1234567890` 
 
 ## Compatibility
 #### It should be noted that the sdk requires a specific version of xcode to be compiled normally. The following is the compatibility table
@@ -29,3 +33,4 @@ end
 | 1.0.1 | 16.2 |
 | 1.0.2 | 16.4 |
 | 1.0.3 | 16.4 |
+| 1.0.4 | 16.4 |
