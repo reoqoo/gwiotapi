@@ -1,0 +1,63 @@
+package com.gw.cp_msg.entity.http
+
+import com.gw.cp_msg.entity.http.MainNoticeEntity.Type.Companion.USER_MSG
+
+/**
+ * @message 表示 一个 设备列表页要展示的消息(简称: 主页消息)
+ * @user yanzheng@Gwell.cc
+ * @date 2023/12/14
+ */
+data class MainNoticeEntity(
+
+    /**
+     * 设备Id.
+     * 如果 是 系统公告, 那么 这个字段 为 null; 如果 是 用户消息, 那么 这个字段 为 设备的id
+     */
+    var deviceId: String?,
+    /**
+     * 弹窗url
+     */
+    var url: String,
+
+    /**
+     * 系统消息 为 Type.SYSTEM_NOTICE; 用户消息 为 Type.USER_MSG
+     */
+    var type: Int? = USER_MSG,
+
+    /**
+     * 用户消息 使用 这个字段 来 标识 唯一性
+     */
+    var msgId: Long? = 0,
+
+    /**
+     * 系统消息 使用 这个字段 来 标识 唯一性
+     */
+    var tag: String? = null,
+
+    /**
+     * 只有 用户消息 才 使用 这个字段.
+     * 表示: 这个是不是服务器通知app来拉取的用户消息.
+     */
+    var isFromPush: Boolean? = false,
+
+    /**
+     * 是否展示过
+     */
+    var isHaveShow: Boolean? = false,
+
+    /**
+     * 是否展示webview界面.
+     * true 表示: 以  h5页面 来 打开; false 表示: 以 h5弹窗 来 打开.
+     * 系统公告 必然 为 false; 而 用户消息 可能 是 true, 可能 是 false.
+     */
+    var showWeb: Boolean? = false,
+) {
+
+    interface Type {
+        companion object {
+            const val USER_MSG = 0
+            const val SYSTEM_NOTICE = 1
+        }
+    }
+
+}

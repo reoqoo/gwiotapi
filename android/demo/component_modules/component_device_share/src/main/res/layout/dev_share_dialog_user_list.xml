@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gw_reoqoo_widget_shape_bg_bottom_dialog"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_61"
+            android:gravity="center"
+            android:text="@string/AA0359"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_17" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_account_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_269"
+            android:overScrollMode="never"
+            tools:listitem="@layout/dev_share_item_user_list_dialog" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_7"
+            android:background="@color/black_5" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:gravity="center"
+            android:text="@string/AA0059"
+            android:textColor="@color/gw_reoqoo_widget_selector_comm_dialog_action_blue_color" />
+    </LinearLayout>
+</layout>

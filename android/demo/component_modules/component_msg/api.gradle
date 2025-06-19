@@ -1,0 +1,9 @@
+import com.gw.buildsrc.version.Versions
+
+dependencies {
+
+    /**
+     * json数据解析
+     */
+    compileOnly("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+}

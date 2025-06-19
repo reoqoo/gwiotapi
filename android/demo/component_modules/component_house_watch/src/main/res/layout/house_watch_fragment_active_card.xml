@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gw_reoqoo_widget_bg_card_12"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_pull_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/house_watch_pull_down"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_6">
+
+            <LinearLayout
+                android:id="@+id/ll_menu_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dp_12"
+                android:paddingEnd="@dimen/dp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/AA0207"
+                    android:textColor="@color/black_90"
+                    android:textSize="@dimen/sp_14" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/house_watch_icon_more" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_single_dev_name"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_32"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:paddingHorizontal="@dimen/dp_12"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="@id/ll_menu_bar"
+                app:layout_constraintStart_toStartOf="@id/ll_menu_bar"
+                app:layout_constraintTop_toBottomOf="@id/ll_menu_bar"
+                tools:text="reoqoo Cam 1 设备名称"
+                tools:visibility="visible" />
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_single_dev_name"
+                app:srlEnableAutoLoadMore="false"
+                app:srlEnableRefresh="false">
+
+                <com.gw_reoqoo.house_watch.widgets.ActiveRefreshHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_actives"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    tools:itemCount="30"
+                    tools:listitem="@layout/house_watch_item_active_list" />
+
+                <com.gw_reoqoo.house_watch.widgets.ActiveRefreshFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/house_watch_image_active_empty"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/AA0203"
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/iv_empty"
+                app:layout_constraintStart_toStartOf="@id/iv_empty"
+                app:layout_constraintTop_toBottomOf="@id/iv_empty"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_expand"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginTop="@dimen/dp_minus_16"
+                android:background="@drawable/gw_reoqoo_widget_bg_card_12_bottom"
+                android:gravity="center"
+                android:text="@string/AA0204"
+                android:textColor="@color/gw_reoqoo_widget_selector_comm_dialog_action_blue_color"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/refresh_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

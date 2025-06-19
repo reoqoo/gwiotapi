@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.gw_reoqoo.lib_widget.title.AppTitle
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:main_text="@string/AA0648" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingEnd="@dimen/dp_0"
+            android:paddingBottom="@dimen/dp_12"
+            android:text="@string/AA0148"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_13" />
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:background="@drawable/gw_reoqoo_widget_bg_card_12"
+            android:hint="@string/AA0149"
+            android:maxLines="1"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingEnd="@dimen/dp_12"
+            android:singleLine="true"
+            android:textColorHint="@color/color_000000_38"
+            android:textSize="@dimen/sp_15" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingEnd="@dimen/dp_0"
+            android:paddingBottom="@dimen/dp_14"
+            android:text="@string/AA0150"
+            android:textColor="@color/black_60"
+            android:textSize="@dimen/sp_12" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/near_share_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@android:color/transparent"
+                android:overScrollMode="never"
+                android:paddingVertical="@dimen/dp_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                tools:background="@drawable/gw_reoqoo_widget_bg_card_12"
+                tools:itemCount="10"
+                tools:listitem="@layout/dev_share_item_near_share_list" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_face_to_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_24"
+            android:text="@string/AA0151"
+            android:textColor="@color/color_4a68a6"
+            android:textSize="@dimen/sp_13" />
+
+        <Button
+            android:id="@+id/btn_share"
+            style="@style/fullWidthButton.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/dp_23"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_23"
+            android:layout_marginBottom="@dimen/dp_23"
+            android:enabled="false"
+            android:text="@string/AA0232" />
+
+    </LinearLayout>
+</layout>

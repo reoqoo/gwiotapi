@@ -1,0 +1,38 @@
+package com.gw_reoqoo.component_family.api.interfaces
+
+/**
+ * @Description: -
+ * @Author: XIAOLEI
+ * @Date: 2023/9/11
+ */
+interface IGuideDataStore {
+    /**
+     * 右上角添加按钮的引导操作结束标志
+     */
+    suspend fun getAddBtnGuide(): Boolean
+
+    /**
+     * 右上角添加按钮的引导操作结束标志
+     */
+    suspend fun setAddBtnGuide(value: Boolean)
+
+    /**
+     * 第一个设备的引导操作
+     */
+    suspend fun getFirstDeviceGuide(): Boolean
+
+    /**
+     * 第一个设备的引导操作
+     */
+    suspend fun setFirstDeviceGuide(value: Boolean)
+
+    /**
+     * 获取设备卡片引导
+     */
+    suspend fun getVideoCardGuide(): Boolean
+
+    /**
+     * 设置设备卡片引导
+     */
+    suspend fun setVideoCardGuide(value: Boolean)
+}

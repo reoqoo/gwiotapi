@@ -1,0 +1,18 @@
+package com.gw.component_push.api.interfaces
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/7/23 23:09
+ * Description: 通知消息的服务
+ */
+interface INotifyServer {
+
+    /**
+     * 通知点击回调
+     *
+     * @param channel String 渠道名称
+     * @param msg String 推送消息内容
+     */
+    fun onNotifyMsgClick(channel: String, msg: String)
+
+}

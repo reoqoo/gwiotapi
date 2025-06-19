@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.HeaderScrollView.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HeaderScrollView.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

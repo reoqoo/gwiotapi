@@ -1,0 +1,98 @@
+import com.gw.buildsrc.utils.DataUtils
+import com.gw.buildsrc.utils.PropertyUtils
+
+project.ext {
+    // 不根据cpu架构拆分 true是分
+    ENABLE_SPLIT_ABI = PropertyUtils.getBooleanProperty(project, "ENABLE_SPLIT_ABI", false)
+    // 不根据分辨率拆分 true是分
+    ENABLE_SPLIT_DENSITY = PropertyUtils.getBooleanProperty(project, "ENABLE_SPLIT_DENSITY", false)
+    // 不根据语言拆分 true是分
+    ENABLE_SPLIT_LANGUAGE = PropertyUtils.getBooleanProperty(project, "ENABLE_SPLIT_LANGUAGE", false)
+
+    // 包名(APPLICATION_ID)
+    APPLICATION_ID = PropertyUtils.getProperty(project, "APPLICATION_ID", "com.gw.demo")
+
+    // 版本号. 注意: google/local这两个渠道的版本号是不一样的
+    //          比如: 国内版打包为780, 国外版打包时为775
+    LOCAL_VERSION_CODE = PropertyUtils.getIntProperty(project, "LOCAL_VERSION_CODE", 1000)
+    GOOGLE_VERSION_CODE = PropertyUtils.getIntProperty(project, "GOOGLE_VERSION_CODE", 1000)
+
+    // 版本名
+    VERSION_NAME = PropertyUtils.getProperty(project, "VERSION_NAME", "01.01.01.01")
+
+    // 子版本号.
+    //          local渠道包: 每个版本 第一次 打 集成提测包 时, 都 从 "101" 开始; 后继 每一轮打集成提测包 都 增 1.
+    //          google渠道包: 每个版本 第一次 打 集成提测包 时, 都 从 "201" 开始; 后继 每一轮打集成提测包 都 增 1.
+    //          注意一点: 如果 是 某一轮重新提测, 不要 将 这个子版本号 增 1.
+    LOCAL_SUB_VERSION = PropertyUtils.getProperty(project, "LOCAL_SUB_VERSION", "101")
+    GOOGLE_SUB_VERSION = PropertyUtils.getProperty(project, "GOOGLE_SUB_VERSION", "201")
+
+    // BUILD_NUMBER
+    //          如果 是 jenkins 上 打包, 那么 这个值 为 jenkins上这个item的BUILD_NUMBER
+    //          如果 是 开发者的pc 上 打包, 那么 这个值 为 当前时间(比如, 当前 是 2022年12月14日 10点32分15秒, 那么 这个值 为 "12141032")
+    BUILD_NUMBER = PropertyUtils.getProperty(project, "BUILD_NUMBER", "")
+    if ("".equals(BUILD_NUMBER)) {
+        BUILD_NUMBER = DataUtils.getCurrentTime()
+    }
+
+    // 构建时间, 表示 本次编译的的时间
+    BUILD_TIME = DataUtils.getTime()
+
+    // 打的包 是不是 用于 集成提测和对外发布, 默认是false
+    //          在 开发者的pc 上, 不应当 更改 这个默认值, 只能 是 false.
+    //          只允许 在 jenkins 上 通过 环境变量/系统属性/gradle属性/project属性 之一 来 取值为 true.
+    //          因为 只能在 jenkins 上 打 集成提测包和对外发布包.
+    IS_RELEASE_APK = PropertyUtils.getBooleanProperty(project, "IS_RELEASE_APK", false)
+
+    // 打的包是否是用于加固, 默认是false
+    //          因为 只有 集成提测的包的local渠道的包 和 对外发布的local渠道的包 需要 进行 加固,
+    //          所以, 几点:
+    //                  在 开发者的pc 上, 不应当 更改 这个默认值, 只能 是 false.
+    //                  在 jenkins 上,
+    //                          如果 打的包 是 集成提测的包的local渠道的包 和 对外发布的local渠道的包,
+    //                                  那么, 通过 环境变量/系统属性/gradle属性/project属性 之一 来 取值为 true.
+    //                          否则 应当 保留 为 false.
+    //                                  注意: 打的包 是 google渠道的包 时, 这个值 也是 取 false.
+    IS_PROTECTED_APP = PropertyUtils.getBooleanProperty(project, "IS_PROTECTED_APP", false)
+
+    // jenkins_env(只有当在jenkins上进行打包时, 我们才会将此环境变量设置为true)
+    //          在 开发者的pc 上, 不应当 更改 这个默认值, 只能 是 false.
+    //          在 jenkins 上, 通过 环境变量/系统属性/gradle属性/project属性 之一 来 取值为 true.
+    IS_JENKINS_ENV = PropertyUtils.getBooleanProperty(project, "IS_JENKINS_ENV", false)
+
+    // 数据库版本
+    DB_VERSION = PropertyUtils.getIntProperty(project, "DB_VERSION", 1)
+
+    // 是否 打开 启用神策插件的transform操作.
+    //          神策插件 的 主要功能 是: 在 编译 之后, 会 遍历 所有的class, 通过 aop方式 进行 transform操作.
+    //          如果 DISABLE_SA_PLUGIN 为 false, 那么 会 启用神策插件的transform操作.
+    //          如果 DISABLE_SA_PLUGIN 为 true, 那么 虽然 仍然 会 apply 神策插件, 但是 在 神策插件 中, 不会 进行 transform操作.
+    //          注意: 这个开关在release版本 上 一定要打开, 因为 我们是需要神策的全埋点功能的.
+    //          之所以 加 这个开关, 是因为 我们开发者在pc上进行debug编译时, 其实 大多数情况下 不需要 神策插件进行transform操作的.
+    //                  transform操作 是 耗时操作. 所以 建议在debug时, 我们 将 这个值 置为 true.
+    //          如果更改这个值?
+    //                  在 jenkins 上, 我们 通过 环境变量/系统属性/gradle属性/project属性 之一 来 取值为 false.
+    //                          注意: 不要 为 false.
+    //                  在 开发者的pc 上, 可以 在 根项目的目录下的"local.properties" 中, 添加 一行: "DISABLE_SA_PLUGIN=true"
+    //                          但是, 注意: 不要把 commit.
+    //          强调一下: 不要(!) 更改 下面这一行代码.
+    DISABLE_SA_PLUGIN = PropertyUtils.getProperty(project, "DISABLE_SA_PLUGIN", PropertyUtils.getLocalProperty(project, "DISABLE_SA_PLUGIN", "false"))
+}
+
+// 打印到终端
+println "----------------------------------------------------------------"
+println "app模块 的 配置:"
+println "       APPLICATION_ID      =   " + project.APPLICATION_ID
+println "       LOCAL_VERSION_CODE  =   " + project.LOCAL_VERSION_CODE
+println "       GOOGLE_VERSION_CODE =   " + project.GOOGLE_VERSION_CODE
+println "       VERSION_NAME        =   " + project.VERSION_NAME
+println "       LOCAL_SUB_VERSION   =   " + project.LOCAL_SUB_VERSION
+println "       GOOGLE_SUB_VERSION  =   " + project.GOOGLE_SUB_VERSION
+println "       BUILD_NUMBER        =   " + project.BUILD_NUMBER
+println "       BUILD_TIME          =   " + project.BUILD_TIME
+println "       IS_RELEASE_APK      =   " + project.IS_RELEASE_APK
+println "       IS_PROTECTED_APP    =   " + project.IS_PROTECTED_APP
+println "       IS_JENKINS_ENV      =   " + project.IS_JENKINS_ENV
+println "       DB_VERSION          =   " + project.DB_VERSION
+println "       DISABLE_SA_PLUGIN   =   " + project.DISABLE_SA_PLUGIN
+println "----------------------------------------------------------------"

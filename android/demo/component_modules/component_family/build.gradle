@@ -1,0 +1,67 @@
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+def isApplication = project.name == debug_module_name
+
+
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+android {
+    namespace 'com.gw_reoqoo.component_family'
+    defaultConfig {
+        if (isApplication) {
+            applicationId "com.gw_reoqoo.component_family"
+        }
+    }
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("family_")
+}
+
+dependencies {
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
+
+dependencies {
+    /**
+     * json库
+     */
+    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+
+    implementation "com.github.bumptech.glide:glide:${Versions.ThirdVersions.VERSION_GLIDE}"
+
+    compileOnly("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+
+    implementation("com.airbnb.android:lottie:${Versions.ThirdVersions.VERSION_LOTTIE}", {
+        exclude group: 'androidx.lifecycle'
+        exclude group: 'androidx.appcompat'
+        exclude group: 'androidx.activity'
+        exclude group: 'androidx.core'
+        exclude group: 'androidx.annotation'
+    })
+}
+
+dependencies {
+    implementation project(path: ':component_modules:component_family_api')
+    implementation project(path: ':component_modules:component_account_api')
+    implementation project(path: ":component_modules:component_config_api")
+    implementation project(path: ":component_modules:component_msg_api")
+    implementation project(path: ":component_modules:component_push_api")
+    implementation project(path: ":component_modules:component_mine_api")
+    implementation project(path: ":component_modules:component_device_share_api")
+}
+
+dependencies {
+    implementation "com.github.Dimezis:BlurView:${Versions.ThirdVersions.VERSION_BLUR_VIEW}"
+
+    implementation("${GwDependLibs.ReoqooSdkLibs.COMP_NAME}component_iotapi_plugin_api:${Versions.ReoqooSdkVer.VERSION_CODE}") {
+        exclude(group: 'com.tencentcs', module: 'txtraevoip')
+    }
+}

@@ -1,0 +1,22 @@
+package com.gw_reoqoo.cp_account.api.kapi
+
+import android.content.Context
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/11/30 15:36
+ * Description: IInterfaceSignApi
+ */
+interface IInterfaceSignApi {
+
+    /**
+     * 获取匿名签名信息
+     *
+     * @param context Context  上下文
+     * @param appID String     appID
+     * @param appVersion String app版本号
+     * @return Array<String>
+     */
+    fun getAnonymousInfo(context: Context, appID: String, appVersion: String): Array<String>
+
+}

@@ -1,0 +1,46 @@
+package com.gw_reoqoo.cp_account.api.kapi
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/8/15 10:34
+ * Description: IUserInfo
+ */
+interface IUserInfo {
+
+    val userId: String
+
+    val terminalId: String
+
+    val email: String?
+
+    val phone: String?
+
+    val nickName: String?
+
+    val accessId: String
+
+    val accessToken: String
+
+    val expireTime: String
+
+    val area: String?
+
+    val regRegion: String?
+
+    val headUrl: String?
+
+    val firstLogin: Boolean?
+
+    val unionIdToken: String?
+
+    val hasBindAccount: Boolean?
+
+    val showId: String?
+
+    /**
+     * 获取显示的名称
+     *
+     * @return String UI显示的名称
+     */
+    fun getInsensitiveName(withNickName: Boolean = false): String
+}

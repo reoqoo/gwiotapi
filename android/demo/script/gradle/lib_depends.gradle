@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+android {
+    compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
+    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
+    defaultConfig {
+        minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
+        targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        // for view binding :
+        dataBinding true
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    packagingOptions {
+        // xlog
+        pickFirst 'lib/armeabi/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi/libgwmarsxlog.so'
+        pickFirst 'lib/armeabi-v7a/libgwmarsxlog.so'
+        pickFirst 'lib/arm64-v8a/libgwmarsxlog.so'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+/**
+ * android组件依赖
+ */
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
+    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
+    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
+    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
+    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
+    
+    testImplementation "junit:junit:${Versions.AndroidUtilsVersions.VERSION_JUNIT}"
+    androidTestImplementation "androidx.test.ext:junit:${Versions.AndroidUtilsVersions.VERSION_TEST_JUNIT}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${Versions.AndroidUtilsVersions.VERSION_ESPRESSO}"
+
+}
+
+/**
+ * 第三方库依赖
+ */
+dependencies {
+}
+
+/**
+ * 技威仓库依赖
+ */
+dependencies {
+    /**
+     * 日志库
+     */
+    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    /**
+     * 工具库
+     */
+    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+    /**
+     * json库
+     */
+    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+}

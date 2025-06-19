@@ -1,3 +1,5 @@
+import java.util.function.Consumer
+
 pluginManagement {
     repositories {
         maven { setUrl("https://maven.aliyun.com/repository/central") }
@@ -62,4 +64,36 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GWIotDemo"
-include ':app'
+
+apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
+// 壳工程
+include ":app"
+include ":component_modules:component_aar_libs"
+
+def includeModules = Arrays.asList(
+        ":lib_modules:lib_api_root",
+        ":lib_modules:lib_resource",
+)
+includeModules.forEach(new Consumer<String>() {
+    @Override
+    void accept(String s) {
+        include "$s"
+    }
+})
+
+def includeWithApiModules = Arrays.asList(
+        ":component_modules:component_push",
+        ":component_modules:component_account",
+        ":component_modules:component_family",
+        ":component_modules:component_device_share",
+        ":component_modules:component_house_watch",
+        ":component_modules:component_mine",
+        ":component_modules:component_config",
+        ":component_modules:component_msg",
+)
+includeWithApiModules.forEach(new Consumer<String>() {
+    @Override
+    void accept(String s) {
+        includeWithApi "$s"
+    }
+})

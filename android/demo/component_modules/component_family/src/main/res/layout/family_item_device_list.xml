@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_7_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/family_shape_bg_device_list_item"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_12">
+
+            <TextView
+                android:id="@+id/tv_dev_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black_100"
+                android:textSize="@dimen/sp_13"
+                tools:text="Reqoo Cam" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/family_shape_online_point_online"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:textColor="@color/black_50"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="在线" />
+
+                <View
+                    android:id="@+id/v_split"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:background="@color/split_line_color" />
+
+                <ImageView
+                    android:id="@+id/iv_4g"
+                    android:layout_width="@dimen/dp_17"
+                    android:layout_height="@dimen/dp_17"
+                    android:layout_gravity="start|bottom"
+                    android:src="@drawable/family_icon_4g_on" />
+
+                <View
+                    android:id="@+id/v_split_line"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:background="@color/split_line_color" />
+
+                <ImageView
+                    android:id="@+id/iv_cloud"
+                    android:layout_width="@dimen/dp_17"
+                    android:layout_height="@dimen/dp_17"
+                    android:layout_gravity="start|bottom"
+                    android:src="@drawable/family_icon_cloud_on" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_product"
+                        android:layout_width="@dimen/dp_54"
+                        android:layout_height="@dimen/dp_54"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerInside"
+                        tools:src="@drawable/family_icon_device_holder_place" />
+
+                    <TextView
+                        android:id="@+id/tv_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|start"
+                        android:layout_marginBottom="@dimen/dp_2"
+                        android:background="@drawable/family_shape_shared_bg"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/dp_2"
+                        android:text="@string/AA0232"
+                        android:textColor="@color/black_60"
+                        android:textSize="@dimen/sp_10" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/bt_turn_off_or_on"
+                    android:layout_width="@dimen/dp_29"
+                    android:layout_height="@dimen/dp_29"
+                    android:layout_gravity="end|bottom"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="false"
+                    app:lottie_rawRes="@raw/family_dev_turnoff"
+                    app:lottie_repeatMode="restart" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

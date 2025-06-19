@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_bind_graph"
+    app:startDestination="@id/bindinputfragment">
+
+    <fragment
+        android:id="@+id/bindinputfragment"
+        android:name="com.gw_reoqoo.cp_account.ui.fragment.bind_account_input.AccountBindInputFragment"
+        android:label="AccountBindInputFragment">
+        <action
+            android:id="@+id/to_account_bindverifycodefragment"
+            app:destination="@id/account_bindverifycodefragment" />
+        <action
+            android:id="@+id/to_account_bindarealistfragment"
+            app:destination="@id/bindarealistfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bindarealistfragment"
+        android:name="com.gw_reoqoo.cp_account.ui.fragment.area_list.AreaListFragment"
+        android:label="BindAreaListFragment">
+        <argument
+            android:name="key_district_bean"
+            app:argType="com.gw_reoqoo.lib_http.entities.DistrictEntity"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/account_bindverifycodefragment"
+        android:name="com.gw_reoqoo.cp_account.ui.fragment.bind_verify_code.BindVerifyCodeFragment"
+        android:label="BindVerifyCodeFragment">
+        <argument
+            android:name="key_account"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="key_district_bean"
+            app:argType="com.gw_reoqoo.lib_http.entities.DistrictEntity"
+            app:nullable="false" />
+        <argument
+            android:name="key_register_type"
+            android:defaultValue="TYPE_MOBILE"
+            app:argType="com.gw_reoqoo.cp_account.entity.AccountRegisterType" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,274 @@
+{
+  "config_version": "1",
+  "platform": {
+    "newSharePermissionMode": 1
+  },
+  "pids": {
+    "343603826131447": {
+      "productModule": "IP3MCB1A",
+      "iOSMinVersion": "1.0",
+      "androidMinVersion": "01.00.00",
+      "productName": "Defender GO",
+      "productNumber": "A003",
+      "isSupport5Gwifi": true,
+      "supportLinkTypes": "0x0014",
+      "linkGuideURL": "https://trade.reoqoo.com/h5/equityCenter/reoqoo/device/guide/thirdProduct",
+      "linkGuideURLPath": "h5/equityCenter/reoqoo/device/guide/thirdProduct",
+      "firstPriorityLinkType": "0x0010",
+      "productImageURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/72338d18-9a14-4a0e-acb3-452e556564d2ETI_IP3MCB1A_C.png",
+      "productImageURL_A": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/8132aa3a-6cae-4749-b7f0-555662e8df9aETI_IP3MCB1A_A.png",
+      "productImageURL_B1": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/f15d403c-096b-494c-922e-8baf295e04bbETI_IP3MCB1A_B1.png",
+      "productImageURL_B2": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/5644ba2e-3302-4b14-a1cf-5f6ec4cbf26aETI_IP3MCB1A_B2.png",
+      "productImageURL_C": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/72338d18-9a14-4a0e-acb3-452e556564d2ETI_IP3MCB1A_C.png",
+      "productImageURL_D": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/4ffc6ef5-52f3-4180-857a-69c1e318484aETI_IP3MCB1A_D.png",
+      "deviceType": 0,
+      "solution": "yoosee",
+      "factoryName": "ETI",
+      "numberOfViews": 1
+    }
+  },
+  "sceneName": {
+    "hans": [
+      "看家防盗",
+      "照顾老人",
+      "看宝宝",
+      "看宠物",
+      "店铺",
+      "车库",
+      "仓库",
+      "院子",
+      "其他"
+    ],
+    "hant": [
+      "看家防盜",
+      "照顧老人",
+      "看寶寶",
+      "看寵物",
+      "店鋪",
+      "車庫",
+      "倉庫",
+      "庭院",
+      "其他"
+    ],
+    "en": [
+      "Home Security",
+      "Elderly Care",
+      "Baby's Room",
+      "Pets",
+      "Shop",
+      "Garage",
+      "Warehouse",
+      "Courtyard",
+      "Other"
+    ],
+    "vi": [
+      "Trang Chủ",
+      "Người già",
+      "Trẻ nhỏ",
+      "Vật nuôi",
+      "Cửa tiệm",
+      "Nhà để xe",
+      "Kho",
+      "Sân vườn",
+      "Khác"
+    ],
+    "th": [
+      "บ้าน",
+      "ชายชรา",
+      "ทารก",
+      "สัตว์เลี้ยง",
+      "ร้านค้า",
+      "โรงรถ",
+      "คลังสินค้า",
+      "ลาน",
+      "อื่น ๆ"
+    ],
+    "ko": [
+      "우리집",
+      "거실",
+      "아기방",
+      "애완 동물",
+      "매장",
+      "차고",
+      "창고",
+      "정원",
+      "기타"
+    ],
+    "ja": [
+      "ホーム",
+      "老人",
+      "赤ちゃん",
+      "ペット",
+      "ショップ",
+      "ガレージ",
+      "倉庫",
+      "中庭",
+      "その他"
+    ],
+    "id": [
+      "Rumah",
+      "Pria tua",
+      "Bayi",
+      "Membelai",
+      "Toko",
+      "Garasi",
+      "Gudang",
+      "Halaman",
+      "Lain"
+    ],
+    "android_in": [
+      "Rumah",
+      "Pria tua",
+      "Bayi",
+      "Membelai",
+      "Toko",
+      "Garasi",
+      "Gudang",
+      "Halaman",
+      "Lain"
+    ],
+    "de": [
+      "Zuhause",
+      "Alter Mann",
+      "Baby",
+      "Haustier",
+      "Geschäft",
+      "Garage",
+      "Warenhaus",
+      "Hof",
+      "Andere"
+    ],
+    "fr": [
+      "Accueil",
+      "Vieil homme",
+      "Bébé",
+      "Anima",
+      "Boutique",
+      "Garage",
+      "Entrepôt",
+      "Cour",
+      "Autre"
+    ],
+    "pt": [
+      "Casa",
+      "Velhote",
+      "Bebê",
+      "Animal",
+      "Loja",
+      "Garagem",
+      "Armazém",
+      "Pátio",
+      "De outros"
+    ],
+    "it": [
+      "Casa",
+      "Vecchio uomo",
+      "Bambino",
+      "Animale",
+      "Negozio",
+      "Box auto",
+      "Magazzino",
+      "Cortile",
+      "Altro"
+    ],
+    "ru": [
+      "Главная",
+      "Старик",
+      "детка",
+      "животное",
+      "Магазин",
+      "гараж",
+      "склад",
+      "двор",
+      "Другой"
+    ],
+    "es": [
+      "Casa",
+      "Anciano",
+      "Bebé",
+      "Mascota",
+      "Tienda",
+      "Garaje",
+      "Almacén",
+      "Patio",
+      "Otro"
+    ],
+    "pl": [
+      "Dom",
+      "Starzec",
+      "Kochanie",
+      "Zwierzę domowe",
+      "Sklep",
+      "Garaż",
+      "Magazyn",
+      "Dziedziniec",
+      "Inny"
+    ],
+    "tr": [
+      "Ev",
+      "Yaşlı adam",
+      "Bebek",
+      "Hayvan",
+      "Dükkan",
+      "Garaj",
+      "Depo",
+      "Avlu",
+      "Diğer"
+    ],
+    "nl": [
+      "Huis",
+      "Oude man",
+      "Baby",
+      "Huisdier",
+      "Winkel",
+      "Garage",
+      "Magazijn",
+      "Binnenplaats",
+      "Andere"
+    ],
+    "el": [
+      "σπίτι",
+      "Μεγαλύτερος",
+      "Μωρό",
+      "Κατοικίδιο ζώο",
+      "Κατάστημα",
+      "Γκαράζ",
+      "Αποθήκη",
+      "Αυλή",
+      "Αλλα"
+    ],
+    "cs": [
+      "Domov",
+      "Starý muž",
+      "Dítě",
+      "Mazlíček",
+      "Prodejna",
+      "Garáž",
+      "Sklad",
+      "Nádvoří",
+      "Jiný"
+    ],
+    "sk": [
+      "Domov",
+      "Starý muž",
+      "Dieťa",
+      "Zviera",
+      "Nakupujte",
+      "Garáž",
+      "Sklad",
+      "Nádvorie",
+      "Iné"
+    ],
+    "fa": [
+      "خانه",
+      "پیرمرد",
+      "عزیزم",
+      "حیوان",
+      "خرید کنید",
+      "گاراژ",
+      "انبار",
+      "حیاط",
+      "دیگر"
+    ]
+  }
+}

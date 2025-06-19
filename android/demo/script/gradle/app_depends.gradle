@@ -1,0 +1,175 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
+apply plugin: 'therouter'
+
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+android {
+    compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
+//    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
+    defaultConfig {
+        minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
+        targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        // for view binding :
+        dataBinding true
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
+    }
+
+    packagingOptions {
+
+        // xlog
+        pickFirst 'lib/armeabi/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+
+        pickFirst 'lib/armeabi/libgwmarsxlog.so'
+        pickFirst 'lib/armeabi-v7a/libgwmarsxlog.so'
+        pickFirst 'lib/arm64-v8a/libgwmarsxlog.so'
+
+        // 自研播放器
+        pickFirst 'lib/armeabi-v7a/libavcodec.so'
+        pickFirst 'lib/armeabi/libavcodec.so'
+        pickFirst 'lib/arm64-v8a/libavcodec.so'
+
+        pickFirst 'lib/armeabi-v7a/libavfilter.so'
+        pickFirst 'lib/armeabi/libavfilter.so'
+        pickFirst 'lib/arm64-v8a/libavfilter.so'
+
+        pickFirst 'lib/armeabi-v7a/libavformat.so'
+        pickFirst 'lib/armeabi/libavformat.so'
+        pickFirst 'lib/arm64-v8a/libavformat.so'
+
+        pickFirst 'lib/armeabi-v7a/libavutil.so'
+        pickFirst 'lib/armeabi/libavutil.so'
+        pickFirst 'lib/arm64-v8a/libavutil.so'
+
+        pickFirst 'lib/armeabi-v7a/libcrypto.1.1.so'
+        pickFirst 'lib/armeabi/libcrypto.1.1.so'
+        pickFirst 'lib/arm64-v8a/libcrypto.1.1.so'
+
+        pickFirst 'lib/armeabi-v7a/libgwbase.so'
+        pickFirst 'lib/armeabi/libgwbase.so'
+        pickFirst 'lib/arm64-v8a/libgwbase.so'
+
+        pickFirst 'lib/armeabi-v7a/libssl.1.1.so'
+        pickFirst 'lib/armeabi/libssl.1.1.so'
+        pickFirst 'lib/arm64-v8a/libssl.1.1.so'
+
+        pickFirst 'lib/armeabi-v7a/libswresample.so'
+        pickFirst 'lib/armeabi/libswresample.so'
+        pickFirst 'lib/arm64-v8a/libswresample.so'
+
+        pickFirst 'lib/armeabi-v7a/libswscale.so'
+        pickFirst 'lib/armeabi/libswscale.so'
+        pickFirst 'lib/arm64-v8a/libswscale.so'
+
+        pickFirst 'lib/armeabi-v7a/libxml2.so'
+        pickFirst 'lib/armeabi/libxml2.so'
+        pickFirst 'lib/arm64-v8a/libxml2.so'
+
+        pickFirst '**/libcurl.so'
+        pickFirst '**/libgwplayer.so'
+        pickFirst '**/libmbedtls.so'
+        pickFirst '**/libiotvideomulti.so'
+        pickFirst '**/libtxTraeVoip.so'
+
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+/**
+ * android库
+ */
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
+    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
+    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
+    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
+
+    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
+    implementation "androidx.constraintlayout:constraintlayout:${Versions.AndroidUtilsVersions.VERSION_CONSTRAINT_LAYOUT}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
+    implementation "androidx.navigation:navigation-ui-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE_EXTENSIONS}"
+    implementation "androidx.lifecycle:lifecycle-livedata:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+
+    // 依赖注入框架
+    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+        exclude group: ("androidx.lifecycle")
+    })
+    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+
+}
+
+/**
+ * 第三方库
+ */
+dependencies {
+    // 路由框架
+    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    // 状态栏适配器
+    implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
+    // 屏幕适配
+    implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+
+//    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
+//        exclude group: 'com.tencentcs'
+//        exclude group: 'org.permissionsdispatcher'
+//    }
+}
+
+/**
+ * 模块依赖
+ */
+dependencies {
+    implementation(project(":lib_modules:lib_api_root"))
+    implementation(project(":lib_modules:lib_resource"))
+}
+
+dependencies {
+    api("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
+
+configurations.configureEach {
+    resolutionStrategy {
+        force "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+        /**
+         * 日志库*/
+        force "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    }
+}

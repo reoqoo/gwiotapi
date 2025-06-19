@@ -1,0 +1,7 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+dependencies {
+    api("com.reoqoo_lib:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    api("${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}")
+}

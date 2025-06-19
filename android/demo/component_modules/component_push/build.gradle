@@ -1,0 +1,48 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+
+android {
+    namespace 'com.gw.component_push'
+
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("push_")
+
+}
+
+dependencies {
+
+    // 国内渠道
+    //localImplementation "com.gwell.lib_gpush:version_local_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+
+    // 海外渠道
+    implementation "com.gwell.lib_gpush:version_google_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+//    implementation "com.gwell.lib_gpush:version_google_brand_snapshot:${Versions.GwVersions.VERSION_GW_PUSH}"
+
+    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+
+    /**
+     * 云存相关
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VAS}:${Versions.GwVersions.VERSION_IOT_VAS}"
+
+    /**
+     * 技威云存播放器库
+     */
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_CLOUD_PLAYER}:${Versions.GwVersions.VERSION_GW_PLAYER}")
+}
+
+dependencies {
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
+
+dependencies {
+    implementation project(path: ':component_modules:component_push_api')
+    implementation project(path: ':component_modules:component_config_api')
+    implementation project(path: ':component_modules:component_account_api')
+    implementation project(path: ':component_modules:component_family_api')
+    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
+}

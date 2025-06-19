@@ -1,0 +1,24 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+apply plugin: 'com.google.dagger.hilt.android'
+dependencies {
+    /**
+     * 路由库
+     */
+    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    
+    // 依赖注入框架
+    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+        exclude group: 'androidx.lifecycle'
+    })
+    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+}
+
+dependencies {
+    /**
+     * 技威网络请求
+     */
+    compileOnly "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+}

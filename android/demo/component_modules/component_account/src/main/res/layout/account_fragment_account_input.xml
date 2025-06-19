@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff">
+
+        <com.gw_reoqoo.lib_widget.title.AppTitle
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_area"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_42"
+            android:layout_marginEnd="@dimen/dp_27"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_000000_90"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="中国大陆" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_account_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_23"
+            android:layout_marginEnd="@dimen/dp_27"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_26"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_title"
+            tools:text="AAAAAAAAAAA" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_account_notice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/AA0032"
+            android:textColor="@color/color_1f1f1f_60"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_title" />
+
+        <com.gw_reoqoo.lib_widget.edittext.ClearEditText
+            android:id="@+id/et_account_number"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:layout_marginStart="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_27"
+            android:background="@drawable/gw_reoqoo_widget_input_bg"
+            android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/AA0002"
+            android:paddingEnd="@dimen/dp_13"
+            android:textColor="@color/color_000000_90"
+            android:textColorHint="@color/color_000000_38"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_notice" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_24"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_notice">
+
+            <TextView
+                android:id="@+id/tv_area_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+86"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_15"
+                tools:text="+86" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:background="@color/black_20" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_err_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@color/color_fa2a2d"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_account_number" />
+
+        <Button
+            android:id="@+id/btn_account_next"
+            style="@style/fullWidthButton.AppCompat"
+            android:layout_width="@dimen/dp_0"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_20"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/AA0020"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_err_notice" />
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/img_agree"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="-3dp"
+            android:background="@drawable/gw_reoqoo_account_agree_bg"
+            android:button="@null"
+            app:layout_constraintEnd_toStartOf="@id/tv_agree"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_agree" />
+
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:id="@+id/tv_agree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:textColor="@color/color_000000_38"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_agree"
+            tools:text="111111111111111111111111111111111111111111111111111111111111111111111111111111111" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

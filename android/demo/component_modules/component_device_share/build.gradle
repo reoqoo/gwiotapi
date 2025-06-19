@@ -1,0 +1,46 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+def isApplication = project.name == debug_module_name
+android {
+    namespace 'com.gw_reoqoo.component_device_share'
+    defaultConfig {
+        if (isApplication) {
+            applicationId "com.gw_reoqoo.component_device_share"
+        }
+    }
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("dev_share_")
+}
+
+dependencies {
+    implementation "com.github.bumptech.glide:glide:${Versions.ThirdVersions.VERSION_GLIDE}"
+    compileOnly("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    implementation("com.airbnb.android:lottie:${Versions.ThirdVersions.VERSION_LOTTIE}", {
+        exclude group: 'androidx.lifecycle'
+        exclude group: 'androidx.appcompat'
+        exclude group: 'androidx.activity'
+        exclude group: 'androidx.core'
+        exclude group: 'androidx.annotation'
+    })
+}
+
+dependencies {
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
+
+    implementation project(path: ':component_modules:component_device_share_api')
+    implementation project(path: ':component_modules:component_family_api')
+    implementation project(path: ':component_modules:component_account_api')
+    implementation project(path: ':component_modules:component_config_api')
+
+    implementation("${GwDependLibs.ReoqooSdkLibs.COMP_NAME}reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.ReoqooSdkLibs.COMP_NAME}component_iotapi_plugin_api:${Versions.ReoqooSdkVer.VERSION_CODE}") {
+        exclude(group: 'com.tencentcs', module: 'txtraevoip')
+    }
+}

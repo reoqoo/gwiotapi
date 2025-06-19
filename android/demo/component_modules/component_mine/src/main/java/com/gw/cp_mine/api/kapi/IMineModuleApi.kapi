@@ -1,0 +1,17 @@
+package com.gw.cp_mine.api.kapi
+
+import android.content.Context
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/9/21 22:50
+ * Description: MineModuleApi
+ */
+interface IMineModuleApi {
+
+    /**
+     * app 升级
+     */
+    fun appVersionUpgrade(context: Context)
+
+}

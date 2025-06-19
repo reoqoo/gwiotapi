@@ -1,0 +1,24 @@
+package com.gw.cp_msg.api.kapi
+
+import androidx.lifecycle.LiveData
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2024/3/1 18:11
+ * Description: IBenefitsApi
+ */
+interface IBenefitsApi {
+
+    /**
+     * 获取活动福利列表
+     */
+    fun loadBenefits()
+
+    /**
+     * 获取未读福利数量
+     *
+     * @return Int? 数量
+     */
+    fun getUnReadBenefitsCount(): LiveData<Int>?
+
+}

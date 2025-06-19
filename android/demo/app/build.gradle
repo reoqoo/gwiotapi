@@ -1,80 +1,170 @@
-plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-}
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.utils.DataUtils
+import com.gw.buildsrc.version.Versions
 
-apply plugin: 'kotlin-kapt'
+apply from: "${rootDir.absolutePath}/script/gradle/app_depends.gradle"
+apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
+apply from: "${rootDir.absolutePath}/app/config.gradle"
+apply plugin: 'com.sensorsdata.analytics.android'
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    namespace 'com.gwell.gwiotdemo'
-    compileSdk 35
+    namespace = "com.gw.reoqoo"
+
     defaultConfig {
-        applicationId "com.gwell.gwiotdemo"
-        minSdk 24
-        targetSdk 35
-        versionCode 1
-        versionName "1.0"
+        applicationId APPLICATION_ID
+        versionCode LOCAL_VERSION_CODE
+        versionName VERSION_NAME
+
+        manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+
+        buildConfigField("String", "BUILD_NUMBER", "\"$BUILD_NUMBER\"")
+        buildConfigField("boolean", "IS_RELEASE_APK", "$IS_RELEASE_APK")
+        buildConfigField("boolean", "IS_PROTECTED_APP", "$IS_PROTECTED_APP")
+        buildConfigField("boolean", "IS_JENKINS_ENV", "$IS_JENKINS_ENV")
+        buildConfigField("String", "BUILD_TIME", "$BUILD_TIME")
+
+        // 设置支持的语言
+        resConfigs "fa", "en", "es", "zh"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = '11'
+    def appNamePrefix = "Demo_"
+
+    flavorDimensions += "version"
+    productFlavors {
+        create("reoqoosdk") {
+            versionCode = GOOGLE_VERSION_CODE
+            dimension = "version"
+            applicationId = "com.gw.demo"
+            buildConfigField("Boolean", "IS_GOOGLE", "true")
+            buildConfigField("String", "SUB_VERSION", "\"$GOOGLE_SUB_VERSION\"")
+            def outputFileName = "$appNamePrefix${VERSION_NAME}.${GOOGLE_SUB_VERSION}_code${GOOGLE_VERSION_CODE}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}"
+            setProperty("archivesBaseName", outputFileName)
+        }
     }
 
-    buildFeatures {
-        dataBinding true
-    }
-    dataBinding {
-        enabled = true
+    sourceSets {
+        getByName("reoqoosdk") {
+            java.srcDirs("src/reoqoosdk/java")
+        }
     }
 
-    packagingOptions {
-        pickFirst '**/libc++_shared.so'
-        pickFirst '**/libgwmarsxlog.so'
-        pickFirst '**/libavcodec.so'
-        pickFirst '**/libavfilter.so'
-        pickFirst '**/libavformat.so'
-        pickFirst '**/libavutil.so'
-        pickFirst '**/libcrypto.1.1.so'
-        pickFirst '**/libgwbase.so'
-        pickFirst '**/libssl.1.1.so'
-        pickFirst '**/libswresample.so'
-        pickFirst '**/libswscale.so'
-        pickFirst '**/libxml2.so'
-        pickFirst '**/libgwplayer.so'
+    applicationVariants.configureEach { variant ->
+        def separator = File.separator
 
-        pickFirst '**/libaudiodsp_dynamic.so'
-        pickFirst '**/libtxTraeVoip.so'
-        pickFirst '**/libcurl.so'
-        pickFirst '**/libijkffmpeg.so'
-        pickFirst '**/libijkplayer.so'
-        pickFirst '**/libijksdl.so'
-        pickFirst '**/libbleconfig.so'
-        pickFirst '**/libiotvideomulti.so'
-        pickFirst '**/libmbedtls.so'
+        def flavorNameInLowercase = variant.flavorName
+        def buildTypeNameInLowercase = variant.buildType.name
+        def flavorNameCapitalized = variant.flavorName.capitalize()
+        def buildTypeNameCapitalized = variant.buildType.name.capitalize()
+        // 子版本号
+        def subVersion = LOCAL_SUB_VERSION
+        println "flavorNameInLowercase:$flavorNameInLowercase buildTypeNameInLowercase:$buildTypeNameInLowercase"
+        if ("google" == flavorNameInLowercase) {
+            subVersion = GOOGLE_SUB_VERSION
+        }
+
+        def localApkFileName = "$appNamePrefix${variant.versionName}.${subVersion}_code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.apk"
+        variant.outputs.configureEach { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk') && "local" == flavorNameInLowercase) {
+                // 修改打包后的apk文件名
+                outputFileName = localApkFileName
+            }
+        }
+
+        // 配置 工件的assemble任务
+        def variantAssembleTask = tasks.getByName("assemble${flavorNameCapitalized}${buildTypeNameCapitalized}")
+        // 配置 工件的bundle任务
+        def variantBundleTask = tasks.getByName("bundle${flavorNameCapitalized}${buildTypeNameCapitalized}")
+        variantAssembleTask.doLast {
+            def apkFileName = localApkFileName
+            println "outputApkName = ${apkFileName}"
+            // 将 apk文件 复制 到 备份目录 下
+            def apkFileOriginalInIntermediates = file("${project.buildDir}${separator}intermediates${separator}apk${separator}${flavorNameInLowercase}${separator}${buildTypeNameInLowercase}${separator}${apkFileName}")
+            println "apkFileOriginalInIntermediates = ${apkFileOriginalInIntermediates}"
+            def apkFileOriginalInOutputs = file("${project.buildDir}${separator}outputs${separator}apk${separator}${flavorNameInLowercase}${separator}${buildTypeNameInLowercase}${separator}${apkFileName}")
+            println "apkFileOriginalInOutputs = ${apkFileOriginalInOutputs}"
+            copyApkOrAabAndMapping(subVersion, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, apkFileOriginalInIntermediates, apkFileOriginalInOutputs)
+        }
+        variantBundleTask.doLast {
+            def aabFileName = "$appNamePrefix${variant.versionName}.${subVersion}_code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.aab"
+            println "aabFileName = ${aabFileName}"
+            // 将 apk文件 复制 到 备份目录 下
+            def apkFileOriginalInIntermediates = file("${project.buildDir}${separator}intermediates${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}")
+            println "apkFileOriginalInIntermediates = ${apkFileOriginalInIntermediates}"
+            def apkFileOriginalInOutputs = file("${project.buildDir}${separator}outputs${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}")
+            println "apkFileOriginalInOutputs = ${apkFileOriginalInOutputs}"
+            copyApkOrAabAndMapping(subVersion, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, apkFileOriginalInIntermediates, apkFileOriginalInOutputs)
+        }
     }
+
+    lintOptions {
+        // 打release时, 不进行 lint检查
+        checkReleaseBuilds false
+
+        // 代码中 使用了 人为的ID设置 时, 忽略 lint检查
+        disable "ResourceType"
+        // 编译时 忽略 未翻译字符串资源的报错, 检查 此项时 置 为 true
+        abortOnError false
+    }
+
+    bundle {
+        // storeArchive {
+        //     enable = false
+        // }
+        // todo 暂时先做拆分上架、观察google后台崩溃情况
+        abi {
+            // 不根据cpu架构拆分
+            enableSplit = ENABLE_SPLIT_ABI
+        }
+        density {
+            // 不根据分辨率拆分
+            enableSplit = ENABLE_SPLIT_DENSITY
+        }
+        language {
+            // 不根据语言拆分
+            enableSplit = ENABLE_SPLIT_LANGUAGE
+        }
+    }
+}
+
+configurations.configureEach {
+    resolutionStrategy.cacheChangingModulesFor 60, 'seconds'
 }
 
 dependencies {
-    implementation "com.gwell:gwiotapi:0.0.18.2"
-    var yooseeKitVersion = "google-release-1.1.39"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:${yooseeKitVersion}") {
-        exclude group: 'com.google.android.material'
-        exclude(group: 'androidx.activity', module: 'activity-ktx')
-        exclude(group: 'com.gwell', module: 'gwiotapi')
+    implementation(project(":component_modules:component_family_api"))
+    implementation(project(":component_modules:component_account_api"))
+    implementation(project(":component_modules:component_device_share_api"))
+    implementation(project(":component_modules:component_house_watch_api"))
+    implementation(project(":component_modules:component_mine_api"))
+    implementation(project(":component_modules:component_config_api"))
+    implementation(project(":component_modules:component_msg_api"))
+    implementation(project(":component_modules:component_push_api"))
+
+    implementation(project(":component_modules:component_family"))
+    implementation(project(":component_modules:component_account"))
+    implementation(project(":component_modules:component_device_share"))
+    implementation(project(":component_modules:component_house_watch"))
+    implementation(project(":component_modules:component_mine"))
+    implementation(project(":component_modules:component_config"))
+    implementation(project(":component_modules:component_msg"))
+    implementation(project(":component_modules:component_push"))
+
+    implementation("${GwDependLibs.ReoqooSdkLibs.COMP_NAME}component_iotapi_plugin:${Versions.ReoqooSdkVer.VERSION_CODE}") {
+        exclude(group: 'com.tencentcs', module: 'txtraevoip')
     }
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.appcompat
-    implementation libs.material
-    implementation libs.androidx.activity
-    implementation libs.androidx.constraintlayout
+}
+
+kapt {
+    correctErrorTypes true
 }

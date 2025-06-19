@@ -1,0 +1,34 @@
+import com.gw.buildsrc.version.Versions
+
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+
+def isApplication = project.name == debug_module_name
+
+android {
+    namespace 'com.gw.cp_config'
+
+    defaultConfig {
+        if (isApplication) {
+            applicationId "com.gw.cp_config"
+        }
+    }
+
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("config_")
+}
+
+dependencies {
+    implementation project(path: ":component_modules:component_config_api")
+    implementation project(path: ":component_modules:component_account_api")
+}
+
+dependencies {
+    /**
+     * json库
+     */
+    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+
+    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff">
+
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
+            android:id="@+id/layout_title"
+            style="@style/titleView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_set_pwd_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_23"
+            android:layout_marginEnd="@dimen/dp_27"
+            android:text="@string/AA0024"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_26"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_title"
+            tools:text="AAAAAAAAAAAAA" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/set_pwd_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="start"
+            android:text="@string/AA0396"
+            android:textColor="@color/color_000000_38"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_set_pwd_title"
+            tools:text="@string/AA0396" />
+
+        <com.gw_reoqoo.lib_widget.input.PasswordInputLayout
+            android:id="@+id/layout_set_pwd"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_pwd_tips"
+            app:widgetHintText="@string/AA0003" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_pwd_level"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/AA0025"
+            android:textColor="@color/color_fa2a2d"
+            android:textSize="@dimen/sp_11"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_set_pwd"
+            tools:visibility="visible" />
+
+        <com.gw_reoqoo.lib_widget.input.PasswordInputLayout
+            android:id="@+id/layout_pwd_confirm"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_34"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_set_pwd"
+            app:widgetHintText="@string/AA0026" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_input_reminder"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/AA0373"
+            android:textColor="@color/color_fa2a2d"
+            android:textSize="@dimen/sp_11"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_pwd_confirm"
+            tools:text="@string/AA0373"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_finish"
+            style="@style/fullWidthButton.AppCompat"
+            android:layout_width="@dimen/dp_0"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_40"
+            android:enabled="false"
+            android:text="@string/AA0058"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_pwd_confirm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

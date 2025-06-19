@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.gw_reoqoo.lib_widget.title.AppTitle
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:main_text="@string/AA0181" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_device_img"
+            android:layout_width="@dimen/dp_242"
+            android:layout_height="@dimen/dp_242"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/share_manager_ic_device_img" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_000000_90"
+            android:textSize="@dimen/sp_15"
+            tools:text="Reoqoo Cam55" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_owner_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_000000_60"
+            android:textSize="@dimen/sp_15"
+            tools:text="分享用户：小王（Reo****com）" />
+
+        <View
+            android:layout_width="@dimen/dp_0_1"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_delete_dev"
+            style="@style/fullWidthButton.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/dp_23"
+            android:text="@string/AA0183" />
+    </LinearLayout>
+
+</layout>

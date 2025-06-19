@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/app_ic_home_watcher_selected" android:state_selected="true" />
+    <item android:drawable="@drawable/app_ic_home_watcher_unselected" android:state_selected="false" />
+</selector>

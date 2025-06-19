@@ -1,0 +1,159 @@
+package com.gw.cp_config.api
+
+import com.gw.cp_config.entity.DevConfigEntity
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/9/5 17:38
+ * Description: IGlobalApi
+ */
+interface IAppConfigApi {
+
+    /**
+     * 同步更新配置
+     */
+    fun uploadConfig()
+
+    /**
+     * 获取支持手机号的国家码列表
+     *
+     * @return List<String>? 国家码列表
+     */
+    fun getCountryCodeList(): List<String>
+
+    /**
+     * 获取场景信息
+     *
+     * @param language String 语言
+     * @param country String 地区
+     *
+     * @return List<String>? 场景信息
+     */
+    fun getSystemScenes(language: String, country: String?): List<String>?
+
+    /**
+     * 获取所有设备配置信息
+     *
+     * @return Map<String, DevConfigEntity>? String: 设备pid, DevConfigEntity: 产品配置信息
+     */
+    fun getDevConfig(): Map<String, DevConfigEntity>?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl_C(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl_D(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 通过设备pid来获取设备配置信息
+     *
+     * @param pid String 设备pid
+     * @return DevConfigEntity? 配置信息
+     */
+    fun getDevConfigByPid(pid: String): DevConfigEntity?
+
+    /**
+     * 根据产品id获取产品名称（自动国际化）
+     */
+    fun getProductName(pid: String): String?
+
+    /**
+     * 获取配置权限模式
+     *
+     * @return Int 0：旧版本权限模式，1：新版本权限模式
+     */
+    fun getPermissionMode(): Int
+
+    /**
+     * 设置权限模式
+     *
+     * @param mode Int 权限模式（PermissionMode）
+     */
+    fun setPermissionMode(mode: Int)
+}
+
+enum class PermissionMode(val mode: Int) {
+    /**
+     * 旧版本权限模式
+     */
+    OLD(0),
+
+    /**
+     * 新版本权限模式
+     */
+    NEW(1),
+}
+
+/**
+ * 产品图类型
+ */
+enum class ProductImgType {
+    /**
+     * 列表
+     */
+    LIST,
+
+    /**
+     * 配网
+     */
+    CONFIG,
+
+    /**
+     * 介紹
+     */
+    INTRODUCTION,
+}
+
+
+/**
+ * APP渠道名称: reoqoo, ipTIME, xiaotun,用于区分不同的渠道下UI页面样式的差异性
+ */
+object AppChannelName {
+    /**
+     * reoqoo
+     */
+    const val CHANNEL_REOQOO = "reoqoo"
+
+    /**
+     * ipTIME
+     */
+    const val CHANNEL_IPTIME = "ipTIME"
+
+    /**
+     * xiaotun
+     */
+    const val CHANNEL_XIAOTUN = "xiaotun"
+
+        /**
+         * 是否是reoqoo渠道App
+         * @return Boolean
+         */
+        fun isReoqooApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_REOQOO)
+        }
+
+        /**
+         * 是否是小豚渠道App
+         * @return Boolean
+         */
+        fun isXiaotunApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_XIAOTUN)
+        }
+
+        /**
+         * 是否是ipTIME渠道App
+         * @return Boolean
+         */
+        fun isIpTimeApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_IPTIME)
+        }
+}

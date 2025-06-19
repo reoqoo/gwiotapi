@@ -1,0 +1,410 @@
+/**
+ * 编译模块并生成api模块
+ * @param moduleName 模块名称
+ * @return
+ */
+def includeWithApi(String moduleName) {
+    // 先加载这个模块
+    include(moduleName)
+    // 找到模块的路径
+    String originDir = project(moduleName).projectDir
+    // api模块的路径
+    String targetDir = "${originDir}_api"
+    // 原模块的名字
+    String originName = project(moduleName).name
+    String targetName = moduleName.replace(originName, "${originName}_api")
+    // 新模块的名字
+    def sdkName = "${targetName}"
+    printf("moduleName:%s,\noriginDir:%s,\ntargetDir:%s,\noriginName:%s,\ntargetName:%s \nsdkName:%s\n", moduleName, originDir, targetDir, originName, targetName, sdkName)
+
+    // 公共模块的位置，预先建了api.gradle文件进去
+    String apiGradle = project(":lib_modules:lib_api_root").projectDir
+
+    // 每次编译删除之前的文件
+    deleteDir(targetDir)
+
+    // 复制.api文件到新的路径
+    copy() {
+        from originDir
+        into targetDir
+        exclude '**/build/'
+        exclude '**/res/'
+        include '**/*.api'
+        include '**/*.kapi'
+    }
+
+    // 删除空文件夹
+    deleteEmptyDir(new File(targetDir))
+    // 直接复制公共模块的AndroidManifest文件到新的路径，作为该模块的文件
+    copy() {
+        from "${apiGradle}/src/main/AndroidManifest.xml"
+        into "${targetDir}/src/main/"
+    }
+
+    // 为AndroidManifest新建路径，路径就是在原来的包下面新建一个api包，作为AndroidManifest里面的包名
+    String packagePath = "${targetDir}/src/main/java/com/gw/${originName}"
+
+    new File(packagePath).mkdirs()
+
+    // 修改AndroidManifest文件包路径
+    fileReader("${targetDir}/src/main/AndroidManifest.xml", "base_api", "${originName}.api")
+
+    // 复制 gradle文件到新的路径，作为该模块的gradle
+    copy() {
+        from "${apiGradle}/api.gradle"
+        into "${targetDir}/"
+    }
+
+    // 修改build.gradle的namespace
+    fileReader("${targetDir}/api.gradle", "com.gw.lib_api_root", "com.gw.${originName}.api")
+
+
+    // 重命名gradle
+    def build = new File(targetDir + "/api.gradle")
+    if (build.exists()) {
+        build.renameTo(new File(targetDir + "/build.gradle"))
+    }
+
+    // 合并gradle
+    def originApiGradle = new File(originDir + "/api.gradle")
+    if (originApiGradle.exists()) {
+        mergeFile(originDir + "/api.gradle", targetDir + "/build.gradle")
+    }
+
+    // 重命名.api和.kapi文件，生成正常的.java文件和kt文件
+    renameApiFiles(targetDir, '.api', '.java')
+    renameApiFiles(targetDir, '.kapi', '.kt')
+
+    // 正常加载新的模块
+    include "$sdkName"
+}
+
+/**
+ * 合并2个文件
+ * @param destFile 目标文件
+ * @param file 被合并文件
+ */
+private def mergeFile(String destFilePath, String filePath) {
+    file(filePath).withWriterAppend { _writer ->
+        file(destFilePath).withReader("UTF-8") { _reader ->
+            _reader.eachLine {
+                _writer.append(it)
+                _writer.append("\n")
+            }
+        }
+    }
+}
+
+/**
+ * 删除空文件
+ * @param dir
+ */
+private void deleteEmptyDir(File dir) {
+    if (dir.isDirectory()) {
+        File[] fs = dir.listFiles()
+        if (fs != null && fs.length > 0) {
+            for (int i = 0; i < fs.length; i++) {
+                File tmpFile = fs[i]
+                if (tmpFile.isDirectory()) {
+                    deleteEmptyDir(tmpFile)
+                }
+                if (tmpFile.isDirectory() && tmpFile.listFiles().length <= 0) {
+                    tmpFile.delete()
+                }
+            }
+        }
+        if (dir.isDirectory() && dir.listFiles().length == 0) {
+            dir.delete()
+        }
+    }
+}
+
+/**
+ * 删除文件
+ * @param targetDir 目标文件路径
+ */
+private void deleteDir(String targetDir) {
+    FileTree targetFiles = fileTree(targetDir)
+    targetFiles.exclude "*.iml"
+    targetFiles.each { File file ->
+        file.delete()
+    }
+}
+
+/**
+ * rename api files(java, kotlin...)
+ */
+private def renameApiFiles(root_dir, String suffix, String replace) {
+    FileTree files = fileTree(root_dir).include("**/*$suffix")
+    files.each {
+        File file ->
+            file.renameTo(new File(file.absolutePath.replace(suffix, replace)))
+    }
+}
+
+/**
+ * 替换文件里面的文本
+ * @param path 文件路径
+ * @param name 被替换的文本
+ * @param sdkName 替换文本
+ * @return
+ */
+def fileReader(path, name, sdkName) {
+    def readerString = ""
+    def hasReplace = false
+
+    file(path).withReader('UTF-8') { reader ->
+        reader.eachLine {
+            if (it.find(name)) {
+                it = it.replace(name, sdkName)
+                hasReplace = true
+            }
+            readerString <<= it
+            readerString << '\n'
+        }
+
+        if (hasReplace) {
+            file(path).withWriter('UTF-8') {
+                within ->
+                    within.append(readerString)
+            }
+        }
+        return readerString
+    }
+}
+
+def getLocalProperties() {
+    def properties = new Properties()
+    try {
+        File localPropertiesFile
+        try {
+            localPropertiesFile = new File(rootDir, 'local.properties');
+            if (localPropertiesFile == null || !localPropertiesFile.exists()) {
+                localPropertiesFile = new File("../local.properties")
+            }
+        } catch (Exception e) {
+            localPropertiesFile = new File("../local.properties")
+        }
+        println("localPropertiesFile===:" + localPropertiesFile.absolutePath)
+        properties.load(new FileInputStream(localPropertiesFile))
+        return properties
+    } catch (Exception e) {
+        e.printStackTrace()
+        return properties
+    }
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleKapt(String compileStr) {
+    moduleKapt(compileStr, {})
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleKapt(String compileStr, Closure configureClosure) {
+    String[] temp = compileStr.split(":")
+    String group = temp[0]
+    String artifactid = temp[1]
+    String version = temp[2]
+
+    Set<String> includeModule = new HashSet<>()
+    boolean isModule = false
+    rootProject.getAllprojects().each {
+        if (it.name == artifactid) {
+            if (it.name.startsWith("lib_")) {
+                artifactid = ":lib_modules:${it.name}"
+            } else if (it.name.startsWith("component_")) {
+                artifactid = ":component_modules:${it.name}"
+            }
+            isModule = true
+        }
+    }
+    if (isModule) {
+        println(project.name + "源码依赖：===project(\":$artifactid\")")
+        projects.project.dependencies.add("kapt", project(':' + artifactid), configureClosure)
+//        projects.project.configurations { compile.exclude group: group, module: artifactid }
+    } else {
+        println(project.name + "依赖：=======$group:$artifactid:$version")
+        projects.project.dependencies.add("kapt", "$group:$artifactid:$version", configureClosure)
+    }
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleApi(String compileStr) {
+    moduleApi(compileStr, {})
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleApi(String compileStr, Closure configureClosure) {
+    String[] temp = compileStr.split(":")
+    String group = temp[0]
+    String artifactid = temp[1]
+    String version = temp[2]
+    boolean isModule = false
+    rootProject.getAllprojects().each {
+        if (it.name == artifactid) {
+            if (it.name.startsWith("lib_")) {
+                artifactid = ":lib_modules:${it.name}"
+            } else if (it.name.startsWith("component_")) {
+                artifactid = ":component_modules:${it.name}"
+            }
+            isModule = true
+        }
+    }
+    if (isModule) {
+        println(project.name + "源码依赖：===project(\":$artifactid\")")
+        projects.project.dependencies.add("api", project(':' + artifactid), configureClosure)
+//        projects.project.configurations { compile.exclude group: group, module: artifactid }
+    } else {
+        println(project.name + "依赖：=======$group:$artifactid:$version")
+        projects.project.dependencies.add("api", "$group:$artifactid:$version", configureClosure)
+    }
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleImplementation(String compileStr) {
+    moduleImplementation(compileStr, {})
+}
+
+/**
+ * 如果工程中有源码，则依赖源码，
+ * 否则依赖当前 baseVersion 对应的最新版本
+ * 如果传入version是SNAPSHOT，则依赖最新的SNAPSHOT，否则，依赖最新的release
+ */
+def moduleImplementation(String compileStr, Closure configureClosure) {
+    String[] temp = compileStr.split(":")
+    String group = temp[0]
+    String artifactid = temp[1]
+    String version = temp[2]
+    boolean isModule = false
+    rootProject.getAllprojects().each {
+        if (it.name == artifactid) {
+            if (it.name.startsWith("lib_")) {
+                artifactid = ":lib_modules:${it.name}"
+            } else if (it.name.startsWith("component_")) {
+                artifactid = ":component_modules:${it.name}"
+            }
+            isModule = true
+        }
+    }
+    if (isModule) {
+        println(project.name + "源码依赖：===project(\":$artifactid\")")
+        projects.project.dependencies.add("implementation", project(':' + artifactid), configureClosure)
+//        projects.project.configurations { compile.exclude group: group, module: artifactid }
+    } else {
+        println(project.name + "依赖：=======$group:$artifactid:$version")
+        projects.project.dependencies.add("implementation", "$group:$artifactid:$version", configureClosure)
+    }
+}
+
+
+/**
+ * 拷贝apk或aab以及mapping到指定目录下
+ * @param subVersion 子版本号
+ * @param flavorNameInLowercase 渠道名（全小写）
+ * @param buildTypeNameInLowercase 编译方式（全小写）
+ * @param buildTypeNameCapitalized 编译方式（首字母大写）
+ * @param outputFileOriginalInIntermediates 在Intermediates目录下输出的文件
+ * @param outputFileOriginalInOutputs 在outputs目录下输出的文件
+ * @return
+ */
+def copyApkOrAabAndMapping(String subVersion, def flavorNameInLowercase, def buildTypeNameInLowercase, def buildTypeNameCapitalized, def outputFileOriginalInIntermediates, def outputFileOriginalInOutputs) {
+    def separator = File.separator
+
+    // 工件备份的目录: `<工程根目录>/artifacts_backup/<app模块名>/<版本名>.<子版本号>/<BUILD_NUMBER>/<flavorNameInLowercase>_<buildTypeNameInLowercase>`
+    //          比如: `<工程根目录>/artifacts_backup/app/00.46.01.06.04/201/local_release`
+    def artifactsBackupDir = file("${project.rootProject.rootDir}${separator}artifacts_backup${separator}${project.name}${separator}${VERSION_NAME}.${subVersion}${separator}${BUILD_NUMBER}${separator}${flavorNameInLowercase}_${buildTypeNameInLowercase}")
+    println "artifactsBackupDir = ${artifactsBackupDir}"
+
+    // 准备好 artifactsBackupDir
+    if (artifactsBackupDir.exists()) {
+        println "artifactsBackupDir has existed, now delete artifactsBackupDir"
+        // 清除 原来的文件
+
+        deleteDir(artifactsBackupDir)
+    }
+    if (artifactsBackupDir.mkdirs()) {
+        println "artifactsBackupDir.mkdirs() is successes"
+    } else {
+        println "artifactsBackupDir.mkdirs() is failed"
+        throw new RuntimeException("create artifactsBackupDir failed")
+    }
+
+    // 将 apk文件或aab文件 复制 到 备份目录 下
+    // build/intermediates/apk/local/release/JW_AN_FB_Yoosee_V00.46.01.04_code1040_2022-10-09_local_db56_release_1.apk
+    println "outputFileOriginalInIntermediates = ${outputFileOriginalInIntermediates}, exsit = ${outputFileOriginalInIntermediates.exists()}"
+    // build/outputs/apk/local/release/JW_AN_FB_Yoosee_V00.46.01.04_code1040_2022-10-09_local_db56_release_1.apk
+    println "outputFileOriginalInOutputs = ${outputFileOriginalInOutputs}, exsit = ${outputFileOriginalInOutputs.exists()}"
+    if (outputFileOriginalInIntermediates.exists()) {
+        def result = copy {
+            println "copy apkFileOriginalInIntermediates into artifactsBackupDir"
+            from outputFileOriginalInIntermediates
+            into artifactsBackupDir
+        }
+        println("copy apkFileOriginalInIntermediates is ${result.didWork}")
+    } else {
+        def result = copy {
+            println "copy apkFileOriginalInOutputs into artifactsBackupDir"
+            from outputFileOriginalInOutputs
+            into artifactsBackupDir
+        }
+        println("copy apkFileOriginalInOutputs is ${result.didWork}")
+    }
+
+    // 将 map目录 复制 到 备份目录 下
+    // build/outputs/mapping/localRelease
+    def mappingDirOriginal = file("${project.buildDir}${separator}outputs${separator}mapping${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}")
+    println "mappingDirOriginal = ${mappingDirOriginal}"
+    if (mappingDirOriginal.exists()) {
+        def mappingDirDest = file("${artifactsBackupDir}${separator}mapping")
+        println "mappingDirDest = ${mappingDirDest}"
+        if (mappingDirDest.exists()) {
+            println "mappingDirDest has existed, now delete mappingDirDest"
+            // 清除 原来的文件
+            deleteDir(mappingDirDest)
+        }
+        if (mappingDirDest.mkdirs()) {
+            println "mappingDirDest.mkdirs() is successes"
+        } else {
+            println "mappingDirDest.mkdirs() is failed"
+            throw new RuntimeException("create mappingDirDest failed")
+        }
+
+        def result =  copy {
+            println "copy mappingDirOriginal into artifactsBackupDir"
+            from mappingDirOriginal
+            into mappingDirDest
+        }
+        println("copy mappingDirOriginal is ${result.didWork}")
+    } else {
+        println "mappingDirOriginal has not existed."
+    }
+}
+
+ext {
+    includeWithApi = this.&includeWithApi
+    moduleKapt = this.&moduleKapt
+    moduleApi = this.&moduleApi
+    moduleImplementation = this.&moduleImplementation
+    getLocalProperties = this.&getLocalProperties
+    copyApkOrAabAndMapping = this.&copyApkOrAabAndMapping
+}

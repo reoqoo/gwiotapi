@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/cl_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56">
+
+        <TextView
+            android:id="@+id/tv_lang_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingEnd="@dimen/dp_12"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_16"
+            app:drawableEndCompat="@drawable/gw_reoqoo_dev_share_icon_user_check"
+            tools:drawableEnd="@drawable/gw_reoqoo_dev_share_icon_user_check"
+            tools:text="简体中文" />
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/color_f2f3f6" />
+    </RelativeLayout>
+</layout>

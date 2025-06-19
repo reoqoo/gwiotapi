@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_4d4d4d"
+        tools:layout_height="@dimen/dp_180"
+        tools:layout_width="@dimen/dp_319">
+
+        <FrameLayout
+            android:id="@+id/fl_video_view_container"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_multi_page_other_cam"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="2"
+            tools:listitem="@layout/house_watch_item_multi_page_other_cam" />
+
+        <TextView
+            android:id="@+id/tv_dev_name"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/white_100"
+            android:textSize="@dimen/sp_12_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="reoqoo Cam 1" />
+
+        <TextView
+            android:id="@+id/tv_dev_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:gravity="center"
+            android:textColor="@color/white_60"
+            android:textSize="@dimen/sp_12_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="设备已离线" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_loading"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="@dimen/dp_29"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/gw_reoqoo_widget_loading_white" />
+
+        <View
+            android:id="@+id/v_click_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <CheckBox
+            android:id="@+id/cb_multi_cam_panel"
+            android:layout_width="@dimen/dp_34"
+            android:layout_height="@dimen/dp_34"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_7"
+            android:background="@drawable/house_watch_selector_cb_multi_cam_panel"
+            android:button="@null"
+            android:padding="@dimen/dp_0"
+            app:layout_constraintBottom_toTopOf="@+id/fl_multi_cam_panel"
+            app:layout_constraintEnd_toEndOf="@+id/fl_multi_cam_panel" />
+
+        <FrameLayout
+            android:id="@+id/fl_multi_cam_panel"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:background="@color/black_40"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_height="@dimen/dp_60">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_multi_cam_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/black_40"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:layout_height="@dimen/dp_60"
+                tools:listitem="@layout/house_watch_single_panel_item_multi_cam">
+                <!--            <include layout="@layout/house_watch_single_panel_item_multi_cam" />-->
+                <!--            <include layout="@layout/house_watch_single_panel_item_multi_cam" />-->
+                <!--            <include layout="@layout/house_watch_single_panel_item_multi_cam" />-->
+            </androidx.recyclerview.widget.RecyclerView>
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_refresh"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/house_watch_refresh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_refresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/AA0428"
+            android:textColor="@color/white_60"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_refresh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

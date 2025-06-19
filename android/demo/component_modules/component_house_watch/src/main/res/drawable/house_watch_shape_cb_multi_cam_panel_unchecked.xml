@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/dp_34"
+        android:height="@dimen/dp_34">
+        <shape android:shape="oval">
+            <solid android:color="@color/black_50" />
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/dp_34"
+        android:height="@dimen/dp_34">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/house_watch_icon_cb_multi_cam_panel_unchecked" />
+    </item>
+</layer-list>

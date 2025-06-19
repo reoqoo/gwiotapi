@@ -1,0 +1,14 @@
+package com.gw_reoqoo.component_family.entrties
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2024/10/14 11:00
+ * Description: SaEvent
+ */
+class SaEventConstant {
+
+    object AddDevice {
+        const val BUTTON_CLICK = "AddDev_ButtonClick"
+    }
+
+}

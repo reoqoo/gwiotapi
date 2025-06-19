@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3537376437",
+    "project_id": "reoqoo-demo",
+    "storage_bucket": "reoqoo-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3537376437:android:800de240c86f9f7b7b9afc",
+        "android_client_info": {
+          "package_name": "com.gw.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf3vPpkjX7O_2NFvNkaPGUT7avEyNNpqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

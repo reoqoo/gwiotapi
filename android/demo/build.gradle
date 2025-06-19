@@ -1,5 +1,34 @@
+import com.gw.buildsrc.version.Versions
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// TODO 需要修改为 kts的配置
+buildscript {
+    ext {
+        agp_version = '8.5.0'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}")
+    }
+
+    project.ext.set("isApp", false)
+
+}
+
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
+    id("com.android.application") version '8.5.0' apply false
+    id("com.android.library") version "7.1.3" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.20" apply false
+    id("cn.therouter.agp8") version "1.2.2" apply false
+    id("com.google.dagger.hilt.android") version "2.51" apply false
+    id("com.sensorsdata.analytics.android") version "4.0.2" apply false
+    id("com.google.gms.google-services") version "4.3.15" apply false
+}
+
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
 }

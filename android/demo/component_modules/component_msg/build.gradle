@@ -1,0 +1,59 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+
+def isApplication = project.name == debug_module_name
+
+android {
+    namespace 'com.gw.cp_msg'
+
+    defaultConfig {
+        if (isApplication) {
+            applicationId "com.gw.cp_msg"
+        }
+    }
+
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("msg_")
+}
+
+dependencies {
+    /**
+     * json库
+     */
+    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+
+    /**
+     * json数据解析
+     */
+    compileOnly("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+
+    /**
+     * adapter
+     */
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.ThirdVersions.VERSION_RECYCLERVIEW_ADAPTER_HELPER}"
+
+    // 技威生命周期管理
+    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
+
+    // 图片加载框架
+    implementation "com.github.bumptech.glide:glide:${Versions.ThirdVersions.VERSION_GLIDE}"
+}
+
+dependencies {
+    implementation("com.reoqoo_lib:lib_log:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
+
+dependencies {
+    implementation project(":component_modules:component_family_api")
+    implementation project(":component_modules:component_account_api")
+    implementation project(":component_modules:component_mine_api")
+    implementation project(":component_modules:component_device_share_api")
+    implementation project(":component_modules:component_msg_api")
+    implementation("${GwDependLibs.ReoqooSdkLibs.COMP_NAME}reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}

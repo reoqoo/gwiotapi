@@ -1,0 +1,20 @@
+package com.gw_reoqoo.cp_account.api.kapi
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/10/17 14:42
+ * Description: IaccountMgrApi
+ */
+interface IAccountMgrApi {
+
+    /**
+     * 退出登录
+     */
+    fun logout()
+
+    /**
+     * 登录失效
+     */
+    fun loginFailure()
+
+}

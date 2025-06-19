@@ -1,0 +1,232 @@
+// 判断是否是调试模块
+def isApplication = project.name == debug_module_name
+
+if (isApplication) {
+    apply plugin: 'com.android.application'
+    apply plugin: 'therouter'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
+
+
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+android {
+    compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
+    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
+    defaultConfig {
+        minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
+        targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main {
+            if (isApplication) {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+    buildFeatures {
+        // for view binding :
+        dataBinding true
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
+    }
+
+    flavorDimensions += "version"
+    productFlavors {
+        create("local") {
+            dimension = "version"
+        }
+
+        create("google") {
+            dimension = "version"
+        }
+
+        create("reoqoosdk") {
+            dimension = "version"
+        }
+    }
+
+    packagingOptions {
+        // xlog
+        pickFirst 'lib/armeabi/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+
+        pickFirst 'lib/armeabi/libgwmarsxlog.so'
+        pickFirst 'lib/armeabi-v7a/libgwmarsxlog.so'
+        pickFirst 'lib/arm64-v8a/libgwmarsxlog.so'
+
+        pickFirst 'lib/armeabi-v7a/libxml2.so'
+        pickFirst 'lib/armeabi/libxml2.so'
+        pickFirst 'lib/arm64-v8a/libxml2.so'
+
+        pickFirst 'lib/armeabi-v7a/libswscale.so'
+        pickFirst 'lib/armeabi/libswscale.so'
+        pickFirst 'lib/arm64-v8a/libswscale.so'
+
+        pickFirst 'lib/armeabi-v7a/libavcodec.so'
+        pickFirst 'lib/armeabi/libavcodec.so'
+        pickFirst 'lib/arm64-v8a/libavcodec.so'
+
+        pickFirst 'lib/armeabi-v7a/libavutil.so'
+        pickFirst 'lib/armeabi/libavutil.so'
+        pickFirst 'lib/arm64-v8a/libavutil.so'
+
+        pickFirst 'lib/armeabi-v7a/libavformat.so'
+        pickFirst 'lib/armeabi/libavformat.so'
+        pickFirst 'lib/arm64-v8a/libavformat.so'
+
+        pickFirst 'lib/armeabi-v7a/libavfilter.so'
+        pickFirst 'lib/armeabi/libavfilter.so'
+        pickFirst 'lib/arm64-v8a/libavfilter.so'
+
+        pickFirst 'lib/armeabi-v7a/libswresample.so'
+        pickFirst 'lib/armeabi/libswresample.so'
+        pickFirst 'lib/arm64-v8a/libswresample.so'
+
+        pickFirst 'lib/armeabi-v7a/libavdevice.so'
+        pickFirst 'lib/armeabi/libavdevice.so'
+        pickFirst 'lib/arm64-v8a/libavdevice.so'
+
+        pickFirst 'lib/armeabi-v7a/libcrypto.1.1.so'
+        pickFirst 'lib/armeabi/libcrypto.1.1.so'
+        pickFirst 'lib/arm64-v8a/libcrypto.1.1.so'
+
+        pickFirst 'lib/armeabi-v7a/libssl.1.1.so'
+        pickFirst 'lib/armeabi/libssl.1.1.so'
+        pickFirst 'lib/arm64-v8a/libssl.1.1.so'
+
+        pickFirst 'lib/armeabi-v7a/libgwbase.so'
+        pickFirst 'lib/armeabi/libgwbase.so'
+        pickFirst 'lib/arm64-v8a/libgwbase.so'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+/**
+ * android库
+ */
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
+    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
+    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
+    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
+
+    testImplementation "junit:junit:${Versions.AndroidUtilsVersions.VERSION_JUNIT}"
+    androidTestImplementation "androidx.test.ext:junit:${Versions.AndroidUtilsVersions.VERSION_TEST_JUNIT}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${Versions.AndroidUtilsVersions.VERSION_ESPRESSO}"
+
+    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
+    implementation "androidx.constraintlayout:constraintlayout:${Versions.AndroidUtilsVersions.VERSION_CONSTRAINT_LAYOUT}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
+    implementation "androidx.navigation:navigation-ui-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE_EXTENSIONS}"
+    implementation "androidx.lifecycle:lifecycle-livedata:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+
+    // 依赖注入框架
+    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+        exclude group: 'androidx.lifecycle'
+    })
+    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+}
+
+/**
+ * 第三方库
+ */
+dependencies {
+    /**
+     * 路由库
+     */
+    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+
+    /**
+     * 动态权限库
+     */
+//    implementation "com.github.getActivity:XXPermissions:${Versions.ThirdVersions.VERSION_XX_PERMISSIONS}"
+    implementation "com.github.permissions-dispatcher:permissionsdispatcher:${Versions.ThirdVersions.VERSION_PERMISSION_DISPATCHER}"
+    kapt "com.github.permissions-dispatcher:permissionsdispatcher-processor:${Versions.ThirdVersions.VERSION_PERMISSION_DISPATCHER}"
+
+    /**
+     * 沉浸式状态栏第三方库: UltimateBarX
+     */
+    implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
+}
+
+/**
+ * 技威仓库
+ */
+dependencies {
+    /**
+     * 日志库
+     */
+    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    /**
+     * 工具库
+     */
+    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+
+    /**
+     * 技威网络请求
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+
+    /**
+     * IoTVideo库
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
+
+    /**
+     * 技威数据统计
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
+}
+
+/**
+ * 模块依赖
+ */
+dependencies {
+    implementation(project(":lib_modules:lib_api_root"))
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_datastore:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
+
+dependencies {
+    implementation("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
+}
