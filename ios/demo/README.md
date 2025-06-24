@@ -24,6 +24,21 @@ end
 ![D41C5D19-01E4-4640-9FAF-C9E06F819832.png](D41C5D19-01E4-4640-9FAF-C9E06F819832.png)
 syntax: `gw` + `your appID`  
 example: `gw1234567890` 
+4. For discovering cams in the LAN when adding them.  
+- Add `NSBonjourServices` key into your App's Info.plist, like below:
+```xml
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_leboremote._tcp</string>
+		<string>_adhp._tcp</string>
+		<string>_me-transferdata._tcp</string>
+		<string>_bonjour._tcp</string>
+		<string>_lnp._tcp</string>
+	</array>
+```  
+- Add `Access Wi-Fi Information`, `Hotspot` to you App's `Signing & Capabilities`.  
+
+5. Add `Background Modes`, `Push Notifications` to you App's `Signing & Capabilities`, and checkout the `Remote notification` if you need the remote notification function.  
 
 ## Compatibility
 #### It should be noted that the sdk requires a specific version of xcode to be compiled normally. The following is the compatibility table
