@@ -25,3 +25,5 @@ GWIoTApi是技威开发的App端物联网设备插件化支持SDK，方便合作
 SDK完整接口文档请查阅:
 
 [GWIoTApi Referfence](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)
+
+[更新日志](docs/api_change_log.md)
