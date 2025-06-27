@@ -193,12 +193,12 @@ extension User {
     private func syncAPNSTokenObservable(apnsToken: String) -> AnyPublisher<Void, Swift.Error> {
         let termId = self.basicInfo.terminalId
         return Future { promise in
-            RQApi.Api.syncAPNSToken(terminalId: termId, apnsToken: apnsToken) {
-                let res = ResponseHandler.responseHandling(jsonStr: $0, error: $1)
-                if case .success = res {
+            GWIoT.shared.uploadPushToken(termId: termId, token: apnsToken) { result, err in
+                let a = gwiot_handleCb(result, err)
+                if case .success = a {
                     promise(.success(()))
                 }
-                if case .failure(let failure) = res {
+                if case .failure(let failure) = a {
                     promise(.failure(failure))
                 }
             }
