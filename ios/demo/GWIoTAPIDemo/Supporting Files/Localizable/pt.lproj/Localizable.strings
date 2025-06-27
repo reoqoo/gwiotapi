@@ -650,3 +650,12 @@
 "AA0656" = "Offline, atualização indisponível";
 "AA0657" = "Anomalia do sistema";
 "AA0658" = "Cancelar";
+"AA0659" = "A versão atual não suporta a vinculação direta deste dispositivo. Por favor, baixe o aplicativo \"Xiaotun Cloud\" para adicionar e usar.";
+"AA0660" = "Baixar";
+"AA0661" = "Lembrete Amigável";
+"AA0662" = "Os seguintes dispositivos não estão disponíveis no aplicativo atual";
+"AA0663" = "Por favor, baixe o aplicativo \"Xiaotun Cloud\" para continuar usando";
+"AA0664" = "Não Lembrar Novamente";
+"AA0665" = "Sobre";
+"AA0666" = "reoqoo";
+"AA0669" = "Por favor, insira a conta";

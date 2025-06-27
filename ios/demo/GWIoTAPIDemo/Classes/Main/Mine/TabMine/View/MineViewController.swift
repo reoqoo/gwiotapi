@@ -69,8 +69,9 @@ class MineViewController: BaseTableViewController {
 
         let shareManagementBtn: ServiceButton = .init(title: String.localization.localized("AA0147", note: "共享管理"), image: R.image.mine_share()!)
         shareManagementBtn.tapPublisher.sink { [weak self] _ in
-            let vc = ShareManagedViewController()
-            self?.navigationController?.pushViewController(vc, animated: true)
+            Task {
+                try await GWIoT.shared.openShareManagerPage()
+            }
         }.store(in: &self.anyCancellables)
 
         res.append(devicesUpgradeBtn)

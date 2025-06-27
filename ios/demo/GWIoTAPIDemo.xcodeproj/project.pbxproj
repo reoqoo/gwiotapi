@@ -34,7 +34,6 @@
 		C4CB60032DF02C710098E3F5 /* loading_white.json in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5E772DF02C710098E3F5 /* loading_white.json */; };
 		C4CB60042DF02C710098E3F5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */; };
 		C4CB60052DF02C710098E3F5 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5F202DF02C710098E3F5 /* Mine.storyboard */; };
-		C4CB60072DF02C710098E3F5 /* ShareManagerViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F1B2DF02C710098E3F5 /* ShareManagerViewController+ViewModel.swift */; };
 		C4CB60082DF02C710098E3F5 /* WelfareActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EFA2DF02C710098E3F5 /* WelfareActivityViewController.swift */; };
 		C4CB60092DF02C710098E3F5 /* RegionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FBA2DF02C710098E3F5 /* RegionSelectionViewController.swift */; };
 		C4CB600A2DF02C710098E3F5 /* RegionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB52DF02C710098E3F5 /* RegionConfirmationViewController.swift */; };
@@ -74,7 +73,6 @@
 		C4CB60392DF02C710098E3F5 /* MineViewController+ServiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F222DF02C710098E3F5 /* MineViewController+ServiceButton.swift */; };
 		C4CB603A2DF02C710098E3F5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E932DF02C710098E3F5 /* AgreementView.swift */; };
 		C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA92DF02C710098E3F5 /* String+Localization.swift */; };
-		C4CB603D2DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F182DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift */; };
 		C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F282DF02C710098E3F5 /* CloseAccountFlowItem.swift */; };
 		C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F2C2DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift */; };
 		C4CB60462DF02C710098E3F5 /* QRCodeScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB02DF02C710098E3F5 /* QRCodeScanningViewController.swift */; };
@@ -92,7 +90,6 @@
 		C4CB60552DF02C710098E3F5 /* CommonEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF12DF02C710098E3F5 /* CommonEmptyView.swift */; };
 		C4CB60572DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F262DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift */; };
 		C4CB60582DF02C710098E3F5 /* RegionSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FBC2DF02C710098E3F5 /* RegionSelectionViewModel.swift */; };
-		C4CB60592DF02C710098E3F5 /* ShareManagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F172DF02C710098E3F5 /* ShareManagedViewController.swift */; };
 		C4CB605A2DF02C710098E3F5 /* SystemMessageViewController+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF92DF02C710098E3F5 /* SystemMessageViewController+Header.swift */; };
 		C4CB605B2DF02C710098E3F5 /* ReoqooAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FCF2DF02C710098E3F5 /* ReoqooAlertViewController.swift */; };
 		C4CB605C2DF02C710098E3F5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FD22DF02C710098E3F5 /* BaseTableViewController.swift */; };
@@ -138,7 +135,6 @@
 		C4CB60902DF02C710098E3F5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FD12DF02C710098E3F5 /* BaseNavigationController.swift */; };
 		C4CB60912DF02C710098E3F5 /* DeviceEntity+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA52DF02C710098E3F5 /* DeviceEntity+Permission.swift */; };
 		C4CB60922DF02C710098E3F5 /* FamilyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EA32DF02C710098E3F5 /* FamilyHeaderView.swift */; };
-		C4CB60932DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F192DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewHeader.swift */; };
 		C4CB60942DF02C710098E3F5 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F302DF02C710098E3F5 /* ModifyPasswordViewController.swift */; };
 		C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F0E2DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift */; };
 		C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA62DF02C710098E3F5 /* DeviceStatus+.swift */; };
@@ -306,8 +302,6 @@
 		C4CB5F832DF02C710098E3F5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C4CB5F862DF02C710098E3F5 /* ExportedImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportedImport.swift; sourceTree = "<group>"; };
 		C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		C4CB5F882DF02C710098E3F5 /* receive_call.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = receive_call.mp3; sourceTree = "<group>"; };
-		C4CB5F892DF02C710098E3F5 /* Reoqoo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reoqoo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4CB5F8D2DF02C710098E3F5 /* AccountCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCenter.swift; sourceTree = "<group>"; };
 		C4CB5F8E2DF02C710098E3F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4CB5F902DF02C710098E3F5 /* DebugConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugConfigurationView.swift; sourceTree = "<group>"; };
@@ -1076,8 +1070,6 @@
 				C4CB5F852DF02C710098E3F5 /* Localizable */,
 				C4CB5F862DF02C710098E3F5 /* ExportedImport.swift */,
 				C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */,
-				C4CB5F882DF02C710098E3F5 /* receive_call.mp3 */,
-				C4CB5F892DF02C710098E3F5 /* Reoqoo-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1502,7 +1494,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CB60AA2DF032750098E3F5 /* MineViewController.swift in Sources */,
-				C4CB60072DF02C710098E3F5 /* ShareManagerViewController+ViewModel.swift in Sources */,
 				C4CB60082DF02C710098E3F5 /* WelfareActivityViewController.swift in Sources */,
 				C4CB60092DF02C710098E3F5 /* RegionSelectionViewController.swift in Sources */,
 				C4CB600A2DF02C710098E3F5 /* RegionConfirmationViewController.swift in Sources */,
@@ -1542,7 +1533,6 @@
 				C4CB60392DF02C710098E3F5 /* MineViewController+ServiceButton.swift in Sources */,
 				C4CB603A2DF02C710098E3F5 /* AgreementView.swift in Sources */,
 				C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */,
-				C4CB603D2DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewCell.swift in Sources */,
 				C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */,
 				C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */,
 				C4CB60462DF02C710098E3F5 /* QRCodeScanningViewController.swift in Sources */,
@@ -1560,7 +1550,6 @@
 				C4CB60552DF02C710098E3F5 /* CommonEmptyView.swift in Sources */,
 				C4CB60572DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift in Sources */,
 				C4CB60582DF02C710098E3F5 /* RegionSelectionViewModel.swift in Sources */,
-				C4CB60592DF02C710098E3F5 /* ShareManagedViewController.swift in Sources */,
 				C4CB605A2DF02C710098E3F5 /* SystemMessageViewController+Header.swift in Sources */,
 				C4CB605B2DF02C710098E3F5 /* ReoqooAlertViewController.swift in Sources */,
 				C4CB605C2DF02C710098E3F5 /* BaseTableViewController.swift in Sources */,
@@ -1606,7 +1595,6 @@
 				C4CB60902DF02C710098E3F5 /* BaseNavigationController.swift in Sources */,
 				C4CB60912DF02C710098E3F5 /* DeviceEntity+Permission.swift in Sources */,
 				C4CB60922DF02C710098E3F5 /* FamilyHeaderView.swift in Sources */,
-				C4CB60932DF02C710098E3F5 /* ShareManagedViewController+DeviceTableViewHeader.swift in Sources */,
 				C4CB60942DF02C710098E3F5 /* ModifyPasswordViewController.swift in Sources */,
 				C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */,
 				C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */,

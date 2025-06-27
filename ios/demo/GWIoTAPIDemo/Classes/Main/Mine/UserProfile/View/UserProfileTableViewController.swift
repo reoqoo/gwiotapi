@@ -76,10 +76,10 @@ class UserProfileTableViewController: BaseTableViewController {
         footerView.frame = .init(x: 0, y: 0, width: 0, height: 80)
         
         // 数据绑定
-        RQCore.Agent.shared.$profileInfo.compactMap({
-            $0?.headUrl
-        }).sink { [weak self] in
-            self?.headerImageView.kf.setImage(with: $0, placeholder: ReoqooImageLoadingPlaceholder())
+        AccountCenter.shared.$currentUser.flatMap {
+            $0?.$profileInfo.eraseToAnyPublisher() ?? Just<RQCore.ProfileInfo?>(nil).eraseToAnyPublisher()
+        }.sink { [weak self] in
+            self?.headerImageView.kf.setImage(with: $0?.headUrl, placeholder: ReoqooImageLoadingPlaceholder())
         }.store(in: &self.anyCancellables)
         
         AccountCenter.shared.currentUser?.$profileInfo
