@@ -47,11 +47,13 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-0.0.21        </div>
+1.1.5        </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active=""
-                        data-filter=":shared/commonMain">common</button>
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":shared/androidMain">android</button>
+                <button class="platform-tag platform-selector native-like" data-active=""
+                        data-filter=":shared/iosMain">ios</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
                         data-role="dropdown-toggle"
@@ -66,12 +68,20 @@
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
-                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":shared/commonMain"
-                                       data-filter=":shared/commonMain"/>
+                                <input type="checkbox" class="checkbox--input" id=":shared/androidMain"
+                                       data-filter=":shared/androidMain"/>
                                 <span class="checkbox--icon"></span>
-                                common
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":shared/iosMain"
+                                       data-filter=":shared/iosMain"/>
+                                <span class="checkbox--icon"></span>
+                                ios
                             </label>
                         </li>
                 </ul>
@@ -105,12 +115,14 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.entities/InitOptions/InitOptions/#com.gw.gwiotapi.entities.AppConfig/PointingToDeclaration//491975536">
+<div class="main-content" data-page-type="member" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.entities/InitOptions/InitOptions/#android.app.Application#kotlin.String#kotlin.Int#com.gw.gwiotapi.entities.AppConfig/PointingToDeclaration//-1833004278">
   <div class="breadcrumbs"><a href="../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../index.html">com.gw.gwiotapi.entities</a><span class="delimiter">/</span><a href="index.html">InitOptions</a><span class="delimiter">/</span><span class="current">InitOptions</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Init</span><wbr></wbr><span><span>Options</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">appConfig<span class="token operator">: </span><a href="../-app-config/index.html">AppConfig</a></span></span><span class="token punctuation">)</span></div></div></div>
+  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">app<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/app/Application.html">Application</a><span class="token punctuation">, </span></span><span class="parameter ">versionName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">versionCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">appConfig<span class="token operator">: </span><a href="../-app-config/index.html">AppConfig</a></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">appConfig<span class="token operator">: </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span></span></span><span class="token punctuation">)</span></div></div>  </div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
