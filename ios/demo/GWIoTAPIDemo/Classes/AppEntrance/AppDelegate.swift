@@ -87,11 +87,8 @@ extension AppDelegate {
             }
         }
 
-        // 配置颜色
-        RQCore.Agent.shared.apperanceConfiguration = UIApplication.apperanceConfiguration
-
         // GWIoTApi init
-        let opts = GWIoTApi.InitOptions(appConfig: .init(appId: UIApplication.appID, appToken: UIApplication.appToken, appName: UIApplication.appName))
+        let opts = GWIoTApi.InitOptions(appConfig: .init(appId: UIApplication.appID, appToken: UIApplication.appToken, appName: UIApplication.appName, cId: UIApplication.cid))
         // 生成设备二维码时需要这个值, 例如: https://brandDomain/d/?u=xxx...
         opts.brandDomain = "reoqoo.com"
         // 取出当前 App 语言, 设置到 opts 中
@@ -106,6 +103,7 @@ extension AppDelegate {
         }
 
         GWIoT.shared.initialize(opts: opts)
+        GWIoT.shared.setUIConfiguration(configuration: UIApplication.apperanceConfiguration)
 
         GWBasePlayer.setLogLevel(.verbose)
 
