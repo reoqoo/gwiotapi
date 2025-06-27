@@ -1,9 +1,0 @@
-import com.gw.buildsrc.version.Versions
-
-dependencies {
-
-    /**
-     * json数据解析
-     */
-    compileOnly("com.google.code.gson:gson:${Versions.ThirdVersions.VERSION_GOOGLE_GSON}")
-}

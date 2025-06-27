@@ -5,7 +5,7 @@ GWIot Demo项目，用于演示GWIot API的使用。
 
 ## 0.注意⚠️⚠️⚠️
 
-当前版本为 ```0.0.18.0``` 后续版本更新，当前Readme为此版本的适配方案，后续版本更新后，会实时更新到当前README文档，以及demo项目
+当前版本为 ```1.1.5.0``` 后续版本更新，当前Readme为此版本的适配方案，后续版本更新后，会实时更新到当前README文档，以及demo项目
 
 ## 1.配置
 
@@ -134,33 +134,29 @@ override fun onCreate() {
     val app = this
 
     // initSdk
-    GWIoT.initialize(InitOptions().apply {
-        from = "REOQOO"
-        albumConfig = AlbumConfig(
-            snapshotDir = "${app.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}ScreenShots",
-            recordDir = "${app.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}RecordVideo",
-            watermarkConfig = WaterMarkConfig(
-                filePath = File(app.filesDir, "watermask_.png").path,
-                position = WaterMarkPosition.RIGHT_TOP
-            )
-        )
-        this["iotAssessId"] = ""
-        this["iotAccessToken"] = ""
-        this["region"] = ""
-        this["regRegion"] = ""
-        this["KEY_HOST_APPNAME_RES"] = R.string.app_name
-    })
+    val option = InitOptions(
+        app = this.application,
+        versionName = "01.05.25",
+        versionCode = 1087,
+        appConfig = AppConfig(
+            appId = "",
+            appToken = "",
+            appName = "",
+            cId = "8.1"
+        ),
+    )
+    GWIoT.initialize(option)
 }
 
 ```
 
 ## 3.使用
 
-3.1 刷新用户信息
+3.1 登录SDK
 
 ```kotlin
- val info = object : IUserInfo {
-    override var accessId: String = ""
+val info = object : IUserAccessInfo {
+    override var accessId: String = "123"
     override var accessToken: String = ""
     override var area: String = ""
     override var expireTime: String = ""
@@ -168,25 +164,25 @@ override fun onCreate() {
     override var terminalId: String = ""
     override var userId: String = ""
 }
-GWIoT.refreshUserInfo(info)
+GWIoT.login(info)
 ```
 3.2 开启配网流程
 
 ```kotlin
-val options = BindOptions(Solution.YOOSEE, qrCodeValue = "", listener = null)
+val options = BindOptions()
 GWIoT.openBind(options)
 ```
 
 3.3 开启监控
 
 ```kotlin
-val option = OpenPluginOption(
-    device = object : IDevice {
-        override var deviceId: String = "devId"
-        override val solution: Solution = Solution.YOOSEE
-    }
-)
-GWIoT.openHome(option)
+val devRet = GWIoT.queryDeviceCacheFirst("devId")
+var device: IDevice? = null
+if (devRet is GWResult.Success) {
+    device = devRet.data
+}
+device ?: throw RuntimeException("没有Device")
+GWIoT.openHome(OpenPluginOption(device = device))
 ```
 
 > 更多API的使用方法可查询[API Referfence](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)

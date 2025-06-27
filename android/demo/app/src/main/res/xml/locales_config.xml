@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 设置支持的语言，仅支持Android 13 及以上版本 -->
-    <locale android:name="en" /> <!-- 英文 -->
-    <locale android:name="fa" /> <!-- 法语 -->
-    <locale android:name="es" /> <!-- 西班牙语 -->
-    <locale android:name="zh" /> <!-- 中文 -->
-</locale-config>

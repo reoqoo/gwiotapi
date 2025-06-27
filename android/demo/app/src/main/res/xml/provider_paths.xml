@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <external-path name="external_root_path" path="."/>
-    <external-path name="gwErrorLog" path="Android/data/com.gw.demo/files/Documents/errorLog/"/>
-    <external-path name="gwLog" path="Android/data/com.gw.demo/files/Documents/IotLog/"/>
-    <external-path name="gwPictures" path="Android/data/com.gw.demo/files/Pictures/"/>
-    <external-path name="gwMovies" path="Android/data/com.gw.demo/files/Movies/"/>
-    <external-path name="external_files" path="."/>
-</paths>
