@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "3537376437",
-    "project_id": "reoqoo-demo",
-    "storage_bucket": "reoqoo-demo.appspot.com"
+    "project_number": "200073544899",
+    "project_id": "android-gwiotdemo-541c4",
+    "storage_bucket": "android-gwiotdemo-541c4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:3537376437:android:800de240c86f9f7b7b9afc",
+        "mobilesdk_app_id": "1:200073544899:android:cfea788ae932ec28430e76",
         "android_client_info": {
-          "package_name": "com.gw.demo"
+          "package_name": "com.gwell.gwiotdemo"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDf3vPpkjX7O_2NFvNkaPGUT7avEyNNpqU"
+          "current_key": "AIzaSyAL3d4USKebsIKZOtXQpUnxsusm0sr5lwM"
         }
       ],
       "services": {

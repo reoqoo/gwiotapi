@@ -1,8 +1,11 @@
-import java.util.function.Consumer
-
 pluginManagement {
     repositories {
-        maven { setUrl("https://maven.aliyun.com/repository/central") }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -14,16 +17,25 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven { setUrl("https://maven.aliyun.com/repository/central") }
-        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
-        maven { setUrl("https://maven.aliyun.com/repository/google") }
-        maven { setUrl("https://maven.aliyun.com/repository/public") }
-        maven { setUrl("https://jitpack.io") }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url "https://jitpack.io" }
+
+        Properties properties = new Properties()
+        InputStream inputStream = file('upload.properties').newDataInputStream();
+        properties.load(inputStream)
+        def GWIOT_NEXUS_BASE_URL = properties.getProperty('GWIOT_NEXUS_BASE_URL')
+        def GWIOT_REPOSITORY_NAME = properties.getProperty('GWIOT_REPOSITORY_NAME')
+        
         maven {
-            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
+            url "${GWIOT_NEXUS_BASE_URL}/maven-releases/"
             credentials {
                 username = 'iptime_eti_user'
                 password = '6S1Moa^HFaL!rEqQC'
@@ -31,13 +43,22 @@ dependencyResolutionManagement {
             allowInsecureProtocol true
         }
         maven {
-            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
+            url "${GWIOT_NEXUS_BASE_URL}/maven-gwiot/"
             credentials {
                 username = 'iptime_eti_user'
                 password = '6S1Moa^HFaL!rEqQC'
             }
             allowInsecureProtocol true
         }
+        maven {
+            url "${GWIOT_NEXUS_BASE_URL}/${GWIOT_REPOSITORY_NAME}/"
+            credentials {
+                username = 'iptime_eti_user'
+                password = '6S1Moa^HFaL!rEqQC'
+            }
+            allowInsecureProtocol true
+        }
+        // Yoosee插件要用到的
         maven {
             url 'https://mvn.zztfly.com/android'
             content {
@@ -58,42 +79,11 @@ dependencyResolutionManagement {
         maven {
             url "https://artifact.bytedance.com/repository/pangle/"
         }
+        
         google()
         mavenCentral()
     }
 }
 
 rootProject.name = "GWIotDemo"
-
-apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
-// 壳工程
-include ":app"
-include ":component_modules:component_aar_libs"
-
-def includeModules = Arrays.asList(
-        ":lib_modules:lib_api_root",
-        ":lib_modules:lib_resource",
-)
-includeModules.forEach(new Consumer<String>() {
-    @Override
-    void accept(String s) {
-        include "$s"
-    }
-})
-
-def includeWithApiModules = Arrays.asList(
-        ":component_modules:component_push",
-        ":component_modules:component_account",
-        ":component_modules:component_family",
-        ":component_modules:component_device_share",
-        ":component_modules:component_house_watch",
-        ":component_modules:component_mine",
-        ":component_modules:component_config",
-        ":component_modules:component_msg",
-)
-includeWithApiModules.forEach(new Consumer<String>() {
-    @Override
-    void accept(String s) {
-        includeWithApi "$s"
-    }
-})
+include ':app'

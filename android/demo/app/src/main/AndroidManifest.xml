@@ -1,98 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.gw.reoqoo"
-    tools:ignore="LockedOrientationActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".app.ReoqooApplication"
-        android:allowBackup="false"
-        android:allowNativeHeapPointerTagging="false"
+        android:name=".App"
+        android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:extractNativeLibs="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/appName"
+        android:label="@string/demo_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:configChanges="locale"
         android:supportsRtl="true"
-        android:theme="@style/CustomDarkModeTheme"
-        tools:replace="android:theme,android:label,android:supportsRtl"
-        tools:targetApi="tiramisu">
-
+        android:theme="@style/Theme.GWIotDemo"
+        tools:replace="android:supportsRtl,android:allowBackup,android:theme,android:label"
+        tools:targetApi="31">
         <activity
-            android:name=".ui.logo.LogoActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <intent-filter>
-                <!--接收外部跳转-->
-                <action android:name="android.intent.action.VIEW" />
-                <!--表示该页面可以被隐式调用，必须加上该项-->
-                <category android:name="android.intent.category.DEFAULT" />
-                <!--如果希望该应用可以通过浏览器的连接启动，则添加该项-->
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:host="share"
-                    android:scheme="demo" />
-            </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false"
-            android:resizeableActivity="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Reoqoo.NoActionBar"
-            tools:targetApi="24" />
-
-        <activity
-            android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"
-            android:configChanges="orientation|screenSize"
-            android:exported="true"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="debugmode"
-                    android:scheme="sad996b0dc" />
-            </intent-filter>
-        </activity>
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${fileProviderAuthority}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
-
-        <provider
-            android:name="com.sensorsdata.analytics.android.sdk.data.SensorsDataContentProvider"
-            android:authorities="${fileProviderAuthority}.SensorsDataContentProvider"
-            android:enabled="true"
-            android:exported="false"
-            tools:replace="android:exported,android:authorities" >
-        </provider>
-
-        <!-- 如果您项目中的所有页面都只需要以高或宽中的一个作为基准进行适配的话, 那就只需要填写高或宽中的一个设计图尺寸即可 -->
-        <meta-data
-            android:name="design_width_in_dp"
-            android:value="360" />
-        <meta-data
-            android:name="design_height_in_dp"
-            android:value="780" />
     </application>
 
 </manifest>
