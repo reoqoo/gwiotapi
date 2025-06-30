@@ -358,6 +358,7 @@
 		C4CB5FE92DF02C710098E3F5 /* GWIoTAPIDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GWIoTAPIDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4CB5FEA2DF02C710098E3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CB5FEB2DF02C710098E3F5 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		C4FF289B2E12228D0004F011 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1320,6 +1321,7 @@
 		C4CB5FEC2DF02C710098E3F5 /* GWIoTAPIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C4FF289B2E12228D0004F011 /* README.md */,
 				C4CB5E812DF02C710098E3F5 /* Assets */,
 				C4CB5F462DF02C710098E3F5 /* Classes */,
 				C4CB5F8A2DF02C710098E3F5 /* Supporting Files */,
