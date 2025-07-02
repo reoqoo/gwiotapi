@@ -50,3 +50,4 @@ example: `gw1234567890`
 | 1.0.3 | 16.4 |
 | 1.0.4 | 16.4 |
 | 1.1.5.0 | unrestricted |
+| 1.1.6.0 | unrestricted |
