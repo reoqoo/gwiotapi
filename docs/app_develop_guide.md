@@ -84,6 +84,61 @@ GWIoT.user.observe(lifeCycle) {
 ```kotlin
 GWIoT.logout()
 ```
+## 推送消息
+如果App需要直接接收Gwell云的推送消息，并且使用GWIoT SDK内置的业务逻辑处理消息，如点击设备事件通知跳转到相关页面进行播放，则需要通过以下步骤进行配置。
+
+### 上传推送Token
+App需要在设备注册推送Token后，调用GWIoT SDK上传推送Token，以便Gwell云可以将推送消息发送到当前设备。
+
+iOS:
+```swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let token = deviceToken.map({ String.init(format: "%02.2hhx", $0) }).joined()
+    
+    // 上传推送Token, termId为用户登陆时返回的终端ID(IUserAccessInfo.terminalId)
+    GWIoT.shared.uploadPushToken(termId: terminalId, token: token) { result, err in
+        let swiftResult = gwiot_handleCb(result, err)
+        print("uploadPushToken result: \(swiftResult)")
+    }
+}
+```
+
+Android:
+```kotlin
+override fun onNewToken(token: String) {
+    // 上传推送Token, termId为用户登陆时返回的终端ID(IUserAccessInfo.terminalId)
+    val res = GWIoT.uploadPushToken(termId, token)
+    Log.d(TAG, "uploadPushToken result: $res")
+}
+```
+
+### 处理推送消息
+App在线收到推送消息或者用户点击通知后，调用GWIoT SDK方法，SDK会识别相关自定义内容进行处理。
+
+iOS:
+```swift
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    // 收到通知
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([])
+        let userInfo = notification.request.content.userInfo
+        GWIoT.shared.receivePushNotification(noti: .init(userInfo: userInfo))
+    }
+
+    // 点击通知
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+        let userInfo = response.notification.request.content.userInfo
+        GWIoT.shared.clickPushNotification(noti: .init(userInfo: userInfo))
+    }
+}
+```
+
+Android:
+    
+```kotlin
+
+```
 
 ## 绑定设备
 GWIoT已经集成了添加绑定设备的UI组件，相关接口为`IBindComponent`，App可以直接调用进入。
