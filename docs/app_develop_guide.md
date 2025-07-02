@@ -85,10 +85,10 @@ GWIoT.user.observe(lifeCycle) {
 GWIoT.logout()
 ```
 ## 推送消息
-如果App需要直接接收Gwell云的推送消息，并且使用GWIoT SDK内置的业务逻辑处理消息，如点击设备事件通知跳转到相关页面进行播放，则需要通过以下步骤进行配置。
+如果App需要直接接收Gwell云的推送消息，并且使用GWIoT SDK内置的业务逻辑处理消息，如点击设备事件通知跳转到相关页面进行播放，则需要通过以下步骤进行调用。
 
 ### 上传推送Token
-App需要在设备注册推送Token后，调用GWIoT SDK上传推送Token，以便Gwell云可以将推送消息发送到当前设备。
+App需要在设备注册推送Token后，调用GWIoT SDK上传推送Token，以便Gwell云可以将推送消息发送到当前设备。如果用户未登录，则不需要上传Token。
 
 iOS:
 ```swift
