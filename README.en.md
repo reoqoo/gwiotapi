@@ -7,8 +7,8 @@ Currently supports iOS and Android.
 1.  Apply for a developer account from our business or related interface person, log in to the developer platform to create and configure applications and products
 2.  Integrate SDK according to the integration instructions of each platform
 
--   [iOS integration instructions](ios/README.md)
--   [Android Integration Instructions](android/README.md)
+-   [iOS integration instructions](ios/demo/README.md)
+-   [Android Integration Instructions](android/demo/README.md)
 
 3.  Calling the SDK interface to realize the functions of each module
 
