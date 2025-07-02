@@ -137,7 +137,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 Android:
     
 ```kotlin
-
+// Android端暂时忽略，等待后期API统一
 ```
 
 ## 绑定设备
