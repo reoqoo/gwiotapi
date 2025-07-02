@@ -37,16 +37,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         val option = InitOptions(
-            app = this.application,
-            versionName = "01.05.25",
-            versionCode = 1087,
+            app = app,
+            versionName = versionName,
+            versionCode = versionCode,
             appConfig = AppConfig(
-                appId = "",
-                appToken = "",
-                appName = "",
-                cId = "8.1"
+                appId = appId,
+                appToken = appToken,
+                appName = appName,
+                cId = cId,
             ),
         )
+        option.brandDomain = brandDomain
+        option.disableAccountService = true
         GWIoT.initialize(option)
     }
 

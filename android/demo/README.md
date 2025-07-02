@@ -32,22 +32,6 @@ maven {
     allowInsecureProtocol true
 }
 maven {
-    url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
-    credentials {
-        username = 'iptime_eti_user'
-        password = '6S1Moa^HFaL!rEqQC'
-    }
-    allowInsecureProtocol true
-}
-maven {
-    url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
-    credentials {
-        username = 'iptime_eti_user'
-        password = '6S1Moa^HFaL!rEqQC'
-    }
-    allowInsecureProtocol true
-}
-maven {
     url 'https://mvn.zztfly.com/android'
     content {
         includeGroup "cn.fly"
