@@ -4,6 +4,9 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform.impl////PointingToDecl
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl//productInfo/com.gw.gwiotapi.entities.Device#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/product-info.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotCloudPageComponet///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-cloud-page-componet/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotCloudPageComponet/openCloudPage/#com.gw.gwiotapi.entities.IDevice?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-cloud-page-componet/open-cloud-page.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/index.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent/openScanQRCodePage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/open-scan-q-r-code-page.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent/recognizeQRCode/#kotlin.String#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/recognize-q-r-code.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotTrafficPageComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-traffic-page-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotTrafficPageComponent/openTrafficPage/#com.gw.gwiotapi.entities.IDevice?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-traffic-page-component/open-traffic-page.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/index.html
@@ -54,6 +57,9 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform/IPropsComponent///Poin
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IPushNotificationComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-push-notification-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IPushNotificationComponent/clickPushNotification/#com.gw.gwiotapi.entities.PushNotification/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-push-notification-component/click-push-notification.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IPushNotificationComponent/receivePushNotification/#com.gw.gwiotapi.entities.PushNotification/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-push-notification-component/receive-push-notification.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform/IQRCodeComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform/IQRCodeComponent/openScanQRCodePage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/open-scan-q-r-code-page.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform/IQRCodeComponent/recognizeQRCode/#kotlin.String#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/recognize-q-r-code.html
 $dokka.location:com.gw.gwiotapi.components.sub////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IAlbumComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-album-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IAlbumComponent/openAlbum/#com.gw.gwiotapi.entities.IDevice?#com.gw.gwiotapi.entities.AlbumAsset?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-album-component/open-album.html
@@ -66,6 +72,7 @@ $dokka.location:com.gw.gwiotapi.components.sub/IBindEventComponent/bindEvents/#/
 $dokka.location:com.gw.gwiotapi.components.sub/ICloudPageComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-cloud-page-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/ICloudPageComponent/openCloudPage/#com.gw.gwiotapi.entities.IDevice?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-cloud-page-component/open-cloud-page.html
 $dokka.location:com.gw.gwiotapi.components.sub/IDevShareComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html
+$dokka.location:com.gw.gwiotapi.components.sub/IDevShareComponent/acceptShareDevice/#com.gw.gwiotapi.entities.QRCodeType.ShareDevice/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/accept-share-device.html
 $dokka.location:com.gw.gwiotapi.components.sub/IDevShareComponent/openShareManagerPage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/open-share-manager-page.html
 $dokka.location:com.gw.gwiotapi.components.sub/IDevUpgradeComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-upgrade-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IDevUpgradeComponent/openBatchUpgradePage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-upgrade-component/open-batch-upgrade-page.html
@@ -599,6 +606,18 @@ $dokka.location:com.gw.gwiotapi.entities/PushNotification/PushNotification/#[Err
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/PushNotification/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/-push-notification.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/extra/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/extra.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/userInfo/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/user-info.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/index.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice/BindDevice/#kotlin.String#kotlin.String#kotlin.String?#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/-bind-device.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice/mac/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/mac.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice/model/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/model.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice/sn/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/sn.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.ShareDevice///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-share-device/index.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.ShareDevice/ShareDevice/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-share-device/-share-device.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.ShareDevice/deviceId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-share-device/device-id.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.Unknown///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-unknown/index.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType.Unknown/Unknown/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-unknown/-unknown.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/index.html
+$dokka.location:com.gw.gwiotapi.entities/QRCodeType/qrCodeValue/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/qr-code-value.html
 $dokka.location:com.gw.gwiotapi.entities/Reason.HttpServiceError.Code.Companion///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-reason/-http-service-error/-code/-companion/index.html
 $dokka.location:com.gw.gwiotapi.entities/Reason.HttpServiceError.Code.Companion/parse/#kotlin.Int/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-reason/-http-service-error/-code/-companion/parse.html
 $dokka.location:com.gw.gwiotapi.entities/Reason.HttpServiceError.Code.EMAIL_ALREADY_REGISTERED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.entities/-reason/-http-service-error/-code/-e-m-a-i-l_-a-l-r-e-a-d-y_-r-e-g-i-s-t-e-r-e-d/index.html
@@ -791,12 +810,14 @@ $dokka.location:com.gw.gwiotapi/GWIoT/albumComp/#/PointingToDeclaration/-g-w-io
 $dokka.location:com.gw.gwiotapi/GWIoT/bindComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/bind-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/configComponent/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/config-component.html
 $dokka.location:com.gw.gwiotapi/GWIoT/devManagerComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/dev-manager-comp.html
+$dokka.location:com.gw.gwiotapi/GWIoT/devShareComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/dev-share-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/httpServiceComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/http-service-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/initializeComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/initialize-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/pluginCfgComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/plugin-cfg-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/pluginComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/plugin-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/propComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/prop-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/pushNotificationComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/push-notification-comp.html
+$dokka.location:com.gw.gwiotapi/GWIoT/qrCodeComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/qr-code-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/registerComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/register-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/solution/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/solution.html
 com.gw.gwiotapi
