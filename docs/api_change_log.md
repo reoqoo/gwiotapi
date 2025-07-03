@@ -9,5 +9,6 @@
 
 
 ## 1.1.7
-- 增加识别二维码接口，详见[IQR]
+- 增加二维码相关接口，包含识别二维码以及进入扫码页面功能，详见[IQRCodeComponent](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html)
+- 增加[接受分享设备接口](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html)
 - 修复已知的Bugs
