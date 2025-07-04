@@ -15,8 +15,6 @@ class KeyWindow: UIWindow {
     
     private lazy var debugFlagImageView: UIImageView = .init(image: R.image.commonDebugFlag())
 
-    override var canBecomeFirstResponder: Bool { true }
-
     var anyCancellables: Set<AnyCancellable> = []
 
     override init(frame: CGRect) {
@@ -32,15 +30,6 @@ class KeyWindow: UIWindow {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.setup()
-    }
-
-    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if UIApplication.UserDefaults.isAppDebugModeEnable {
-            DispatchQueue.main.async {
-                // 打开 DEBUG 小蜜蜂
-                UIApplication.shared.keyWindow?.addSubview(IVDevToolsAssistant.shared)
-            }
-        }
     }
 
     func setup() {

@@ -10,12 +10,6 @@ import Foundation
 extension UserDefaults {
     // UserDefaults 全局 Key
     enum GlobalKey: String {
-        /// debug 模式开启
-        case Reoqoo_DebugMode
-        /// 服务器环境是否测试环境
-        case Reoqoo_isTestEnv
-        /// H5 DEBUG 模式 Bool
-        case Reoqoo_H5DebugMode
 
         /// 强开云服务入口
         case Reoqoo_IsForceOpenVasEntrance
@@ -36,25 +30,6 @@ extension UserDefaults {
 
         /// 最近执行迁移操作的版本
         case Reoqoo_MigrationRecord
-
-        /// 开发模式下修改 reoqoo 开发者 `AppID` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_AppID
-        /// 开发模式下修改 reoqoo 开发者 `AppToken` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_AppToken
-        /// 开发模式下修改 reoqoo 开发者 `AppName` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_AppName
-        /// 开发模式下修改 reoqoo 开发者 `AppPkgName` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_AppPkgName
-        /// 开发模式下修改 reoqoo 开发者 传入的 `用户协议` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_UserAgreementURL
-        /// 开发模式下修改 reoqoo 开发者 传入的 `隐私协议` 的 UserDefaults key
-        /// 不对外公开, 仅内部测试用
-        case Reoqoo_PrivacyPolicyURL
     }
 
     // UserDefaults 用户相关信息 Key, 跟用户绑定

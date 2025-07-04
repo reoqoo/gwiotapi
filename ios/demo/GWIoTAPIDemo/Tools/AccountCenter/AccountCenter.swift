@@ -81,8 +81,10 @@ class AccountCenter {
         self.currentUser = user
         // 注册远程推送
         UIApplication.shared.registerForRemoteNotifications()
-        // 使用户更新 profile info
-        self.currentUser?.updateUserProfileInfo()
+        DispatchQueue.main.async {
+            // 使用户更新 profile info
+            self.currentUser?.updateUserProfileInfo()
+        }
         // 是否从网络请求登录成功, 如果是, 1.将 User 存起来 2.更新 token 更新时间
         if !isFromLocalData {
             // 数据持久化

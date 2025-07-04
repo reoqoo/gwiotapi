@@ -10,6 +10,8 @@ import RQCore
 import RQDeviceShared
 import RQWebServices
 
+import GWIoTApi
+
 class FamilyViewController2: BaseViewController {
 
     let vm: ViewModel = .init()
@@ -167,16 +169,18 @@ class FamilyViewController2: BaseViewController {
             let popoverOptions: [PopoverOption] = [.arrowSize(.zero), .animationIn(0.2), .animationOut(0), .cornerRadius(16), .springDamping(1), .initialSpringVelocity(1), .showBlackOverlay(false), .shadowOffset(.init(width: 4, height: 4)), .shadowRadius(8)]
             let listView = PopoverListView.init(options: popoverOptions, items: [
                 .init(image: nil, title: String.localization.localized("AA0049", note: "添加设备"), handler: {
-                    let vc = QRCodeScanningViewController.init(for: .addDevice)
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    Task {
+                        try await GWIoT.shared.openBind(opts: .init(qrCodeValue: nil))
+                    }
                 }),
                 .init(image: nil, title: String.localization.localized("AA0050", note: "分享设备"), handler: {
                     let vc = ShareDevicesListViewController.init()
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }),
                 .init(image: nil, title: String.localization.localized("AA0051", note: "扫一扫"), handler: {
-                    let vc = QRCodeScanningViewController.init(for: .justScanning)
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    Task {
+                        try await GWIoT.shared.openScanQRCodePage()
+                    }
                 })
             ], frame: .init(x: 0, y: 0, width: 128, height: 150), rowHeight: 50)
 

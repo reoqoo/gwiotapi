@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Override point for customization after application launch.
         self.sdkInit(withAppliction: application, withLaunchingOptions: launchOptions)
-
+        
         return true
     }
 

@@ -74,9 +74,8 @@ class DevicesViewController2: BaseViewController {
 
         // emptyView 点击了新增设备按钮
         self.emptyView.addDeviceBtnOnClickObservable
-            .sink(receiveValue: { [weak self] in
-                let vc = QRCodeScanningViewController.init(for: .addDevice)
-                self?.navigationController?.pushViewController(vc, animated: true)
+            .sink(receiveValue: {
+                GWIoT.shared.openBind(opts: BindOptions.init(qrCodeValue: nil)) { _, _ in }
             }).store(in: &self.anyCancellables)
     }
 
