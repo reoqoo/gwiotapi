@@ -4,4 +4,52 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     id("com.google.dagger.hilt.android") version "2.51" apply false
     id("com.google.gms.google-services") version "4.3.15" apply false
+    id("cn.therouter.agp8") version "1.2.2" apply false
+}
+
+project.ext {
+    // maven仓库的帐号
+    def propFile = project.rootProject.file('gwiot_config.properties')
+
+    GWIOT_VERSION_NAME = ""
+    GWIOT_VERSION_CODE = ""
+    GWIOT_APP_ID = ""
+    GWIOT_APP_TOKEN = ""
+    GWIOT_APP_NAME = ""
+    GWIOT_CID = ""
+    GWIOT_BRAND_DOMAIN = ""
+
+    USER_ACCESS_ID = ""
+    USER_ACCESS_TOKEN = ""
+    USER_AREA = ""
+    USER_EXPIRE_TIME = ""
+    USER_REG_REGION = ""
+    USER_TERMINAL_ID = ""
+    USER_USER_ID = ""
+
+    DEV_DEV_ID = ""
+    
+    if (propFile.exists()) {
+        Properties properties = new Properties()
+        InputStream inputStream = propFile.newDataInputStream()
+        properties.load(inputStream)
+        GWIOT_VERSION_NAME = properties.getProperty('VERSION_NAME')
+        GWIOT_VERSION_CODE = properties.getProperty('VERSION_CODE')
+        GWIOT_APP_ID = properties.getProperty('APP_ID')
+        GWIOT_APP_TOKEN = properties.getProperty('APP_TOKEN')
+        GWIOT_APP_NAME = properties.getProperty('APP_NAME')
+        GWIOT_CID = properties.getProperty('CID')
+        GWIOT_BRAND_DOMAIN = properties.getProperty('BRAND_DOMAIN')
+
+        USER_ACCESS_ID = properties.getProperty("USER_ACCESS_ID")
+        USER_ACCESS_TOKEN = properties.getProperty("USER_ACCESS_TOKEN")
+        USER_AREA = properties.getProperty("USER_AREA")
+        USER_EXPIRE_TIME = properties.getProperty("USER_EXPIRE_TIME")
+        USER_REG_REGION = properties.getProperty("USER_REG_REGION")
+        USER_TERMINAL_ID = properties.getProperty("USER_TERMINAL_ID")
+        USER_USER_ID = properties.getProperty("USER_USER_ID")
+        
+        
+        DEV_DEV_ID = properties.getProperty("DEV_DEV_ID")
+    }
 }

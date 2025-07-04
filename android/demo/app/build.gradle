@@ -6,6 +6,7 @@ plugins {
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'therouter'
 
 android {
     namespace 'com.gwell.gwiotdemo'
@@ -17,6 +18,27 @@ android {
         versionCode 1
         versionName "1.0"
         manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
+
+        buildConfigField("String", "GWIOT_VERSION_NAME", "\"${GWIOT_VERSION_NAME}\"")
+        buildConfigField("int", "GWIOT_VERSION_CODE", "${GWIOT_VERSION_CODE}")
+        buildConfigField("String", "GWIOT_APP_ID", "\"${GWIOT_APP_ID}\"")
+        buildConfigField("String", "GWIOT_APP_TOKEN", "\"${GWIOT_APP_TOKEN}\"")
+        buildConfigField("String", "GWIOT_APP_NAME", "\"${GWIOT_APP_NAME}\"")
+        buildConfigField("String", "GWIOT_CID", "\"${GWIOT_CID}\"")
+        buildConfigField("String", "GWIOT_BRAND_DOMAIN", "\"${GWIOT_BRAND_DOMAIN}\"")
+
+        buildConfigField("String", "USER_ACCESS_ID", "\"${USER_ACCESS_ID}\"")
+        buildConfigField("String", "USER_ACCESS_TOKEN", "\"${USER_ACCESS_TOKEN}\"")
+        buildConfigField("String", "USER_AREA", "\"${USER_AREA}\"")
+        buildConfigField("String", "USER_EXPIRE_TIME", "\"${USER_EXPIRE_TIME}\"")
+        buildConfigField("String", "USER_REG_REGION", "\"${USER_REG_REGION}\"")
+        buildConfigField("String", "USER_TERMINAL_ID", "\"${USER_TERMINAL_ID}\"")
+        buildConfigField("String", "USER_USER_ID", "\"${USER_USER_ID}\"")
+        
+        buildConfigField("String", "DEV_DEV_ID", "\"${DEV_DEV_ID}\"")
+    }
+    buildFeatures {
+        buildConfig true
     }
     buildTypes {
         release {
@@ -75,8 +97,8 @@ dependencies {
 }
 
 dependencies {
-    implementation "com.gwell:gwiotapi:1.1.5.0"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.8") {
+    implementation "com.gwell:gwiotapi:1.1.9.0"
+    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.10") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')
         exclude(group: 'com.gwell', module: 'iotvideo-multiplatform')
@@ -85,9 +107,11 @@ dependencies {
         exclude(group: 'com.gwell', module: 'gwiotapi')
         exclude(group: 'com.tencentcs', module: 'txtraevoip')
     }
-    implementation "com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.6"
     
     
+    def reoqooV = "google-release-01.05.25.0.10"
+    implementation "com.reoqoo.gw_plugin_hub:main:$reoqooV"
+
     implementation "com.google.firebase:firebase-messaging:24.0.0"
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat

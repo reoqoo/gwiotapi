@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.gw.gwiotapi.GWIoT
+import com.gw.gwiotapi.components.GWPlugin
 import com.gw.gwiotapi.entities.AppConfig
 import com.gw.gwiotapi.entities.BindOptions
 import com.gw.gwiotapi.entities.GWResult
@@ -35,33 +36,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val option = InitOptions(
-            app = app,
-            versionName = versionName,
-            versionCode = versionCode,
-            appConfig = AppConfig(
-                appId = appId,
-                appToken = appToken,
-                appName = appName,
-                cId = cId,
-            ),
-        )
-        option.brandDomain = brandDomain
-        option.disableAccountService = true
-        GWIoT.initialize(option)
+        GWIoT.deviceList.observe(this) { devList ->
+            Log.i(TAG, "deviceList = $devList")
+        }
+        GWIoT.user.observe(this) { user ->
+            Log.i(TAG, "user = $user")
+        }
+        GWIoT.propsChanged.observe(this) { props ->
+            Log.i(TAG, "propsChanged = $props")
+        }
     }
 
     fun startLogin(view: View) {
         scope.launch {
             val info = object : IUserAccessInfo {
-                override var accessId: String = "123"
-                override var accessToken: String = ""
-                override var area: String = ""
-                override var expireTime: String = ""
-                override var regRegion: String = ""
-                override var terminalId: String = ""
-                override var userId: String = ""
+                override var accessId: String = BuildConfig.USER_ACCESS_ID
+                override var accessToken: String = BuildConfig.USER_ACCESS_TOKEN
+                override var area: String = BuildConfig.USER_AREA
+                override var expireTime: String = BuildConfig.USER_EXPIRE_TIME
+                override var regRegion: String = BuildConfig.USER_REG_REGION
+                override var terminalId: String = BuildConfig.USER_TERMINAL_ID
+                override var userId: String = BuildConfig.USER_USER_ID
             }
             GWIoT.login(info)
         }
@@ -81,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     fun openHome(view: View) {
         scope.launch {
-            val devRet = GWIoT.queryDeviceCacheFirst("devId")
+            val devRet = GWIoT.queryDeviceCacheFirst(BuildConfig.DEV_DEV_ID)
             var device: IDevice? = null
             if (devRet is GWResult.Success) {
                 device = devRet.data
