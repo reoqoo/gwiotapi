@@ -97,8 +97,8 @@ dependencies {
 }
 
 dependencies {
-    implementation "com.gwell:gwiotapi:1.1.9.0"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.10") {
+    implementation "com.gwell:gwiotapi:1.2.0.0"
+    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-google-release-6.32.2.0.15") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')
         exclude(group: 'com.gwell', module: 'iotvideo-multiplatform')
@@ -109,7 +109,7 @@ dependencies {
     }
     
     
-    def reoqooV = "google-release-01.05.25.0.10"
+    def reoqooV = "google-release-01.05.25.0.11"
     implementation "com.reoqoo.gw_plugin_hub:main:$reoqooV"
 
     implementation "com.google.firebase:firebase-messaging:24.0.0"
