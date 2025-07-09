@@ -105,11 +105,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 Android:
 ```kotlin
-override fun onNewToken(token: String) {
-    // 上传推送Token, termId为用户登陆时返回的终端ID(IUserAccessInfo.terminalId)
-    val res = GWIoT.uploadPushToken(termId, token)
-    Log.d(TAG, "uploadPushToken result: $res")
-}
+// Android端SDK内部处理暂时忽略
 ```
 
 ### 处理推送消息
@@ -137,7 +133,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 Android:
     
 ```kotlin
-// Android端暂时忽略，等待后期API统一
+// Android端SDK内部处理暂时忽略
 ```
 
 ## 绑定设备

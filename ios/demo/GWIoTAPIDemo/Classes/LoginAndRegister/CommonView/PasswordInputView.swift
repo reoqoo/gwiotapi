@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RQCore
 
 class PasswordInputView: UIView {
 

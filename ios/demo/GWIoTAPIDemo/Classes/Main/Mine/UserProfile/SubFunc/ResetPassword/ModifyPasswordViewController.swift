@@ -55,7 +55,7 @@ class ModifyPasswordViewController: BaseViewController, ScrollBaseViewAndKeyboar
         self.adjustScrollViewContentInsetWhenKeyboardFrameChanged()
 
         self.view.backgroundColor = R.color.background_FFFFFF_white()
-        self.setNavigationBarBackground(R.color.background_FFFFFF_white()!, tintColor: R.color.text_000000_90()!)
+        self.rq.setNavigationBarBackground(R.color.background_FFFFFF_white()!, tintColor: R.color.text_000000_90()!)
 
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { make in

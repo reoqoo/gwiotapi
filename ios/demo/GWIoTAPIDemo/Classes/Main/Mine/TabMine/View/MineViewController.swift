@@ -11,6 +11,8 @@ import RQWebServices
 import RQCore
 import RQCoreUI
 import RQFirmwareUpgrade
+import RQIssueFeedback
+import RQMessageCenter
 
 extension MineViewController {
     enum EquityBtnType: Int {
@@ -147,7 +149,7 @@ class MineViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBarBackground(.clear)
+        self.rq.setNavigationBarBackground(.clear)
 
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(customView: self.settingButton), UIBarButtonItem.init(customView: self.msgButton)]
 
@@ -178,9 +180,10 @@ class MineViewController: BaseTableViewController {
             }.store(in: &self.anyCancellables)
 
         // 消息中心按钮点击
-        self.msgButton.tapPublisher.sink { [weak self] _ in
-            let vc = MessageCenterViewController.init()
-            self?.navigationController?.pushViewController(vc, animated: true)
+        self.msgButton.tapPublisher.sink { _ in
+            Task {
+                try await GWIoT.shared.openMessageCenterPage()
+            }
         }.store(in: &self.anyCancellables)
 
         // 设置按钮点击

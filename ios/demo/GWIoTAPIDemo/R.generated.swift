@@ -5153,48 +5153,6 @@ struct _R {
     /// Image `login.logo.216`.
     var loginLogo216: RswiftResources.ImageResource { .init(name: "login.logo.216", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `messageCenter.clear`.
-    var messageCenterClear: RswiftResources.ImageResource { .init(name: "messageCenter.clear", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.emptyData`.
-    var messageCenterEmptyData: RswiftResources.ImageResource { .init(name: "messageCenter.emptyData", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.appUpdate`.
-    var messageCenterTypeAppUpdate: RswiftResources.ImageResource { .init(name: "messageCenter.type.appUpdate", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.appUpdate.unread`.
-    var messageCenterTypeAppUpdateUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.appUpdate.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.cloud`.
-    var messageCenterTypeCloud: RswiftResources.ImageResource { .init(name: "messageCenter.type.cloud", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.cloud.unread`.
-    var messageCenterTypeCloudUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.cloud.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.coupon`.
-    var messageCenterTypeCoupon: RswiftResources.ImageResource { .init(name: "messageCenter.type.coupon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.coupon.unread`.
-    var messageCenterTypeCouponUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.coupon.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.deviceUpdate`.
-    var messageCenterTypeDeviceUpdate: RswiftResources.ImageResource { .init(name: "messageCenter.type.deviceUpdate", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.deviceUpdate.unread`.
-    var messageCenterTypeDeviceUpdateUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.deviceUpdate.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.feedbackReply`.
-    var messageCenterTypeFeedbackReply: RswiftResources.ImageResource { .init(name: "messageCenter.type.feedbackReply", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.feedbackReply.unread`.
-    var messageCenterTypeFeedbackReplyUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.feedbackReply.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.share`.
-    var messageCenterTypeShare: RswiftResources.ImageResource { .init(name: "messageCenter.type.share", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `messageCenter.type.share.unread`.
-    var messageCenterTypeShareUnread: RswiftResources.ImageResource { .init(name: "messageCenter.type.share.unread", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
     /// Image `mine.changeBinding.email`.
     var mineChangeBindingEmail: RswiftResources.ImageResource { .init(name: "mine.changeBinding.email", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 

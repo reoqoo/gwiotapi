@@ -1,4 +1,14 @@
-# Change Log
+# Changelog
+
+## 1.2.0
+- 增加[消息中心接口](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html)
+
+
+## 1.1.7
+- 增加二维码相关接口，包含识别二维码以及进入扫码页面功能，详见[IQRCodeComponent](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html)
+- 增加[接受分享设备接口](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html)
+- 修复已知的Bugs
+
 
 ## 1.1.5
 - Android、iOS同步接口版本
@@ -8,7 +18,4 @@
 - 修复已知的Bugs
 
 
-## 1.1.7
-- 增加二维码相关接口，包含识别二维码以及进入扫码页面功能，详见[IQRCodeComponent](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html)
-- 增加[接受分享设备接口](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html)
-- 修复已知的Bugs
+

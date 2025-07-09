@@ -33,13 +33,12 @@ extension UserProfileTableViewController {
             switch event {
             case let .modifyUserInfo(header, nick, oldPassword, newPassword):
                 // 检查 昵称 格式是否正确
-                if let nick = nick, nick.isContainEmoji {
-                    self.status = .didCompleteModifyUserInfo(.failure(ReoqooError.accountError(reason: .nickNameContainInvalidCharacter)))
-                    return
-                }
                 AccountCenter.shared.currentUser?.modifyUserInfoPublisher(header: header, nick: nick, oldPassword: oldPassword, newPassword: newPassword)
                     .sink(receiveCompletion: { [weak self] in
-                        guard case let .failure(err) = $0 else { return }
+                        guard case var .failure(err) = $0 else { return }
+                        if (err as NSError).code == 10019 {
+                            err = (ReoqooError.accountError(reason: .nickNameContainInvalidCharacter))
+                        }
                         self?.status = .didCompleteModifyUserInfo(.failure(err))
                     }, receiveValue: { [weak self] profileInfo in
                         self?.status = .didCompleteModifyUserInfo(.success(()))
@@ -48,6 +47,6 @@ extension UserProfileTableViewController {
         }
 
         // MARK: 发布者封装
-        
+
     }
 }

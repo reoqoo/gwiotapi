@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Override point for customization after application launch.
         self.sdkInit(withAppliction: application, withLaunchingOptions: launchOptions)
-        
+
         return true
     }
 
@@ -57,8 +57,8 @@ extension AppDelegate {
     func sdkInit(withAppliction application: UIApplication, withLaunchingOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 
         // 推送注册
-        UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, err in
+            UNUserNotificationCenter.current().delegate = self
             if granted {
                 logInfo("用户允许APNS远程推送服务")
             }else{

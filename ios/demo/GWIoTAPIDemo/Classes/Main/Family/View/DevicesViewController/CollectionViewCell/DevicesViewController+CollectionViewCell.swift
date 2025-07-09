@@ -7,6 +7,7 @@
 
 import Foundation
 import RQCore
+import RQCoreUI
 
 extension DevicesViewController2 {
     class DeviceCollectionViewCell: UICollectionViewCell {
