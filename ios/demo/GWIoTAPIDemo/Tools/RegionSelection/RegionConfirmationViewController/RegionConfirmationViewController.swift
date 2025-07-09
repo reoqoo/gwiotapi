@@ -46,7 +46,7 @@ class RegionConfirmationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
+        self.rq.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
         self.view.backgroundColor = R.color.background_FFFFFF_white()
         
         self.view.addSubview(self.titleLabel)

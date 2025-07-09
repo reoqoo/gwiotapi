@@ -8,6 +8,7 @@
 import UIKit
 import IVAccountMgr
 import RQCore
+import RQCoreUI
 
 extension UserSelectHeaderViewController {
     class CollectionViewCell: UICollectionViewCell {

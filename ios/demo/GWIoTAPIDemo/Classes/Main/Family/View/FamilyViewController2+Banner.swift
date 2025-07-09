@@ -7,6 +7,7 @@
 
 import Foundation
 import RQCore
+import RQCoreUI
 
 protocol FamilyViewControllerBanner: UIView {
     /// 类型

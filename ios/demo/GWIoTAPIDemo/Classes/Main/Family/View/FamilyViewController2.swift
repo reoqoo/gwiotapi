@@ -7,6 +7,7 @@
 
 import Foundation
 import RQCore
+import RQCoreUI
 import RQDeviceShared
 import RQWebServices
 
@@ -271,9 +272,9 @@ extension FamilyViewController2 {
 
     // 将当前 active child 的 ScrollView 的滑动 self.scrollView 的滑动的联动起来
     func linkageScroll(parentScrollView: UIScrollView?, childScrollView: UIScrollView?) {
-        if self.scrollView.contentSize.height == 0 || self.scrollView.size.height == 0 { return }
+        if self.scrollView.contentSize.height == 0 || self.scrollView.bounds.size.height == 0 { return }
         // child scroll 是否有滑动空间
-        let childCanNotScrollable = (self.activeChild?.mainScrollView?.contentSize.height ?? 0) <= (self.activeChild?.mainScrollView?.size.height ?? 0)
+        let childCanNotScrollable = (self.activeChild?.mainScrollView?.contentSize.height ?? 0) <= (self.activeChild?.mainScrollView?.bounds.size.height ?? 0)
         let tabViewMinY = self.tabView.frame.minY
         if let parentScrollView = parentScrollView {
             if !self.canParentViewScroll {

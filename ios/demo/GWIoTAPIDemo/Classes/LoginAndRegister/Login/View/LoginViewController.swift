@@ -11,6 +11,7 @@ import RQCore
 import RQCoreUI
 import RQApi
 import RQWebServices
+import RQIssueFeedback
 
 class LoginViewController: BaseViewController, ScrollBaseViewAndKeyboardMatchable {
 
@@ -63,7 +64,7 @@ class LoginViewController: BaseViewController, ScrollBaseViewAndKeyboardMatchabl
 
         self.navigationItem.rightBarButtonItem = self.regionSelectionBarButtonItem
 
-        self.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
+        self.rq.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
         self.view.backgroundColor = R.color.background_FFFFFF_white()
 
         self.helloLabel?.text = String.localization.localized("AA0001", note: "Hello , reoqoo ！")

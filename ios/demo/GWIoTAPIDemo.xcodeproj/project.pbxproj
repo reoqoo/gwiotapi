@@ -34,11 +34,9 @@
 		C4CB60032DF02C710098E3F5 /* loading_white.json in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5E772DF02C710098E3F5 /* loading_white.json */; };
 		C4CB60042DF02C710098E3F5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */; };
 		C4CB60052DF02C710098E3F5 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5F202DF02C710098E3F5 /* Mine.storyboard */; };
-		C4CB60082DF02C710098E3F5 /* WelfareActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EFA2DF02C710098E3F5 /* WelfareActivityViewController.swift */; };
 		C4CB60092DF02C710098E3F5 /* RegionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FBA2DF02C710098E3F5 /* RegionSelectionViewController.swift */; };
 		C4CB600A2DF02C710098E3F5 /* RegionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB52DF02C710098E3F5 /* RegionConfirmationViewController.swift */; };
 		C4CB600B2DF02C710098E3F5 /* UserSelectHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F322DF02C710098E3F5 /* UserSelectHeaderViewController.swift */; };
-		C4CB600E2DF02C710098E3F5 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE32DF02C710098E3F5 /* ScrollableTabBar.swift */; };
 		C4CB60112DF02C710098E3F5 /* InputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FDF2DF02C710098E3F5 /* InputAccessoryView.swift */; };
 		C4CB60132DF02C710098E3F5 /* ReoqooPopupViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE12DF02C710098E3F5 /* ReoqooPopupViewProperty.swift */; };
 		C4CB60152DF02C710098E3F5 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA32DF02C710098E3F5 /* Collection+.swift */; };
@@ -54,8 +52,6 @@
 		C4CB60252DF02C710098E3F5 /* URL+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FAD2DF02C710098E3F5 /* URL+Static.swift */; };
 		C4CB60272DF02C710098E3F5 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9F2DF02C710098E3F5 /* UIScrollView+.swift */; };
 		C4CB60292DF02C710098E3F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E992DF02C710098E3F5 /* LoginViewController.swift */; };
-		C4CB602A2DF02C710098E3F5 /* Kingfisher+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE02DF02C710098E3F5 /* Kingfisher+Placeholder.swift */; };
-		C4CB602B2DF02C710098E3F5 /* MessageCenterSubLevelViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F032DF02C710098E3F5 /* MessageCenterSubLevelViewController+ViewModel.swift */; };
 		C4CB602C2DF02C710098E3F5 /* SystemAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F0B2DF02C710098E3F5 /* SystemAuthorizationViewController.swift */; };
 		C4CB602D2DF02C710098E3F5 /* OneTimeCodeInputViewController+SubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E8B2DF02C710098E3F5 /* OneTimeCodeInputViewController+SubViews.swift */; };
 		C4CB602F2DF02C710098E3F5 /* FamilyViewController2+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EB52DF02C710098E3F5 /* FamilyViewController2+ViewModel.swift */; };
@@ -72,7 +68,6 @@
 		C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA92DF02C710098E3F5 /* String+Localization.swift */; };
 		C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F282DF02C710098E3F5 /* CloseAccountFlowItem.swift */; };
 		C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F2C2DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift */; };
-		C4CB60472DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F012DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift */; };
 		C4CB60482DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EAA2DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift */; };
 		C4CB604A2DF02C710098E3F5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E852DF02C710098E3F5 /* AppInfo.swift */; };
 		C4CB604B2DF02C710098E3F5 /* PasswordSettingSucceedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E8E2DF02C710098E3F5 /* PasswordSettingSucceedViewController.swift */; };
@@ -80,45 +75,34 @@
 		C4CB604E2DF02C710098E3F5 /* PopoverListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FD92DF02C710098E3F5 /* PopoverListView.swift */; };
 		C4CB60502DF02C710098E3F5 /* OneTimeCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E8A2DF02C710098E3F5 /* OneTimeCodeInputViewController.swift */; };
 		C4CB60512DF02C710098E3F5 /* AuthorizationStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F0D2DF02C710098E3F5 /* AuthorizationStatusTableViewCell.swift */; };
-		C4CB60522DF02C710098E3F5 /* WelfareActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF42DF02C710098E3F5 /* WelfareActivityTableViewCell.swift */; };
 		C4CB60542DF02C710098E3F5 /* PasswordSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E902DF02C710098E3F5 /* PasswordSettingViewController.swift */; };
 		C4CB60552DF02C710098E3F5 /* CommonEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF12DF02C710098E3F5 /* CommonEmptyView.swift */; };
 		C4CB60572DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F262DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift */; };
 		C4CB60582DF02C710098E3F5 /* RegionSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FBC2DF02C710098E3F5 /* RegionSelectionViewModel.swift */; };
-		C4CB605A2DF02C710098E3F5 /* SystemMessageViewController+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF92DF02C710098E3F5 /* SystemMessageViewController+Header.swift */; };
 		C4CB605B2DF02C710098E3F5 /* ReoqooAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FCF2DF02C710098E3F5 /* ReoqooAlertViewController.swift */; };
 		C4CB605C2DF02C710098E3F5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FD22DF02C710098E3F5 /* BaseTableViewController.swift */; };
-		C4CB605D2DF02C710098E3F5 /* SwiftCombine+PublishedPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F972DF02C710098E3F5 /* SwiftCombine+PublishedPropertyWrapper.swift */; };
 		C4CB605E2DF02C710098E3F5 /* AuthorizationStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F072DF02C710098E3F5 /* AuthorizationStatusItem.swift */; };
 		C4CB605F2DF02C710098E3F5 /* AboutReoqooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EEA2DF02C710098E3F5 /* AboutReoqooViewController.swift */; };
 		C4CB60602DF02C710098E3F5 /* UIApplication+SandboxPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FAC2DF02C710098E3F5 /* UIApplication+SandboxPath.swift */; };
 		C4CB60622DF02C710098E3F5 /* GWIoTAPIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FC02DF02C710098E3F5 /* GWIoTAPIDelegate.swift */; };
-		C4CB60632DF02C710098E3F5 /* SystemMessageViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EFC2DF02C710098E3F5 /* SystemMessageViewController+ViewModel.swift */; };
-		C4CB60652DF02C710098E3F5 /* UIViewController+NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA02DF02C710098E3F5 /* UIViewController+NavigationBarStyle.swift */; };
 		C4CB60672DF02C710098E3F5 /* AppEntranceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E832DF02C710098E3F5 /* AppEntranceManager.swift */; };
 		C4CB60682DF02C710098E3F5 /* FamilyViewController2+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EB22DF02C710098E3F5 /* FamilyViewController2+Banner.swift */; };
-		C4CB606A2DF02C710098E3F5 /* RQSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FE22DF02C710098E3F5 /* RQSwitch.swift */; };
 		C4CB606B2DF02C710098E3F5 /* APNSSettingViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F122DF02C710098E3F5 /* APNSSettingViewController+ViewModel.swift */; };
 		C4CB606C2DF02C710098E3F5 /* AppentranceManager+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E842DF02C710098E3F5 /* AppentranceManager+Extra.swift */; };
 		C4CB606D2DF02C710098E3F5 /* SystemAuthorizationViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F132DF02C710098E3F5 /* SystemAuthorizationViewController+ViewModel.swift */; };
 		C4CB606E2DF02C710098E3F5 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E962DF02C710098E3F5 /* FindPasswordViewController.swift */; };
 		C4CB606F2DF02C710098E3F5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FEB2DF02C710098E3F5 /* R.generated.swift */; };
-		C4CB60732DF02C710098E3F5 /* UNUserNotificationCenter+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F982DF02C710098E3F5 /* UNUserNotificationCenter+Combine.swift */; };
 		C4CB60742DF02C710098E3F5 /* MineViewController+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F1E2DF02C710098E3F5 /* MineViewController+Model.swift */; };
 		C4CB60752DF02C710098E3F5 /* Codable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA22DF02C710098E3F5 /* Codable+.swift */; };
-		C4CB60762DF02C710098E3F5 /* Date+StringPresented.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA42DF02C710098E3F5 /* Date+StringPresented.swift */; };
 		C4CB60772DF02C710098E3F5 /* BasicTabbarController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F422DF02C710098E3F5 /* BasicTabbarController+ViewModel.swift */; };
 		C4CB60782DF02C710098E3F5 /* FamilyViewController+ChildrenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EAF2DF02C710098E3F5 /* FamilyViewController+ChildrenCollectionViewCell.swift */; };
 		C4CB60792DF02C710098E3F5 /* ChangeLanguageViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EEE2DF02C710098E3F5 /* ChangeLanguageViewController+ViewModel.swift */; };
 		C4CB607A2DF02C710098E3F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E822DF02C710098E3F5 /* AppDelegate.swift */; };
 		C4CB607E2DF02C710098E3F5 /* Popoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FDB2DF02C710098E3F5 /* Popoverable.swift */; };
-		C4CB60802DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9B2DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.m */; };
 		C4CB60812DF02C710098E3F5 /* RequestOneTimeCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E9E2DF02C710098E3F5 /* RequestOneTimeCodeViewController.swift */; };
-		C4CB60822DF02C710098E3F5 /* FirstLevelMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF32DF02C710098E3F5 /* FirstLevelMessageTableViewCell.swift */; };
 		C4CB60832DF02C710098E3F5 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9D2DF02C710098E3F5 /* UICollectionView+.swift */; };
 		C4CB60842DF02C710098E3F5 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9C2DF02C710098E3F5 /* UIButton+Style.swift */; };
 		C4CB60872DF02C710098E3F5 /* DevicesViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EAC2DF02C710098E3F5 /* DevicesViewController2.swift */; };
-		C4CB60882DF02C710098E3F5 /* AVCaptureDevice+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F962DF02C710098E3F5 /* AVCaptureDevice+Combine.swift */; };
 		C4CB60892DF02C710098E3F5 /* FamilyViewController2+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EA82DF02C710098E3F5 /* FamilyViewController2+Model.swift */; };
 		C4CB608A2DF02C710098E3F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F102DF02C710098E3F5 /* SettingViewController.swift */; };
 		C4CB608B2DF02C710098E3F5 /* RebindTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F252DF02C710098E3F5 /* RebindTipsViewController.swift */; };
@@ -132,16 +116,12 @@
 		C4CB60942DF02C710098E3F5 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F302DF02C710098E3F5 /* ModifyPasswordViewController.swift */; };
 		C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F0E2DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift */; };
 		C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FA62DF02C710098E3F5 /* DeviceStatus+.swift */; };
-		C4CB60982DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF72DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift */; };
 		C4CB609A2DF02C710098E3F5 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F372DF02C710098E3F5 /* UserProfileTableViewController.swift */; };
 		C4CB609B2DF02C710098E3F5 /* UIApplication+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FAB2DF02C710098E3F5 /* UIApplication+Info.swift */; };
 		C4CB609C2DF02C710098E3F5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F9E2DF02C710098E3F5 /* UIColor+.swift */; };
 		C4CB609D2DF02C710098E3F5 /* DevicesViewController2+EmptyDevicesPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EAD2DF02C710098E3F5 /* DevicesViewController2+EmptyDevicesPlaceholder.swift */; };
 		C4CB609F2DF02C710098E3F5 /* ExportedImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F862DF02C710098E3F5 /* ExportedImport.swift */; };
-		C4CB60A02DF02C710098E3F5 /* SystemMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF82DF02C710098E3F5 /* SystemMessageViewController.swift */; };
-		C4CB60A12DF02C710098E3F5 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EF62DF02C710098E3F5 /* MessageCenterViewController.swift */; };
 		C4CB60A22DF02C710098E3F5 /* RegionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FB62DF02C710098E3F5 /* RegionSelectionButton.swift */; };
-		C4CB60A42DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EFF2DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift */; };
 		C4CB60A52DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5EB32DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift */; };
 		C4CB60A62DF02C710098E3F5 /* APNSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5F092DF02C710098E3F5 /* APNSSettingViewController.swift */; };
 		C4CB60A72DF02C710098E3F5 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5E862DF02C710098E3F5 /* KeyWindow.swift */; };
@@ -294,19 +274,12 @@
 		C4CB5F872DF02C710098E3F5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C4CB5F8D2DF02C710098E3F5 /* AccountCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCenter.swift; sourceTree = "<group>"; };
 		C4CB5F8E2DF02C710098E3F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C4CB5F962DF02C710098E3F5 /* AVCaptureDevice+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Combine.swift"; sourceTree = "<group>"; };
-		C4CB5F972DF02C710098E3F5 /* SwiftCombine+PublishedPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftCombine+PublishedPropertyWrapper.swift"; sourceTree = "<group>"; };
-		C4CB5F982DF02C710098E3F5 /* UNUserNotificationCenter+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNUserNotificationCenter+Combine.swift"; sourceTree = "<group>"; };
-		C4CB5F9A2DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTContainerNavigationController+CommonStyleConfiguration.h"; sourceTree = "<group>"; };
-		C4CB5F9B2DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RTContainerNavigationController+CommonStyleConfiguration.m"; sourceTree = "<group>"; };
 		C4CB5F9C2DF02C710098E3F5 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
 		C4CB5F9D2DF02C710098E3F5 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		C4CB5F9E2DF02C710098E3F5 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C4CB5F9F2DF02C710098E3F5 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
-		C4CB5FA02DF02C710098E3F5 /* UIViewController+NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarStyle.swift"; sourceTree = "<group>"; };
 		C4CB5FA22DF02C710098E3F5 /* Codable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+.swift"; sourceTree = "<group>"; };
 		C4CB5FA32DF02C710098E3F5 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
-		C4CB5FA42DF02C710098E3F5 /* Date+StringPresented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringPresented.swift"; sourceTree = "<group>"; };
 		C4CB5FA52DF02C710098E3F5 /* DeviceEntity+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceEntity+Permission.swift"; sourceTree = "<group>"; };
 		C4CB5FA62DF02C710098E3F5 /* DeviceStatus+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceStatus+.swift"; sourceTree = "<group>"; };
 		C4CB5FA72DF02C710098E3F5 /* LanguageCode+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguageCode+.swift"; sourceTree = "<group>"; };
@@ -333,10 +306,7 @@
 		C4CB5FDB2DF02C710098E3F5 /* Popoverable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popoverable.swift; sourceTree = "<group>"; };
 		C4CB5FDE2DF02C710098E3F5 /* InfiltrateScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiltrateScrollView.swift; sourceTree = "<group>"; };
 		C4CB5FDF2DF02C710098E3F5 /* InputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccessoryView.swift; sourceTree = "<group>"; };
-		C4CB5FE02DF02C710098E3F5 /* Kingfisher+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Placeholder.swift"; sourceTree = "<group>"; };
 		C4CB5FE12DF02C710098E3F5 /* ReoqooPopupViewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReoqooPopupViewProperty.swift; sourceTree = "<group>"; };
-		C4CB5FE22DF02C710098E3F5 /* RQSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQSwitch.swift; sourceTree = "<group>"; };
-		C4CB5FE32DF02C710098E3F5 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
 		C4CB5FE42DF02C710098E3F5 /* ScrollBaseViewAndKeyboardMatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBaseViewAndKeyboardMatchable.swift; sourceTree = "<group>"; };
 		C4CB5FE82DF02C710098E3F5 /* GWIoTAPIDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GWIoTAPIDemo.entitlements; sourceTree = "<group>"; };
 		C4CB5FE92DF02C710098E3F5 /* GWIoTAPIDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GWIoTAPIDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1040,26 +1010,13 @@
 			path = AccountCenter;
 			sourceTree = "<group>";
 		};
-		C4CB5F992DF02C710098E3F5 /* SwiftCombine */ = {
-			isa = PBXGroup;
-			children = (
-				C4CB5F962DF02C710098E3F5 /* AVCaptureDevice+Combine.swift */,
-				C4CB5F972DF02C710098E3F5 /* SwiftCombine+PublishedPropertyWrapper.swift */,
-				C4CB5F982DF02C710098E3F5 /* UNUserNotificationCenter+Combine.swift */,
-			);
-			path = SwiftCombine;
-			sourceTree = "<group>";
-		};
 		C4CB5FA12DF02C710098E3F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C4CB5F9A2DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.h */,
-				C4CB5F9B2DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.m */,
 				C4CB5F9C2DF02C710098E3F5 /* UIButton+Style.swift */,
 				C4CB5F9D2DF02C710098E3F5 /* UICollectionView+.swift */,
 				C4CB5F9E2DF02C710098E3F5 /* UIColor+.swift */,
 				C4CB5F9F2DF02C710098E3F5 /* UIScrollView+.swift */,
-				C4CB5FA02DF02C710098E3F5 /* UIViewController+NavigationBarStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1067,11 +1024,9 @@
 		C4CB5FAF2DF02C710098E3F5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C4CB5F992DF02C710098E3F5 /* SwiftCombine */,
 				C4CB5FA12DF02C710098E3F5 /* UI */,
 				C4CB5FA22DF02C710098E3F5 /* Codable+.swift */,
 				C4CB5FA32DF02C710098E3F5 /* Collection+.swift */,
-				C4CB5FA42DF02C710098E3F5 /* Date+StringPresented.swift */,
 				C4CB5FA52DF02C710098E3F5 /* DeviceEntity+Permission.swift */,
 				C4CB5FA62DF02C710098E3F5 /* DeviceStatus+.swift */,
 				C4CB5FA72DF02C710098E3F5 /* LanguageCode+.swift */,
@@ -1215,10 +1170,7 @@
 				C4CB5FDC2DF02C710098E3F5 /* Popover Series */,
 				C4CB5FDE2DF02C710098E3F5 /* InfiltrateScrollView.swift */,
 				C4CB5FDF2DF02C710098E3F5 /* InputAccessoryView.swift */,
-				C4CB5FE02DF02C710098E3F5 /* Kingfisher+Placeholder.swift */,
 				C4CB5FE12DF02C710098E3F5 /* ReoqooPopupViewProperty.swift */,
-				C4CB5FE22DF02C710098E3F5 /* RQSwitch.swift */,
-				C4CB5FE32DF02C710098E3F5 /* ScrollableTabBar.swift */,
 				C4CB5FE42DF02C710098E3F5 /* ScrollBaseViewAndKeyboardMatchable.swift */,
 			);
 			path = UI;
@@ -1414,11 +1366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CB60AA2DF032750098E3F5 /* MineViewController.swift in Sources */,
-				C4CB60082DF02C710098E3F5 /* WelfareActivityViewController.swift in Sources */,
 				C4CB60092DF02C710098E3F5 /* RegionSelectionViewController.swift in Sources */,
 				C4CB600A2DF02C710098E3F5 /* RegionConfirmationViewController.swift in Sources */,
 				C4CB600B2DF02C710098E3F5 /* UserSelectHeaderViewController.swift in Sources */,
-				C4CB600E2DF02C710098E3F5 /* ScrollableTabBar.swift in Sources */,
 				C4CB60112DF02C710098E3F5 /* InputAccessoryView.swift in Sources */,
 				C4CB60132DF02C710098E3F5 /* ReoqooPopupViewProperty.swift in Sources */,
 				C4CB60152DF02C710098E3F5 /* Collection+.swift in Sources */,
@@ -1434,8 +1384,6 @@
 				C4CB60252DF02C710098E3F5 /* URL+Static.swift in Sources */,
 				C4CB60272DF02C710098E3F5 /* UIScrollView+.swift in Sources */,
 				C4CB60292DF02C710098E3F5 /* LoginViewController.swift in Sources */,
-				C4CB602A2DF02C710098E3F5 /* Kingfisher+Placeholder.swift in Sources */,
-				C4CB602B2DF02C710098E3F5 /* MessageCenterSubLevelViewController+ViewModel.swift in Sources */,
 				C4CB602C2DF02C710098E3F5 /* SystemAuthorizationViewController.swift in Sources */,
 				C4CB602D2DF02C710098E3F5 /* OneTimeCodeInputViewController+SubViews.swift in Sources */,
 				C4CB602F2DF02C710098E3F5 /* FamilyViewController2+ViewModel.swift in Sources */,
@@ -1452,7 +1400,6 @@
 				C4CB603C2DF02C710098E3F5 /* String+Localization.swift in Sources */,
 				C4CB60422DF02C710098E3F5 /* CloseAccountFlowItem.swift in Sources */,
 				C4CB60432DF02C710098E3F5 /* CloseAccountReasonSelectionViewController.swift in Sources */,
-				C4CB60472DF02C710098E3F5 /* MessageCenterSubLevelViewController.swift in Sources */,
 				C4CB60482DF02C710098E3F5 /* DevicesViewController+CollectionViewCell.swift in Sources */,
 				C4CB604A2DF02C710098E3F5 /* AppInfo.swift in Sources */,
 				C4CB604B2DF02C710098E3F5 /* PasswordSettingSucceedViewController.swift in Sources */,
@@ -1460,45 +1407,34 @@
 				C4CB604E2DF02C710098E3F5 /* PopoverListView.swift in Sources */,
 				C4CB60502DF02C710098E3F5 /* OneTimeCodeInputViewController.swift in Sources */,
 				C4CB60512DF02C710098E3F5 /* AuthorizationStatusTableViewCell.swift in Sources */,
-				C4CB60522DF02C710098E3F5 /* WelfareActivityTableViewCell.swift in Sources */,
 				C4CB60542DF02C710098E3F5 /* PasswordSettingViewController.swift in Sources */,
 				C4CB60552DF02C710098E3F5 /* CommonEmptyView.swift in Sources */,
 				C4CB60572DF02C710098E3F5 /* RequestOneTimeCodeForBindingViewController.swift in Sources */,
 				C4CB60582DF02C710098E3F5 /* RegionSelectionViewModel.swift in Sources */,
-				C4CB605A2DF02C710098E3F5 /* SystemMessageViewController+Header.swift in Sources */,
 				C4CB605B2DF02C710098E3F5 /* ReoqooAlertViewController.swift in Sources */,
 				C4CB605C2DF02C710098E3F5 /* BaseTableViewController.swift in Sources */,
-				C4CB605D2DF02C710098E3F5 /* SwiftCombine+PublishedPropertyWrapper.swift in Sources */,
 				C4CB605E2DF02C710098E3F5 /* AuthorizationStatusItem.swift in Sources */,
 				C4CB605F2DF02C710098E3F5 /* AboutReoqooViewController.swift in Sources */,
 				C4CB60602DF02C710098E3F5 /* UIApplication+SandboxPath.swift in Sources */,
 				C4CB60622DF02C710098E3F5 /* GWIoTAPIDelegate.swift in Sources */,
-				C4CB60632DF02C710098E3F5 /* SystemMessageViewController+ViewModel.swift in Sources */,
-				C4CB60652DF02C710098E3F5 /* UIViewController+NavigationBarStyle.swift in Sources */,
 				C4CB60672DF02C710098E3F5 /* AppEntranceManager.swift in Sources */,
 				C4CB60682DF02C710098E3F5 /* FamilyViewController2+Banner.swift in Sources */,
-				C4CB606A2DF02C710098E3F5 /* RQSwitch.swift in Sources */,
 				C4CB606B2DF02C710098E3F5 /* APNSSettingViewController+ViewModel.swift in Sources */,
 				C4CB606C2DF02C710098E3F5 /* AppentranceManager+Extra.swift in Sources */,
 				C4CB606D2DF02C710098E3F5 /* SystemAuthorizationViewController+ViewModel.swift in Sources */,
 				C4CB606E2DF02C710098E3F5 /* FindPasswordViewController.swift in Sources */,
 				C4CB606F2DF02C710098E3F5 /* R.generated.swift in Sources */,
-				C4CB60732DF02C710098E3F5 /* UNUserNotificationCenter+Combine.swift in Sources */,
 				C4CB60742DF02C710098E3F5 /* MineViewController+Model.swift in Sources */,
 				C4CB60752DF02C710098E3F5 /* Codable+.swift in Sources */,
-				C4CB60762DF02C710098E3F5 /* Date+StringPresented.swift in Sources */,
 				C4CB60772DF02C710098E3F5 /* BasicTabbarController+ViewModel.swift in Sources */,
 				C4CB60782DF02C710098E3F5 /* FamilyViewController+ChildrenCollectionViewCell.swift in Sources */,
 				C4CB60792DF02C710098E3F5 /* ChangeLanguageViewController+ViewModel.swift in Sources */,
 				C4CB607A2DF02C710098E3F5 /* AppDelegate.swift in Sources */,
 				C4CB607E2DF02C710098E3F5 /* Popoverable.swift in Sources */,
-				C4CB60802DF02C710098E3F5 /* RTContainerNavigationController+CommonStyleConfiguration.m in Sources */,
 				C4CB60812DF02C710098E3F5 /* RequestOneTimeCodeViewController.swift in Sources */,
-				C4CB60822DF02C710098E3F5 /* FirstLevelMessageTableViewCell.swift in Sources */,
 				C4CB60832DF02C710098E3F5 /* UICollectionView+.swift in Sources */,
 				C4CB60842DF02C710098E3F5 /* UIButton+Style.swift in Sources */,
 				C4CB60872DF02C710098E3F5 /* DevicesViewController2.swift in Sources */,
-				C4CB60882DF02C710098E3F5 /* AVCaptureDevice+Combine.swift in Sources */,
 				C4CB60892DF02C710098E3F5 /* FamilyViewController2+Model.swift in Sources */,
 				C4CB608A2DF02C710098E3F5 /* SettingViewController.swift in Sources */,
 				C4CB608B2DF02C710098E3F5 /* RebindTipsViewController.swift in Sources */,
@@ -1512,16 +1448,12 @@
 				C4CB60942DF02C710098E3F5 /* ModifyPasswordViewController.swift in Sources */,
 				C4CB60962DF02C710098E3F5 /* AuthorizationStatusTableViewHeader.swift in Sources */,
 				C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */,
-				C4CB60982DF02C710098E3F5 /* MessageCenterViewController+CollectionViewCell.swift in Sources */,
 				C4CB609A2DF02C710098E3F5 /* UserProfileTableViewController.swift in Sources */,
 				C4CB609B2DF02C710098E3F5 /* UIApplication+Info.swift in Sources */,
 				C4CB609C2DF02C710098E3F5 /* UIColor+.swift in Sources */,
 				C4CB609D2DF02C710098E3F5 /* DevicesViewController2+EmptyDevicesPlaceholder.swift in Sources */,
 				C4CB609F2DF02C710098E3F5 /* ExportedImport.swift in Sources */,
-				C4CB60A02DF02C710098E3F5 /* SystemMessageViewController.swift in Sources */,
-				C4CB60A12DF02C710098E3F5 /* MessageCenterViewController.swift in Sources */,
 				C4CB60A22DF02C710098E3F5 /* RegionSelectionButton.swift in Sources */,
-				C4CB60A42DF02C710098E3F5 /* MessageCenterSubLevelViewController+TableViewCell.swift in Sources */,
 				C4CB60A52DF02C710098E3F5 /* FamilyViewControllerChildrenProtocol.swift in Sources */,
 				C4CB60A62DF02C710098E3F5 /* APNSSettingViewController.swift in Sources */,
 				C4CB60A72DF02C710098E3F5 /* KeyWindow.swift in Sources */,

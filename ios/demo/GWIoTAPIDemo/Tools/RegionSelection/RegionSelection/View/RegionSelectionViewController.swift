@@ -76,7 +76,7 @@ class RegionSelectionViewController: BaseViewController, ScrollBaseViewAndKeyboa
 
         self.title = String.localization.localized("AA0014", note: "国家/地区")
 
-        self.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
+        self.rq.setNavigationBarBackground(R.color.background_FFFFFF_white()!)
         self.view.backgroundColor = R.color.background_FFFFFF_white()
         
         self.view.addSubview(self.introduceLabel)

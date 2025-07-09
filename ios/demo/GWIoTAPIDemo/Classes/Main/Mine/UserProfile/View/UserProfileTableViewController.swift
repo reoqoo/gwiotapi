@@ -7,6 +7,7 @@
 
 import UIKit
 import RQCore
+import RQCoreUI
 
 extension UserProfileTableViewController {
     struct CellItem {

@@ -7,6 +7,7 @@
 
 import UIKit
 import IVAccountMgr
+import RQCore
 
 class CloseAccountPasswordInputViewController: BaseViewController, ScrollBaseViewAndKeyboardMatchable {
 
