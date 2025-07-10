@@ -15,6 +15,7 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerCompone
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/isLogin/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/is-login.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/login/#com.gw.gwiotapi.entities.AccountType#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/login.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/login/#com.gw.gwiotapi.entities.IUserAccessInfo/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/login.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/login/#com.gw.gwiotapi.entities.UserC2CInfo/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/login.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/logout/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/logout.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/modifyPassword/#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/modify-password.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/modifyUserInfo/#kotlin.String?#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/modify-user-info.html
@@ -748,6 +749,16 @@ $dokka.location:com.gw.gwiotapi.entities/User/User/#com.gw.gwiotapi.entities.Use
 $dokka.location:com.gw.gwiotapi.entities/User/isC2CLogin/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user/is-c2-c-login.html
 $dokka.location:com.gw.gwiotapi.entities/User/loginInfo/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user/login-info.html
 $dokka.location:com.gw.gwiotapi.entities/User/profileInfo/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user/profile-info.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/index.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/UserC2CInfo/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/-user-c2-c-info.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/accessId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/access-id.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/accessToken/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/access-token.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/area/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/area.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/expend/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/expend.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/expireTime/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/expire-time.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/regRegion/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/reg-region.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/terminalId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/terminal-id.html
+$dokka.location:com.gw.gwiotapi.entities/UserC2CInfo/userId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-c2-c-info/user-id.html
 $dokka.location:com.gw.gwiotapi.entities/UserLoginInfo///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-login-info/index.html
 $dokka.location:com.gw.gwiotapi.entities/UserLoginInfo/UserLoginInfo/#com.gw.gwiotapi.entities.IUserAccessInfo/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-login-info/-user-login-info.html
 $dokka.location:com.gw.gwiotapi.entities/UserLoginInfo/UserLoginInfo/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-user-login-info/-user-login-info.html
