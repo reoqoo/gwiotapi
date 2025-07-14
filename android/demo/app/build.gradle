@@ -36,6 +36,8 @@ android {
         buildConfigField("String", "USER_USER_ID", "\"${USER_USER_ID}\"")
         
         buildConfigField("String", "DEV_DEV_ID", "\"${DEV_DEV_ID}\"")
+        
+        buildConfigField("String", "TEST_QRCODE_VALUE", "\"${TEST_QRCODE_VALUE}\"")
     }
     buildFeatures {
         buildConfig true
@@ -97,8 +99,8 @@ dependencies {
 }
 
 dependencies {
-    implementation "com.gwell:gwiotapi:1.2.1.0"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.17") {
+    implementation "com.gwell:gwiotapi:1.2.2.0"
+    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.18") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')
         exclude(group: 'com.gwell', module: 'iotvideo-multiplatform')
@@ -109,7 +111,7 @@ dependencies {
     }
     
     
-    implementation "com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.12"
+    implementation "com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.13"
 
     implementation "com.google.firebase:firebase-messaging:24.0.0"
     implementation libs.androidx.core.ktx

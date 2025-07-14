@@ -74,6 +74,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun recognizeQRCode(view: View) {
+        scope.launch(Dispatchers.Main) {
+            val qrcodeValue = BuildConfig.TEST_QRCODE_VALUE
+            GWIoT.recognizeQRCode(qrcodeValue, true)
+        }
+    }
+
     fun openHome(view: View) {
         scope.launch {
             val devRet = GWIoT.queryDeviceCacheFirst(BuildConfig.DEV_DEV_ID)

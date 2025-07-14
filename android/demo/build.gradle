@@ -29,6 +29,8 @@ project.ext {
 
     DEV_DEV_ID = ""
     
+    TEST_QRCODE_VALUE = ""
+    
     if (propFile.exists()) {
         Properties properties = new Properties()
         InputStream inputStream = propFile.newDataInputStream()
@@ -51,5 +53,7 @@ project.ext {
         
         
         DEV_DEV_ID = properties.getProperty("DEV_DEV_ID")
+
+        TEST_QRCODE_VALUE = properties.getProperty("TEST_QRCODE_VALUE")
     }
 }
