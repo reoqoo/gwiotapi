@@ -8,14 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.gw.gwiotapi.GWIoT
-import com.gw.gwiotapi.components.GWPlugin
-import com.gw.gwiotapi.entities.AppConfig
 import com.gw.gwiotapi.entities.BindOptions
 import com.gw.gwiotapi.entities.GWResult
 import com.gw.gwiotapi.entities.IDevice
-import com.gw.gwiotapi.entities.IUserAccessInfo
-import com.gw.gwiotapi.entities.InitOptions
 import com.gw.gwiotapi.entities.OpenPluginOption
+import com.gw.gwiotapi.entities.UserC2CInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -49,15 +46,25 @@ class MainActivity : AppCompatActivity() {
 
     fun startLogin(view: View) {
         scope.launch {
-            val info = object : IUserAccessInfo {
-                override var accessId: String = BuildConfig.USER_ACCESS_ID
-                override var accessToken: String = BuildConfig.USER_ACCESS_TOKEN
-                override var area: String = BuildConfig.USER_AREA
-                override var expireTime: String = BuildConfig.USER_EXPIRE_TIME
-                override var regRegion: String = BuildConfig.USER_REG_REGION
-                override var terminalId: String = BuildConfig.USER_TERMINAL_ID
-                override var userId: String = BuildConfig.USER_USER_ID
-            }
+//            val info = object : IUserAccessInfo {
+//                override var accessId: String = BuildConfig.USER_ACCESS_ID
+//                override var accessToken: String = BuildConfig.USER_ACCESS_TOKEN
+//                override var area: String = BuildConfig.USER_AREA
+//                override var expireTime: String = BuildConfig.USER_EXPIRE_TIME
+//                override var regRegion: String = BuildConfig.USER_REG_REGION
+//                override var terminalId: String = BuildConfig.USER_TERMINAL_ID
+//                override var userId: String = BuildConfig.USER_USER_ID
+//            }
+//            GWIoT.login(info)
+            
+            val info = UserC2CInfo(
+                accessId = BuildConfig.USER_ACCESS_ID,
+                accessToken = BuildConfig.USER_ACCESS_TOKEN,
+                expireTime = BuildConfig.USER_EXPIRE_TIME,
+                terminalId = BuildConfig.USER_TERMINAL_ID,
+                expend = """{"area":"sg","regRegion":"US"}"""
+            )
+            
             GWIoT.login(info)
         }
     }
