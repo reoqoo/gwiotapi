@@ -100,7 +100,7 @@ dependencies {
 
 dependencies {
     implementation "com.gwell:gwiotapi:1.2.1.0"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.20") {
+    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.24") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')
         exclude(group: 'com.gwell', module: 'iotvideo-multiplatform')
@@ -109,7 +109,7 @@ dependencies {
         exclude(group: 'com.gwell', module: 'gwiotapi')
         exclude(group: 'com.tencentcs', module: 'txtraevoip')
     }
-    implementation("com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.17") {
+    implementation("com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.19") {
         exclude(group: 'com.gwell', module: 'gwiotapi')
     }
     
