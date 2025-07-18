@@ -171,10 +171,10 @@ class MineViewController: BaseTableViewController {
 
         // 是否需要显示云服务, 流量入口
         // 如果设备列表为空 或 user 是 SUPERVIP, "我的订单" 和 "我的卡券" 不需要显示
-        Publishers.CombineLatest4(DeviceManager.shared.$needShowVasEntrance, DeviceManager.shared.$needShow4GFluxEntrance, DeviceManager.shared.generateDevicesPublisher(), RQCore.Agent.shared.$loginInfo)
+        Publishers.CombineLatest4(DeviceManager.shared.$needShowVasEntrance, DeviceManager.shared.$needShow4GFluxEntrance, DeviceManager.shared.generateDevicesPublisher(), RQCore.Agent.shared.$profileInfo)
             .sink { [weak self] showVas, show4G, devicesFetchResult, currentUser in
                 let numOfDev = devicesFetchResult?.count ?? 0
-                let isSuperVip = currentUser?.isSuperVip_ ?? false
+                let isSuperVip = currentUser?.isSuperVip ?? false
                 let hide = numOfDev == 0 || isSuperVip
                 self?.reloadTableView(showVas: showVas, showFlux: show4G, hideMyTransactions: hide, hideMyTickets: hide)
             }.store(in: &self.anyCancellables)

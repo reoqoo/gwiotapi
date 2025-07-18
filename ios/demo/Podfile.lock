@@ -27,7 +27,7 @@ PODS:
   - FMDB/Core (2.7.12)
   - FMDB/standard (2.7.12):
     - FMDB/Core
-  - GWIoTKit/Core (1.1.8.0):
+  - GWIoTKit/Core (1.2.4):
     - AFNetworking
     - Codextended
     - CombineCocoa
@@ -53,7 +53,7 @@ PODS:
     - SSZipArchive
     - SwiftyJSON
     - Then
-  - GWIoTKit/RQIAPKit (1.1.8.0):
+  - GWIoTKit/RQIAPKit (1.2.4):
     - AFNetworking
     - Codextended
     - CombineCocoa
@@ -79,20 +79,20 @@ PODS:
     - SSZipArchive
     - SwiftyJSON
     - Then
-  - Kingfisher (8.4.0)
+  - Kingfisher (8.5.0)
   - lottie-ios (4.5.2)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.9)
   - Popover (1.3.0)
-  - QCloudCore (6.5.0):
-    - QCloudCore/Default (= 6.5.0)
-  - QCloudCore/Default (6.5.0):
-    - QCloudTrack/Beacon (= 6.5.0)
-  - QCloudCOSXML (6.5.0):
-    - QCloudCOSXML/Default (= 6.5.0)
-  - QCloudCOSXML/Default (6.5.0):
-    - QCloudCore (= 6.5.0)
-  - QCloudTrack/Beacon (6.5.0)
+  - QCloudCore (6.5.1):
+    - QCloudCore/Default (= 6.5.1)
+  - QCloudCore/Default (6.5.1):
+    - QCloudTrack/Beacon (= 6.5.1)
+  - QCloudCOSXML (6.5.1):
+    - QCloudCOSXML/Default (= 6.5.1)
+  - QCloudCOSXML/Default (6.5.1):
+    - QCloudCore (= 6.5.1)
+  - QCloudTrack/Beacon (6.5.1)
   - QTEventBus (0.4.1):
     - QTEventBus/Core (= 0.4.1)
   - QTEventBus/Core (0.4.1)
@@ -195,15 +195,15 @@ SPEC CHECKSUMS:
   CZImagePreviewer: a88c65afaaab475c0cbb95cd6a3404a746ffdb70
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
-  GWIoTKit: 84c711dbf8ee603632778251c7730df1e991043e
-  Kingfisher: b14cc47bbfa7a3c150dd12962ee9c86338545629
+  GWIoTKit: 59e6f1a9de9b9588583eef556468785b9614607f
+  Kingfisher: ff0d31a1f07bdff6a1ebb3ba08b8e6e567b6500c
   lottie-ios: 96784afc26ea031d3e2b6cae342a4b8915072489
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   Popover: 10e1d9528f81d9504df984b7b3f491292bc1822d
-  QCloudCore: 8681c29dc68d783d07209e7a6ebd8b9058ec73e8
-  QCloudCOSXML: 26ba1918f7126e650e70f091fee4760cca38038a
-  QCloudTrack: d4b780cfb3fddbfc9217ddf1f9ba72bfdf1a3b67
+  QCloudCore: 6f8c67b96448472d2c6a92b9cfe1bdb5abbb1798
+  QCloudCOSXML: 92f50a787b4e8d9a7cb6ea8e626775256b4840a7
+  QCloudTrack: 20b79388365b4c8ed150019c82a56f1569f237f8
   QTEventBus: ea42577d40303f11fb2392e1383fb5d4a7335609
   R.swift: f573269ca45b2ab066c082e363dd4c2b297b0d71
   ReactiveCocoa: 5d10386f0ce09f922006efbf784881c5fade27c5

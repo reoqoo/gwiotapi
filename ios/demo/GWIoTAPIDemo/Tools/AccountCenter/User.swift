@@ -100,6 +100,10 @@ class User: Codable {
     // 同步 APNS token
     func syncAPNSToken(_ apnsToken: String) {
         self.syncAPNSTokenObservable(apnsToken: apnsToken)
+            .catch({ err in
+                Fail(error: err).delay(for: 2, scheduler: DispatchQueue.main)
+            })
+            .retry(3)
             .sink(receiveCompletion: {
                 guard case let .failure(err) = $0 else { return }
                 logError("[AccountCenter] 同步 APNS Token 到服务器失败: ", err)
@@ -192,17 +196,20 @@ extension User {
     // MARK: 同步推送TOKEN
     private func syncAPNSTokenObservable(apnsToken: String) -> AnyPublisher<Void, Swift.Error> {
         let termId = self.basicInfo.terminalId
-        return Future { promise in
-            GWIoT.shared.uploadPushToken(termId: termId, token: apnsToken) { result, err in
-                let a = gwiot_handleCb(result, err)
-                if case .success = a {
-                    promise(.success(()))
-                }
-                if case .failure(let failure) = a {
-                    promise(.failure(failure))
+        return Deferred {
+            Future { promise in
+                GWIoT.shared.uploadPushToken(termId: termId, token: apnsToken) { result, err in
+                    let a = gwiot_handleCb(result, err)
+                    if case .success = a {
+                        promise(.success(()))
+                    }
+                    if case .failure(let failure) = a {
+                        promise(.failure(failure))
+                    }
                 }
             }
-        }.eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
 
     // MARK: 用户信息

@@ -74,8 +74,10 @@ class DevicesViewController2: BaseViewController {
 
         // emptyView 点击了新增设备按钮
         self.emptyView.addDeviceBtnOnClickObservable
-            .sink(receiveValue: {
-                GWIoT.shared.openBind(opts: BindOptions.init(qrCodeValue: nil)) { _, _ in }
+            .sink(receiveValue: { _ in
+                Task {
+                    try await QRCodeScanningHandler.shared.openScanningWithTitle(String.localization.localized("AA0049", note: "添加设备"), description: String.localization.localized("AA0062", note: "扫描设备机身二维码添加设备"))
+                }
             }).store(in: &self.anyCancellables)
     }
 

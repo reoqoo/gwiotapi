@@ -171,7 +171,7 @@ class FamilyViewController2: BaseViewController {
             let listView = PopoverListView.init(options: popoverOptions, items: [
                 .init(image: nil, title: String.localization.localized("AA0049", note: "添加设备"), handler: {
                     Task {
-                        try await GWIoT.shared.openBind(opts: .init(qrCodeValue: nil))
+                        try await QRCodeScanningHandler.shared.openScanningWithTitle(String.localization.localized("AA0049", note: "添加设备"), description: String.localization.localized("AA0062", note: "扫描设备机身二维码添加设备"))
                     }
                 }),
                 .init(image: nil, title: String.localization.localized("AA0050", note: "分享设备"), handler: {
@@ -180,7 +180,7 @@ class FamilyViewController2: BaseViewController {
                 }),
                 .init(image: nil, title: String.localization.localized("AA0051", note: "扫一扫"), handler: {
                     Task {
-                        try await GWIoT.shared.openScanQRCodePage()
+                        try await QRCodeScanningHandler.shared.openScanningWithTitle(String.localization.localized("AA0051", note: "扫一扫"), description: String.localization.localized("AA0176", note: "请扫描设备上的二维码或他人分享的二维码"))
                     }
                 })
             ], frame: .init(x: 0, y: 0, width: 128, height: 150), rowHeight: 50)

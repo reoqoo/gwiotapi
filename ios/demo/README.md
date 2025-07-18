@@ -52,7 +52,7 @@ example: `gw1234567890`
 | 1.1.5.0 | unrestricted |
 | 1.1.6.0 | unrestricted |
 | 1.1.8.0 | unrestricted |
-| 1.2.0.0 | unrestricted |
+| 1.2.0.0+ | unrestricted |
 
 ## Running Log
 ![公版App扫码打开debug模式.png](公版App扫码打开debug模式.png)

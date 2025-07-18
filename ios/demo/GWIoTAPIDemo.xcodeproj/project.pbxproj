@@ -12,6 +12,7 @@
 		C401679D2DF050FB0068335D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C401679C2DF050FB0068335D /* CoreAudio.framework */; };
 		C401679F2DF051060068335D /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C401679E2DF051060068335D /* VideoToolbox.framework */; };
 		C40167A32DF056630068335D /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40167A22DF056630068335D /* CoreAudioKit.framework */; };
+		C447CD422E2A3E88009E7E70 /* QRCodeScanningHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C447CD412E2A3E88009E7E70 /* QRCodeScanningHandler.swift */; };
 		C4CB5FED2DF02C710098E3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5E7A2DF02C710098E3F5 /* Assets.xcassets */; };
 		C4CB5FEE2DF02C710098E3F5 /* CountryCodeEN.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5E7C2DF02C710098E3F5 /* CountryCodeEN.plist */; };
 		C4CB5FEF2DF02C710098E3F5 /* deviceAddition_connecting.json in Resources */ = {isa = PBXBuildFile; fileRef = C4CB5E722DF02C710098E3F5 /* deviceAddition_connecting.json */; };
@@ -138,6 +139,7 @@
 		C401679E2DF051060068335D /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		C40167A02DF055A70068335D /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
 		C40167A22DF056630068335D /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		C447CD412E2A3E88009E7E70 /* QRCodeScanningHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanningHandler.swift; sourceTree = "<group>"; };
 		C478FB4E2D6705E100F12F02 /* GWIoTAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWIoTAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CB5E722DF02C710098E3F5 /* deviceAddition_connecting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deviceAddition_connecting.json; sourceTree = "<group>"; };
 		C4CB5E732DF02C710098E3F5 /* deviceAddition_deviceScanning.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deviceAddition_deviceScanning.json; sourceTree = "<group>"; };
@@ -1179,6 +1181,7 @@
 		C4CB5FE72DF02C710098E3F5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C447CD412E2A3E88009E7E70 /* QRCodeScanningHandler.swift */,
 				C4CB5F8F2DF02C710098E3F5 /* AccountCenter */,
 				C4CB5FAF2DF02C710098E3F5 /* Extensions */,
 				C4CB5FBF2DF02C710098E3F5 /* RegionSelection */,
@@ -1345,13 +1348,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1450,6 +1449,7 @@
 				C4CB60972DF02C710098E3F5 /* DeviceStatus+.swift in Sources */,
 				C4CB609A2DF02C710098E3F5 /* UserProfileTableViewController.swift in Sources */,
 				C4CB609B2DF02C710098E3F5 /* UIApplication+Info.swift in Sources */,
+				C447CD422E2A3E88009E7E70 /* QRCodeScanningHandler.swift in Sources */,
 				C4CB609C2DF02C710098E3F5 /* UIColor+.swift in Sources */,
 				C4CB609D2DF02C710098E3F5 /* DevicesViewController2+EmptyDevicesPlaceholder.swift in Sources */,
 				C4CB609F2DF02C710098E3F5 /* ExportedImport.swift in Sources */,
