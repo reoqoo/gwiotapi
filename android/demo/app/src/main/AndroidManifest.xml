@@ -11,7 +11,7 @@
         android:label="@string/demo_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GWIotDemo"
+        android:theme="@style/CustomDarkModeTheme"
         tools:replace="android:supportsRtl,android:allowBackup,android:theme,android:label"
         tools:targetApi="31">
         <activity
