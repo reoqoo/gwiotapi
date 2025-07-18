@@ -2,12 +2,13 @@ package com.gwell.gwiotdemo
 
 import android.app.Application
 import android.content.Context
-import com.gwell.gwiotdemo.BuildConfig
 import com.google.firebase.FirebaseApp
 import com.gw.gwiotapi.GWIoT
+import com.gw.gwiotapi.entities.AlbumConfig
 import com.gw.gwiotapi.entities.AppConfig
 import com.gw.gwiotapi.entities.InitOptions
 import dagger.hilt.android.HiltAndroidApp
+import java.io.File
 
 @HiltAndroidApp
 class App : Application() {
@@ -27,6 +28,13 @@ class App : Application() {
         )
         option.brandDomain = BuildConfig.GWIOT_BRAND_DOMAIN
         option.disableAccountService = true
+        val snapshotDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}ScreenShots"
+        val recordDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}RecordVideo"
+        option.albumConfig = AlbumConfig(
+            snapshotDir = snapshotDir,
+            recordDir = recordDir,
+            watermarkConfig = null
+        )
         GWIoT.initialize(option)
     }
 
