@@ -25,6 +25,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="startLogin2"
+        android:text="登录2" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="startNetConfig"
         android:text="拉起配网" />
 
@@ -47,4 +53,15 @@
         android:onClick="getDeviceList"
         android:text="获取设备列表" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getDeviceLastFramePath"
+        android:text="获取设备最后一帧图像保存路径" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="loginOut"
+        android:text="退出登录" />
 </LinearLayout>

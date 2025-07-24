@@ -176,4 +176,12 @@ device ?: throw RuntimeException("没有Device")
 GWIoT.openHome(OpenPluginOption(device = device))
 ```
 
+3.4 主题设置
+
+```xml
+<application
+    android:theme="@style/CustomDarkModeTheme">
+</application>
+```
+
 > 更多API的使用方法可查询[API Referfence](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)

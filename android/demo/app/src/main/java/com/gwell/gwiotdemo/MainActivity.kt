@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.gw.gwiotapi.GWIoT
-import com.gw.gwiotapi.entities.BindOptions
 import com.gw.gwiotapi.entities.GWResult
 import com.gw.gwiotapi.entities.IDevice
 import com.gw.gwiotapi.entities.OpenPluginOption
+import com.gw.gwiotapi.entities.PushNotification
+import com.gw.gwiotapi.entities.ScanQRCodeOptions
 import com.gw.gwiotapi.entities.UserC2CInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -33,30 +34,25 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // 设备列表改动
         GWIoT.deviceList.observe(this) { devList ->
             Log.i(TAG, "deviceList = $devList")
         }
+        // 用户信息改动（登录/信息改动）
         GWIoT.user.observe(this) { user ->
             Log.i(TAG, "user = $user")
         }
+        // 设备状态改变
         GWIoT.propsChanged.observe(this) { props ->
             Log.i(TAG, "propsChanged = $props")
         }
+        // 离线推送处理
+        GWIoT.receivePushNotification(PushNotification(intent = intent))
     }
 
     fun startLogin(view: View) {
         scope.launch {
-//            val info = object : IUserAccessInfo {
-//                override var accessId: String = BuildConfig.USER_ACCESS_ID
-//                override var accessToken: String = BuildConfig.USER_ACCESS_TOKEN
-//                override var area: String = BuildConfig.USER_AREA
-//                override var expireTime: String = BuildConfig.USER_EXPIRE_TIME
-//                override var regRegion: String = BuildConfig.USER_REG_REGION
-//                override var terminalId: String = BuildConfig.USER_TERMINAL_ID
-//                override var userId: String = BuildConfig.USER_USER_ID
-//            }
-//            GWIoT.login(info)
-            
+
             val info = UserC2CInfo(
                 accessId = BuildConfig.USER_ACCESS_ID,
                 accessToken = BuildConfig.USER_ACCESS_TOKEN,
@@ -64,20 +60,39 @@ class MainActivity : AppCompatActivity() {
                 terminalId = BuildConfig.USER_TERMINAL_ID,
                 expend = """{"area":"sg","regRegion":"US"}"""
             )
-            
+
             GWIoT.login(info)
+        }
+    }
+
+    fun startLogin2(view: View) {
+        scope.launch {
+            val info = UserC2CInfo(
+                accessId = BuildConfig.USER_ACCESS_ID,
+                accessToken = BuildConfig.USER_ACCESS_TOKEN,
+                expireTime = BuildConfig.USER_EXPIRE_TIME,
+                terminalId = BuildConfig.USER_TERMINAL_ID,
+                expend = """{"area":"sg","regRegion":"US"}"""
+            )
+
+            GWIoT.login(info)
+        }
+    }
+
+    fun loginOut(view: View) {
+        scope.launch {
+            GWIoT.logout()
         }
     }
 
     fun startNetConfig(view: View) {
         scope.launch(Dispatchers.Main) {
-            try {
-                val opt = BindOptions()
-                val ret = GWIoT.openBind(opt)
-                Log.i(TAG, "ret=$ret")
-            } catch (e: Exception) {
-                Log.i(TAG, "e=$e")
+            val opt = ScanQRCodeOptions()
+            opt.enableBuiltInHandling = true
+            val ret = GWIoT.openScanQRCodePage(opt) { type, close ->
+                Log.i(TAG, "startNetConfig.type=$type")
             }
+            Log.i(TAG, "ret=$ret")
         }
     }
 
@@ -108,6 +123,19 @@ class MainActivity : AppCompatActivity() {
             }
             val deviceList = listRet.data
             Log.i(TAG, "deviceList = $deviceList")
+        }
+    }
+
+    fun getDeviceLastFramePath(view: View) {
+        scope.launch {
+            val devResult = GWIoT.queryDeviceCacheFirst("devid")
+            if (devResult is GWResult.Success) {
+                val device = devResult.data
+                if (device != null) {
+                    val lastFramePath = GWIoT.getLastSnapshotPath(device)
+                    Log.i(TAG, "lastFramePath = $lastFramePath")
+                }
+            }
         }
     }
 }
