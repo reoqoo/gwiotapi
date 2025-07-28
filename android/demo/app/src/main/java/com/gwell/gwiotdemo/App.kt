@@ -1,5 +1,6 @@
 package com.gwell.gwiotdemo
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import com.google.firebase.FirebaseApp
@@ -25,6 +26,7 @@ class App : Application() {
                 appName = BuildConfig.GWIOT_APP_NAME,
                 cId = BuildConfig.GWIOT_CID,
             ),
+            mainActvityKlass = MainActivity::class.java as Class<Activity>,
         )
         option.brandDomain = BuildConfig.GWIOT_BRAND_DOMAIN
         option.disableAccountService = true

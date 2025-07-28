@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.i(TAG, "onCreate")
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -46,8 +46,12 @@ class MainActivity : AppCompatActivity() {
         GWIoT.propsChanged.observe(this) { props ->
             Log.i(TAG, "propsChanged = $props")
         }
+        Log.i(TAG, "intent = $intent")
+        this.initLogger()
         // 离线推送处理
-        GWIoT.receivePushNotification(PushNotification(intent = intent))
+        runOnUiThread {
+            GWIoT.receivePushNotification(PushNotification(intent = intent))
+        }
     }
 
     fun startLogin(view: View) {
