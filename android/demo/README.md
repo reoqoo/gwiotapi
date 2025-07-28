@@ -5,7 +5,7 @@ GWIot Demo项目，用于演示GWIot API的使用。
 
 ## 0.注意⚠️⚠️⚠️
 
-当前版本为 ```1.1.9.0``` 后续版本更新，当前Readme为此版本的适配方案，后续版本更新后，会实时更新到当前README文档，以及demo项目
+当前版本为 ```1.2.12.0``` 后续版本更新，当前Readme为此版本的适配方案，后续版本更新后，会实时更新到当前README文档，以及demo项目
 
 ## 1.配置
 
@@ -122,7 +122,7 @@ dependencies {
 
 override fun onCreate() {
     super.onCreate()
-    
+
     val option = InitOptions(
         app = this,
         versionName = BuildConfig.GWIOT_VERSION_NAME,
@@ -133,9 +133,17 @@ override fun onCreate() {
             appName = BuildConfig.GWIOT_APP_NAME,
             cId = BuildConfig.GWIOT_CID,
         ),
+        mainActvityKlass = MainActivity::class.java as Class<Activity>,
     )
     option.brandDomain = BuildConfig.GWIOT_BRAND_DOMAIN
     option.disableAccountService = true
+    val snapshotDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}ScreenShots"
+    val recordDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}RecordVideo"
+    option.albumConfig = AlbumConfig(
+        snapshotDir = snapshotDir,
+        recordDir = recordDir,
+        watermarkConfig = null
+    )
     GWIoT.initialize(option)
 }
 
@@ -146,15 +154,13 @@ override fun onCreate() {
 3.1 登录SDK
 
 ```kotlin
-val info = object : IUserAccessInfo {
-    override var accessId: String = "123"
-    override var accessToken: String = ""
-    override var area: String = ""
-    override var expireTime: String = ""
-    override var regRegion: String = ""
-    override var terminalId: String = ""
-    override var userId: String = ""
-}
+val info = UserC2CInfo(
+    accessId = TODO(),
+    accessToken = TODO(),
+    expireTime = TODO(),
+    terminalId = TODO(),
+    expend = TODO()
+)
 GWIoT.login(info)
 ```
 3.2 开启配网流程
@@ -182,6 +188,20 @@ GWIoT.openHome(OpenPluginOption(device = device))
 <application
     android:theme="@style/CustomDarkModeTheme">
 </application>
+```
+
+3.4 推送处理
+
+```kotlin
+class LauncherActivity : FragmentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // 离线推送处理
+        runOnUiThread {
+            GWIoT.receivePushNotification(PushNotification(intent = intent))
+        }
+    }
+}
+
 ```
 
 > 更多API的使用方法可查询[API Referfence](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)
