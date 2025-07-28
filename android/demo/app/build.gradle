@@ -109,7 +109,7 @@ dependencies {
         exclude(group: 'com.gwell', module: 'gwiotapi')
         exclude(group: 'com.tencentcs', module: 'txtraevoip')
     }
-    implementation("com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.33") {
+    implementation("com.reoqoo.gw_plugin_hub:main:google-release-01.05.25.0.34") {
         exclude(group: 'com.gwell', module: 'gwiotapi')
     }
     
