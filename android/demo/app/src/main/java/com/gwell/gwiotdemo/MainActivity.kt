@@ -42,6 +42,16 @@ class MainActivity : AppCompatActivity() {
         GWIoT.user.observe(this) { user ->
             Log.i(TAG, "user = $user")
         }
+        // 是否登录
+        GWIoT.isLogin.observeForever { isLogin: Boolean? ->
+            Log.i(TAG, "isLogin = $isLogin")
+            if (isLogin == true) {
+                runOnUiThread {
+                    // 离线推送处理
+                    GWIoT.receivePushNotification(PushNotification(intent = intent))
+                }
+            }
+        }
         // 设备状态改变
         GWIoT.propsChanged.observe(this) { props ->
             Log.i(TAG, "propsChanged = $props")
