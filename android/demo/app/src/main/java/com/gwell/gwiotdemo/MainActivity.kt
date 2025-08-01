@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import com.gw.gwiotapi.GWIoT
 import com.gw.gwiotapi.entities.GWResult
 import com.gw.gwiotapi.entities.IDevice
@@ -42,16 +43,17 @@ class MainActivity : AppCompatActivity() {
         GWIoT.user.observe(this) { user ->
             Log.i(TAG, "user = $user")
         }
-        // 是否登录
-        GWIoT.isLogin.observeForever { isLogin: Boolean? ->
-            Log.i(TAG, "isLogin = $isLogin")
-            if (isLogin == true) {
-                runOnUiThread {
-                    // 离线推送处理
+        // SDK初始化后解析推送消息
+        val oneObserver = object : Observer<Boolean?> {
+            override fun onChanged(value: Boolean?) {
+                GwellLogUtils.i(TAG, "parseOfflineMsg.onChanged=$value")
+                if (value == true) {
                     GWIoT.receivePushNotification(PushNotification(intent = intent))
+                    GWIoT.sdkInitFinish.removeObserver(this)
                 }
             }
         }
+        GWIoT.sdkInitFinish.observeForever(oneObserver)
         // 设备状态改变
         GWIoT.propsChanged.observe(this) { props ->
             Log.i(TAG, "propsChanged = $props")

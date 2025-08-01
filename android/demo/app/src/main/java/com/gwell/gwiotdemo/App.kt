@@ -7,15 +7,26 @@ import com.google.firebase.FirebaseApp
 import com.gw.gwiotapi.GWIoT
 import com.gw.gwiotapi.entities.AlbumConfig
 import com.gw.gwiotapi.entities.AppConfig
+import com.gw.gwiotapi.entities.AppTexts
 import com.gw.gwiotapi.entities.InitOptions
+import com.gw.gwiotapi.entities.Theme
+import com.gw.gwiotapi.entities.UIConfiguration
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import java.io.File
 
 @HiltAndroidApp
 class App : Application() {
+    private val scope by lazy { MainScope() }
     override fun onCreate() {
         super.onCreate()
-        
+        scope.launch {
+            init()
+        }
+    }
+
+    private suspend fun init() {
         val option = InitOptions(
             app = this,
             versionName = BuildConfig.GWIOT_VERSION_NAME,
@@ -38,6 +49,14 @@ class App : Application() {
             watermarkConfig = null
         )
         GWIoT.initialize(option)
+        GWIoT.setUIConfiguration(
+            UIConfiguration(
+                theme = Theme(),
+                texts = AppTexts(
+                    appNamePlaceHolder = this.getString(R.string.demo_app_name)
+                )
+            )
+        )
     }
 
     override fun attachBaseContext(base: Context?) {
