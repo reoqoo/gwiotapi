@@ -171,7 +171,7 @@ class FamilyViewController2: BaseViewController {
             let listView = PopoverListView.init(options: popoverOptions, items: [
                 .init(image: nil, title: String.localization.localized("AA0049", note: "添加设备"), handler: {
                     Task {
-                        try await QRCodeScanningHandler.shared.openScanningWithTitle(String.localization.localized("AA0049", note: "添加设备"), description: String.localization.localized("AA0062", note: "扫描设备机身二维码添加设备"))
+                        try await GWIoT.shared.openBindableProductList()
                     }
                 }),
                 .init(image: nil, title: String.localization.localized("AA0050", note: "分享设备"), handler: {

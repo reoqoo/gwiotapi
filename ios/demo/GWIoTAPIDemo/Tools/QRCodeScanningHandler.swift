@@ -12,11 +12,25 @@ import RQCoreUI
 class QRCodeScanningHandler {
     static let shared: QRCodeScanningHandler = .init()
 
-    private init() {}
+    private init() {
+        // 监听 bind 结果
+        GWPlugin.shared.bindEvents.observe(weakRef: self) { event in
+            guard let event = event else { return }
+            if let event = event as? BindEvent.BindCancelled {
+                
+            }
+            if let event = event as? BindEvent.BindFailed {
+                
+            }
+            if let event = event as? BindEvent.BindSuccess {
+                // 点击 "开始使用" 后, 会触发这里
+            }
+        }
+    }
 
     func openScanningWithTitle(_ title: String, description: String) async throws {
-        let opts = ScanQRCodeOptions(enableBuiltInHandling: true, title: title, description: description)
-        try await GWIoT.shared.openScanQRCodePage(opts: opts) { qrCodeType in
+        let opts = ScanQRCodeOptions(enableBuiltInHandling: true, title: title, descTitle: description)
+        try await GWIoT.shared.openScanQRCodePage(opts: opts) { qrCodeType, closeHandler in
             // 处理其他二维码
             if qrCodeType.qrCodeValue.contains("smarthome.hicloud.com") {
                 DispatchQueue.main.async {
@@ -42,7 +56,8 @@ class QRCodeScanningHandler {
             // 配网
             if let qrCodeType = qrCodeType as? QRCodeType.BindDevice {
                 Task {
-                    try await GWIoT.shared.openBind(opts: .init(qrCodeValue: qrCodeType.qrCodeValue))
+                    let _ = closeHandler()
+                    try await GWIoT.shared.openBind(qrCodeValue: qrCodeType.qrCodeValue)
                 }
                 return
             }
@@ -50,6 +65,7 @@ class QRCodeScanningHandler {
             // 分享
             if let qrCodeType = qrCodeType as? QRCodeType.ShareDevice {
                 Task {
+                    let _ = closeHandler()
                     try await GWIoT.shared.acceptShareDevice(qrCode: .init(deviceId: qrCodeType.deviceId, inviteCode: qrCodeType.inviteCode, permission: qrCodeType.permission, expireTime: qrCodeType.expireTime, pid: qrCodeType.pid, qrCodeValue: qrCodeType.qrCodeValue))
                 }
                 return

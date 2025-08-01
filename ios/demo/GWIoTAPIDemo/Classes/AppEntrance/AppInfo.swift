@@ -22,7 +22,7 @@ extension UIApplication {
 
         return .init(
             theme: Theme(colors: nil, icons: nil),
-            texts: AppTexts(appNamePlaceHolder: "")
+            texts: AppTexts(appNamePlaceHolder: "Defender ClearVu")
         )
 
     }()

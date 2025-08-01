@@ -46,13 +46,6 @@ class AboutReoqooViewController: BaseTableViewController {
         self.view = tableView
     }
 
-    lazy var internetContentProviderLable: UILabel = .init().then {
-        $0.text = "粤ICP备17085704号-19A"
-        $0.textColor = R.color.text_000000_38()
-        $0.font = .systemFont(ofSize: 12)
-        $0.textAlignment = .center
-    }
-
     lazy var dataSource: [CellItem] = [
         .init(title: String.localization.localized("AA0274", note: "版本更新"), handler: { [weak self] in
             UIApplication.shared.open(URL.AppStoreURL)
@@ -123,20 +116,6 @@ class AboutReoqooViewController: BaseTableViewController {
         self.tableViewHeader.snp.makeConstraints { make in
             make.width.equalTo(self.view.snp.width)
         }
-
-        self.tableView.addSubview(self.internetContentProviderLable)
-        self.internetContentProviderLable.snp.makeConstraints { make in
-            make.width.equalTo(self.view.snp.width)
-            make.height.equalTo(44)
-            make.bottom.equalTo(0)
-        }
-
-        self.tableView.publisher(for: \.contentSize).sink { [weak self] in
-            let height = $0.height
-            self?.internetContentProviderLable.snp.updateConstraints({ make in
-                make.bottom.equalTo(height + 12)
-            })
-        }.store(in: &self.anyCancellables)
 
         self.view.layoutIfNeeded()
     }

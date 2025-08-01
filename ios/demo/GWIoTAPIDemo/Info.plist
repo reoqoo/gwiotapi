@@ -2,18 +2,59 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>zhiduodev</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>gw+yourAPPID</string>
+				<string>huaweizhixuan-test.zhiduodev.com</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>payJumpBack</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zxiosvasapi.zhiduodev.com</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>HiLink</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>hilink</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>SensorsData.production</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sad996b0dc</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>reoqoo</string>
+			</array>
+		</dict>
+		<dict/>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
