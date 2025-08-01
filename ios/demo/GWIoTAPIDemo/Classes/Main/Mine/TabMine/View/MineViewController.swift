@@ -242,6 +242,7 @@ class MineViewController: BaseTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = R.color.background_FFFFFF_white()!
         if indexPath.section == 3 {
             self.setupCellStyle(cell: cell)
             cell.imageView?.image = self.cellItems[safe_: indexPath.row]?.image

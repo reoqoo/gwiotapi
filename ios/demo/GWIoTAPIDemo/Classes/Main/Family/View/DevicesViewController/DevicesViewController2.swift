@@ -279,11 +279,11 @@ extension DevicesViewController2 {
 
         let deviceId = device.deviceId
         let shareItem: PopoverListView.Item = .init(image: R.image.family_share(), title: String.localization.localized("AA0050", note: "分享设备"), handler: {
-            GWIoT.shared.queryDeviceListCacheFirst { devs, err in
-                switch gwiot_handleCb(devs, err) {
-                case .success(let devices):
-                    if let devs = devices as? [GWIoTApi.Device], let dev = devs.first(where: { $0.deviceId == deviceId }) {
-                        GWIoT.shared.openDevSharePage(opt: .init(device: dev), completionHandler: { _,_ in })
+            GWIoT.shared.queryDevice(deviceId: deviceId) { result, err in
+                switch gwiot_handleCb(result, err) {
+                case .success(let device):
+                    if let device = device {
+                        GWIoT.shared.openDevSharePage(opt: .init(device: device), completionHandler: { _,_ in })
                     }
                 case .failure(_):
                     break

@@ -59,6 +59,7 @@ class UserProfileTableViewController: BaseTableViewController {
         super.viewDidLoad()
 
         self.title = String.localization.localized("AA0275", note: "账户信息")
+        self.rq.setNavigationBarBackground(R.color.background_F2F3F6_thinGray()!)
 
         self.tableView.separatorColor = R.color.lineSeparator()
         self.tableView.separatorInset = .init(top: 0, left: 12, bottom: 0, right: 12)
@@ -80,7 +81,9 @@ class UserProfileTableViewController: BaseTableViewController {
         AccountCenter.shared.$currentUser.flatMap {
             $0?.$profileInfo.eraseToAnyPublisher() ?? Just<RQCore.ProfileInfo?>(nil).eraseToAnyPublisher()
         }.sink { [weak self] in
-            self?.headerImageView.kf.setImage(with: $0?.headUrl, placeholder: ReoqooImageLoadingPlaceholder())
+            if let headerURL = $0?.headUrl {
+                self?.headerImageView.kf.setImage(with: headerURL, placeholder: ReoqooImageLoadingPlaceholder())
+            }
         }.store(in: &self.anyCancellables)
         
         AccountCenter.shared.currentUser?.$profileInfo
@@ -114,6 +117,7 @@ class UserProfileTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = self.cellItems[indexPath.section][indexPath.row]
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.backgroundColor = R.color.background_FFFFFF_white()!
         cell.textLabel?.font = .systemFont(ofSize: 16)
         cell.textLabel?.textColor = R.color.text_000000_90()
         cell.textLabel?.text = item.title
