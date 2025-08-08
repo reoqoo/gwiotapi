@@ -25,12 +25,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startLogin2"
-        android:text="登录2" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:onClick="startNetConfig"
         android:text="拉起配网" />
 

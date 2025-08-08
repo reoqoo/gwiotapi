@@ -13,7 +13,6 @@ import com.gw.gwiotapi.entities.Theme
 import com.gw.gwiotapi.entities.UIConfiguration
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 import java.io.File
 
 @HiltAndroidApp
@@ -21,12 +20,10 @@ class App : Application() {
     private val scope by lazy { MainScope() }
     override fun onCreate() {
         super.onCreate()
-        scope.launch {
-            init()
-        }
+        init()
     }
 
-    private suspend fun init() {
+    private fun init() {
         val option = InitOptions(
             app = this,
             versionName = BuildConfig.GWIOT_VERSION_NAME,

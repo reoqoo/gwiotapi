@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         // SDK初始化后解析推送消息
         val oneObserver = object : Observer<Boolean?> {
             override fun onChanged(value: Boolean?) {
-                GwellLogUtils.i(TAG, "parseOfflineMsg.onChanged=$value")
+                Log.i(TAG, "parseOfflineMsg.onChanged=$value")
                 if (value == true) {
-                    GWIoT.receivePushNotification(PushNotification(intent = intent))
+                    GWIoT.clickPushNotification(PushNotification(intent = intent))
                     GWIoT.sdkInitFinish.removeObserver(this)
                 }
             }
