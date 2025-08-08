@@ -81,20 +81,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startLogin2(view: View) {
-        scope.launch {
-            val info = UserC2CInfo(
-                accessId = BuildConfig.USER_ACCESS_ID,
-                accessToken = BuildConfig.USER_ACCESS_TOKEN,
-                expireTime = BuildConfig.USER_EXPIRE_TIME,
-                terminalId = BuildConfig.USER_TERMINAL_ID,
-                expend = """{"area":"sg","regRegion":"US"}"""
-            )
-
-            GWIoT.login(info)
-        }
-    }
-
     fun loginOut(view: View) {
         scope.launch {
             GWIoT.logout()
