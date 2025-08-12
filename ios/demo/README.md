@@ -54,10 +54,4 @@ example: `gw1234567890`
 | 1.1.8.0 | unrestricted |
 | 1.2.0.0+ | unrestricted |
 
-## Running Log
-![公版App扫码打开debug模式.png](公版App扫码打开debug模式.png)
-Scanning QRCODE above, then opening the page below. 
-![IMG_2645.PNG](IMG_2645.PNG)
-![IMG_2646.PNG](IMG_2646.PNG)
-![IMG_2647.PNG](IMG_2647.PNG)
-You can find the logs here.
+
