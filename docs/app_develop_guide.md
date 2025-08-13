@@ -139,17 +139,43 @@ Android:
 ## 绑定设备
 GWIoT已经集成了添加绑定设备的UI组件，相关接口为`IBindComponent`，App可以直接调用进入。
 
-目前仅支持通过设备二维码进入绑定流程，
+目前支持多种方式进入绑定流程，
 
-如果App自行实现扫码并传入二维码字符串，则SDK内识别二维码内容进入绑定页面；
+### 用户选择产品进入绑定
+插件内实现了支持的产品列表页面，用户可选择产品进入绑定流程。
 
-如果不传，则SDK进入扫码页面。
+也可以通过SDK获取到支持的产品列表, 自行实现产品列表页面以及通过产品信息对象进入绑定流程。
 
-绑定成功会返回`IDevice`信息。
 ```kotlin
-val opts = BindOptions(qrcoeValue = null)
-val deviceResult = GWIoT.openBind(opts)
+// 直接进入产品列表页面
+GWIoT.openBindableProductList()
+
+// 获取缓存的产品列表
+val products = GWIoT.productList.value
+// 刷新产品列表
+GWIoT.queryProductList()
+
+// 通过产品信息对象进入绑定流程
+GWIoT.openBind(product)
 ```
+
+### 扫描二维码绑定
+
+扫描设备上的二维码进入绑定流程。
+
+SDK内置了扫码页面，也可以自行实现扫码功能，通过SDK接口识别二维码类型，自行设计后续交互。
+
+```kotlin
+// 直接进入扫码页面
+GWIoT.openScanQRCodePage()
+
+// 识别二维码内容
+GWIoT.recognizeQRCode(qrCodeValue, enableBuiltInHandling)
+
+// 判断是设备二维码后，通过二维码进入绑定
+GWIoT.openBind(qrCodeValue)
+```
+
 
 ## 设备管理
 设备管理相关接口为`IDevMangerComponent`，包含支持的产品列表、设备列表、设备详情等接口，每次查询后除了当前方法返回结果，同时也会更新相关的缓存List。
