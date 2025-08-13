@@ -98,11 +98,11 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.51"
 }
 
-def yooseeKitVersion = "google-release-6.33.0.0.23"
-def reoqooKitVersion = "google-release-01.05.25.0.45"
+def yooseeKitVersion = "google-release-6.33.0.0.27"
+def reoqooKitVersion = "google-release-01.05.25.0.48"
 
 dependencies {
-    implementation "com.gwell:gwiotapi:1.3.1.1"
+    implementation "com.gwell:gwiotapi:1.3.2.1"
     implementation("com.yoosee.gw_plugin_hub:impl_main:$yooseeKitVersion") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')

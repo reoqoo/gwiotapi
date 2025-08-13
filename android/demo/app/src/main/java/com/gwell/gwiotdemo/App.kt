@@ -8,6 +8,7 @@ import com.gw.gwiotapi.GWIoT
 import com.gw.gwiotapi.entities.AlbumConfig
 import com.gw.gwiotapi.entities.AppConfig
 import com.gw.gwiotapi.entities.AppTexts
+import com.gw.gwiotapi.entities.DeviceShareOption
 import com.gw.gwiotapi.entities.InitOptions
 import com.gw.gwiotapi.entities.Theme
 import com.gw.gwiotapi.entities.UIConfiguration
@@ -44,6 +45,10 @@ class App : Application() {
             snapshotDir = snapshotDir,
             recordDir = recordDir,
             watermarkConfig = null
+        )
+        // 设备分享的功能
+        option.deviceShareOptions = listOf(
+            DeviceShareOption.QRCode
         )
         GWIoT.initialize(option)
         GWIoT.setUIConfiguration(
