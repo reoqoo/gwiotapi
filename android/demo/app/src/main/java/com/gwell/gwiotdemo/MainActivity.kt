@@ -140,4 +140,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun openEvents(view: View) {
+        scope.launch {
+            val devResult = GWIoT.queryDeviceCacheFirst("devid")
+            if (devResult is GWResult.Success) {
+                val device = devResult.data
+                if (device != null) {
+                    val ret = GWIoT.openEventsPage(device)
+                    Log.i(TAG, "openEventsPage = $ret")
+                }
+            }
+        }
+    }
 }

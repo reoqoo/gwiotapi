@@ -58,4 +58,9 @@
         android:layout_height="wrap_content"
         android:onClick="loginOut"
         android:text="退出登录" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openEvents"
+        android:text="打开智能守护" />
 </LinearLayout>
