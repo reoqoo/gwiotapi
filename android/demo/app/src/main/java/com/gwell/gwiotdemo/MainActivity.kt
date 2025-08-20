@@ -153,4 +153,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun openShareManager(view: View) {
+        scope.launch {
+            GWIoT.openShareManagerPage()
+        }
+    }
 }

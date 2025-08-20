@@ -98,8 +98,8 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.51"
 }
 
-def yooseeKitVersion = "google-release-6.33.0.0.40"
-def reoqooKitVersion = "google-release-01.05.25.0.54"
+def yooseeKitVersion = "google-release-6.33.0.0.42"
+def reoqooKitVersion = "google-release-01.05.25.0.58"
 
 dependencies {
     implementation "com.gwell:gwiotapi:1.3.4.0"
