@@ -18,9 +18,6 @@ class AppEntranceManager {
     
     static let shared: AppEntranceManager = .init()
 
-    /// 在某些需求场景下, 仅仅对键盘显示/隐藏 事件监听以获取 keyboard frame 是不足够的, 如果键盘当前已经显示, 就取不到当前 frame 了, 所以设置此值供外部监听使用
-    @DidSetPublished private(set) var currentKeyboardStatus: KeyboardStatus = .init(frame: .zero, isShow: false)
-
     /// Application Status 发布者
     @DidSetPublished private(set) var applicationState: ApplicationState = .didFinishLaunching
 
@@ -30,9 +27,6 @@ class AppEntranceManager {
     var keyWindow: KeyWindow?
 
     private init() {
-        // 对 键盘 状态进行监听
-        self.bindingKeyboardStatusNotification()
-
         // 对 application state 进行监听
         self.bindingApplicaitonState()
 
@@ -93,24 +87,6 @@ class AppEntranceManager {
         Timer.publish(every: 1, on: .main, in: .common).autoconnect().first().sink { [weak self] _ in
             self?.presentUsageAgreementIfNeed()
         }.store(in: &self.anyCancellables)
-    }
-
-    // 对 键盘显示/隐藏 进行监听
-    private func bindingKeyboardStatusNotification() {
-        NotificationCenter.default
-            .publisher(for: UIApplication.keyboardWillShowNotification)
-            .sink(receiveValue: { [weak self] notification in
-                guard let keyboardFrame = notification.userInfo?[UIApplication.keyboardFrameEndUserInfoKey] as? CGRect,
-                      let self = self else { return }
-                self.currentKeyboardStatus = .init(frame: keyboardFrame, isShow: true)
-            }).store(in: &self.anyCancellables)
-
-        NotificationCenter.default.publisher(for: UIApplication.keyboardWillHideNotification)
-            .sink(receiveValue: { [weak self] notification in
-                guard let keyboardFrame = notification.userInfo?[UIApplication.keyboardFrameEndUserInfoKey] as? CGRect,
-                      let self = self else { return }
-                self.currentKeyboardStatus = .init(frame: keyboardFrame, isShow: false)
-            }).store(in: &self.anyCancellables)
     }
 
     // 对 app 状态进行绑定
