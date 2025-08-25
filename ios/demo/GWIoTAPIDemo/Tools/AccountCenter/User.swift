@@ -195,10 +195,9 @@ extension User {
 
     // MARK: 同步推送TOKEN
     private func syncAPNSTokenObservable(apnsToken: String) -> AnyPublisher<Void, Swift.Error> {
-        let termId = self.basicInfo.terminalId
         return Deferred {
             Future { promise in
-                GWIoT.shared.uploadPushToken(termId: termId, token: apnsToken) { result, err in
+                GWIoT.shared.uploadPushToken(token: apnsToken) { result, err in
                     let a = gwiot_handleCb(result, err)
                     if case .success = a {
                         promise(.success(()))
