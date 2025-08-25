@@ -40,6 +40,21 @@ example: `gw1234567890`
 
 5. Add `Background Modes`, `Push Notifications` to you App's `Signing & Capabilities`, and checkout the `Remote notification` if you need the remote notification function.  
 
+## Notification Service Extension
+Our Server supported the attachment notification pushing, it needs your app extension support.
+The struct of notification like below:
+```
+{
+	"aps":{
+		"alert":{
+			"title":"title","subtitle":"subtitle","body":"body"
+		}
+	},
+	"media-url":"https://img.imgdb.cn/item/606b15a98322e6675ccaa89e.jpg"
+}
+```
+About notification service extension, you can refer to `https://medium.com/@jpmtech/push-notification-service-extension-in-swift-b1a0b68051d6`, or see the `NotificationService.swift` in our iOS demo.
+
 ## Compatibility
 #### It should be noted that the sdk requires a specific version of xcode to be compiled normally. The following is the compatibility table
 
