@@ -81,6 +81,7 @@ class AccountCenter {
         self.currentUser = user
         // 注册远程推送
         UIApplication.shared.registerForRemoteNotifications()
+        // 异步触发, 避免 accessToken 未被正确赋值就调用了 updateUserProfileInfo 的方法
         DispatchQueue.main.async {
             // 使用户更新 profile info
             self.currentUser?.updateUserProfileInfo()
@@ -128,9 +129,11 @@ class AccountCenter {
 
     /// 监听账号被注销通知
     private func observerAccountDidClosed() {
-        NotificationCenter.default.publisher(for: User.accountHasBeenDeletedNotification).sink { [weak self] notification in
-            self?.userDidCloseAccount()
-        }.store(in: &self.anyCancellables)
+        NotificationCenter.default.publisher(for: IVNetwork.accountHasBeenDeletedNotificationName)
+            .merge(with: NotificationCenter.default.publisher(for: User.accountHasBeenDeletedNotification))
+            .sink { [weak self] notification in
+                self?.userDidCloseAccount()
+            }.store(in: &self.anyCancellables)
     }
 
     /// 监听账号密码被修改
@@ -144,7 +147,7 @@ class AccountCenter {
 
     /// 监听AccessToken过期
     private func observerAccessTokenDidExpired() {
-        NotificationCenter.default.publisher(for: User.accessTokenDidExpiredNotification).sink { [weak self] _ in
+        NotificationCenter.default.publisher(for: IVNetwork.accessTokenExpireNotificationName).sink { [weak self] _ in
             logInfo("[AccountCenter] 收到10026, AccessToken过期, 退出当前登录用户")
             self?.logoutCurrentUser()
         }.store(in: &self.anyCancellables)
@@ -424,10 +427,9 @@ extension AccountCenter {
     }
 
     private func logoutRequestPublisher() -> AnyPublisher<Void, Swift.Error> {
-        guard let terminalId = self.currentUser?.basicInfo.terminalId else { return Fail(error: (ReoqooError.generalError(reason: .optionalTypeUnwrapped))).eraseToAnyPublisher() }
         return Deferred {
             Future<(), Swift.Error> { promise in
-                RQApi.Api.logout(terminalId: terminalId) {
+                RQApi.Api.logout {
                     let res = ResponseHandler.responseHandling(jsonStr: $0, error: $1)
                     if case .success = res {
                         promise(.success(()))

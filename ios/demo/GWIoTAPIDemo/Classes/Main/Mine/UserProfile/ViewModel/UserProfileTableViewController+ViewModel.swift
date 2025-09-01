@@ -32,6 +32,11 @@ extension UserProfileTableViewController {
         func processEvent(_ event: Event) {
             switch event {
             case let .modifyUserInfo(header, nick, oldPassword, newPassword):
+                // 检查 昵称 是否包含了标点符号
+                if nick?.range(of: ".*\\p{P}.*", options: .regularExpression) != nil {
+                    self.status = .didCompleteModifyUserInfo(.failure(ReoqooError.accountError(reason: .nickNameContainInvalidCharacter)))
+                    return
+                }
                 // 检查 昵称 格式是否正确
                 AccountCenter.shared.currentUser?.modifyUserInfoPublisher(header: header, nick: nick, oldPassword: oldPassword, newPassword: newPassword)
                     .sink(receiveCompletion: { [weak self] in

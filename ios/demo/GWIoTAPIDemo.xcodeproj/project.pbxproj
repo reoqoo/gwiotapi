@@ -1270,8 +1270,6 @@
 			dependencies = (
 			);
 			name = NotificaitonServiceExtension;
-			packageProductDependencies = (
-			);
 			productName = NotificaitonServiceExtension;
 			productReference = C41AD5A52E5C060600382D0A /* NotificaitonServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1427,13 +1425,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
