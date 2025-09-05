@@ -8,12 +8,6 @@
 import Foundation
 
 extension AppEntranceManager {
-
-    // 键盘状态信息记录
-    struct KeyboardStatus {
-        let frame: CGRect
-        let isShow: Bool
-    }
     
     enum ApplicationState {
         case didEnterBackground

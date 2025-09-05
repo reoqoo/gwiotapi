@@ -12,8 +12,6 @@ import RQCore
 import RQApi
 
 extension User {
-    /// 审核期间此 user 提供给 apple 登录, 隐藏云服务入口
-    static var SUPERVIP_userId: String = ""
     /// 用户被注销通知
     static let accountHasBeenDeletedNotification: Notification.Name = .init(rawValue: "accountHasBeenDeletedNotification")
     /// accessToken 过期通知
@@ -30,9 +28,6 @@ class User: Codable {
     @DidSetPublished var basicInfo: RQCore.LoginInfo
     /// 用户信息 /app/user/infoQuery
     @DidSetPublished var profileInfo: RQCore.ProfileInfo?
-
-    /// 是否超级VIP
-    var isSuperVip: Bool { self.basicInfo.userId == User.SUPERVIP_userId }
 
     /// 该用户专属 UserDefaults
     lazy var userDefault: UserDefaults? = .init(suiteName: self.basicInfo.userId)
@@ -175,7 +170,7 @@ extension User {
     private func refreshTokenObservable() -> AnyPublisher<RefreshTokenResult, Swift.Error> {
         Deferred {
             Future { promise in
-                RQApi.Api.updateAccessToken(uniqueId: UIDevice.current.identifierForVendor?.uuidString) {
+                RQApi.Api.updateAccessToken {
                     let res = ResponseHandler.responseHandling(jsonStr: $0, error: $1)
                     if case let .success(json) = res {
                         guard let accessToken = json["data"]["accessToken"].string, let expireTime = json["data"]["expireTime"].double else {
@@ -195,10 +190,9 @@ extension User {
 
     // MARK: 同步推送TOKEN
     private func syncAPNSTokenObservable(apnsToken: String) -> AnyPublisher<Void, Swift.Error> {
-        let termId = self.basicInfo.terminalId
         return Deferred {
             Future { promise in
-                GWIoT.shared.uploadPushToken(termId: termId, token: apnsToken) { result, err in
+                GWIoT.shared.uploadPushToken(token: apnsToken) { result, err in
                     let a = gwiot_handleCb(result, err)
                     if case .success = a {
                         promise(.success(()))
@@ -208,8 +202,7 @@ extension User {
                     }
                 }
             }
-        }
-        .eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
 
     // MARK: 用户信息
@@ -237,7 +230,7 @@ extension User {
     func modifyUserInfoPublisher(header: String?, nick: String?, oldPassword: String?, newPassword: String?) -> AnyPublisher<ProfileInfo, Swift.Error> {
         Deferred {
             Future<Void, Swift.Error> { promise in
-                RQApi.Api.modifyUserInfo(header: header, nick: nick, oldPassword: oldPassword, newPassword: newPassword, uniqueId: UIDevice.current.identifierForVendor?.uuidString) {
+                RQApi.Api.modifyUserInfo(header: header, nick: nick, oldPassword: oldPassword, newPassword: newPassword) {
                     let res = ResponseHandler.responseHandling(jsonStr: $0, error: $1)
                     if case .success = res {
                         promise(.success(()))

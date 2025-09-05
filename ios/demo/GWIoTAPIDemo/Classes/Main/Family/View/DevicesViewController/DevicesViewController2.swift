@@ -92,7 +92,8 @@ class DevicesViewController2: BaseViewController {
 // MARK: FamilyViewControllerChildren
 extension DevicesViewController2: FamilyViewControllerChildren {
     func pullToRefresh(completion: (()->())?) {
-        DeviceManager.shared.requestDevices { _ in
+        Task {
+            try await GWIoT.shared.queryDeviceList()
             completion?()
         }
     }
@@ -293,10 +294,11 @@ extension DevicesViewController2 {
         let deleteItem: PopoverListView.Item = .init(image: R.image.family_delete(), title: String.localization.localized("AA0056", note: "删除设备"), handler: {
             let property = ReoqooPopupViewProperty()
             property.message = String.localization.localized("AA0173", note: "确定要删除设备吗？")
+            let devId = device.deviceId
             IVPopupView(property: property, actions: [
                 IVPopupAction(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), handler: {}),
                 IVPopupAction(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), handler: {
-                    DeviceManager.shared.deleteDevice(device, deleteOperationFrom: .app)
+                    Task { try await GWIoT.shared.unbindDevice(deviceId: devId) }
                 })]).show()
         })
 
