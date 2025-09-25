@@ -32,6 +32,8 @@ class UserProfileTableViewController: BaseTableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
 
+    weak var modifyNameAlert: AlertViewController?
+
     lazy var logoutButton: UIButton = .init(type: .custom).then {
         $0.setBackgroundColor(R.color.background_FFFFFF_white()!, for: .normal)
         $0.setBackgroundColor(R.color.background_000000_5()!, for: .highlighted)
@@ -59,11 +61,10 @@ class UserProfileTableViewController: BaseTableViewController {
         super.viewDidLoad()
 
         self.title = String.localization.localized("AA0275", note: "账户信息")
-        self.rq.setNavigationBarBackground(R.color.background_F2F3F6_thinGray()!)
 
         self.tableView.separatorColor = R.color.lineSeparator()
         self.tableView.separatorInset = .init(top: 0, left: 12, bottom: 0, right: 12)
-        self.tableView.tableHeaderView = .init(frame: .init(x: 0, y: 0, width: 0, height: 24))
+        self.tableView.tableHeaderView = .init(frame: .init(x: 0, y: 0, width: 0, height: 16))
 
         let footerView: UIView = .init()
         footerView.addSubview(self.logoutButton)
@@ -81,9 +82,8 @@ class UserProfileTableViewController: BaseTableViewController {
         AccountCenter.shared.$currentUser.flatMap {
             $0?.$profileInfo.eraseToAnyPublisher() ?? Just<RQCore.ProfileInfo?>(nil).eraseToAnyPublisher()
         }.sink { [weak self] in
-            if let headerURL = $0?.headUrl {
-                self?.headerImageView.kf.setImage(with: headerURL, placeholder: ReoqooImageLoadingPlaceholder())
-            }
+            guard let headerURL = $0?.headUrl else { return }
+            self?.headerImageView.kf.setImage(with: headerURL, placeholder: R.image.userHeaderDefault())
         }.store(in: &self.anyCancellables)
         
         AccountCenter.shared.currentUser?.$profileInfo
@@ -117,7 +117,6 @@ class UserProfileTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = self.cellItems[indexPath.section][indexPath.row]
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.backgroundColor = R.color.background_FFFFFF_white()!
         cell.textLabel?.font = .systemFont(ofSize: 16)
         cell.textLabel?.textColor = R.color.text_000000_90()
         cell.textLabel?.text = item.title
@@ -184,27 +183,25 @@ class UserProfileTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { 12 }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 { return 12 }
         return 0.1
     }
 
     // MARK: Helper
     func presentRenameAlert() {
-        let vc = ReoqooAlertViewController(alertTitle: .string(String.localization.localized("AA0286", note: "请输入昵称")),
-                                           input: [],
-                                           inputPlaceholder: [String.localization.localized("AA0286", note: "请输入昵称")],
-                                           inputLimit: 24,
-                                           inputLimitText: String.localization.localized("AA0289", note: "昵称必须少于24个字"),
-                                           actions: [
-                                            .init(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), font: .systemFont(ofSize: 16, weight: .medium))
-                                           ])
-        vc.property.position = .center
-        let okAction = IVPopupAction.init(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.text_link_4A68A6(), disableColor: R.color.text_link_4A68A6()!.withAlphaComponent(0.38), font: .systemFont(ofSize: 16, weight: .medium), autoDismiss: false) { [weak self, weak vc] in
-            MBProgressHUD.showLoadingHUD_DispatchOnMainThread(isMask: true, tag: 100)
-            self?.vm.processEvent(.modifyUserInfo(header: nil, nick: vc?.textFieldContents.first?.flatMap({ $0 }), oldPassword: nil, newPassword: nil))
-        }
-        vc.addAction(okAction)
-        self.present(vc, animated: true)
+        let toast = String.localization.localized("AA0289", note: "昵称必须少于24个字")
+        let alert = RQCoreUI.AlertViewController.init(title: String.localization.localized("AA0286", note: "请输入昵称"), content: nil, actions: [
+            .init(title: String.localization.localized("AA0059", note: "取消"), style: .cancel),
+            .init(title: String.localization.localized("AA0058", note: "确定"), style: .default, handler: { [weak self] _, alert in
+                MBProgressHUD.showLoadingHUD_DispatchOnMainThread(isMask: true, tag: 100)
+                self?.vm.processEvent(.modifyUserInfo(header: nil, nick: alert.textFields?.first?.text, oldPassword: nil, newPassword: nil))
+            })
+        ])
+        alert.addTextFiled(String.localization.localized("AA0286", note: "请输入昵称"), textFieldLimit: .init(limit: 24, limitWarning: toast), editingChangedHandler: { text, textField, alert in
+            guard let alert = alert as? AlertViewController else { return }
+            alert.actions.last?.enable = !text.isEmpty
+        })
+        self.modifyNameAlert = alert
+        self.present(alert, animated: true)
     }
 
     // 点击了手机号码
@@ -240,19 +237,19 @@ class UserProfileTableViewController: BaseTableViewController {
             MBProgressHUD.showHUD_DispatchOnMainThread(text: err.localizedDescription)
         }
         if case .success = result {
-            self.presentedViewController?.dismiss(animated: true)
+            self.modifyNameAlert?.dismiss(animated: true)
         }
     }
     
     // 弹出退出登录提示
     func presentLogoutAlert() {
-        let cancelAction: IVPopupAction = .init(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), font: .systemFont(ofSize: 16, weight: .medium))
-        let sureAction: IVPopupAction = .init(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), font: .systemFont(ofSize: 16, weight: .medium)) { [weak self] in
+        let cancelAction: RQCoreUI.AlertViewController.Action = .init(title: String.localization.localized("AA0059", note: "取消"), style: .cancel)
+        let sureAction: RQCoreUI.AlertViewController.Action = .init(title: String.localization.localized("AA0058", note: "确定"), style: .destructive, handler: { [weak self] _, alert in
             self?.logout()
-        }
-        let vc = ReoqooAlertViewController.init(alertContent: .string(String.localization.localized("AA0309", note: "确定退出登录吗？")), actions: [cancelAction, sureAction])
-        vc.property.messageAlign = .center
-        self.present(vc, animated: true)
+            alert.dismiss(animated: true)
+        })
+        let alert = RQCoreUI.AlertViewController.init(title: nil, content: .string(String.localization.localized("AA0309", note: "确定退出登录吗？")), actions: [cancelAction, sureAction])
+        self.present(alert, animated: true)
     }
 
     func logout() {

@@ -106,6 +106,15 @@ class RequestOneTimeCodeForBindingViewController: BaseViewController, ScrollBase
             make.leading.equalToSuperview().offset(28)
         }
 
+#if LAUNCH_XIAOTUN
+        self.scrollView.addSubview(self.accountInputView)
+        self.accountInputView.snp.makeConstraints { make in
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(52)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
+            make.height.equalTo(56)
+        }
+#else
         if self.bindType == .bindTelephone || self.bindType == .changeTelephone {
             self.scrollView.addSubview(self.regionSelectionButton)
             self.regionSelectionButton.snp.makeConstraints { make in
@@ -131,6 +140,7 @@ class RequestOneTimeCodeForBindingViewController: BaseViewController, ScrollBase
                 make.height.equalTo(56)
             }
         }
+#endif
 
         self.scrollView.addSubview(self.getOneTimeCodeButton)
         self.getOneTimeCodeButton.snp.makeConstraints { make in
@@ -159,7 +169,11 @@ class RequestOneTimeCodeForBindingViewController: BaseViewController, ScrollBase
         }).store(in: &self.anyCancellables)
 
         RegionInfoProvider.shared.$selectedRegion.sink(receiveValue: { [weak self] regionInfo in
-            self?.accountInputView.regionInfo = regionInfo
+            if self?.bindType == .bindEmail || self?.bindType == .changeEmail {
+                self?.accountInputView.regionInfo = nil
+            }else{
+                self?.accountInputView.regionInfo = regionInfo
+            }
         }).store(in: &self.anyCancellables)
 
         self.regionSelectionButton.tapPublisher.sink(receiveValue: { [weak self] _ in
@@ -194,7 +208,13 @@ extension RequestOneTimeCodeForBindingViewController {
         }
 
         guard let accountType = accountType else {
-            MBProgressHUD.showHUD_DispatchOnMainThread(text: String.localization.localized("AA0369", note: "请输入手机号或邮箱"))
+            // 判断错误类型, 弹出适当的提示语
+            if self.bindType == .bindEmail || self.bindType == .changeEmail {
+                MBProgressHUD.showHUD_DispatchOnMainThread(text: String.localization.localized("AA0267", note: "邮箱格式错误"))
+            }
+            if self.bindType == .bindTelephone || self.bindType == .changeTelephone {
+                MBProgressHUD.showHUD_DispatchOnMainThread(text: String.localization.localized("AA0266", note: "手机号格式错误"))
+            }
             return
         }
 

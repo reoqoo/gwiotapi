@@ -22,35 +22,26 @@ extension DevicesViewController2 {
                 guard let device = self.device else { return }
 
                 self.roleButton.setTitle(device.role.description, for: .normal)
-                self.roleButton.isHidden = device.role == .master
-                // yoosee设备 或 访客设备不显示 power键
-                self.powerButton.isHidden = device.role != .master || device.solution == .yoosee
-                self.cloudImageView.removeFromSuperview()
-                self.fourGImageView.removeFromSuperview()
 
                 device.publisher(\.remarkName, whenErrorOccur: "")
                     .sink { [weak self] name in
                         self?.nameLabel.text = name
                     }.store(in: &self.deviceInfoObserveAnyCancellables)
 
-                let solution = device.solution
-
                 // 监听设备状态 及 设备角色 以控制 UI 显示
                 // 监听设备服务的开通情况
-                Combine.Publishers.CombineLatest4(device.publisher(\.status, whenErrorOccur: .offline), device.publisher(\.role, whenErrorOccur: .master), device.publisher(\.vss, whenErrorOccur: nil), device.publisher(\.fourCard, whenErrorOccur: nil))
-                    .sink { [weak self] status, role, vss, fourCard in
-                        if vss?.isInvalidated == true { return }
-                        if fourCard?.isInvalidated == true { return }
-
-                        let isSupportVss = vss?.isSupport ?? false
-                        let isSupport4GFlux = fourCard?.isSupport ?? false
-
+                Combine.Publishers.CombineLatest3(
+                    device.publisher(\.status, whenErrorOccur: .offline),
+                    device.publisher(\.role, whenErrorOccur: .master),
+                    device.publisher(\.solution, whenErrorOccur: .reoqoo))
+                    .sink { [weak self] status, role, solution in
                         self?.statusDotLabel.backgroundColor = status.color
-                        self?.statusLabel.text = status.description + ((isSupportVss || isSupport4GFlux) ? "  |  " : "")
+                        self?.statusLabel.text = status.description
                         self?.powerButton.setBackgroundImage(status.image, for: .normal)
 
-                        // 如果设备状态是 在线 / 关机 / 在线, 隐藏开关机动画
-                        self?.powerButton.isHidden = !(status == .online || status == .offline || status == .shutdown) || role != .master || solution == .yoosee
+                        self?.roleButton.isHidden = role == .master
+                        // 如果设备状态是分享, yoosee, 开机中, 关机中隐藏开关机按钮
+                        self?.powerButton.isHidden = status == .turningOn || status == .turningOff || role == .shared || solution == .yoosee
                         self?.turnOnAnimationView.isHidden = status != .turningOn || role != .master
                         self?.turnOffAnimationView.isHidden = status != .turningOff || role != .master
 
@@ -60,22 +51,6 @@ extension DevicesViewController2 {
 
                         if status == .turningOn {
                             self?.turnOnAnimationView.play()
-                        }
-
-                        self?.isBuy4GFlux = fourCard?.isBuy4G ?? false
-                        if let support = fourCard?.isSupport, support, let fourGImageView = self?.fourGImageView {
-                            self?.gainIconsStackView.addArrangedSubview(fourGImageView)
-                            self?.fourGImageView.snp.makeConstraints { make in
-                                make.height.equalTo(18)
-                            }
-                        }
-
-                        self?.isBuyCloud = vss?.isBuyCloud ?? false
-                        if let support = vss?.isSupport, support, let cloudImageView = self?.cloudImageView {
-                            self?.gainIconsStackView.addArrangedSubview(cloudImageView)
-                            self?.cloudImageView.snp.makeConstraints { make in
-                                make.height.equalTo(18)
-                            }
                         }
                     }.store(in: &self.deviceInfoObserveAnyCancellables)
 
@@ -94,20 +69,6 @@ extension DevicesViewController2 {
 
         /// 设备在线状态
         private var status: RQCore.DeviceStatus = .offline
-
-        /// 是否已有生效的付费云存
-        private var isBuyCloud: Bool = false {
-            didSet {
-                self.cloudImageView.image = self.isBuyCloud ? R.image.family_cloud_on() : R.image.family_cloud_off()
-            }
-        }
-
-        /// 是否已有生效的付费流量
-        private var isBuy4GFlux: Bool = false {
-            didSet {
-                self.fourGImageView.image = self.isBuy4GFlux ? R.image.family_4G_on() : R.image.family_4G_off()
-            }
-        }
 
         /// 设备名称文本组件
         private lazy var nameLabel = UILabel().then {
@@ -140,18 +101,6 @@ extension DevicesViewController2 {
             $0.textAlignment = .left
             $0.textColor = R.color.text_000000_60()
         }
-
-        private lazy var gainIconsStackView: UIStackView = .init().then {
-            $0.axis = .horizontal
-            $0.alignment = .center
-            $0.spacing = 6
-        }
-
-        /// 设备云存状态图片组件
-        private lazy var cloudImageView = UIImageView()
-
-        /// 设备4G流量开通状态图片
-        private lazy var fourGImageView = UIImageView()
 
         /// 设备开关机按钮组件
         private lazy var powerButton = UIButton(type: .custom).then {
@@ -204,12 +153,6 @@ extension DevicesViewController2 {
                 make.top.equalTo(self.nameLabel.snp.bottom).offset(2)
                 make.left.equalTo(self.statusDotLabel.snp.right).offset(7)
                 make.height.equalTo(18)
-            }
-
-            self.contentView.addSubview(self.gainIconsStackView)
-            self.gainIconsStackView.snp.makeConstraints { make in
-                make.centerY.equalTo(self.statusLabel)
-                make.left.equalTo(self.statusLabel.snp.right)
             }
 
             self.contentView.addSubview(self.powerButton)

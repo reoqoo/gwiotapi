@@ -7,6 +7,7 @@
 
 import UIKit
 import RQCore
+import RQCoreUI
 
 class ModifyPasswordViewController: BaseViewController, ScrollBaseViewAndKeyboardMatchable {
 

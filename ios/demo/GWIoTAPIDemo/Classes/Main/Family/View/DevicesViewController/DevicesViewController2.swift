@@ -7,6 +7,7 @@
 
 import UIKit
 import RQCore
+import RQCoreUI
 import RQDeviceShared
 import GWIoTApi
 
@@ -15,7 +16,7 @@ class DevicesViewController2: BaseViewController {
     lazy var layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = self.cellMargin
     }
-
+    
     private let cellMargin: Double = 16
 
     lazy var collectionView = InfiltrateCollectionView(frame: .zero, collectionViewLayout: layout).then {
@@ -47,12 +48,12 @@ class DevicesViewController2: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
+        
         // 2024/2/22 用 EmptyDataSet 显示 emptyView 总是会偏移不居中, 所以不使用 EmptyDataSet 方案了
         self.view.addSubview(self.emptyView)
         self.emptyView.snp.makeConstraints { make in
@@ -93,7 +94,14 @@ class DevicesViewController2: BaseViewController {
 extension DevicesViewController2: FamilyViewControllerChildren {
     func pullToRefresh(completion: (()->())?) {
         Task {
-            try await GWIoT.shared.queryDeviceList()
+            let result = try await GWIoT.shared.queryDeviceList()
+            if case let .success(devs) = gwiot_swiftResult(of: result) {
+                if let devs = devs as? [GWIoTApi.Device] {
+                    for d in devs {
+                        try await GWIoT.shared.getIoTProps(device: d)
+                    }
+                }
+            }
             completion?()
         }
     }
@@ -242,37 +250,26 @@ extension DevicesViewController2: UICollectionViewDropDelegate {
 // MARK: Helper
 extension DevicesViewController2 {
     func presentTurningPowerAlert(_ deviceId: String, on: Bool) {
-        let property = ReoqooPopupViewProperty()
-        if on {
-            property.message = String.localization.localized("AA0061", note: "确定开启设备吗？")
-        } else {
-            property.message = String.localization.localized("AA0060", note: "确定关闭设备吗？")
-        }
-
-        let popupView = IVPopupView(property: property, actions: [
-            IVPopupAction(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), handler: {}),
-            IVPopupAction(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), handler: {
-
+        let title = on ? String.localization.localized("AA0061", note: "确定开启设备吗？") : String.localization.localized("AA0060", note: "确定关闭设备吗？")
+        let alert = RQCoreUI.AlertViewController.init(title: nil, content: .string(title), actions: [
+            .init(title: String.localization.localized("AA0059", note: "取消"), style: .cancel),
+            .init(title: String.localization.localized("AA0058", note: "确定"), style: .destructive, handler: { action, alert in
+                /// 执行开挂机
                 GWIoT.shared.queryDeviceListCacheFirst { devs, err in
                     switch gwiot_handleCb(devs, err) {
                     case .success(let devices):
                         if let devs = devices as? [GWIoTApi.Device], let dev = devs.first(where: { $0.deviceId == deviceId }) {
-
-                            GWIoT.shared.setPowerStatus(status: on, device: dev) {_,_ in
-
-                            }
+                            GWIoT.shared.setPowerStatus(status: on, device: dev) {_,_ in }
                         }
                     case .failure(_):
                         break
                     }
                 }
-
-
-
+                
+                alert.dismiss(animated: true)
             })
         ])
-
-        popupView.show()
+        self.present(alert, animated: true)
     }
 
     func longPress(device: DeviceEntity, cell: UICollectionViewCell) {
@@ -280,26 +277,16 @@ extension DevicesViewController2 {
 
         let deviceId = device.deviceId
         let shareItem: PopoverListView.Item = .init(image: R.image.family_share(), title: String.localization.localized("AA0050", note: "分享设备"), handler: {
-            GWIoT.shared.queryDevice(deviceId: deviceId) { result, err in
-                switch gwiot_handleCb(result, err) {
-                case .success(let device):
-                    if let device = device {
-                        GWIoT.shared.openDevSharePage(opt: .init(device: device), completionHandler: { _,_ in })
-                    }
-                case .failure(_):
-                    break
+            Task {
+                let result = try await GWIoT.shared.queryDevice(deviceId: deviceId)
+                if case let .success(dev) = gwiot_handleCb(result, nil), let dev = dev {
+                    try await GWIoT.shared.openDevSharePage(opt: .init(device: dev))
                 }
             }
         })
+        
         let deleteItem: PopoverListView.Item = .init(image: R.image.family_delete(), title: String.localization.localized("AA0056", note: "删除设备"), handler: {
-            let property = ReoqooPopupViewProperty()
-            property.message = String.localization.localized("AA0173", note: "确定要删除设备吗？")
-            let devId = device.deviceId
-            IVPopupView(property: property, actions: [
-                IVPopupAction(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), handler: {}),
-                IVPopupAction(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), handler: {
-                    Task { try await GWIoT.shared.unbindDevice(deviceId: devId) }
-                })]).show()
+            self.showDeleteDevAlert(device: device)
         })
 
         var items: [PopoverListView.Item] = []
@@ -310,6 +297,21 @@ extension DevicesViewController2 {
         listView.tableView.separatorInset = .init(top: 0, left: 48, bottom: 0, right: 16)
         listView.show(fromView: cell, inView: AppEntranceManager.shared.keyWindow!)
         self.longPressMenu = listView
+    }
+
+    /// 弹出删除设备 alert
+    func showDeleteDevAlert(device: RQCore.DeviceEntity) {
+        let content = String.localization.localized("AA0173", note: "确定要删除设备吗？")
+        let alert = RQCoreUI.AlertViewController.init(title: String.localization.localized("AA0056", note: "删除设备"), content: .string(content), actions: [
+            .init(title: String.localization.localized("AA0059", note: "取消"), style: .cancel),
+            .init(title: String.localization.localized("AA0058", note: "确定"), style: .destructive, handler: { action, alert in
+                Task {
+                    try await GWIoT.shared.unbindDevice(deviceId: device.deviceId)
+                }
+                alert.dismiss(animated: true)
+            })
+        ])
+        self.present(alert, animated: true)
     }
 
 }

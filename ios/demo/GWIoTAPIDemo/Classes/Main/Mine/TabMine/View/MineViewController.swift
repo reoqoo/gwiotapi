@@ -12,7 +12,6 @@ import RQCore
 import RQCoreUI
 import RQFirmwareUpgrade
 import RQIssueFeedback
-import RQMessageCenter
 
 extension MineViewController {
     enum EquityBtnType: Int {
@@ -71,9 +70,7 @@ class MineViewController: BaseTableViewController {
 
         let shareManagementBtn: ServiceButton = .init(title: String.localization.localized("AA0147", note: "共享管理"), image: R.image.mine_share()!)
         shareManagementBtn.tapPublisher.sink { [weak self] _ in
-            Task {
-                try await GWIoT.shared.openShareManagerPage()
-            }
+            GWIoT.shared.openShareManagerPage(completionHandler: { _, _ in })
         }.store(in: &self.anyCancellables)
 
         res.append(devicesUpgradeBtn)
@@ -122,16 +119,24 @@ class MineViewController: BaseTableViewController {
     })
 
     /// 帮助与反馈
-    lazy var cellItem_feedback: CellItem = .init(image: R.image.mine_feedback()!, title: String.localization.localized("AA0223", note: "帮助与反馈"), action: { [weak self] in
+    lazy var cellItem_feedback: CellItem = .init(image: R.image.mine_feedback()!, title: String.localization.localized("AA0605", note: "帮助与反馈"), action: { [weak self] in
         let vc = IssueFeedbackH5ViewController.init()
         self?.navigationController?.pushViewController(vc, animated: true)
     })
 
-    /// 关于reoqoo
-    lazy var cellItem_about: CellItem = .init(image: R.image.mine_about()!, title: String.localization.localized("AA0224", note: "关于reoqoo"), action: { [weak self] in
+#if LAUNCH_XIAOTUN
+    /// 关于小豚当家
+    lazy var cellItem_about: CellItem = .init(image: R.image.mine_about()!, title: String.localization.localized("AA0665", note: "关于") + String.localization.localized("AA0666", note: "小豚当家"), action: { [weak self] in
         let vc = AboutReoqooViewController.init()
         self?.navigationController?.pushViewController(vc, animated: true)
     })
+#else
+    /// 关于reoqoo
+    lazy var cellItem_about: CellItem = .init(image: R.image.mine_about()!, title: String.localization.localized("AA0665", note: "关于") + " " + String.localization.localized("AA0447", note: "reoqoo"), action: { [weak self] in
+        let vc = AboutReoqooViewController.init()
+        self?.navigationController?.pushViewController(vc, animated: true)
+    })
+#endif
 
     lazy var cellItems: [CellItem] = []
 
@@ -242,7 +247,6 @@ class MineViewController: BaseTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = R.color.background_FFFFFF_white()!
         if indexPath.section == 3 {
             self.setupCellStyle(cell: cell)
             cell.imageView?.image = self.cellItems[safe_: indexPath.row]?.image

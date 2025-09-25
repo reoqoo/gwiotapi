@@ -18,12 +18,14 @@ class BasicTabbarController: UITabBarController {
     var anyCancellables: Set<AnyCancellable> = []
 
     lazy var familyViewController: FamilyViewController2 = .init()
+    lazy var guardianViewController: GuardianViewController = .init()
     lazy var mineViewController: MineViewController = .fromStoryboard()
 
     override init(nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // 为确保这几个 child 的 navigationController 都是独立的, 所以 child 需要是 WrappedNavigationController 类型
         self.viewControllers = [WrappedNavigationController.init(rootViewController: self.familyViewController), 
+                                WrappedNavigationController.init(rootViewController: self.guardianViewController),
                                 WrappedNavigationController.init(rootViewController: self.mineViewController)]
     }
 

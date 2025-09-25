@@ -16,7 +16,7 @@ extension BasicTabbarController {
     /// 使 FamilyViewController / GuardianViewController / MineViewController 实例执行 push / pop 操作时, 执行 tabbarController.navigationController 的 push / pop 操作
     class WrappedNavigationController: BaseNavigationController {
 
-        let wrappableControllerClasses: [AnyClass] = [FamilyViewController2.self, MineViewController.self]
+        let wrappableControllerClasses: [AnyClass] = [FamilyViewController2.self, GuardianViewController.self, MineViewController.self]
 
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
             // 由于使用了 RTRootNavigationController, 所以 初始化时传入的 viewController 是 RTContainerController 类型

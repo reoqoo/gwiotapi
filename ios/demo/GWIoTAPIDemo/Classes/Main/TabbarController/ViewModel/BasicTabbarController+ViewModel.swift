@@ -8,7 +8,6 @@
 import Foundation
 import RQCore
 import RQDeviceAddition
-import GWIoTBridgeReoqooKit
 import IVAccountMgr
 
 extension BasicTabbarController {
@@ -33,7 +32,7 @@ extension BasicTabbarController {
                         self?.fetchH5Banner()
                     }
                 }).store(in: &self.anyCancellables)
-
+            
             // 监听设备绑定成功通知, 查询用户消息, 以弹出首绑推广H5
             NotificationCenter.default.publisher(for: RQDeviceAddition.Agent.didFinishBindNotification).sink { [weak self] _ in
                 self?.fetchH5Msg(ignoreDeviceFirstBind: false)

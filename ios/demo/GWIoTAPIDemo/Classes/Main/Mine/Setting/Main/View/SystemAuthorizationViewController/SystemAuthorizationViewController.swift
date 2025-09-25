@@ -41,7 +41,7 @@ class SystemAuthorizationViewController: BaseTableViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: String.init(describing: SettingViewController.AuthorizationStatusTableViewHeader.self)) as! SettingViewController.AuthorizationStatusTableViewHeader
-        header.label.text = String.localization.localized("AA0633", note: "为了向您提供更好的用户体验，reoqoo 会在特定场景下向您申请以下手机系统权限")
+        header.label.text = String.localization.localized("AA0633", note: "为了向您提供更好的用户体验，APP会在特定场景下向您申请以下手机系统权限")
         return header
     }
 

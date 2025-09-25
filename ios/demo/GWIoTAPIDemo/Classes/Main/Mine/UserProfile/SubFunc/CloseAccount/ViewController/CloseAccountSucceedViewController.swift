@@ -7,6 +7,7 @@
 
 import UIKit
 import RQCore
+import GWIoTApi
 
 class CloseAccountSucceedViewController: BaseViewController {
 

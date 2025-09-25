@@ -29,7 +29,7 @@ class QRCodeScanningHandler {
     }
 
     func openScanningWithTitle(_ title: String, description: String) async throws {
-        let opts = ScanQRCodeOptions(enableBuiltInHandling: true, title: title, descTitle: description)
+        let opts = ScanQRCodeOptions(enableBuiltInHandling: false, title: title, descTitle: description)
         try await GWIoT.shared.openScanQRCodePage(opts: opts) { qrCodeType, closeHandler in
             // 处理其他二维码
             if qrCodeType.qrCodeValue.contains("smarthome.hicloud.com") {

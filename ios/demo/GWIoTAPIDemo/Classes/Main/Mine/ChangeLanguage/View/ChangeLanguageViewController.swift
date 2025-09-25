@@ -18,7 +18,8 @@ extension ChangeLanguageViewController {
         }
 
         lazy var tick: UIImageView = .init().then {
-            $0.image = R.image.commonTick()
+            $0.tintColor = R.color.text_000000_90()
+            $0.image = R.image.commonTick()?.withRenderingMode(.alwaysTemplate)
             $0.isHidden = true
         }
 
@@ -95,6 +96,9 @@ class ChangeLanguageViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
 
+        self.tableView.tableHeaderView = UIView(frame: .init(x: 0, y: 0, width: 0.1, height: 0.1))
+        self.tableView.sectionHeaderHeight = 16
+
         // 保存按钮点击
         self.saveBarButtonItem.tapPublisher.sink(receiveValue: { [weak self] _ in
             guard let indexPath = self?.tableView.indexPathForSelectedRow else { return }
@@ -125,4 +129,6 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
             self.navigationItem.rightBarButtonItem = self.saveBarButtonItem
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { 16 }
 }

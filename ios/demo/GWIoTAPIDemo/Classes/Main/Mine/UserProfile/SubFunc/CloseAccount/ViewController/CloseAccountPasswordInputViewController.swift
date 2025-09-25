@@ -7,7 +7,7 @@
 
 import UIKit
 import IVAccountMgr
-import RQCore
+import RQCoreUI
 
 class CloseAccountPasswordInputViewController: BaseViewController, ScrollBaseViewAndKeyboardMatchable {
 
@@ -123,12 +123,14 @@ class CloseAccountPasswordInputViewController: BaseViewController, ScrollBaseVie
     }
 
     func presentWranningAlert() {
-        let vc = ReoqooAlertViewController(alertTitle: .string(String.localization.localized("AA0328", note: "您真的要注销账号吗？")), alertContent: .string(String.localization.localized("AA0329", note: "账号注销后，将清空所有信息和数据")))
-        vc.addAction(.init(title: String.localization.localized("AA0059", note: "取消"), style: .custom, color: R.color.text_link_4A68A6(), font: .systemFont(ofSize: 16, weight: .medium)))
-        vc.addAction(.init(title: String.localization.localized("AA0058", note: "确定"), style: .custom, color: R.color.button_destructive_FA2A2D(), font: .systemFont(ofSize: 16, weight: .medium), handler: { [weak self] in
-            self?.closeAccount()
-        }))
-        self.present(vc, animated: true)
+        let alert = RQCoreUI.AlertViewController.init(title: String.localization.localized("AA0328", note: "您真的要注销账号吗？"), content: .string(String.localization.localized("AA0329", note: "账号注销后，将清空所有信息和数据")), actions: [
+            .init(title: String.localization.localized("AA0059", note: "取消"), style: .cancel),
+            .init(title: String.localization.localized("AA0058", note: "确定"), style: .destructive, handler: { [weak self] _, alert in
+                alert.dismiss(animated: true)
+                self?.closeAccount()
+            })
+        ])
+        self.present(alert, animated: true)
     }
 
     // 发送注销请求

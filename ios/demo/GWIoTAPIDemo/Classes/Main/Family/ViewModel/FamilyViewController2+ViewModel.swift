@@ -7,7 +7,7 @@
 
 import Foundation
 import RQCore
-import GWIoTBridgeReoqooKit
+
 
 extension FamilyViewController2 {
     class ViewModel {
@@ -20,6 +20,12 @@ extension FamilyViewController2 {
 
         /// 供 View 监听, 以弹出 首页顶部Banner
         public let headerBannerSubject: PassthroughSubject<IVBBSMgr.Banner, Never> = .init()
+
+#if LAUNCH_XIAOTUN
+        /// 历史 device list 发布者
+        /// 获取旧小豚当家app的历史设备, 如果有, 就弹框提示用户去下载小豚云
+        public let historyDeviceListSubject: PassthroughSubject<[String], Never> = .init()
+#endif
 
         /// 供 View 监听, 以弹出 首页重要公告
         @DidSetPublished public var importantBannerItem: ImportantNoticeItem?
@@ -53,6 +59,15 @@ extension FamilyViewController2 {
                     default: break
                     }
                 }).store(in: &self.anyCancellables)
+
+            // 用户登录成功, 刷旧小豚当家的历史设备
+            RQCore.Agent.shared.$linkStatus.sink { [weak self] linkStatus in
+                guard linkStatus == .online else { return }
+#if LAUNCH_XIAOTUN
+                // 刷历史设备列表
+                self?.fetchHistoryDeviceList()
+#endif
+            }.store(in: &self.anyCancellables)
         }
 
         // 展示浮窗/顶部banner/重要
@@ -115,5 +130,21 @@ extension FamilyViewController2 {
             guard let tag = self.importantBannerItem?.tag else { return }
             RQCore.Agent.shared.ivBBSMgr.updateNoticeStatus(true, tag: tag) { jsonStr, err in }
         }
+
+#if LAUNCH_XIAOTUN
+        public func fetchHistoryDeviceList() {
+            RQCore.Agent.shared.ivAccountMgr.getHistoryDeviceList { [weak self] in
+                let result = RQCore.ResponseHandler.responseHandling(jsonStr: $0, error: $1)
+                guard case let .success(json) = result else { return }
+                let data = json["data"]
+                let isShowed = data["isShowed"].intValue
+                let deviceNames = data["list"].arrayValue.map({ $0["deviceName"].stringValue })
+                // 已经显示过了, 就不再重复显示
+                if isShowed == 1 { return }
+                if deviceNames.isEmpty { return }
+                self?.historyDeviceListSubject.send(deviceNames)
+            }
+        }
+#endif
     }
 }

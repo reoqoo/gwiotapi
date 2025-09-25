@@ -46,6 +46,16 @@ class AboutReoqooViewController: BaseTableViewController {
         self.view = tableView
     }
 
+    lazy var internetContentProviderLable: UILabel = .init().then {
+        $0.text = "粤ICP备17085704号-19A"
+        $0.textColor = R.color.text_000000_38()
+        $0.font = .systemFont(ofSize: 12)
+        $0.textAlignment = .center
+        $0.isUserInteractionEnabled = true
+    }
+
+    lazy var tapOnTnternetContentProviderLableGesture: UITapGestureRecognizer = .init()
+
     lazy var dataSource: [CellItem] = [
         .init(title: String.localization.localized("AA0274", note: "版本更新"), handler: { [weak self] in
             UIApplication.shared.open(URL.AppStoreURL)
@@ -64,7 +74,9 @@ class AboutReoqooViewController: BaseTableViewController {
 
 
     lazy var appNameLabel: UILabel = .init().then {
+#if LAUNCH_REOQOO
         $0.text = String.localization.localized("AA0447", note: "reoqoo")
+#endif
         $0.font = .systemFont(ofSize: 20, weight: .medium)
         $0.textColor = R.color.text_000000_90()
     }
@@ -85,7 +97,11 @@ class AboutReoqooViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = String.localization.localized("AA0224", note: "关于reoqoo")
+#if LAUNCH_XIAOTUN
+        self.title = String.localization.localized("AA0665", note: "关于") + String.localization.localized("AA0666", note: "小豚当家")
+#else
+        self.title = String.localization.localized("AA0665", note: "关于") + "reoqoo"
+#endif
 
         self.tableView.rowHeight = 56
         self.tableView.backgroundColor = R.color.background_F2F3F6_thinGray()
@@ -116,6 +132,29 @@ class AboutReoqooViewController: BaseTableViewController {
         self.tableViewHeader.snp.makeConstraints { make in
             make.width.equalTo(self.view.snp.width)
         }
+
+        self.tableView.addSubview(self.internetContentProviderLable)
+        self.internetContentProviderLable.snp.makeConstraints { make in
+            make.width.equalTo(self.view.snp.width)
+            make.height.equalTo(44)
+            make.bottom.equalTo(0)
+        }
+
+        self.internetContentProviderLable.addGestureRecognizer(self.tapOnTnternetContentProviderLableGesture)
+
+        self.tableView.publisher(for: \.contentSize).sink { [weak self] _ in
+            let safeAreaInsetsTop = (self?.tableView.safeAreaInsets.top ?? 0)
+            let safeAreaInsetsBottom = (self?.tableView.safeAreaInsets.bottom ?? 0)
+            let tableViewHeight = (self?.tableView.size.height ?? 0)
+            let height = tableViewHeight - safeAreaInsetsTop - safeAreaInsetsBottom
+            self?.internetContentProviderLable.snp.updateConstraints({ make in
+                make.bottom.equalTo(height + 12)
+            })
+        }.store(in: &self.anyCancellables)
+
+        self.tapOnTnternetContentProviderLableGesture.tapPublisher.sink { [weak self] _ in
+            UIApplication.shared.open(.init(string: "https://beian.miit.gov.cn")!)
+        }.store(in: &self.anyCancellables)
 
         self.view.layoutIfNeeded()
     }
