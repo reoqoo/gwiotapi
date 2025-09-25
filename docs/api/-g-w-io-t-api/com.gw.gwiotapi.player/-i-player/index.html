@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>IPlayer</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    GWIoTApi
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.4.4        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":shared/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":shared/commonMain"
+                                       data-filter=":shared/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    GWIoTApi
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.player/IPlayer///PointingToDeclaration//491975536">
+  <div class="breadcrumbs"><a href="../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../index.html">com.gw.gwiotapi.player</a><span class="delimiter">/</span><span class="current">IPlayer</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>IPlayer</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">IPlayer</a></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-i-live-player/index.html">ILivePlayer</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1808157732%2FProperties%2F491975536" anchor-label="connectState" id="1808157732%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="connect-state.html"><span>connect</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1808157732%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="connect-state.html">connectState</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.livedata/-live-data/index.html">LiveData</a><span class="token operator">&lt;</span><a href="../../com.gw.gwiotapi.player.constants/-connect-state/index.html">ConnectState</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">连接状态</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2092539418%2FProperties%2F491975536" anchor-label="deviceId" id="2092539418%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="device-id.html"><span>device</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2092539418%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="device-id.html">deviceId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="655533586%2FProperties%2F491975536" anchor-label="mute" id="655533586%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mute.html"><span><span>mute</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="655533586%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">var </span><a href="mute.html">mute</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">静音</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1937305217%2FProperties%2F491975536" anchor-label="playerState" id="-1937305217%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="player-state.html"><span>player</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1937305217%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="player-state.html">playerState</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.livedata/-live-data/index.html">LiveData</a><span class="token operator">&lt;</span><a href="../../com.gw.gwiotapi.player.constants/-player-state/index.html">PlayerState</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">播放状态</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="226378533%2FProperties%2F491975536" anchor-label="scalingMode" id="226378533%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="scaling-mode.html"><span>scaling</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="226378533%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">var </span><a href="scaling-mode.html">scalingMode</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.player.constants/-video-scaling-mode/index.html">VideoScalingMode</a></div><div class="brief "><p class="paragraph">视频缩放模式</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-878094225%2FProperties%2F491975536" anchor-label="videoView" id="-878094225%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="video-view.html"><span>video</span><wbr></wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-878094225%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="video-view.html">videoView</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.player.entities/-player-view/index.html">PlayerView</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="115137592%2FProperties%2F491975536" anchor-label="videoViews" id="115137592%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="video-views.html"><span>video</span><wbr></wbr><span><span>Views</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="115137592%2FProperties%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="video-views.html">videoViews</a><span class="token operator">: </span><a href="../../com.gw.gwiotapi.livedata/-live-data/index.html">LiveData</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.gw.gwiotapi.player.entities/-player-view/index.html">PlayerView</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-161617159%2FFunctions%2F491975536" anchor-label="getError" id="-161617159%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-error.html"><span>get</span><wbr></wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-161617159%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="get-error.html"><span class="token function">getError</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-error/index.html">GWError</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="262099287%2FFunctions%2F491975536" anchor-label="play" id="262099287%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="play.html"><span><span>play</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="262099287%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="play.html"><span class="token function">play</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="602028105%2FFunctions%2F491975536" anchor-label="stop" id="602028105%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="stop.html"><span><span>stop</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="602028105%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="stop.html"><span class="token function">stop</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>Copyright © 2025 Gwelltimes. All rights reserved.</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

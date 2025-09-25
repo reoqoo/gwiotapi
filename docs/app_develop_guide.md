@@ -133,7 +133,43 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 Android:
     
 ```kotlin
-// Android端SDK内部处理暂时忽略
+
+// 点击通知
+
+class SplashActivity : AppCompatActivity() {
+    onCreate() {
+        ...
+        val oneObserver = object : Observer<Boolean?> {
+            override fun onChanged(value: Boolean?) {
+                if (value == true) {
+                    GWIoT.clickPushNotification(PushNotification(intent = intent))
+                    GWIoT.sdkInitFinish.removeObserver(this)
+                }
+            }
+        }
+        GWIoT.sdkInitFinish.observeForever(oneObserver)
+    }
+}
+
+
+
+// 收到通知
+
+class SplashActivity : AppCompatActivity() {
+    onCreate() {
+        ...
+        val oneObserver = object : Observer<Boolean?> {
+            override fun onChanged(value: Boolean?) {
+                if (value == true) {
+                    GWIoT.receivePushNotification(PushNotification(intent = intent))
+                    GWIoT.sdkInitFinish.removeObserver(this)
+                }
+            }
+        }
+        GWIoT.sdkInitFinish.observeForever(oneObserver)
+    }
+}
+
 ```
 
 ## 绑定设备

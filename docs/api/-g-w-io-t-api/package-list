@@ -4,11 +4,17 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform.impl////PointingToDecl
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl//productInfo/com.gw.gwiotapi.entities.Device#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/product-info.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotCloudPageComponet///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-cloud-page-componet/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotCloudPageComponet/openCloudPage/#com.gw.gwiotapi.entities.IDevice?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-cloud-page-componet/open-cloud-page.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotMultiLiveComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-multi-live-component/index.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotMultiLiveComponent/openMultiLivePage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-multi-live-component/open-multi-live-page.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent/openScanQRCodePage/#com.gw.gwiotapi.entities.ScanQRCodeOptions#kotlin.Function2[com.gw.gwiotapi.entities.QRCodeType,kotlin.Function0[kotlin.Unit],kotlin.Unit]?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/open-scan-q-r-code-page.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotQRCodeComponent/recognizeQRCode/#kotlin.String#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-q-r-code-component/recognize-q-r-code.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotTrafficPageComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-traffic-page-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWIotTrafficPageComponent/openTrafficPage/#com.gw.gwiotapi.entities.IDevice?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-iot-traffic-page-component/open-traffic-page.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWPhoneContentComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-phone-content-component/index.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWPhoneContentComponent/phoneUniqueId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-phone-content-component/phone-unique-id.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWPlayerComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-player-component/index.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform.impl/GWPlayerComponent/getLivePlayer/#com.gw.gwiotapi.entities.LivePlayerOption/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform.impl/-g-w-player-component/get-live-player.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/accountEvent/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/account-event.html
@@ -20,6 +26,7 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerCompone
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/modifyPassword/#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/modify-password.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/modifyUserInfo/#kotlin.String?#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/modify-user-info.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/refreshUserInfo/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/refresh-user-info.html
+$dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/uploadPushToken/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/upload-push-token.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountManagerComponent/user/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/user.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountRegisterComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-register-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IAccountRegisterComponent/querySupportedSmsRegisterCountryCodes/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-account-register-component/query-supported-sms-register-country-codes.html
@@ -47,7 +54,6 @@ $dokka.location:com.gw.gwiotapi.components.cross_platform/IHostConfigComponent/h
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IHttpServiceComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-http-service-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IHttpServiceComponent/queryDefaultAvatarList/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-http-service-component/query-default-avatar-list.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IHttpServiceComponent/unbindDevice/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-http-service-component/unbind-device.html
-$dokka.location:com.gw.gwiotapi.components.cross_platform/IHttpServiceComponent/uploadPushToken/#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-http-service-component/upload-push-token.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IMessageCenterComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IMessageCenterComponent/queryUnreadCount/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/query-unread-count.html
 $dokka.location:com.gw.gwiotapi.components.cross_platform/IMessageCenterComponent/unreadCount/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/unread-count.html
@@ -105,24 +111,34 @@ $dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/sendSmsCode
 $dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/unbindDevice/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/unbind-device.html
 $dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/unregister/#kotlin.String#kotlin.String?#kotlin.String#kotlin.Int#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/unregister.html
 $dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/updateMessageRead/#kotlin.String?#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/update-message-read.html
-$dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/uploadPushToken/#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/upload-push-token.html
+$dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/uploadPushToken/#kotlin.String#kotlin.String#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/upload-push-token.html
 $dokka.location:com.gw.gwiotapi.components.sub/IHttpRequestComponent/verifyCode/#kotlin.String#kotlin.Int/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-http-request-component/verify-code.html
 $dokka.location:com.gw.gwiotapi.components.sub/IHumanVerificationComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-human-verification-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IHumanVerificationComponent/startHumanVerification/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-human-verification-component/start-human-verification.html
 $dokka.location:com.gw.gwiotapi.components.sub/IInitializeComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-initialize-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IInitializeComponent/initialize/#com.gw.gwiotapi.entities.InitOptions/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-initialize-component/initialize.html
+$dokka.location:com.gw.gwiotapi.components.sub/IInitializeComponent/initializeAsync/#com.gw.gwiotapi.entities.InitOptions/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-initialize-component/initialize-async.html
+$dokka.location:com.gw.gwiotapi.components.sub/IInitializeDispatcherComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-initialize-dispatcher-component/index.html
+$dokka.location:com.gw.gwiotapi.components.sub/IInitializeDispatcherComponent/initialize/#com.gw.gwiotapi.entities.InitOptions/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-initialize-dispatcher-component/initialize.html
 $dokka.location:com.gw.gwiotapi.components.sub/ILanguageConfigComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-language-config-component/index.html
-$dokka.location:com.gw.gwiotapi.components.sub/ILanguageConfigComponent/setLanguage/#com.gw.gwiotapi.entities.LanguageCode/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-language-config-component/set-language.html
+$dokka.location:com.gw.gwiotapi.components.sub/ILanguageConfigComponent/setLanguage/#com.gw.gwiotapi.entities.LanguageCode?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-language-config-component/set-language.html
 $dokka.location:com.gw.gwiotapi.components.sub/ILogOutputComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-log-output-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/ILogOutputComponent/log/#com.gw.gwiotapi.entities.LogLevel#kotlin.String#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-log-output-component/log.html
 $dokka.location:com.gw.gwiotapi.components.sub/IMessageCenterPageComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-message-center-page-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IMessageCenterPageComponent/openMessageCenterPage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-message-center-page-component/open-message-center-page.html
+$dokka.location:com.gw.gwiotapi.components.sub/IMultiLiveComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-multi-live-component/index.html
+$dokka.location:com.gw.gwiotapi.components.sub/IMultiLiveComponent/openMultiLivePage/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-multi-live-component/open-multi-live-page.html
 $dokka.location:com.gw.gwiotapi.components.sub/IOpenHelperPageComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-open-helper-page-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IOpenHelperPageComponent/openHelperPage/#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-open-helper-page-component/open-helper-page.html
+$dokka.location:com.gw.gwiotapi.components.sub/IPhoneContentComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-phone-content-component/index.html
+$dokka.location:com.gw.gwiotapi.components.sub/IPhoneContentComponent/phoneUniqueId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-phone-content-component/phone-unique-id.html
+$dokka.location:com.gw.gwiotapi.components.sub/IPlayerComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-player-component/index.html
+$dokka.location:com.gw.gwiotapi.components.sub/IPlayerComponent/getLivePlayer/#com.gw.gwiotapi.entities.LivePlayerOption/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-player-component/get-live-player.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/index.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/getLastSnapshotPath/#com.gw.gwiotapi.entities.IDevice/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/get-last-snapshot-path.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/openDevSharePage/#com.gw.gwiotapi.entities.DevShareOption/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/open-dev-share-page.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/openDeviceInfoPage/#com.gw.gwiotapi.entities.IDevice/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/open-device-info-page.html
+$dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/openEventsPage/#com.gw.gwiotapi.entities.IDevice/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/open-events-page.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/openHome/#com.gw.gwiotapi.entities.OpenPluginOption/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/open-home.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPluginComponent/openPlayback/#com.gw.gwiotapi.entities.PlaybackOption/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-plugin-component/open-playback.html
 $dokka.location:com.gw.gwiotapi.components.sub/IPropComponent///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.components.sub/-i-prop-component/index.html
@@ -373,6 +389,12 @@ $dokka.location:com.gw.gwiotapi.entities/Device/relation/#/PointingToDeclaration
 $dokka.location:com.gw.gwiotapi.entities/Device/remarkName/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device/remark-name.html
 $dokka.location:com.gw.gwiotapi.entities/Device/solution/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device/solution.html
 $dokka.location:com.gw.gwiotapi.entities/Device/vss/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device/vss.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption.Account///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/-account/index.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption.Account/Account/#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/-account/-account.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption.Account/phone/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/-account/phone.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption.Account/userId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/-account/user-id.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption.QRCode///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/-q-r-code/index.html
+$dokka.location:com.gw.gwiotapi.entities/DeviceShareOption///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-device-share-option/index.html
 $dokka.location:com.gw.gwiotapi.entities/GWError///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-g-w-error/index.html
 $dokka.location:com.gw.gwiotapi.entities/GWError/GWError/#[Error type: Unresolved type for NSError]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-g-w-error/-g-w-error.html
 $dokka.location:com.gw.gwiotapi.entities/GWError/GWError/#kotlin.String#[Error type: Unresolved type for Reason]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-g-w-error/-g-w-error.html
@@ -450,11 +472,14 @@ $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/InitCommOptions/#com.gw
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/albumConfig/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/album-config.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/appConfig/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/app-config.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/brandDomain/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/brand-domain.html
+$dokka.location:com.gw.gwiotapi.entities/InitCommOptions/deviceShareOptions/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/device-share-options.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/disableAccountService/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/disable-account-service.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/disableMultiLiveView/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/disable-multi-live-view.html
+$dokka.location:com.gw.gwiotapi.entities/InitCommOptions/disableMultipleLogins/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/disable-multiple-logins.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/feedbackEmail/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/feedback-email.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/hostConfig/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/host-config.html
 $dokka.location:com.gw.gwiotapi.entities/InitCommOptions/language/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/language.html
+$dokka.location:com.gw.gwiotapi.entities/InitCommOptions/soundOnByDefault/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-comm-options/sound-on-by-default.html
 $dokka.location:com.gw.gwiotapi.entities/InitOptions///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-options/index.html
 $dokka.location:com.gw.gwiotapi.entities/InitOptions/InitOptions/#[Error type: Unresolved type for AppConfig]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-options/-init-options.html
 $dokka.location:com.gw.gwiotapi.entities/InitOptions/InitOptions/#android.app.Application#java.lang.Class[android.app.Activity]#kotlin.String#kotlin.Int#com.gw.gwiotapi.entities.AppConfig/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-init-options/-init-options.html
@@ -518,6 +543,16 @@ $dokka.location:com.gw.gwiotapi.entities/LanguageCode/entries/#/PointingToDeclar
 $dokka.location:com.gw.gwiotapi.entities/LanguageCode/isoCode/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-language-code/iso-code.html
 $dokka.location:com.gw.gwiotapi.entities/LanguageCode/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-language-code/value-of.html
 $dokka.location:com.gw.gwiotapi.entities/LanguageCode/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-language-code/values.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerCommOption///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-comm-option/index.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerCommOption/LivePlayerCommOption/#com.gw.gwiotapi.entities.IDevice/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-comm-option/-live-player-comm-option.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerCommOption/definition/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-comm-option/definition.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerCommOption/device/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-comm-option/device.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/index.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption/LivePlayerOption/#[Error type: Unresolved type for IDevice]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/-live-player-option.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption/LivePlayerOption/#com.gw.gwiotapi.entities.IDevice#android.view.LayoutInflater#android.view.ViewGroup?#kotlin.Boolean/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/-live-player-option.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption/attachToRoot/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/attach-to-root.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption/inflater/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/inflater.html
+$dokka.location:com.gw.gwiotapi.entities/LivePlayerOption/parent/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-live-player-option/parent.html
 $dokka.location:com.gw.gwiotapi.entities/LogLevel.ASSERT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.entities/-log-level/-a-s-s-e-r-t/index.html
 $dokka.location:com.gw.gwiotapi.entities/LogLevel.DEBUG///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.entities/-log-level/-d-e-b-u-g/index.html
 $dokka.location:com.gw.gwiotapi.entities/LogLevel.ERROR///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.entities/-log-level/-e-r-r-o-r/index.html
@@ -699,8 +734,9 @@ $dokka.location:com.gw.gwiotapi.entities/PushMsg/pushData/#/PointingToDeclaratio
 $dokka.location:com.gw.gwiotapi.entities/PushMsg/pushType/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-msg/push-type.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/index.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/PushNotification/#[Error type: Unresolved type for NSDictionary]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/-push-notification.html
-$dokka.location:com.gw.gwiotapi.entities/PushNotification/PushNotification/#android.content.Intent?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/-push-notification.html
+$dokka.location:com.gw.gwiotapi.entities/PushNotification/PushNotification/#android.content.Intent?#kotlin.String?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/-push-notification.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/intent/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/intent.html
+$dokka.location:com.gw.gwiotapi.entities/PushNotification/json/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/json.html
 $dokka.location:com.gw.gwiotapi.entities/PushNotification/userInfo/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-push-notification/user-info.html
 $dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/index.html
 $dokka.location:com.gw.gwiotapi.entities/QRCodeType.BindDevice/BindDevice/#kotlin.String#kotlin.String?#kotlin.String?#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.entities/-q-r-code-type/-bind-device/-bind-device.html
@@ -919,6 +955,84 @@ $dokka.location:com.gw.gwiotapi.livedata/WeakOwner/isObserving/#/PointingToDecla
 $dokka.location:com.gw.gwiotapi.livedata/WeakOwner/isTerminated/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-weak-owner/is-terminated.html
 $dokka.location:com.gw.gwiotapi.livedata/WeakOwner/obj/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-weak-owner/obj.html
 $dokka.location:com.gw.gwiotapi.livedata/WeakOwner/removeListener/#com.gw.gwiotapi.livedata.NLifecycleListener/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.livedata/-weak-owner/remove-listener.html
+$dokka.location:com.gw.gwiotapi.player.constants////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.AssignChn///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-assign-chn/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.Connected///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-connected/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.Connecting///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-connecting/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.Disconnected///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-disconnected/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.Disconnecting///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-disconnecting/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.Preparing///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-preparing/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState.WakeUpDev///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/-wake-up-dev/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState/entries/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/entries.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/value-of.html
+$dokka.location:com.gw.gwiotapi.player.constants/ConnectState/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-connect-state/values.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Completed///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-completed/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Error///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-error/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Inited///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-inited/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Loading///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-loading/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Paused///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-paused/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Playing///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-playing/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Prepared///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-prepared/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Preparing///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-preparing/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Stopped///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-stopped/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Stopping///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-stopping/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState.Uninit///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/-uninit/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState/entries/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/entries.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/value-of.html
+$dokka.location:com.gw.gwiotapi.player.constants/PlayerState/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-player-state/values.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition.High///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/-high/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition.Low///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/-low/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition.Mid///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/-mid/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition/entries/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/entries.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/value-of.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoDefinition/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-definition/values.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode.AspectFill///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/-aspect-fill/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode.AspectFit///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/-aspect-fit/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode.Fill///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/-fill/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode.None///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/-none/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode/entries/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/entries.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/value-of.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoScalingMode/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-scaling-mode/values.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode.Auto///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/-auto/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode.Custom///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/-custom/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode.HEDIV///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/-h-e-d-i-v/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode.Original///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/-original/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode.VEDIV///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/-v-e-d-i-v/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/index.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode/entries/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/entries.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode/valueOf/#kotlin.String/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/value-of.html
+$dokka.location:com.gw.gwiotapi.player.constants/VideoViewMode/values/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.constants/-video-view-mode/values.html
+$dokka.location:com.gw.gwiotapi.player.entities////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/index.html
+$dokka.location:com.gw.gwiotapi.player.entities/ILiveIntercom///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-i-live-intercom/index.html
+$dokka.location:com.gw.gwiotapi.player.entities/ILiveIntercom/isActive/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-i-live-intercom/is-active.html
+$dokka.location:com.gw.gwiotapi.player.entities/ILiveIntercom/start/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-i-live-intercom/start.html
+$dokka.location:com.gw.gwiotapi.player.entities/ILiveIntercom/stop/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-i-live-intercom/stop.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/index.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView/PlayerView/#[Error type: Unresolved type for UIView]/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/-player-view.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView/PlayerView/#android.content.Context#android.util.AttributeSet?/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/-player-view.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView/pixelSize/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/pixel-size.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView/videoIndex/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/video-index.html
+$dokka.location:com.gw.gwiotapi.player.entities/PlayerView/view/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player.entities/-player-view/view.html
+$dokka.location:com.gw.gwiotapi.player////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/index.html
+$dokka.location:com.gw.gwiotapi.player/ILivePlayer///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-live-player/index.html
+$dokka.location:com.gw.gwiotapi.player/ILivePlayer/definition/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-live-player/definition.html
+$dokka.location:com.gw.gwiotapi.player/ILivePlayer/intercom/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-live-player/intercom.html
+$dokka.location:com.gw.gwiotapi.player/ILivePlayer/setDefinition/#com.gw.gwiotapi.player.constants.VideoDefinition/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-live-player/set-definition.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/index.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/connectState/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/connect-state.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/deviceId/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/device-id.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/getError/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/get-error.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/mute/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/mute.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/play/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/play.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/playerState/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/player-state.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/scalingMode/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/scaling-mode.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/stop/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/stop.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/videoView/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/video-view.html
+$dokka.location:com.gw.gwiotapi.player/IPlayer/videoViews/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi.player/-i-player/video-views.html
 $dokka.location:com.gw.gwiotapi////PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/index.html
 $dokka.location:com.gw.gwiotapi/GWIoT///PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html
 $dokka.location:com.gw.gwiotapi/GWIoT/accountComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/account-comp.html
@@ -930,6 +1044,7 @@ $dokka.location:com.gw.gwiotapi/GWIoT/devShareComp/#/PointingToDeclaration/-g-w
 $dokka.location:com.gw.gwiotapi/GWIoT/httpServiceComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/http-service-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/initializeComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/initialize-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/msgCenterComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/msg-center-comp.html
+$dokka.location:com.gw.gwiotapi/GWIoT/playerComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/player-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/pluginCfgComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/plugin-cfg-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/pluginComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/plugin-comp.html
 $dokka.location:com.gw.gwiotapi/GWIoT/propComp/#/PointingToDeclaration/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/prop-comp.html
@@ -947,3 +1062,6 @@ com.gw.gwiotapi.database
 com.gw.gwiotapi.entities
 com.gw.gwiotapi.ext
 com.gw.gwiotapi.livedata
+com.gw.gwiotapi.player
+com.gw.gwiotapi.player.constants
+com.gw.gwiotapi.player.entities
