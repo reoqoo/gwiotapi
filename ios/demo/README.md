@@ -55,18 +55,4 @@ The struct of notification like below:
 ```
 About notification service extension, you can refer to `https://medium.com/@jpmtech/push-notification-service-extension-in-swift-b1a0b68051d6`, or see the `NotificationService.swift` in our iOS demo.
 
-## Compatibility
-#### It should be noted that the sdk requires a specific version of xcode to be compiled normally. The following is the compatibility table
-
-| SDK Version | Xcode Version |
-| --- | --- |
-| 1.0.1 | 16.2 |
-| 1.0.2 | 16.4 |
-| 1.0.3 | 16.4 |
-| 1.0.4 | 16.4 |
-| 1.1.5.0 | unrestricted |
-| 1.1.6.0 | unrestricted |
-| 1.1.8.0 | unrestricted |
-| 1.2.0.0+ | unrestricted |
-
 
