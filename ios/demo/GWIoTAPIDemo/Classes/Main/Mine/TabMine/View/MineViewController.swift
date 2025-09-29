@@ -124,19 +124,11 @@ class MineViewController: BaseTableViewController {
         self?.navigationController?.pushViewController(vc, animated: true)
     })
 
-#if LAUNCH_XIAOTUN
-    /// 关于小豚当家
-    lazy var cellItem_about: CellItem = .init(image: R.image.mine_about()!, title: String.localization.localized("AA0665", note: "关于") + String.localization.localized("AA0666", note: "小豚当家"), action: { [weak self] in
-        let vc = AboutReoqooViewController.init()
-        self?.navigationController?.pushViewController(vc, animated: true)
-    })
-#else
     /// 关于reoqoo
     lazy var cellItem_about: CellItem = .init(image: R.image.mine_about()!, title: String.localization.localized("AA0665", note: "关于") + " " + String.localization.localized("AA0447", note: "reoqoo"), action: { [weak self] in
         let vc = AboutReoqooViewController.init()
         self?.navigationController?.pushViewController(vc, animated: true)
     })
-#endif
 
     lazy var cellItems: [CellItem] = []
 

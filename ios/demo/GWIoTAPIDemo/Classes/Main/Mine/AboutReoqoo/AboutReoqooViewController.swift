@@ -97,11 +97,7 @@ class AboutReoqooViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-#if LAUNCH_XIAOTUN
-        self.title = String.localization.localized("AA0665", note: "关于") + String.localization.localized("AA0666", note: "小豚当家")
-#else
         self.title = String.localization.localized("AA0665", note: "关于") + "reoqoo"
-#endif
 
         self.tableView.rowHeight = 56
         self.tableView.backgroundColor = R.color.background_F2F3F6_thinGray()

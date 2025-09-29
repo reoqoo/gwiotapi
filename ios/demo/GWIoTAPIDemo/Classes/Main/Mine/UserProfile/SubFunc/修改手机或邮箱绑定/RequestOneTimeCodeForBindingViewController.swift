@@ -106,15 +106,6 @@ class RequestOneTimeCodeForBindingViewController: BaseViewController, ScrollBase
             make.leading.equalToSuperview().offset(28)
         }
 
-#if LAUNCH_XIAOTUN
-        self.scrollView.addSubview(self.accountInputView)
-        self.accountInputView.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(52)
-            make.leading.equalToSuperview().offset(28)
-            make.trailing.equalToSuperview().offset(-28)
-            make.height.equalTo(56)
-        }
-#else
         if self.bindType == .bindTelephone || self.bindType == .changeTelephone {
             self.scrollView.addSubview(self.regionSelectionButton)
             self.regionSelectionButton.snp.makeConstraints { make in
@@ -140,7 +131,6 @@ class RequestOneTimeCodeForBindingViewController: BaseViewController, ScrollBase
                 make.height.equalTo(56)
             }
         }
-#endif
 
         self.scrollView.addSubview(self.getOneTimeCodeButton)
         self.getOneTimeCodeButton.snp.makeConstraints { make in
