@@ -120,8 +120,7 @@ class MineViewController: BaseTableViewController {
 
     /// 帮助与反馈
     lazy var cellItem_feedback: CellItem = .init(image: R.image.mine_feedback()!, title: String.localization.localized("AA0605", note: "帮助与反馈"), action: { [weak self] in
-        let vc = IssueFeedbackH5ViewController.init()
-        self?.navigationController?.pushViewController(vc, animated: true)
+        GWIoT.shared.openHelperPage { _, _ in }
     })
 
     /// 关于reoqoo
