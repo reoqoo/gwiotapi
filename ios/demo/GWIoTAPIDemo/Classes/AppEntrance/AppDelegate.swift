@@ -95,9 +95,8 @@ extension AppDelegate {
         GWIoT.shared.isShowFeedbackHistory = false
 
         // GWIoTApi init
-        let opts = GWIoTApi.InitOptions(appConfig: .init(appId: UIApplication.appID, appToken: UIApplication.appToken, appName: UIApplication.appName, cId: UIApplication.cid))
+        let opts = GWIoTApi.InitOptions(appConfig: .init(appId: UIApplication.appID, appToken: UIApplication.appToken))
         // 生成设备二维码时需要这个值, 例如: https://brandDomain/d/?u=xxx...
-        opts.brandDomain = "reoqoo.com"
         // 取出当前 App 语言, 设置到 opts 中
         let gwLang = GWIoTApi.LanguageCode.current
         opts.language = gwLang

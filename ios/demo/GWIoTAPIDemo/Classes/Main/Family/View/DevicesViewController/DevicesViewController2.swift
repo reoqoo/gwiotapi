@@ -16,9 +16,9 @@ class DevicesViewController2: BaseViewController {
     lazy var layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = self.cellMargin
     }
-    
+    #if $NonescapableTypes
     private let cellMargin: Double = 16
-
+    #endif
     lazy var collectionView = InfiltrateCollectionView(frame: .zero, collectionViewLayout: layout).then {
         $0.delegate = self
         $0.dataSource = self

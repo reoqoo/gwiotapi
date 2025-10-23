@@ -151,34 +151,9 @@
 		C40F972F2E85664900AF2388 /* CountryCodeCN.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40F95902E85664900AF2388 /* CountryCodeCN.plist */; };
 		C40F97302E85664900AF2388 /* deviceAddition_deviceScanning.json in Resources */ = {isa = PBXBuildFile; fileRef = C40F95882E85664900AF2388 /* deviceAddition_deviceScanning.json */; };
 		C40F97312E85664900AF2388 /* family_update.json in Resources */ = {isa = PBXBuildFile; fileRef = C40F958B2E85664900AF2388 /* family_update.json */; };
-		C41AD5AD2E5C060600382D0A /* NotificaitonServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C41AD5A52E5C060600382D0A /* NotificaitonServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C41AD5B62E5C061E00382D0A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41AD5B32E5C061E00382D0A /* NotificationService.swift */; };
 		C4CB606F2DF02C710098E3F5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FEB2DF02C710098E3F5 /* R.generated.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C41AD5AA2E5C060600382D0A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C478FB462D6705E100F12F02 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C41AD5A42E5C060600382D0A;
-			remoteInfo = NotificaitonServiceExtension;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C41AD5AC2E5C060600382D0A /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				C41AD5AD2E5C060600382D0A /* NotificaitonServiceExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A78241C67C0890137E604DF /* Pods-GWIoTAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GWIoTAPIDemo.debug.xcconfig"; path = "Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1461,12 +1436,10 @@
 				C478FB4B2D6705E100F12F02 /* Frameworks */,
 				C478FB4C2D6705E100F12F02 /* Resources */,
 				87C0F7AD83187DB37405A989 /* [CP] Copy Pods Resources */,
-				C41AD5AC2E5C060600382D0A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C41AD5AB2E5C060600382D0A /* PBXTargetDependency */,
 			);
 			name = GWIoTAPIDemo;
 			productName = GWIoTAPIDemo;
@@ -1754,14 +1727,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C41AD5AB2E5C060600382D0A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C41AD5A42E5C060600382D0A /* NotificaitonServiceExtension */;
-			targetProxy = C41AD5AA2E5C060600382D0A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		C40F96502E85664900AF2388 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1910,6 +1875,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1961,6 +1927,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

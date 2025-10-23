@@ -9,10 +9,8 @@ import Foundation
 import GWIoTApi
 
 extension UIApplication {
-    static let appName = ""
     static let appID = ""
     static let appToken = ""
-    static let cid = ""
 
     static var apperanceConfiguration: GWIoTApi.UIConfiguration = {
         let icons = GWIoTApi.Theme.Icons(

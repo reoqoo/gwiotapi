@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GWIoTApi
 import RQCore
 
 /// 确认手机号码区号页面
@@ -91,11 +92,15 @@ class RegionConfirmationViewController: BaseViewController {
 
     @objc func confirmBtnOnClick(sender: UIButton) {
         let selected = RegionInfoProvider.shared.selectedRegion
-        RQCore.StandardConfiguration.shared.getSMSSupportedRegionInfosPublisher()
-            .sink(receiveValue: { [weak self] supported in
-                let accountTypes: RequestOneTimeCodeViewController.AccountType = supported.contains(selected) ? [.email, .telephone] : [.email]
+        Task { [weak self] in
+            let hud = MBProgressHUD.showLoadingHUD_DispatchOnMainThread()
+            let res = try await GWIoT.shared.querySupportedSmsRegisterCountryCodes()
+            hud.hide(animated: true)
+            if case let .success(arr) = gwiot_swiftResult(of: res), let supported = arr as? [String] {
+                let accountTypes: RequestOneTimeCodeViewController.AccountType = supported.contains(selected.countryCode) ? [.email, .telephone] : [.email]
                 let vc = RequestOneTimeCodeViewController.init(accountType: accountTypes)
                 self?.navigationController?.pushViewController(vc, animated: true)
-            }).store(in: &self.anyCancellables)
+            }
+        }
     }
 }
