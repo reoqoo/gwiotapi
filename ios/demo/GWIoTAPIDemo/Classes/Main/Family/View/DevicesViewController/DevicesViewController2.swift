@@ -63,10 +63,12 @@ class DevicesViewController2: BaseViewController {
         }
 
         // 监听设备以构建设备列表
-        DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.deviceListSortID, \.deviceId])
+        DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.deviceListSortID, \.deviceId], fullyCollectionReturn: true)
             .map {
                 guard let devs = $0 else { return [] }
-                return Array(devs.sorted(by: \.deviceListSortID, ascending: true))
+                return devs.sorted(by: {
+                    ($0.deviceListSortID ?? 0) < ($1.deviceListSortID ?? 0)
+                })
             }.sink { [weak self] (devs: [DeviceEntity]) in
                 self?.emptyView.isHidden = devs.count != 0
                 self?.devices = devs

@@ -140,13 +140,12 @@ extension GuardianViewController {
                 }).store(in: &self.anyCancellables)
             
             // 监听设备列表发生变化
-            DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.liveViewSortID])
+            DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.liveViewSortID], fullyCollectionReturn: true)
                 .sink(receiveValue: { [weak self] results in
-                    if let devs = results?.sorted(by: \.liveViewSortID, ascending: true) {
-                        self?.liveViewContainer.updateDevcies(Array(devs))
-                    }else{
-                        self?.liveViewContainer.updateDevcies([])
-                    }
+                    let devs = results?.sorted(by: {
+                        ($0.liveViewSortID ?? 0) < ($1.liveViewSortID ?? 0)
+                    }) ?? []
+                    self?.liveViewContainer.updateDevcies(devs)
                 }).store(in: &self.anyCancellables)
         }
     }

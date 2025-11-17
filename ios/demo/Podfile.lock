@@ -27,7 +27,7 @@ PODS:
   - FMDB/Core (2.7.12)
   - FMDB/standard (2.7.12):
     - FMDB/Core
-  - GWIoTKit/Core (1.5.0.3):
+  - GWIoTKit/Core (1.5.2.1):
     - AFNetworking (~> 4.0)
     - Codextended (~> 0.3.0)
     - CombineCocoa (~> 0.4.1)
@@ -55,7 +55,7 @@ PODS:
     - SSZipArchive (~> 2.4.3)
     - SwiftyJSON (~> 5.0.2)
     - Then (~> 3.0.0)
-  - GWIoTKit/RQIAPKit (1.5.0.3):
+  - GWIoTKit/RQIAPKit (1.5.2.1):
     - AFNetworking (~> 4.0)
     - Codextended (~> 0.3.0)
     - CombineCocoa (~> 0.4.1)
@@ -83,7 +83,7 @@ PODS:
     - SSZipArchive (~> 2.4.3)
     - SwiftyJSON (~> 5.0.2)
     - Then (~> 3.0.0)
-  - Kingfisher (8.6.0)
+  - Kingfisher (8.6.1)
   - lottie-ios (4.5.2)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.9)
@@ -199,8 +199,8 @@ SPEC CHECKSUMS:
   CZImagePreviewer: a88c65afaaab475c0cbb95cd6a3404a746ffdb70
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
-  GWIoTKit: 503a2bb52415ae6606bf6e46b8a998a157d71633
-  Kingfisher: 64278f126a815d0e2d391cdf71311b85882c4de0
+  GWIoTKit: e5bce92cc27158e87cd1a3fcf77bebbe61440919
+  Kingfisher: 7ac7a7288653787a54206b11a3c74f49ab650f1f
   lottie-ios: 96784afc26ea031d3e2b6cae342a4b8915072489
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78

@@ -235,13 +235,12 @@ class LiveConfigurationViewController: PageSheetStyleViewController {
             self?.dismiss(animated: true)
         }).store(in: &self.anyCancellables)
         
-        DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.liveViewSortID]).first()
+        DeviceManager.shared.generateDevicesPublisher(keyPaths: [\.liveViewSortID], fullyCollectionReturn: true).first()
             .sink(receiveValue: { [weak self] results in
-                if let devs = results?.sorted(by: \.liveViewSortID, ascending: true) {
-                    self?.devices = Array(devs)
-                }else{
-                    self?.devices = []
-                }
+                let devs = results?.sorted(by: {
+                    ($0.liveViewSortID ?? 0) < ($1.liveViewSortID ?? 0)
+                }) ?? []
+                self?.devices = devs
                 self?.tableView.reloadData()
             }).store(in: &self.anyCancellables)
     }
