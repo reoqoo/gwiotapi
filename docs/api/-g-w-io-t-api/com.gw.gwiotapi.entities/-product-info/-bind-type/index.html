@@ -47,7 +47,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.4.4        </div>
+1.5.2        </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
                 <button class="platform-tag platform-selector common-like" data-active=""
@@ -109,24 +109,7 @@
   <div class="breadcrumbs"><a href="../../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../../index.html">com.gw.gwiotapi.entities</a><span class="delimiter">/</span><a href="../index.html">ProductInfo</a><span class="delimiter">/</span><span class="current">BindType</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Bind</span><wbr></wbr><span><span>Type</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">设备联网功能码
-
-用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。
-PC产测软件从固件上读取设备联网功能码,生成设备二维码标签。(讨论)
-PC产测软件将设备联网功能码回传云端，以便今后的扩展应用
-位    配网方式    版本    备注
-0    Smartlink    1.0    智能联机 （7601Wifi模块）
-1    声波1.0    1.0    声波配网 （海思、联咏、国科）
-2    AP    1.0
-3    Simpeconfig    1.0
-4    蓝牙    1.0
-5    二维码    1.0
-6    服务器notify通知    1.0    ?
-7    声波2.0    2.0
-8-12    预留扩展
-13    4G设备(外置卡)    2.0
-14    4G设备(内置卡)    2.0
-15    设备存在有线网口    2.0</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><p class="paragraph">设备联网功能 用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。 PC产测软件从固件上读取设备联网功能码,生成设备二维码标签。(讨论) PC产测软件将设备联网功能码回传云端，以便今后的扩展应用</p><table><thead><tr><th>位</th><th>配网方式</th><th>版本</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>Smartlink</td><td>1.0</td><td>智能联机（7601Wifi模块）</td></tr><tr><td>1</td><td>声波1.0</td><td>1.0</td><td>声波配网（海思、联咏、国科）</td></tr><tr><td>2</td><td>AP</td><td>1.0</td><td></td></tr><tr><td>3</td><td>Simpeconfig</td><td>1.0</td><td></td></tr><tr><td>4</td><td>蓝牙</td><td>1.0</td><td></td></tr><tr><td>5</td><td>二维码</td><td>1.0</td><td></td></tr><tr><td>6</td><td>服务器notify通知</td><td>1.0</td><td>4G</td></tr><tr><td>7</td><td>声波2.0</td><td>2.0</td><td></td></tr><tr><td>8-12</td><td>预留扩展</td><td></td><td></td></tr><tr><td>13</td><td>4G设备(外置卡)</td><td>2.0</td><td></td></tr><tr><td>14</td><td>4G设备(内置卡)</td><td>2.0</td><td></td></tr><tr><td>15</td><td>设备存在有线网口</td><td>2.0</td><td></td></tr></tbody></table></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
