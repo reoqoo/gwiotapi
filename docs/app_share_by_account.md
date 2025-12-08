@@ -1,10 +1,10 @@
 ## 开启通过账号分享设备功能
 
-SDK内分享设备用两种方式，通过二维码和通过账号分享设备。但是如果App不使用技威账号服务，初始化时设置了`disableAccountService = true`，则SDK会默认隐藏通过账号分享设备功能。如果需要显示该功能，App需要按照以下步骤实现。
+SDK内分享设备支持两种方式，通过二维码和通过账号分享设备。但是如果App不使用技威账号服务，初始化时设置了`disableAccountService = true`，则SDK会默认隐藏通过账号分享设备功能。如果需要显示该功能，App需要按照以下步骤实现。
 
 功能预览:
 
-![img.png](assets/img.png)
+![img.png](assets/device_sharing.png)
 
 ### 实现步骤
 #### 初始化时设置分享方式
@@ -96,7 +96,8 @@ class HostAccountService: IHostAccountService {
         if let account = account as? AccountTypeMobile {
             accountStr = "\(account.area)-\(account.number)"
         }
-        /// 根据账号字符串从云端查询账号信息
+        
+        // 根据账号字符串从云端查询账号信息，需要App cloud实现
         queryAccountInfoByAccount(accountStr) { result in 
             switch result {
             case let .success(json):
