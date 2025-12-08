@@ -139,18 +139,7 @@ class HostAccountService: IHostAccountService {
                 is AccountType.Mobile -> "${account.area}-${account.number}"
             }
 
-            // 模拟从云端查询账号信息
-            try {
-                val mockInfo = queryAccountInfoByAccount(accountStr)
-                val info = HostAccountInfo(
-                    accessId = "gwellAccessId",
-                    nickName = "xia****com",
-                    avatarUrl = "https://example.com/example.jpg"
-                )
-                return GWResult.Success(info)
-            } catch (err: Exception) {
-                return GWResult.Failure(err)
-            }
+            return queryAccountInfoByAccount(accountStr)
         }
 
         /**
