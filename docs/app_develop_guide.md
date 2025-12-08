@@ -10,10 +10,14 @@ GWIoTApi以KMP([Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform-
 在App启动时，需要进行SDK初始化，才能正常使用SDK提供的功能。
 ```kotlin
 
-val opts = InitOptions(AppConfig("appId", "appToken", "appName"))
-opts.language = LanguageCode.EN // 按需设置语言
+val opts = InitOptions(AppConfig("appId", "appToken"))
+opts.language = LanguageCode.EN // 按需设置语言, 默认跟随系统
+opts.disableAccountService = true // true: 不使用技威账号服务, false: 使用技威账号服务
+
 GWIoT.initialize(opts)
 ```
+
+> 如果不使用技威账号账号服务，设备插件内通过账号分享设备功能默认进行了隐藏，如果需要显示该功能，请参考[非技威账号开启通过账号分享设备](app_share_by_account.md)。
 
 ## 访问认证
 根据是否使用技威账号体系/服务，SDK登录认证可以分为两种情况。
