@@ -23,6 +23,8 @@ SDK需要通过App查询确认并显示被分享用户的账号信息，如昵�
 1. 分享设备流程，通过用户输入的账号查询账号信息
 2. 显示设备已分享用户列表，通过技威accessId列表查询账号信息
 
+**这两个接口需要您的App和Cloud实现，账号信息包含技威accesId。 所以App Cloud和技威云进行账号认证对接时，需要将技威的accessId和App账号进行映射保存。**
+
 > 注意，SDK内仅使用昵称、头像在UI上进行展示，不会缓存或者上传到服务器。 App可以对昵称进行脱敏处理再传给SDK，如`test***1`。
 
 详细流程如下：
@@ -64,6 +66,28 @@ interface IHostAccountService: IComponent {
     
     
 }
+
+data class HostAccountInfo(
+
+    /**
+     * 技威的accessId
+     */
+    val accessId: String,
+
+    /**
+     * 用户昵称
+     *
+     * 仅用于分享设备用户信息展示，App接口可以对昵称进行脱敏处理，展示给其他用户。
+     */
+    val nickName: String,
+
+    /**
+     * 用户头像url
+     *
+     * 设备分享功能展示分享/被分享用户头像时使用。
+     */
+    val avatarUrl: String? = null,
+)
 ```
 ##### 代码示例
 
