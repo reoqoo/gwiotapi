@@ -99,8 +99,7 @@ iOS:
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let token = deviceToken.map({ String.init(format: "%02.2hhx", $0) }).joined()
     
-    // 上传推送Token, termId为用户登陆时返回的终端ID(IUserAccessInfo.terminalId)
-    GWIoT.shared.uploadPushToken(termId: terminalId, token: token) { result, err in
+    GWIoT.shared.uploadPushToken(token: token) { result, err in
         let swiftResult = gwiot_handleCb(result, err)
         print("uploadPushToken result: \(swiftResult)")
     }
