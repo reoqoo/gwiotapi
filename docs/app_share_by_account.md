@@ -9,12 +9,11 @@ SDK内分享设备支持两种方式，通过二维码和通过账号分享设�
 ### 实现步骤
 #### 初始化时设置分享方式
 在设置`disableAccountService = true`后，设置`deviceShareOptions`为需要显示的分享方式。
-其中`DeviceShareOption.Account(phone = true)`表示支持账号分享，分享时默认提示用户输入邮箱账号，如果您的App账号支持手机注册，则要将`phone`参数设置为`true`，分享时则会提示用户输入邮箱或者手机号账号。
 
 ```kotlin
 val opts = InitOptions(AppConfig("appId", "appToken"))
 opts.disableAccountService = true 
-opts.deviceShareOptions = listOf(DeviceShareOption.QRCode, DeviceShareOption.Account(phone = true)) // 显示二维码分享和账号分享（支持手机号）
+opts.deviceShareOptions = listOf(DeviceShareOption.QRCode, DeviceShareOption.Account(inputPlaceholder = "请输入账号")) // 显示二维码分享和账号分享, inputPlaceholder为空则使用插件默认提示"请输入$appName账号"
 GWIoT.initialize(opts)
 ```
 
@@ -51,11 +50,11 @@ interface IHostAccountServiceComponent: IComponent {
 interface IHostAccountService: IComponent {
 
     /**
-     * 通过用户输入的账号(邮箱/手机号)查询App账号信息。
+     * 通过用户输入的账号查询App账号信息。
      *
      * 在分享设备，通过账号分享功能处，通过这个接口查询用户进行分享。
      */
-    suspend fun onRequestAccountInfoByAccount(account: AccountType): GWResult<HostAccountInfo>
+    suspend fun onRequestAccountInfoByAccount(account: String): GWResult<HostAccountInfo>
 
     /**
      * 通过技威账号的accessId查询App账号信息。
@@ -110,19 +109,12 @@ class HostAccountService: IHostAccountService {
     }
 
 
-    func onRequestAccountInfoByAccount(account: any AccountType, completionHandler: @escaping @Sendable (GWResult<HostAccountInfo>?, (any Error)?) -> Void) {
-        var accountStr: String = ""
-        if let account = account as? AccountTypeEmail {
-            accountStr = account.email
-        }
+    func onRequestAccountInfoByAccount(account: String, completionHandler: @escaping @Sendable (GWResult<HostAccountInfo>?, (any Error)?) -> Void) {
         
-        // 忽略AccountTypeMobile如果账号不支持手机号码
-        if let account = account as? AccountTypeMobile {
-            accountStr = "\(account.area)-\(account.number)"
-        }
+        // App自行判断账号格式等是否合法
         
         // 根据账号字符串从云端查询账号信息，需要App cloud实现
-        queryAccountInfoByAccount(accountStr) { result in 
+        queryAccountInfoByAccount(account) { result in 
             switch result {
             case let .success(json):
                 let info = HostAccountInfo(accessId: "gwellAccessId", nickName: "xia****com", avatarUrl: "https://example.com/example.jpg")
@@ -156,15 +148,8 @@ class HostAccountService: IHostAccountService {
             return GWResult.Success(mockInfos)
         }
 
-        override suspend fun onRequestAccountInfoByAccount(account: AccountType): GWResult<HostAccountInfo> {
-            val accountStr = when (account) {
-                is AccountType.Email -> account.email
-                
-                // 忽略AccountType.Mobile如果账号不支持手机号码
-                is AccountType.Mobile -> "${account.area}-${account.number}"
-            }
-
-            return queryAccountInfoByAccount(accountStr)
+        override suspend fun onRequestAccountInfoByAccount(account: String): GWResult<HostAccountInfo> {
+            return queryAccountInfoByAccount(account)
         }
 
         /**
