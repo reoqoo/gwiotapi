@@ -10,11 +10,34 @@ SDK内分享设备支持两种方式，通过二维码和通过账号分享设�
 #### 初始化时设置分享方式
 在设置`disableAccountService = true`后，设置`deviceShareOptions`为需要显示的分享方式。
 
+kotlin
 ```kotlin
 val opts = InitOptions(AppConfig("appId", "appToken"))
 opts.disableAccountService = true 
-opts.deviceShareOptions = listOf(DeviceShareOption.QRCode, DeviceShareOption.Account(inputPlaceholder = "请输入账号")) // 显示二维码分享和账号分享, inputPlaceholder为空则使用插件默认提示"请输入$appName账号"
+opts.deviceShareOptions = listOf(DeviceShareOption.QRCode, DeviceShareOption.Account) // 显示二维码分享和账号分享
 GWIoT.initialize(opts)
+```
+
+swift
+```swift
+let opts = InitOptions(appConfig: AppConfig(appId: "appId", appToken: "appToken"))
+opts.disableAccountService = true 
+opts.deviceShareOptions = [.qrcode, .account] // 显示二维码分享和账号分享
+GWIoT.shared.initialize(opts)
+```
+
+
+如果App需要自定义账号分享输入框的占位提示文案，可通过`GWIoT.setUIConfiguration(_:)`方法进行设置。
+
+```kotlin
+val cfg = UIConfiguration(
+    theme = null,
+    texts = AppTexts(
+        appNamePlaceHolder = "App名称",  // null则SDK内部获取AppName
+        accountSharingInputPlaceholder = "请输入邮箱/账号",  // null则用SDK内默认文案"请输入$appName账号"
+    )
+)
+GWIoT.setUIConfiguration(cfg)
 ```
 
 #### 实现并注册接口
@@ -22,7 +45,7 @@ SDK需要通过App查询确认并显示被分享用户的账号信息，如昵�
 1. 分享设备流程，通过用户输入的账号查询账号信息
 2. 显示设备已分享用户列表，通过技威accessId列表查询账号信息
 
-**这两个接口需要您的App和Cloud实现，账号信息包含技威accesId。 所以App Cloud和技威云进行账号认证对接时，需要将技威的accessId和App账号进行映射保存。**
+**这两个接口需要您的App和Cloud实现，账号信息包含技威accessId。 所以App Cloud和技威云进行账号认证对接时，需要将技威的accessId和App账号进行映射保存。**
 
 > 注意，SDK内仅使用昵称、头像在UI上进行展示，不会缓存或者上传到服务器。 App可以对昵称进行脱敏处理再传给SDK，如`test***1`。
 
