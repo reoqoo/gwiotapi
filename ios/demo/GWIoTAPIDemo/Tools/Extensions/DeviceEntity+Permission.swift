@@ -44,7 +44,8 @@ extension RQCore.DeviceEntity {
     /// 获取多个设备回放权限描述发布者
     public static func getDevicesPlaybackPermissionPublisher(_ devices: [DeviceEntity]) -> AnyPublisher<[(deviceId: String, hasPlaybackPermission: Bool)], Swift.Error> {
         let pubs = devices.map { device in
-            device.getDevicePlaybackPermissionPublisher().map { (deviceId: device.deviceId, hasPlaybackPermission: $0) }
+            let devid = device.deviceId
+            return device.getDevicePlaybackPermissionPublisher().map { (deviceId: devid, hasPlaybackPermission: $0) }
         }
         return pubs.combineLatest().eraseToAnyPublisher()
     }
