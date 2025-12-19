@@ -1,0 +1,154 @@
+---
+
+### 1、接口文档
+● 注：所以接口请求时都需携带签名相关参数，签名计算方式如下：[签名计算方式](http://note.youdao.com/groupshare/?token=1E676FB4DEF14F009BBFB67A216F6232&gid=108651055)
+
+#### 1.1、设备信息查询，限频==10/s==
+##### 1.1.1. 接口描述
+> 为客户的售后客服查询场景，提供设备信息查询能力。
+ 
+```
+请求地址：
+post
+https://domain/openapi/custCloud/oss/devInfo
+```
+
+##### 1.1.2. 请求参数
+参数          |类型   |必填|描述
+--------------|-------|----|---------------------
+action        |string | 是 |操作的接口名称，这里为 **devInfo**
+appId         |string |是  |由技威分配（向相关人员索要）
+appToken      |string |是  |由技威分配（向相关人员索要）
+sn            |string |否  |设备sn，sn 和 devId选择其一
+devId         |string |否  | 技威云的设备id，sn 和 devId选择其一
+accessId      |string |是  |技威云用户id
+
+**请求示例**
+```
+curl --location --request POST 'http://localhost:12042/openapi/custCloud/app/user/thirdCustLogin' \
+--header 'X-IotVideo-AccessID: 0000175a370efbbe852dc1cd1b0b877e' \
+--header 'X-IotVideo-Nonce: 1212' \
+--header 'X-IotVideo-Timestamp: 1696757960' \
+--header 'X-IotVideo-Signature: e55Cg870djBQZA6ts2s+B1Dlq0g=' \
+--header 'Content-Type: application/json' \
+--header 'Host: localhost:12042' \
+--data-raw '{
+    "appId":"0000175a370xxxxxxxc1cd1b0b877e",
+    "appToken":"a844e8320c75a5cxxxxxxxxxxxxxxxxxce9e347xxxxx041a05a7053",
+    "sn":"876xxxxxxx347",
+    "devId":"",
+    "accessId":"-922337198xxxxx56044"
+}'
+```
+
+##### 1.1.3. 响应参数
+参数          |类型   |描述
+--------------|-------|---------------------
+code          |integer|返回错误码
+msg           |string |返回的提示消息
+data          |Model |
+
+**data结构**：
+参数名       |类型    |必填|描述
+-------------|--------|----|----
+deviceInfo         |string  | 是 |设备信息
+storageInfo         |string  | 是 |云存储信息
+flowInfo         |string  | 是 |流量信息
+
+
+**deviceInfo结构**：
+参数名       |类型    |必填|描述
+-------------|--------|----|----
+deviceId         |string  | 是 | 技威设备id
+ownerId         |int64  | 是 | 技威设备主人id，0：设备当前未被绑定
+online         |int64  | 是 | 在线状态， 0：不在线， 1：在线
+onlineUpdateTime         |int64  | 是 | 在线状态最后一次更新时间
+deviceType         |string  | 是 | 设备类型
+battery         |string  | 是 | 电池电量
+signal         |int64  | 是 | 信号质量
+rssi         |int64  | 是 | 设备实际的信号值：当前使用WiFi或者4G卡的信号值
+firmwareVer         |string  | 是 | 固件版本
+powerMode         |string  | 是 | 供电模式 0--无电池设备; 1--有电池设备，当前电池供电; 2--有电池设备,当前为外部电源供电
+powerCharging         |string  | 是 | 充电状态 0:未充电; 1:充电中; 2:低电压充电中; 3:高电压充电中
+bindTime         |int64  | 是 | 绑定时间
+* 设备如长时间离线（几个月）设备的在线信息将获取不到：online、onlineUpdateTime、battery、signal、rssi、powerMode、powerCharging
+
+
+
+**storageInfo结构**：
+参数名       |类型    |必填|描述
+-------------|--------|----|----
+orderId         |string  | 是 | 最一次订单编号
+pkgType         |int64  | 是 | 套餐类型，0：全时，1：事件
+startTime       |int64  | 是 | 服务开始时间
+endTime         |int64  | 是 | 服务结束时间
+srvStatus       |int64  | 是 | 服务状态，2:正在使用的服务, 5:已过期关闭的服务
+storageDays         |int64  | 是 | 存储天数
+subStatus         |bool  | 是 | 订阅状态，true:订阅中
+subTime         |int64  | 是 | 订阅时间，0：未订阅
+withholdTime         |int64  | 是 | 最近一次扣款时间，0：未扣款
+
+**flowInfo结构**：
+参数名       |类型    |必填|描述
+-------------|--------|----|----
+simId         |string  | 是 | 卡号
+orderId         |int64  | 是 | 最一次订单编号
+startTime       |int64  | 是 | 服务开始时间
+endTime         |int64  | 是 | 服务结束时间
+srvStatus       |int64  | 是 | 服务状态，0：过期，1：生效
+cardProvider         |string  | 是 | 卡商
+subStatus         |bool  | 是 | 订阅状态， true:订阅中
+subTime         |int64  | 是 | 订阅时间，0：未订阅
+withholdTime         |int64  | 是 | 最近一次扣款时间， 0：未扣款
+
+##### 1.1.4. 返回结果
+```
+{
+    "code": 0,
+    "data": {
+        "deviceInfo": {
+            "deviceId": "51xxxx15988",
+            "ownerId": -922337198xxxxx56044,
+            "online": 1,
+            "deviceType": "",
+            "battery": "",
+            "connectInfo": "",
+            "rssi": -101,
+            "firmwareVer": "43.0.0.43",
+            "powerMode": "",
+            "powerCharging": "",
+            "bindTime": 1763802936
+        },
+        "storageInfo": {
+            "orderId": "xxx",
+            "pkgType": 5,
+            "startTime": 0,
+            "endTime": 0,
+            "srvStatus": 2,
+            "storageDays": 7,
+            "subStatus": true,
+            "subTime": 1763802936,
+            "withholdTime": 1763802936
+        },
+        "flowInfo": {
+            "simId": "xx",
+            "orderId": "xxx",
+            "startTime": 1763802936,
+            "endTime": 3972791736,
+            "srvStatus": 1,
+            "cardProvider": "中国电信",
+            "subStatus": false,
+            "subTime": 1763802936,
+            "withholdTime": 1763802936
+        }
+    },
+    "msg": "ok",
+    "requestId": "6029eee2-02a9-4431-99eb-038aefe387ad"
+}
+```
+
+##### 1.1.5. 错误码
+错误码 |错误描述                         
+-------|---------------------------------
+0      |成功                          
+10007  |签名校验失败 
