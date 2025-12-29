@@ -22,7 +22,7 @@ GWIoT.initialize(opts)
 ## 访问认证
 根据是否使用技威账号体系/服务，SDK登录认证可以分为两种情况。
 ### 不使用技威账号服务
-如果不使用技威账号服务，那么需要通过云端对接方式获取SDK认证所需的`UserC2CInfo`信息，详见[云云对接](https://note.youdao.com/coshare/index.html?token=EA4BCC59DE664ACCBA3AD7723D0B5B89&gid=108651055&_time=1745378888893#/1425034038)。
+如果不使用技威账号服务，那么需要通过云端对接方式获取SDK认证所需的`UserC2CInfo`信息，详见[云云对接](../cloud/客户云云对接.md)。
 
 获取到`UserC2CInfo`后，通过`GWIoT.login()`方法进行认证。
 ```kotlin
