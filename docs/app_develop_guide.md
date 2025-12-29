@@ -119,9 +119,15 @@ iOS:
 extension AppDelegate: UNUserNotificationCenterDelegate {
     // 收到通知
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([])
+        
         let userInfo = notification.request.content.userInfo
         GWIoT.shared.receivePushNotification(noti: .init(userInfo: userInfo))
+
+        /// 根据App需求，展示App在前台时收到的通知
+        /// .sound: 播放提示音
+        /// .banner: 展示在App顶部Banner
+        /// .list: 展示在系统通知栏列表
+        completionHandler([.sound, .banner, .list])
     }
 
     // 点击通知
