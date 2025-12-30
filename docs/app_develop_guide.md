@@ -127,7 +127,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         /// .sound: 播放提示音
         /// .banner: 展示在App顶部Banner
         /// .list: 展示在系统通知栏列表
-        completionHandler([.sound, .banner, .list])
+        /// .badge: 更新App图标上的数字
+        completionHandler([.sound, .banner, .list, .badge])
     }
 
     // 点击通知
