@@ -72,7 +72,7 @@ class AccountInputView: UIView {
         }).store(in: &self.anyCancellables)
 
         /// 监听 regionInfo 变化
-        self.$regionInfo.map({ $0?.countryCode ?? "" })
+        self.$regionInfo.map({ $0?.districtCode ?? "" })
             .sink(receiveValue: {[weak self] code in
                 if code.isEmpty {
                     self?.removeRegionCodeLabel()

@@ -9,6 +9,7 @@ import UIKit
 import IVAccountMgr
 import RQCore
 import RQApi
+import BaseKit
 
 extension PasswordSettingViewController {
     enum For {
@@ -156,7 +157,7 @@ class PasswordSettingViewController: BaseViewController, ScrollBaseViewAndKeyboa
                 return
             }
             if case let .register(accountType, oneTimeCode) = self?.for {
-                let regionNameCode = RegionInfoProvider.shared.selectedRegion.regionCode
+                let regionNameCode = RegionInfoProvider.shared.selectedRegion.district
                 self?.sendingSignUpRequest(accountType: accountType, regionNameCode: regionNameCode, oneTimeCode: oneTimeCode, password: password)
             }
             if case let .forgotPassword(accountType, oneTimeCode) = self?.for {

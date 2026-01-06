@@ -19,7 +19,7 @@ extension RegionSelectionViewController {
                     return
                 }
                 self.countryNameLabel.text = countryInfo.countryName
-                self.countryCodeLabel.text = countryInfo.countryCode.isEmpty ? "" : "+" + countryInfo.countryCode
+                self.countryCodeLabel.text = countryInfo.districtCode.isEmpty ? "" : "+" + countryInfo.districtCode
             }
         }
 

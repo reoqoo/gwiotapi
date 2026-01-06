@@ -194,7 +194,7 @@ extension RequestOneTimeCodeForBindingViewController {
         }
 
         if self.accountInputView.textField.text?.isValidTelephoneNumber ?? false {
-            accountType = .mobile(account, mobileArea: RegionInfoProvider.shared.selectedRegion.countryCode)
+            accountType = .mobile(account, mobileArea: RegionInfoProvider.shared.selectedRegion.districtCode)
         }
 
         guard let accountType = accountType else {

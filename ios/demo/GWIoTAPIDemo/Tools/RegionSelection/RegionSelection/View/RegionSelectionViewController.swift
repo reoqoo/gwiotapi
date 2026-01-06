@@ -118,7 +118,7 @@ class RegionSelectionViewController: BaseViewController, ScrollBaseViewAndKeyboa
             self?.currentSelectedCountryNameLabel.text = countryName
         }).store(in: &self.anyCancellables)
 
-        RegionInfoProvider.shared.$selectedRegion.map({ "+" + $0.countryCode }).sink(receiveValue: { [weak self] countryCode in
+        RegionInfoProvider.shared.$selectedRegion.map({ "+" + $0.districtCode }).sink(receiveValue: { [weak self] countryCode in
             self?.currentSelectedCountryCodeLabel.text = countryCode
         }).store(in: &self.anyCancellables)
 

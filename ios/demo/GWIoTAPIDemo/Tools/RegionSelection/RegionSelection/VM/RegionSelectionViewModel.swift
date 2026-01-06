@@ -9,7 +9,7 @@ import Foundation
 import RQCore
 
 class RegionSelectionViewModel {
-    
+
     @DidSetPublished var dataSource: [RegionInfo] = []
 
     // 设计此Subject 与 ViewController.textField.rx.text 绑定. 当 ViewController 中的搜索框输入时, 监听输入内容.
@@ -24,17 +24,17 @@ class RegionSelectionViewModel {
                 let chineseLocale = Locale.init(identifier: "zh_CN")
                 // 按拼音排序
                 if RQCore.Agent.shared.language == .CN {
-                    return $0.countryNameOfAllVersions.simplifiedChineseVersion.localizedCompare($1.countryNameOfAllVersions.simplifiedChineseVersion) == .orderedAscending
+                    return $0.districtNames.zh_hans.localizedCompare($1.districtNames.zh_hans) == .orderedAscending
                 }
                 // 繁体也按拼音排序
                 if RQCore.Agent.shared.language == .TC {
-                    return $0.countryNameOfAllVersions.traditionalChineseVersion.compare($1.countryNameOfAllVersions.traditionalChineseVersion, locale: chineseLocale) == .orderedAscending
+                    return $0.districtNames.zh_hant.compare($1.districtNames.zh_hant, locale: chineseLocale) == .orderedAscending
                 }
-                return $0.countryNameOfAllVersions.englishVersion < $1.countryNameOfAllVersions.englishVersion
+                return $0.districtNames.en < $1.districtNames.en
             }
 
             // 取出 "其他", 排到最后去
-            let others = afterSorted.filter { $0.countryCode.isEmpty && $0.regionCode.isEmpty }
+            let others = afterSorted.filter { $0.districtCode == "0" }
             afterSorted.removeAll { others.contains($0) }
             afterSorted.append(contentsOf: others)
 
@@ -47,21 +47,21 @@ class RegionSelectionViewModel {
                 if let searchKeyword = searchKeyword, !searchKeyword.isEmpty {
                     return regions.filter({
                         // 匹配所有语言的名称
-                        if $0.countryNameOfAllVersions.englishVersion.lowercased().contains(searchKeyword.lowercased()) {
+                        if $0.districtNames.en.lowercased().contains(searchKeyword.lowercased()) {
                             return true
                         }
-                        if $0.countryNameOfAllVersions.simplifiedChineseVersion.lowercased().contains(searchKeyword.lowercased()) {
+                        if $0.districtNames.zh_hans.lowercased().contains(searchKeyword.lowercased()) {
                             return true
                         }
-                        if $0.countryNameOfAllVersions.traditionalChineseVersion.lowercased().contains(searchKeyword.lowercased()) {
+                        if $0.districtNames.zh_hant.lowercased().contains(searchKeyword.lowercased()) {
                             return true
                         }
                         // 匹配国家码 +86 ...
-                        if $0.countryCode.contains(searchKeyword.lowercased()) {
+                        if $0.districtCode.contains(searchKeyword.lowercased()) {
                             return true
                         }
                         // 匹配国家
-                        if $0.regionCode.lowercased().contains(searchKeyword.lowercased()) {
+                        if $0.district.lowercased().contains(searchKeyword.lowercased()) {
                             return true
                         }
                         return false
@@ -75,5 +75,5 @@ class RegionSelectionViewModel {
                 self?.dataSource = regions
             }.store(in: &self.anyCancellables)
     }
-    
+
 }

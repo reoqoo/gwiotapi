@@ -66,7 +66,7 @@ class QRCodeScanningHandler {
             if let qrCodeType = qrCodeType as? QRCodeType.ShareDevice {
                 Task {
                     let _ = closeHandler()
-                    try await GWIoT.shared.acceptShareDevice(qrCode: .init(deviceId: qrCodeType.deviceId, inviteCode: qrCodeType.inviteCode, permission: qrCodeType.permission, expireTime: qrCodeType.expireTime, pid: qrCodeType.pid, qrCodeValue: qrCodeType.qrCodeValue))
+                    try await GWIoT.shared.acceptShareDevice(qrCode: qrCodeType)
                 }
                 return
             }

@@ -97,7 +97,7 @@ class RegionConfirmationViewController: BaseViewController {
             let res = try await GWIoT.shared.querySupportedSmsRegisterCountryCodes()
             hud.hide(animated: true)
             if case let .success(arr) = gwiot_swiftResult(of: res), let supported = arr as? [String] {
-                let accountTypes: RequestOneTimeCodeViewController.AccountType = supported.contains(selected.countryCode) ? [.email, .telephone] : [.email]
+                let accountTypes: RequestOneTimeCodeViewController.AccountType = supported.contains(selected.districtCode) ? [.email, .telephone] : [.email]
                 let vc = RequestOneTimeCodeViewController.init(accountType: accountTypes)
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
