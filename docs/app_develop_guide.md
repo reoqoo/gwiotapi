@@ -22,7 +22,7 @@ GWIoT.initialize(opts)
 ## 访问认证
 根据是否使用技威账号体系/服务，SDK登录认证可以分为两种情况。
 ### 不使用技威账号服务
-如果不使用技威账号服务，那么需要通过云端对接方式获取SDK认证所需的`UserC2CInfo`信息，详见[云云对接](https://note.youdao.com/coshare/index.html?token=EA4BCC59DE664ACCBA3AD7723D0B5B89&gid=108651055&_time=1745378888893#/1425034038)。
+如果不使用技威账号服务，那么需要通过云端对接方式获取SDK认证所需的`UserC2CInfo`信息，详见[云云对接](../cloud/客户云云对接.md)。
 
 获取到`UserC2CInfo`后，通过`GWIoT.login()`方法进行认证。
 ```kotlin
@@ -119,9 +119,16 @@ iOS:
 extension AppDelegate: UNUserNotificationCenterDelegate {
     // 收到通知
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([])
+        
         let userInfo = notification.request.content.userInfo
         GWIoT.shared.receivePushNotification(noti: .init(userInfo: userInfo))
+
+        /// 根据App需求，展示App在前台时收到的通知
+        /// .sound: 播放提示音
+        /// .banner: 展示在App顶部Banner
+        /// .list: 展示在系统通知栏列表
+        /// .badge: 更新App图标上的数字
+        completionHandler([.sound, .banner, .list, .badge])
     }
 
     // 点击通知
