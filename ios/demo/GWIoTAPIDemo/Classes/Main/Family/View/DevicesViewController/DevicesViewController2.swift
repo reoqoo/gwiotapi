@@ -19,6 +19,10 @@ class DevicesViewController2: BaseViewController {
     #if $NonescapableTypes
     private let cellMargin: Double = 16
     #endif
+    
+    /// 标记是否已经完成首次数据加载，用于避免空页面一闪而过
+    private var hasLoadedOnce: Bool = false
+
     lazy var collectionView = InfiltrateCollectionView(frame: .zero, collectionViewLayout: layout).then {
         $0.delegate = self
         $0.dataSource = self
@@ -70,9 +74,34 @@ class DevicesViewController2: BaseViewController {
                     ($0.deviceListSortID ?? 0) < ($1.deviceListSortID ?? 0)
                 })
             }.sink { [weak self] (devs: [DeviceEntity]) in
-                self?.emptyView.isHidden = devs.count != 0
-                self?.devices = devs
-                self?.collectionView.reloadData()
+                guard let self = self else { return }
+                self.devices = devs
+                self.collectionView.reloadData()
+                
+                // 首次加载时，只有在有设备数据或确认数据加载完成后才更新 emptyView 的显示状态
+                // 避免添加设备页面一闪而过的问题
+                if !self.hasLoadedOnce {
+                    // 如果有设备数据，立即隐藏 emptyView
+                    if devs.count > 0 {
+                        self.emptyView.isHidden = true
+                        self.hasLoadedOnce = true
+                    }
+                    // 如果没有设备数据，延迟一小段时间后再显示 emptyView
+                    // 这样可以等待数据加载完成，避免闪烁
+                    else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                            guard let self = self else { return }
+                            // 延迟后再次检查，如果仍然没有设备才显示 emptyView
+                            if self.devices.isEmpty {
+                                self.emptyView.isHidden = false
+                            }
+                            self.hasLoadedOnce = true
+                        }
+                    }
+                } else {
+                    // 后续更新直接根据设备数量显示/隐藏 emptyView
+                    self.emptyView.isHidden = devs.count != 0
+                }
             }.store(in: &self.anyCancellables)
 
         // emptyView 点击了新增设备按钮
