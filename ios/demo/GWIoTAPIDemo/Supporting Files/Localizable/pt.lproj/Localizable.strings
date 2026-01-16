@@ -683,3 +683,6 @@
 "AA0691" = "Usando uma rede não-WLAN, a reprodução pode gerar custos de dados";
 "AA0692" = "Visto %@";
 "AA0693" = "O app deseja acessar seu armazenamento.";
+"AA0694" = "Outro meio de login";
+"AA0695" = "Login com um clique";
+"AA0696" = "Login/registro de outras contas";

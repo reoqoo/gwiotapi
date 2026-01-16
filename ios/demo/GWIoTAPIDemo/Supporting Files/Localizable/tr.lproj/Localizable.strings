@@ -125,8 +125,8 @@
 "AA0126" = "“XT-” bulunamazsa ne yapmalı?";
 "AA0127" = "1.Aygıt hızlı ağ iletişimini desteklemeyebilir (hotspot bağlantısı). Lütfen bağlantı metodunu seçerken aygıttan gelen sesli uyarıları takip ediniz veya.";
 "AA0128" = "2.Cep telefonu ile aygıtın arasındaki mesafe çok uzak. 30 cm. mesafede\n olması gerekmektedir.";
-"AA0129" = "'XT-' ile başlayan Wi-Fi'ye bağlanın";
-"AA0130" = "'XT-' ile başlayan Wi-Fi'ye bağlandıktan sonra ekleme sürecini tamamlamak için APP'e dönmeyi unutmayın~";
+"AA0129" = "XT-' ile başlayan Wi-Fi'ye bağlanın";
+"AA0130" = "XT-' ile başlayan Wi-Fi'ye bağlandıktan sonra ekleme sürecini tamamlamak için APP'e dönmeyi unutmayın~";
 "AA0131" = "Kabul ediyorum";
 "AA0132" = "Taramak";
 "AA0133" = "Lütfen ekipmanın bağlantı için bekleme modunda olduğundan emin olun,telefonunuzu kameraya yaklaşın.";
@@ -683,3 +683,6 @@
 "AA0691" = "Wi-Fi dışı bir ağ kullanıyor, oynatmak veri maliyeti oluşturabilir";
 "AA0692" = "Görüldü %@";
 "AA0693" = "Uygulama depolama bilgilerinizi kullanmak istiyor";
+"AA0694" = "Başka yollarla giriş yapın";
+"AA0695" = "Tek tıkla giriş";
+"AA0696" = "Diğer hesap ile girişi/kayıt";

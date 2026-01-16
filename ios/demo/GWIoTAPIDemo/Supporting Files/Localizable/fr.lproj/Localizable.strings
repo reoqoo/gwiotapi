@@ -683,3 +683,6 @@
 "AA0691" = "Utilisation d'un réseau non-WLAN, la lecture peut entraîner des frais de données";
 "AA0692" = "Vu %@";
 "AA0693" = "L'application veut utiliser votre stockage";
+"AA0694" = "Autres méthodes de connexion";
+"AA0695" = "Connexion par téléphone";
+"AA0696" = "Connexion/inscription avec un autre compte";

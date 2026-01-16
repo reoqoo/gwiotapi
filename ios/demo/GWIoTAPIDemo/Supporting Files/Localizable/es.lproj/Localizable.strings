@@ -683,3 +683,6 @@
 "AA0691" = "Usando una red no-WLAN, la reproducción puede incurrir en costos de datos";
 "AA0692" = "Visto %@";
 "AA0693" = "La aplicación quiere usar tu almacenamiento";
+"AA0694" = "Otra forma de iniciar la sesión";
+"AA0695" = "Inicio de sesión con un clic";
+"AA0696" = "Iniciar sesión con otra cuenta / registrarse";

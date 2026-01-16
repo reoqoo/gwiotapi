@@ -687,5 +687,5 @@
 "AA0692" = "%@ are detected";
 "AA0693" = "Need permission to access phone storage";
 "AA0694" = "Other login methods";
-"AA0695" = "One-Click Login";
-"AA0696" = "Other account login/registration";
+"AA0695" = "Phone Login";
+"AA0696" = "Login/register with another account";

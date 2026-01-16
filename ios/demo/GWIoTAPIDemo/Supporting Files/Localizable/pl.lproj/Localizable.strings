@@ -683,3 +683,6 @@
 "AA0691" = "Korzystanie z sieci innej niż WLAN, odtwarzanie może generować koszty danych";
 "AA0692" = "Zobaczony %@";
 "AA0693" = "Aplikacja chce korzystać z Twojej pamięci";
+"AA0694" = "Inna metoda logowania";
+"AA0695" = "Logowanie jednym kliknięciem";
+"AA0696" = "Inne logowanie/rejestracja konta";
