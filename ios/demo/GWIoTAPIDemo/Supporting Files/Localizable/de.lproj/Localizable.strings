@@ -539,7 +539,7 @@
 "AA0542" = "Download fehlgeschlagen, bitte Netzwerkverbindung des Geräts prüfen und erneut versuchen";
 "AA0543" = "Aktualisierung fehlgeschlagen, bitte Gerät neu starten und erneut versuchen";
 "AA0544" = "Wird aktualisiert...";
-"AA0545" = "Ich habe die Nutzungsvereinbarung und die Datenschutzerklärung\n gelesen und stimme ihnen zu";
+"AA0545" = "Ich habe die Nutzungsvereinbarung und die Datenschutzerklärung gelesen und stimme ihnen zu";
 "AA0546" = "Eine kamera";
 "AA0547" = "Foto.";
 "AA0548" = "Na video.";
@@ -687,3 +687,4 @@
 "AA0694" = "Weitere Anmeldungsmethoden";
 "AA0695" = "Telefon-Anmeldung";
 "AA0696" = "Mit einem anderen Konto anmelden/registrieren";
+"AA0697" = "Die aktuelle Version unterstützt die direkte Bindung dieses Geräts nicht. Bitte laden Sie die \"AI LIFE\"-App herunter, um es hinzuzufügen und zu verwenden.";
