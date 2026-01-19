@@ -1,3 +1,7 @@
+<div align="right">
+  <a href="./README.en.md" style="display: inline-block; padding: 6px 12px; background-color: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">English</a>
+</div>
+
 GWIoTApi是技威开发的App端物联网设备插件化支持SDK，方便合作厂商快速开发定制自有品牌的App，通过接入技威已实现的各型号产品插件，即可实现设备直播、回放、设置等功能。
 
 目前支持iOS、Android。

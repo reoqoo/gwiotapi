@@ -1,34 +1,33 @@
-GWIoTApi is an app-side IoT device plug-in support SDK developed by Jiwei, which facilitates cooperative manufacturers to quickly develop and customize their own brand apps. By connecting to various product plug-ins that Jiwei has implemented, you can realize the functions of device live broadcast, playback, and settings.
+<div align="right">
+  <a href="./README.md" style="display: inline-block; padding: 6px 12px; background-color: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">中文</a>
+</div>
 
-Currently supports iOS and Android.
+GWIoTApi is an App-side IoT device plug-in support SDK developed by Gwell, which facilitates partner manufacturers to quickly develop and customize their own branded Apps. By integrating Gwell's already implemented product plugins for various models, you can achieve functions such as device live streaming, playback, and settings.
+
+Currently supports iOS and Android platforms.
 
 ## Development Process
+1. Apply for a developer account from our business or relevant contact person, log in to the developer platform to create and configure applications and products
+2. Integrate the SDK according to each platform's integration instructions
+- [iOS Integration Instructions](ios/demo/README.en.md)
+- [Android Integration Instructions](android/demo/README.en.md)
+3. Call SDK interfaces to implement various module functions
+- Before developing the App, please read the [App Development Guide](docs/app_develop_guide.en.md) to understand key code implementations such as SDK initialization, login and registration, and refer to the demos of each platform to understand how to use the SDK.
+- [iOS Demo](ios/demo)
+- [Android Demo](android/demo)
 
-1.  Apply for a developer account from our business or related interface person, log in to the developer platform to create and configure applications and products
-2.  Integrate SDK according to the integration instructions of each platform
+## Implemented Functions
+Currently, the SDK has implemented various functions/interfaces required for App development, including but not limited to the following:
+- [x] Account interfaces, including login, registration, logout, password modification, and other personal information management
+- [x] Device interfaces, including device list, device details, device control, etc.
+- [x] Device plugins, built-in complete device function UI components, including live streaming, playback, settings, etc.
+- [x] Album component, built-in default device album UI component for managing device screenshots and recordings
+- [x] ...
+> If you have other requirements/suggestions, please contact our business or relevant contact person directly
 
--   [iOS integration instructions](ios/demo/README.md)
--   [Android Integration Instructions](android/demo/README.md)
+## API Documentation
+For the complete SDK API documentation, please refer to:
 
-3.  Calling the SDK interface to realize the functions of each module
+[GWIoTApi Reference](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)
 
--   Before developing the app, please read[App Development Guide](docs/app_develop_guide.md), understand the implementation of key codes such as SDK initialization, login and registration, and refer to each demo to understand how SDK is used.
--   [iOS Demo](ios/demo)
--   [Android Demo](android/demo)
-
-## Implemented functions
-
-At present, the SDK has implemented various functions/interfaces required for developing an App, including but not limited to the following:
-
--   [x] Account interface, including login, registration, cancellation, password modification and other personal information, etc.
--   [x] Equipment interface, including device list, device details, device control, etc.
--   [x] Device plug-in, built-in complete device function UI components, including live broadcast, playback, settings and other functions
--   [x] Album component, built-in default device album UI component, manage device screenshots and video recordings
--   [x] ...
-    > If you have any other requests/suggestions, you can contact our business or relevant interface person directly
-
-## Interface Documentation
-
-SDK完整接口文档请查阅:
-
-[GWIOT API REFERENCE](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi/-g-w-io-t/index.html)
+[Update Log](docs/api_change_log.en.md)
