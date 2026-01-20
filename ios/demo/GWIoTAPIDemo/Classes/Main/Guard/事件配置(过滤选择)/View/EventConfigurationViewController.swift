@@ -162,9 +162,11 @@ class EventConfigurationViewController: PageSheetStyleViewController {
 
     /// 决定 cell 显示
     /// 可选的事件类型
-    var eventFilterSelections: [CollectionViewCellItem] = DITCloudEventType.validityTypes.reduce(into: [.init(type: .all)]) { partialResult, type in
-        partialResult.append(.init(type: .event(type)))
-    }
+    var eventFilterSelections: [CollectionViewCellItem] = DITCloudEventType.validityTypes
+        .filter { $0 != .face }
+        .reduce(into: [.init(type: .all)]) { partialResult, type in
+            partialResult.append(.init(type: .event(type)))
+        }
     /// 可选的设备
     var deviceFilterSelections: [CollectionViewCellItem] = []
 
