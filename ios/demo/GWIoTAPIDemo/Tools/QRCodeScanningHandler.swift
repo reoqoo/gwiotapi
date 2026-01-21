@@ -29,35 +29,17 @@ class QRCodeScanningHandler {
     }
 
     func openScanningWithTitle(_ title: String, description: String) async throws {
+        try await GWIoT.shared.openScanQRCodePage(opts: .init(), recognized: nil)
+        return
+        
+        // 自定义处理二维码结果 参考代码
         let opts = ScanQRCodeOptions(enableBuiltInHandling: false, title: title, descTitle: description)
         try await GWIoT.shared.openScanQRCodePage(opts: opts) { qrCodeType, closeHandler in
-            // 处理其他二维码
-            if qrCodeType.qrCodeValue.contains("smarthome.hicloud.com") {
-                DispatchQueue.main.async {
-                    let alertContent = String.localization.localized("AA0659", note: "当前版本暂不支持直接绑定该设备，请下载\"小豚云\"APP添加使用。")
-                    let alert = RQCoreUI.AlertViewController.init(title: nil, content: .string(alertContent), actions: [
-                        .init(title: String.localization.localized("AA0131", note: "知道了"), style: .default, handler: { _, alert in
-                            alert.dismiss(animated: true)
-                        }),
-                        .init(title: String.localization.localized("AA0660", note: "去下载"), style: .default, handler: { _, alert in
-                            alert.dismiss(animated: true)
-                            let url: URL = .init(string: "dophigo://")!
-                            if UIApplication.shared.canOpenURL(url) {
-                                UIApplication.shared.open(url)
-                            }else{
-                                UIApplication.shared.open(.init(string: "https://apps.apple.com/app/1226835767")!)
-                            }
-                        })
-                    ])
-                    UIApplication.rootViewController()?.present(alert, animated: true)
-                }
-            }
-
             // 配网
             if let qrCodeType = qrCodeType as? QRCodeType.BindDevice {
                 Task {
-                    let _ = closeHandler()
                     try await GWIoT.shared.openBind(qrCodeValue: qrCodeType.qrCodeValue)
+                    let _ = closeHandler() // 关闭扫码页面
                 }
                 return
             }
