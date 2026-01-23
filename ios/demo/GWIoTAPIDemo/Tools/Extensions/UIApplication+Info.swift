@@ -8,15 +8,7 @@
 import Foundation
 
 extension UIApplication {
-    enum Key {}
     enum UserDefaults {}
-}
-
-extension UIApplication.Key {
-    enum Bugly {
-        static let appID = "c4c7e120ae"
-        static let appKey = "af233192-1ae2-442d-844d-d47895ee7af5"
-    }
 }
 
 extension UIApplication.UserDefaults {
