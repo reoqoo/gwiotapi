@@ -10,7 +10,9 @@ import Foundation
 extension UserDefaults {
     // UserDefaults 全局 Key
     enum GlobalKey: String {
-
+        /// 服务器环境是否测试环境
+        case Reoqoo_isTestEnv
+        
         /// 强开云服务入口
         case Reoqoo_IsForceOpenVasEntrance
         /// 强开4G流量入口
