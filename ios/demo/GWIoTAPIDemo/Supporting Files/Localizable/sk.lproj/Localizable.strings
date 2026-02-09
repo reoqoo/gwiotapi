@@ -690,3 +690,10 @@
 "AA0695" = "Prihlásenie jedným kliknutím";
 "AA0696" = "Prihlásenie/registrácia iného účtu";
 "AA0697" = "Aktuálna verzia nepodporuje priame prepojenie tohto zariadenia. Stiahnite si aplikáciu \"AI LIFE\" na pridanie a používanie.";
+"AA0698" = "1.Naskenujte QR kód na zařízení nebo sdílený ostatními\n2.Navštivte oficiální web DophiGo > Podpora > Stáhnout a získejte\nnástroj Little Dolphin PC pro přihlášení a použití pomocí QR kódu";
+"AA0699" = "Potvrdiť";
+"AA0700" = "Prihlásenie PC";
+"AA0701" = "Zrušiť";
+"AA0702" = "Prihlásenie úspešné";
+"AA0703" = "Prihlásenie zlyhalo";
+"AA0704" = "Token vypršal, ukončite a skúste znova";

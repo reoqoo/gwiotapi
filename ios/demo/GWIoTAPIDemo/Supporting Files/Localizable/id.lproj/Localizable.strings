@@ -690,3 +690,10 @@
 "AA0695" = "Tekan untuk masuk";
 "AA0696" = "Masuk dengan akun lain / Daftar";
 "AA0697" = "Versi saat ini tidak mendukung pengikatan langsung perangkat ini. Silakan unduh aplikasi \"AI LIFE\" untuk menambahkan dan menggunakannya.";
+"AA0698" = "1.Lütfen cihazdaki veya başkaları tarafından paylaşılan QR kodunu tarayın\n2.DophiGo resmi web sitesine > Destek > İndir bölümüne giderek\nQR kod girişi ve kullanımı için Little Dolphin PC aracını edinin";
+"AA0699" = "Konfirmasi";
+"AA0700" = "Login PC";
+"AA0701" = "Batal";
+"AA0702" = "Login berhasil";
+"AA0703" = "Gagal masuk";
+"AA0704" = "Token kedaluwarsa, keluar dan coba lagi";

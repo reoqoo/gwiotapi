@@ -687,3 +687,10 @@
 "AA0695" = "Inloggen met één klik";
 "AA0696" = "Andere account login/registratie";
 "AA0697" = "De huidige versie ondersteunt geen directe binding van dit apparaat. Download de \"AI LIFE\"-app om toe te voegen en te gebruiken.";
+"AA0698" = "1.Silakan pindai kode QR di perangkat atau dibagikan oleh orang lain\n2.Kunjungi situs web resmi DophiGo > Dukungan > Unduh untuk mendapatkan\nalat PC Little Dolphin untuk login dan penggunaan kode QR";
+"AA0699" = "Bevestigen";
+"AA0700" = "PC-inlog";
+"AA0701" = "Annuleren";
+"AA0702" = "Inloggen geslaagd";
+"AA0703" = "Aanmelden mislukt";
+"AA0704" = "Token verlopen, verlaat en probeer opnieuw";

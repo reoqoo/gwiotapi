@@ -690,3 +690,10 @@
 "AA0695" = "Đăng nhập nhanh";
 "AA0696" = "Đăng nhập bằng tài khoản khác/đăng ký";
 "AA0697" = "Phiên bản hiện tại không hỗ trợ liên kết trực tiếp thiết bị này. Vui lòng tải ứng dụng \"AI LIFE\" để thêm và sử dụng.";
+"AA0698" = "1.Scan il codice QR sul dispositivo o condiviso da altri\n2.Vai sul sito ufficiale di DophiGo > Supporto > Download per ottenere\nlo strumento PC Little Dolphin per l'accesso e l'uso con codice QR";
+"AA0699" = "Xác nhận";
+"AA0700" = "Đăng nhập PC";
+"AA0701" = "Hủy";
+"AA0702" = "ĐĂNG NHẬP THÀNH CÔNG!";
+"AA0703" = "Đăng nhập thất bại";
+"AA0704" = "Token hết hạn, vui lòng thoát và thử lại";

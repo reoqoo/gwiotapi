@@ -687,3 +687,10 @@
 "AA0695" = "Inicio de sesión con un clic";
 "AA0696" = "Iniciar sesión con otra cuenta / registrarse";
 "AA0697" = "La versión actual no admite la vinculación directa de este dispositivo. Por favor, descargue la aplicación \"AI LIFE\" para agregarlo y usarlo.";
+"AA0698" = "1.デバイス上のQRコードまたは他の人が共有したQRコードをスキャンしてください\n2.DophiGo公式サイト > サポート > ダウンロードにアクセスして\nQRコードログインと使用のためのLittle Dolphin PCツールを入手してください";
+"AA0699" = "Confirmar";
+"AA0700" = "Inicio PC";
+"AA0701" = "Cancelar";
+"AA0702" = "Inicio de sesión con éxito";
+"AA0703" = "Error de inicio de sesión";
+"AA0704" = "Token caducado, salga y vuelva a intentarlo";

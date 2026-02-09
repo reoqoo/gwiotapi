@@ -687,3 +687,10 @@
 "AA0695" = "Logowanie jednym kliknięciem";
 "AA0696" = "Inne logowanie/rejestracja konta";
 "AA0697" = "Obecna wersja nie obsługuje bezpośredniego wiązania tego urządzenia. Pobierz aplikację \"AI LIFE\", aby dodać i używać.";
+"AA0698" = "1.Escanee el código QR en el dispositivo o compartido por otros\n2.Vaya al sitio web oficial de DophiGo > Soporte > Descargas para obtener\nla herramienta Little Dolphin PC para inicio de sesión y uso con código QR";
+"AA0699" = "Potwierdź";
+"AA0700" = "Logowanie PC";
+"AA0701" = "Anuluj";
+"AA0702" = "Logowanie pomyślne";
+"AA0703" = "Logowanie nieudane";
+"AA0704" = "Token wygasł, wyjdź i spróbuj ponownie";

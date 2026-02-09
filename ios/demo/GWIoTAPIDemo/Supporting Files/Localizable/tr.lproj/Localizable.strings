@@ -687,3 +687,10 @@
 "AA0695" = "Tek tıkla giriş";
 "AA0696" = "Diğer hesap ile girişi/kayıt";
 "AA0697" = "Mevcut sürüm bu cihazın doğrudan bağlanmasını desteklemiyor. Lütfen eklemek ve kullanmak için \"AI LIFE\" uygulamasını indirin.";
+"AA0698" = "1.Zeskanuj kod QR na urządzeniu lub udostępniony przez innych\n2.OdwiEDŹ oficjalną stronę DophiGo > Wsparcie > Pobierz, aby uzyskać\nnarzędzie Little Dolphin PC do logowania i użytkowania za pomocą kodu QR";
+"AA0699" = "Onayla";
+"AA0700" = "PC Giriş";
+"AA0701" = "İptal";
+"AA0702" = "Giriş başarılı";
+"AA0703" = "Giriş başarısız";
+"AA0704" = "Token süresi doldu, çıkın ve yeniden deneyin";
