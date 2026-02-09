@@ -9,6 +9,7 @@ import Foundation
 import RQCore
 import RQCoreUI
 import RQDeviceShared
+import RQDeviceAddition
 import RQWebServices
 
 import GWIoTApi
@@ -207,6 +208,14 @@ class FamilyViewController2: BaseViewController {
             }
         }).store(in: &self.anyCancellables)
 
+        // 设备绑定成功后(点击“开始使用”)，主动同步一次设备列表，避免返回首页列表不刷新
+        NotificationCenter.default.publisher(for: RQDeviceAddition.Agent.didFinishBindNotification)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.activeChild?.pullToRefresh(completion: nil)
+            }.store(in: &self.anyCancellables)
+        
         // 查询到分享邀请新消息, 会触发此发布者
         self.vm.deviceShareInviteObservable.sink(receiveValue: { [weak self] inviteModel in
             // 显示邀请
