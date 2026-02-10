@@ -687,7 +687,7 @@
 "AA0695" = "Connexion par téléphone";
 "AA0696" = "Connexion/inscription avec un autre compte";
 "AA0697" = "La version actuelle ne prend pas en charge la liaison directe de cet appareil. Veuillez télécharger l'application \"AI LIFE\" pour l'ajouter et l'utiliser.";
-"AA0698" = "1.기기 또는 다른 사람이 공유한 QR 코드를 스캔하세요\n2.DophiGo 공식 웹사이트 > Support > Download에서\nQR 코드 로그인 및 사용을 위한 Little Dolphin PC 도구를 다운로드하세요";
+"AA0698" = "1.Veuillez scanner le code QR sur l'appareil ou partagé par d'autres\n2.Allez sur le site officiel de DophiGo > Support > Télécharger pour obtenir\nl'outil PC Little Dolphin pour la connexion et l'utilisation par QR code";
 "AA0699" = "Confirmer";
 "AA0700" = "Connexion PC";
 "AA0701" = "Annuler";
