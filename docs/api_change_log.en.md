@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.6.5
+- Merged YooseeKit 6.39
+  - Adapted new device features such as grid battery, soft PTZ, etc., compatible with multiple camera types.
+  - Added vertical screen fullscreen interaction for monitoring, smart guard, and playback.
+  - Optimized event time points for cloud/card playback.
+  - Supported "Cloud Playback Video Quality" setting for 4G devices.
+- Fixed known bugs
+
+
 ## 1.2.0
 - Added [Message Center Interface](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html)
 

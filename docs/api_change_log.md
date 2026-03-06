@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.5
+- 合并YooseeKit 6.39
+  - 适配格子电池、软云台等新设备特性，兼容多类型摄像头。
+  - 监控、智能守护、回放新增竖屏全屏交互。
+  - 云 / 卡回放事件时间点逻辑优化。
+  - 设备支持 “云回放录像质量” 设置。
+- 修复已知的Bugs
+
 ## 1.2.0
 - 增加[消息中心接口](https://reoqoo.github.io/gwiotapi/api/-g-w-io-t-api/com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html)
 
