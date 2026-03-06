@@ -47,7 +47,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.5.5        </div>
+1.6.5        </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
                 <button class="platform-tag platform-selector common-like" data-active=""
@@ -236,6 +236,21 @@
               </div>
             </div>
           </div>
+<a data-name="615462419%2FFunctions%2F491975536" anchor-label="queryDevUpgradeInfo" id="615462419%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="query-dev-upgrade-info.html"><span>query</span><wbr></wbr><span>Dev</span><wbr></wbr><span>Upgrade</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="615462419%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="query-dev-upgrade-info.html"><span class="token function">queryDevUpgradeInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">devId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">currentVer<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-result/index.html">GWResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">查询设备升级信息 p2p &quot;sdk/dev/upg/app/queryVersion&quot;</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1691268340%2FFunctions%2F491975536" anchor-label="queryMessageDetailList" id="-1691268340%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
           <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
@@ -307,6 +322,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="query-user-info.html"><span class="token function">queryUserInfo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-result/index.html">GWResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">查询用户信息</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1714518222%2FFunctions%2F491975536" anchor-label="queryUserMessage" id="-1714518222%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="query-user-message.html"><span>query</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1714518222%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="query-user-message.html"><span class="token function">queryUserMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">deviceId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">onlyUnread<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-result/index.html">GWResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">查询用户消息 path: &quot;openapi/notice/usrmsg&quot; 参数&quot;notAutoReaded&quot;未传，固定1</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -427,6 +457,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="update-message-read.html"><span class="token function">updateMessageRead</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tag<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">deviceId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-result/index.html">GWResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">更新消息已读</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1453633479%2FFunctions%2F491975536" anchor-label="updateUserMessageStatus" id="-1453633479%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-user-message-status.html"><span>update</span><wbr></wbr><span>User</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1453633479%2FFunctions%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="update-user-message-status.html"><span class="token function">updateUserMessageStatus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">list<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.gw.gwiotapi.entities/-g-w-result/index.html">GWResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">更新用户消息状态 path: &quot;openapi/notice/setmsgstatus&quot;</p></div></div></div>
                 </div>
               </div>
             </div>

@@ -47,7 +47,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.5.5        </div>
+1.6.5        </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
                 <button class="platform-tag platform-selector common-like" data-active=""
@@ -109,7 +109,7 @@
   <div class="breadcrumbs"><a href="../../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../../index.html">com.gw.gwiotapi.entities</a><span class="delimiter">/</span><a href="../index.html">ProductInfo</a><span class="delimiter">/</span><span class="current">BindType</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Bind</span><wbr></wbr><span><span>Type</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><p class="paragraph">设备联网功能 用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。 PC产测软件从固件上读取设备联网功能码,生成设备二维码标签。(讨论) PC产测软件将设备联网功能码回传云端，以便今后的扩展应用</p><table><thead><tr><th>位</th><th>配网方式</th><th>版本</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>Smartlink</td><td>1.0</td><td>智能联机（7601Wifi模块）</td></tr><tr><td>1</td><td>声波1.0</td><td>1.0</td><td>声波配网（海思、联咏、国科）</td></tr><tr><td>2</td><td>AP</td><td>1.0</td><td></td></tr><tr><td>3</td><td>Simpeconfig</td><td>1.0</td><td></td></tr><tr><td>4</td><td>蓝牙</td><td>1.0</td><td></td></tr><tr><td>5</td><td>二维码</td><td>1.0</td><td></td></tr><tr><td>6</td><td>服务器notify通知</td><td>1.0</td><td>4G</td></tr><tr><td>7</td><td>声波2.0</td><td>2.0</td><td></td></tr><tr><td>8-12</td><td>预留扩展</td><td></td><td></td></tr><tr><td>13</td><td>4G设备(外置卡)</td><td>2.0</td><td></td></tr><tr><td>14</td><td>4G设备(内置卡)</td><td>2.0</td><td></td></tr><tr><td>15</td><td>设备存在有线网口</td><td>2.0</td><td></td></tr></tbody></table></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><p class="paragraph">设备联网功能 用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。 PC产测软件从固件上读取<strong>设备联网功能码</strong>,生成设备二维码标签。(==讨论==) PC产测软件将<strong>设备联网功能码</strong>回传云端，以便今后的扩展应用</p><table><thead><tr><th>位</th><th>配网方式</th><th>版本</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>Smartlink</td><td>1.0</td><td>智能联机 （7601Wifi模块）</td></tr><tr><td>1</td><td>声波1.0</td><td>1.0</td><td>声波配网 （海思、联咏、国科）</td></tr><tr><td>2</td><td>AP</td><td>1.0</td></tr><tr><td>3</td><td>Simpeconfig</td><td>1.0</td></tr><tr><td>4</td><td>蓝牙</td><td>1.0</td></tr><tr><td>5</td><td>二维码</td><td>1.0</td></tr><tr><td>6</td><td>4G配网绑定</td><td>1.0</td><td>设备通知APP走4G配网绑定</td></tr><tr><td>7</td><td>声波2.0</td><td>2.0</td></tr><tr><td>8</td><td>支持2.4G wifi</td><td>2.0</td></tr><tr><td>9</td><td>支持5G wifi</td><td>2.0</td></tr><tr><td>10</td><td>4G设备支持APN设置</td><td>2.0</td></tr><tr><td>11</td><td>4G优先(双模设备)</td><td>2.0</td></tr><tr><td>12</td><td>预留扩展</td><td></td></tr><tr><td>13</td><td>4G设备(外置卡)</td><td>2.0</td></tr><tr><td>14</td><td>4G设备(内置卡)</td><td>2.0</td></tr><tr><td>15</td><td>设备存在有线网口</td><td>2.0</td></tr></tbody></table></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
@@ -221,17 +221,17 @@
               </div>
             </div>
           </div>
-<a data-name="29222483%2FClasslikes%2F491975536" anchor-label="NotifyBind" id="29222483%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+<a data-name="560172540%2FClasslikes%2F491975536" anchor-label="FourG" id="560172540%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
           <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-notify-bind/index.html">NotifyBind</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="29222483%2FClasslikes%2F491975536"></span>
+                  <div><a href="-four-g/index.html">FourG</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="560172540%2FClasslikes%2F491975536"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-notify-bind/index.html">NotifyBind</a></div></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-four-g/index.html">FourG</a></div></div></div></div>
                 </div>
               </div>
             </div>
@@ -251,17 +251,62 @@
               </div>
             </div>
           </div>
-<a data-name="-1710044072%2FClasslikes%2F491975536" anchor-label="QRCodeLocal" id="-1710044072%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+<a data-name="2025569506%2FClasslikes%2F491975536" anchor-label="WiFi" id="2025569506%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
           <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-q-r-code-local/index.html">QRCodeLocal</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1710044072%2FClasslikes%2F491975536"></span>
+                  <div><a href="-wi-fi/index.html">WiFi</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2025569506%2FClasslikes%2F491975536"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-q-r-code-local/index.html">QRCodeLocal</a></div></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-wi-fi/index.html">WiFi</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-943551340%2FClasslikes%2F491975536" anchor-label="WiFi5G" id="-943551340%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-wi-fi5-g/index.html">WiFi5G</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-943551340%2FClasslikes%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-wi-fi5-g/index.html">WiFi5G</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-910886421%2FClasslikes%2F491975536" anchor-label="FourGAPN" id="-910886421%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-four-g-a-p-n/index.html">FourGAPN</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-910886421%2FClasslikes%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-four-g-a-p-n/index.html">FourGAPN</a></div></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-895884096%2FClasslikes%2F491975536" anchor-label="FourGPriority" id="-895884096%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-four-g-priority/index.html">FourGPriority</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-895884096%2FClasslikes%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><a href="-four-g-priority/index.html">FourGPriority</a></div></div></div></div>
                 </div>
               </div>
             </div>

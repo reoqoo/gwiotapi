@@ -47,9 +47,11 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.5.5        </div>
+1.6.5        </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":shared/androidMain">android</button>
                 <button class="platform-tag platform-selector common-like" data-active=""
                         data-filter=":shared/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
@@ -66,6 +68,14 @@
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":shared/androidMain"
+                                       data-filter=":shared/androidMain"/>
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":shared/commonMain"
@@ -105,14 +115,16 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="package" id="content" pageIds="GWIoTApi::com.gw.gwiotapi////PointingToDeclaration//491975536">
+<div class="main-content" data-page-type="package" id="content" pageIds="GWIoTApi::com.gw.gwiotapi////PointingToDeclaration//2118410958">
   <div class="breadcrumbs"><a href="../../index.html">GWIoTApi</a><span class="delimiter">/</span><span class="current">com.gw.gwiotapi</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
-    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><p class="paragraph"><a href="-g-w-io-t/index.html"><strong>GWIoT</strong></a><strong>包含应用层用到的所有接口，开发者仅需关注这个类即可</strong></p></div></div>
+    <div class="platform-hinted UnderCoverText with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/androidMain"><p class="paragraph"><a href="-g-w-io-t/index.html"><strong>GWIoT</strong></a><strong>包含应用层用到的所有接口，开发者仅需关注这个类即可</strong></p></div><div class="content sourceset-dependent-content" data-togglable=":shared/commonMain"><p class="paragraph"><a href="-g-w-io-t/index.html"><strong>GWIoT</strong></a><strong>包含应用层用到的所有接口，开发者仅需关注这个类即可</strong></p></div>    </div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
         <h2 class="">Types</h2>
@@ -126,7 +138,45 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-g-w-io-t/index.html">GWIoT</a> : <a href="../com.gw.gwiotapi.components.sub/-i-initialize-dispatcher-component/index.html">IInitializeDispatcherComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-bind-api-component/index.html">IBindApiComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-plugin-config-component/index.html">IPluginConfigComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-plugin-component/index.html">IPluginComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-props-component/index.html">IPropsComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-album-component/index.html">IAlbumComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-http-service-component/index.html">IHttpServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/index.html">IDevMangerComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html">IDevShareComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-dev-upgrade-component/index.html">IDevUpgradeComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-account-register-component/index.html">IAccountRegisterComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html">IAccountManagerComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-host-account-service-component/index.html">IHostAccountServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-push-notification-component/index.html">IPushNotificationComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-traffic-page-component/index.html">ITrafficPageComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-cloud-service-component/index.html">ICloudServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-helper-page-component/index.html">IHelperPageComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html">IQRCodeComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html">IMessageCenterComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-phone-content-component/index.html">IPhoneContentComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-player-component/index.html">IPlayerComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-multi-live-component/index.html">IMultiLiveComponent</a></div><div class="brief "><p class="paragraph">GWIoT是开发者的使用入口，包含应用层开发所需要的所有接口。</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-g-w-io-t/index.html">GWIoT</a> : <a href="../com.gw.gwiotapi.components.sub/-i-initialize-dispatcher-component/index.html">IInitializeDispatcherComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-bind-api-component/index.html">IBindApiComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-plugin-config-component/index.html">IPluginConfigComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-plugin-component/index.html">IPluginComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-props-component/index.html">IPropsComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-album-component/index.html">IAlbumComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-http-service-component/index.html">IHttpServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-dev-manger-component/index.html">IDevMangerComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-dev-share-component/index.html">IDevShareComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-dev-upgrade-component/index.html">IDevUpgradeComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-dev-check-upgrade-component/index.html">IDevCheckUpgradeComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-account-register-component/index.html">IAccountRegisterComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-account-manager-component/index.html">IAccountManagerComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-host-account-service-component/index.html">IHostAccountServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-push-notification-component/index.html">IPushNotificationComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-traffic-page-component/index.html">ITrafficPageComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-cloud-service-component/index.html">ICloudServiceComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-helper-page-component/index.html">IHelperPageComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-q-r-code-component/index.html">IQRCodeComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-message-center-component/index.html">IMessageCenterComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-phone-content-component/index.html">IPhoneContentComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-player-component/index.html">IPlayerComponent</a>, <a href="../com.gw.gwiotapi.components.sub/-i-multi-live-component/index.html">IMultiLiveComponent</a>, <a href="../com.gw.gwiotapi.components.cross_platform/-i-page-lifecycle-component/index.html">IPageLifecycleComponent</a></div><div class="brief "><p class="paragraph">GWIoT是开发者的使用入口，包含应用层开发所需要的所有接口。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1954015862%2FClasslikes%2F1828012138" anchor-label="PageLifecycleHelper" id="-1954015862%2FClasslikes%2F1828012138" data-filterable-set=":shared/androidMain"></a>
+          <div class="table-row" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-page-lifecycle-helper/index.html"><span>Page</span><wbr></wbr><span>Lifecycle</span><wbr></wbr><span><span>Helper</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1954015862%2FClasslikes%2F1828012138"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-page-lifecycle-helper/index.html">PageLifecycleHelper</a></div><div class="brief "><p class="paragraph">Android平台页面生命周期辅助类 提供便捷方法将Activity生命周期事件映射到SDK页面生命周期事件</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-256103366%2FFunctions%2F1828012138" anchor-label="registerPageLifecycle" id="-256103366%2FFunctions%2F1828012138" data-filterable-set=":shared/androidMain"></a>
+          <div class="table-row" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="register-page-lifecycle.html"><span>register</span><wbr></wbr><span>Page</span><wbr></wbr><span><span>Lifecycle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-256103366%2FFunctions%2F1828012138"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://developer.android.com/reference/kotlin/android/app/Activity.html">Activity</a><span class="token punctuation">.</span><a href="register-page-lifecycle.html"><span class="token function">registerPageLifecycle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">page<span class="token operator">: </span><a href="../com.gw.gwiotapi.entities/-page/index.html">Page</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Activity扩展函数，用于自动注册页面生命周期回调</p></div></div>                  </div>
                 </div>
               </div>
             </div>
