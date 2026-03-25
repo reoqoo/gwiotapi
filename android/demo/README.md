@@ -95,8 +95,8 @@ android {
 }
 
 dependencies { 
-    implementation "com.gwell:gwiotapi:1.1.9.0"
-    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.32.2.0.10") {
+    implementation "com.gwell:gwiotapi:1.6.7.3"
+    implementation("com.yoosee.gw_plugin_hub:impl_main:google-release-6.39.0.0.8") {
         exclude group: 'com.google.android.material'
         exclude(group: 'com.yoosee.gw_plugin_hub', module: 'liblog_release')
         exclude(group: 'com.gwell', module: 'iotvideo-multiplatform')
@@ -107,7 +107,7 @@ dependencies {
     }
     
     
-    def reoqooV = "google-release-01.05.25.0.10"
+    def reoqooV = "dss-release-01.06.01.0.58"
     implementation "com.reoqoo.gw_plugin_hub:main:$reoqooV"
 }
 
