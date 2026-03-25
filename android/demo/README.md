@@ -129,13 +129,10 @@ override fun onCreate() {
         versionCode = BuildConfig.GWIOT_VERSION_CODE,
         appConfig = AppConfig(
             appId = BuildConfig.GWIOT_APP_ID,
-            appToken = BuildConfig.GWIOT_APP_TOKEN,
-            appName = BuildConfig.GWIOT_APP_NAME,
-            cId = BuildConfig.GWIOT_CID,
+            appToken = BuildConfig.GWIOT_APP_TOKEN
         ),
         mainActvityKlass = MainActivity::class.java as Class<Activity>,
     )
-    option.brandDomain = BuildConfig.GWIOT_BRAND_DOMAIN
     option.disableAccountService = true
     val snapshotDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}ScreenShots"
     val recordDir = "${this.getExternalFilesDir(null)}${File.separator}iotplugin${File.separator}RecordVideo"
