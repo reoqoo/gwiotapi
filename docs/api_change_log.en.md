@@ -1,4 +1,6 @@
 # Changelog
+## 1.6.7.3
+- Fixed known bugs
 
 ## 1.6.5
 - Merged YooseeKit 6.39
