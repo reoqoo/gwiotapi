@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             Log.i(TAG, "propsChanged = $props")
         }
         Log.i(TAG, "intent = $intent")
-        this.initLogger()
+//        this.initLogger()
         // 离线推送处理
         runOnUiThread {
             GWIoT.receivePushNotification(PushNotification(intent = intent))
