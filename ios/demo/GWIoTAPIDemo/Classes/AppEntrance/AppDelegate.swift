@@ -103,6 +103,7 @@ extension AppDelegate {
 
         let servicesEnv: HostConfig.Env = UIApplication.UserDefaults.isTestEnv ? .test : .prod
         opts.hostConfig = .init(env: servicesEnv)
+        opts.enableEventReportOnlyMode = AppFeatureConfiguration.enableCloudRecordDecoupleMode
 
         if let watermarkPath = Bundle.main.path(forResource: "watermark_reo_logo", ofType: "png") {
             opts.albumConfig = .init(watermarkConfig: .init(filePath: watermarkPath, position: nil, horizontalMargin: 0, verticalMargin: 0, widthScale: 0, heightScale: 0))

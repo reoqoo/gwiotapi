@@ -153,6 +153,7 @@
 		C40F97312E85664900AF2388 /* family_update.json in Resources */ = {isa = PBXBuildFile; fileRef = C40F958B2E85664900AF2388 /* family_update.json */; };
 		C41AD5B62E5C061E00382D0A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41AD5B32E5C061E00382D0A /* NotificationService.swift */; };
 		C4CB606F2DF02C710098E3F5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB5FEB2DF02C710098E3F5 /* R.generated.swift */; };
+		D76F66902F9A6714007C0EBB /* AppFeatureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F668F2F9A6714007C0EBB /* AppFeatureConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +357,7 @@
 		C4CB5FEA2DF02C710098E3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CB5FEB2DF02C710098E3F5 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		C4FF289B2E12228D0004F011 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D76F668F2F9A6714007C0EBB /* AppFeatureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,6 +440,7 @@
 				C40F95972E85664900AF2388 /* AppDelegate.swift */,
 				C40F95982E85664900AF2388 /* AppEntranceManager.swift */,
 				C40F95992E85664900AF2388 /* AppentranceManager+Extra.swift */,
+				D76F668F2F9A6714007C0EBB /* AppFeatureConfiguration.swift */,
 				C40F959A2E85664900AF2388 /* AppInfo.swift */,
 				C40F959B2E85664900AF2388 /* KeyWindow.swift */,
 				C40F959C2E85664900AF2388 /* LaunchScreen.storyboard */,
@@ -1576,9 +1579,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWIoTAPIDemo/Pods-GWIoTAPIDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1659,6 +1666,7 @@
 				C40F96DF2E85664900AF2388 /* CloseAccountPasswordInputViewController.swift in Sources */,
 				C40F96E02E85664900AF2388 /* EventContentView+TableViewComponents.swift in Sources */,
 				C40F96E12E85664900AF2388 /* SettingViewController.swift in Sources */,
+				D76F66902F9A6714007C0EBB /* AppFeatureConfiguration.swift in Sources */,
 				C40F96E22E85664900AF2388 /* String+Utils.swift in Sources */,
 				C40F96E32E85664900AF2388 /* GuardianViewController+LiveCollectionViewCell.swift in Sources */,
 				C40F96E42E85664900AF2388 /* User.swift in Sources */,
