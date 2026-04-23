@@ -541,7 +541,7 @@
 "AA0542" = "Download failed. Please try again after checking the device network";
 "AA0543" = "Upgrade failed. Please try again after restarting the device";
 "AA0544" = "Upgrading...";
-"AA0545" = "I have read and agree to《User agreement》and《Privacy Policy》";
+"AA0545" = "I have read and agree to《User agreement\n》and《Privacy Policy》";
 "AA0546" = "Camera";
 "AA0547" = "Photo";
 "AA0548" = "Video";
@@ -697,4 +697,4 @@
 "AA0702" = "Login successful";
 "AA0703" = "Login failed";
 "AA0704" = "Token expired, please exit and retry";
-"AA0705" = "Please first call the ipTIME customer service hotline (1544–8695) for consultation, and then proceed with \"sending feedback\" according to the guidance/requirements provided by customer service.";
+"AA0705" = "Please first call the ipTIME customer service hotline (1544-8695) for consultation, then follow the customer service instructions/requirements to \"Send Feedback\".";

@@ -694,3 +694,4 @@
 "AA0702" = "Connexion réussie";
 "AA0703" = "Échec de la connexion";
 "AA0704" = "Token expiré, veuillez quitter et réessayer";
+"AA0705" = "Veuillez d'abord appeler la hotline du service client ipTIME (1544-8695) pour une consultation, puis suivez les instructions/exigences du service client pour \"Envoyer un commentaire\".";

@@ -694,3 +694,4 @@
 "AA0702" = "Giriş başarılı";
 "AA0703" = "Giriş başarısız";
 "AA0704" = "Token süresi doldu, çıkın ve yeniden deneyin";
+"AA0705" = "Lütfen önce ipTIME müşteri hizmetleri hattını (1544-8695) arayarak danışın, ardından müşteri hizmetlerinin talimatları/şartları doğrultusunda \"Geri Bildirim Gönder\" işlemini yapın.";

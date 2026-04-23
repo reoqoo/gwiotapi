@@ -43,7 +43,7 @@
 "AA0043" = "Mein";
 "AA0044" = "Vereinbarung";
 "AA0045" = "Zusammenfassung der Nutzerservicevereinbarung und Datenschutzerklärung";
-"AA0046" = "Willkommen bei reoqoo! reoqoo ist eine Online-Audio- und -Videoplattform, die von Shenzhen DophiGo IoT Technology  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzerklärung und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %@ und %@ lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.";
+"AA0046" = "Willkommen bei reoqoo! reoqoo ist eine Online-Audio- und -Videoplattform, die von Shenzhen DophiGo IoT Technology  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzerklärung\n und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %@ und %@ lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.";
 "AA0047" = "%@s Zuhause";
 "AA0048" = "Gerät";
 "AA0049" = "Geräte hinzufügen";
@@ -539,7 +539,7 @@
 "AA0542" = "Download fehlgeschlagen, bitte Netzwerkverbindung des Geräts prüfen und erneut versuchen";
 "AA0543" = "Aktualisierung fehlgeschlagen, bitte Gerät neu starten und erneut versuchen";
 "AA0544" = "Wird aktualisiert...";
-"AA0545" = "Ich habe die Nutzungsvereinbarung und die Datenschutzerklärung gelesen und stimme ihnen zu";
+"AA0545" = "Ich habe die Nutzungsvereinbarung und die Datenschutzerklärung\n gelesen und stimme ihnen zu";
 "AA0546" = "Eine kamera";
 "AA0547" = "Foto.";
 "AA0548" = "Na video.";
@@ -695,3 +695,4 @@
 "AA0702" = "Anmeldung erfolgreich";
 "AA0703" = "Anmeldung fehlgeschlagen";
 "AA0704" = "Token abgelaufen, bitte beenden und erneut versuchen";
+"AA0705" = "Bitte rufen Sie zuerst die ipTIME-Kundendienst-Hotline (1544-8695) an, um sich beraten zu lassen, und folgen Sie dann den Anweisungen/Anforderungen des Kundendienstes, um \"Feedback senden\" zu klicken.";
