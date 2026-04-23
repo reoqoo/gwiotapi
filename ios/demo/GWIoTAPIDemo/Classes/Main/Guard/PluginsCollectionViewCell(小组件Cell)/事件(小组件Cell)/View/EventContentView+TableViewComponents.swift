@@ -21,7 +21,11 @@ extension GuardianViewController.EventContentView {
                 guard let event = event else { return }
 
                 self.timeLabel.text = Date(timeIntervalSince1970: event.startTime).string(with: "HH:mm")
-                self.eventImageView.kf.setImage(with: event.imageURL, placeholder: R.image.commonImageLoadingPlaceholder()!)
+                if let imageURL = event.imageURL {
+                    self.eventImageView.kf.setImage(with: imageURL, placeholder: R.image.commonImageLoadingPlaceholder()!)
+                } else {
+                    self.eventImageView.image = R.image.commonImageLoadingPlaceholder()
+                }
                 self.eventDurationLabel.text = event.duration == 0 ? "" : event.duration.stringFormatted()
                 
                 // 事件图标
@@ -156,7 +160,11 @@ extension GuardianViewController.EventContentView {
                 event.deviceNameObservable.sink(receiveValue: { [weak self] name in
                     self?.deviceNameLabel.text = name
                 }).store(in: &self.anyCancellables)
-                self.eventImageView.kf.setImage(with: event.imageURL, placeholder: R.image.commonImageLoadingPlaceholder()!)
+                if let imageURL = event.imageURL {
+                    self.eventImageView.kf.setImage(with: imageURL, placeholder: R.image.commonImageLoadingPlaceholder()!)
+                } else {
+                    self.eventImageView.image = R.image.commonImageLoadingPlaceholder()
+                }
                 self.eventDurationLabel.text = event.duration == 0 ? "" : event.duration.stringFormatted()
 
                 // 判断该显示 事件图标+label 或 事件图标们

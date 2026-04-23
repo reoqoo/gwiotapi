@@ -99,12 +99,15 @@ extension GuardianViewController.EventCollectionCell {
                 return queryEventsObserveble
             }.eraseToAnyPublisher()
 
-            // 发起请求
-            requestPermissionObservable.map({
-                    // 移除 events 中没有图片的事件
-                    let events = $1.filter { !($0.imgUrl?.isEmpty ?? true) }
-                    return ($0, events)
-                })
+            // enableCloudRecordDecoupleMode == true 时展示全部事件（含无图）；false 时与历史行为一致，去掉无封面图的事件
+            requestPermissionObservable
+            .map { (timeFilter: TimeFilter, events: [GuardianViewController.Event]) -> QueryEventResult in
+                if AppFeatureConfiguration.enableCloudRecordDecoupleMode {
+                    return (timeFilter, events)
+                }
+                let eventsWithImage = events.filter { !($0.imgUrl?.isEmpty ?? true) }
+                return (timeFilter, eventsWithImage)
+            }
             .map({ [weak self] (timeFilter: TimeFilter, events: [GuardianViewController.Event]) -> (TimeFilter, [TimeInterval: [GuardianViewController.Event]], Bool) in
                     if isRefresh {
                         self?.events = []
