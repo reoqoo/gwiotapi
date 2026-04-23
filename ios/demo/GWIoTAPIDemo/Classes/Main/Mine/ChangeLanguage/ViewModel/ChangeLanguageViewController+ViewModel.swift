@@ -64,6 +64,7 @@ extension ChangeLanguageViewController {
             }
             let gwLanguageCode = LanguageCode.current
             GWIoT.shared.setLanguage(code: gwLanguageCode)
+            GWIoT.shared.setUIConfiguration(configuration: UIApplication.apperanceConfiguration)
         }
     }
 
