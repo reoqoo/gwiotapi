@@ -191,15 +191,55 @@ extension AccountCenter {
     }()
 }
 
+// MARK: 登录相关错误
+extension AccountCenter {
+    /// 连续输错密码达到上限, 登录被限制
+    /// 对应服务端错误码 10902016
+    struct LoginRateLimitError: LocalizedError {
+        /// 达到的失败限制次数
+        let limitTimes: Int
+        /// 剩余封禁时间(秒)
+        let disableTimespan: Int
+
+        /// 剩余封禁时间, 向上取整到分钟; 不足 1 分钟按 1 分钟展示
+        var disableMinutes: Int {
+            max(1, Int(ceil(Double(self.disableTimespan) / 60.0)))
+        }
+
+        var errorDescription: String? {
+            String.localization.localized(
+                "AA0706",
+                note: "账号或密码连续错误输入%@次，登录已被限制，请%@分钟后再试。",
+                args: "\(self.limitTimes)", "\(self.disableMinutes)"
+            )
+        }
+    }
+
+    /// 服务端返回的密码错误冻结码
+    fileprivate static let loginPasswordRateLimitCode = 10902016
+}
+
 // MARK: Request Combine Wrapped
 extension AccountCenter {
     // MARK: 登录接口
     func loginRequestPublisher(accountType: RQApi.AccountType, password: String) -> AnyPublisher<User, Swift.Error> {
         // 创建 Single 发布者, 对登录请求进行包装
         Deferred {
-            Future { promise in
-                RQApi.Api.login(accountType: accountType, password: password) {
-                    let result = ResponseHandler.responseHandling(jsonStr: $0, error: $1)
+            Future<JSON, Swift.Error> { promise in
+                RQApi.Api.login(accountType: accountType, password: password) { jsonStr, error in
+                    // 优先拦截 "密码连续错误达到上限" 错误
+                    // IVNetwork 对 code != 0 的应答会丢弃 jsonStr 并回调一个 NSError,
+                    // code 位于 nsError.code, data 字段透传在 nsError.userInfo["data"] 中(需 IVNetwork 已注入该字段)
+                    if let nsError = error as NSError?,
+                       nsError.code == Self.loginPasswordRateLimitCode {
+                        let dataDict = nsError.userInfo["data"] as? [String: Any] ?? [:]
+                        let limitTimes = (dataDict["limitTimes"] as? Int) ?? 0
+                        let disableTimespan = (dataDict["disableTimespan"] as? Int) ?? 0
+                        let err = LoginRateLimitError(limitTimes: limitTimes, disableTimespan: disableTimespan)
+                        promise(.failure(err))
+                        return
+                    }
+                    let result = ResponseHandler.responseHandling(jsonStr: jsonStr, error: error)
                     promise(result)
                 }
             }.tryMap { json in

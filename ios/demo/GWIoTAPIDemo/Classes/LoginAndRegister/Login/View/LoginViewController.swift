@@ -204,9 +204,32 @@ extension LoginViewController {
                 loadingHUD.hideDispatchOnMainThread()
                 self?.loginBtn.isEnabled = true
                 guard case let .failure(err) = $0 else { return }
+                // 密码连续错误达到上限, 弹窗提示
+                if let rateLimitErr = err as? AccountCenter.LoginRateLimitError {
+                    self?.showLoginRateLimitAlert(error: rateLimitErr)
+                    return
+                }
                 MBProgressHUD.showHUD_DispatchOnMainThread(text: err.localizedDescription)
             }, receiveValue: { _ in
 
             }).store(in: &self.anyCancellables)
+    }
+
+    /// 显示 "登录已被限制" 提示弹窗
+    func showLoginRateLimitAlert(error: AccountCenter.LoginRateLimitError) {
+        let content = error.localizedDescription
+        let confirmAction = RQCoreUI.AlertViewController.Action(
+            title: String.localization.localized("AA0018", note: "确认"),
+            style: .default,
+            handler: { _, alert in
+                alert.dismiss(animated: true)
+            }
+        )
+        let alert = RQCoreUI.AlertViewController(
+            title: nil,
+            content: .string(content),
+            actions: [confirmAction]
+        )
+        self.present(alert, animated: true)
     }
 }
