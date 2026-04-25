@@ -9,7 +9,6 @@ import UIKit
 import RQImagePicker
 import GWIoTApi
 import RQCore
-import GWIoTBridgeReoqooKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -56,8 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func sdkInit(withAppliction application: UIApplication, withLaunchingOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-
-        Bridge.enableCloudRecordDecoupleMode = AppFeatureConfiguration.enableCloudRecordDecoupleMode
 
         // 推送注册
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, err in
