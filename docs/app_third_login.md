@@ -1,5 +1,6 @@
-## 第三方登录SDK说明
+# 第三方登录SDK说明
 
+## 登录流程
 当不使用技威的账号服务时，App需要通过云云对接方式获取SDK登录认证所需的信息，云端接口说明详见[云云对接](../cloud/客户云云对接.md)。
 
 总体流程如下：
@@ -122,6 +123,57 @@ data class UserC2CInfo(
     val expend: String
 )
 
+```
+
+
+## 账号多端/单端登录说明
+
+SDK的登录终端通过[云云对接](../cloud/客户云云对接.md)中的`thirdCustLogin`接口的`uniqueId`字段进行区分。
+- 如果要实现多端登录，这个字段应该通过App获取手机设备的唯一ID，尽量保证唯一即可，建议生成后缓存下来，避免每次启动App都重新生成。也可以使用SDK的`GWIoT.phoneUniqueId()`方法进行获取。
+- 如果要实现单端登录，这个字段可以固定为一个值，建议传unionId一样的值。
+
+### 账号事件处理
+
+SDK会通过`accountEvent`LiveData通知App账号事件，App需要监听这个事件，根据事件类型进行处理，特别是限制单端登录时。
+```swift
+        GWIoT.shared.accountEvent.observe(weakRef: self) { event in
+            switch onEnum(of: event) {
+
+            case .kickedOut:
+                // 处理账号被踢出事件，单端登录时账号在其他终端登录，则会触发
+                break
+                
+            case .accessTokenExpired:
+                // 处理token过期事件, App如果没调SDK退出登录，SDK内会自动刷新token，暂时可以忽略
+                break
+
+            case .accountUnregistered:
+                // 处理账号注销事件，目前云端接口不支持账号注销，暂时忽略
+                break
+
+            default: break
+            }
+        }
+```
+
+kotlin
+```kotlin
+        GWIoT.accountEvent.observeForever(object : Observer<AccountEvent> {
+            override fun onChanged(value: AccountEvent) {
+                when (value) {
+                    is AccountEvent.KickedOut -> {
+                        // 处理账号被踢出事件，单端登录时账号在其他终端登录，则会触发
+                    }
+                    is AccountEvent.AccessTokenExpired -> {
+                        // 处理token过期事件, App如果没调SDK退出登录，SDK内会自动刷新token，暂时可以忽略
+                    }
+                    is AccountEvent.AccountUnregistered -> {
+                        // 处理账号注销事件，目前云端接口不支持账号注销，暂时忽略
+                    }
+                }
+                
+            }
+        })
 ```
 
 

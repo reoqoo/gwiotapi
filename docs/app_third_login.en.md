@@ -1,5 +1,6 @@
-## Third-party Login SDK Documentation
+# Third-party Login SDK Documentation
 
+## Login Process
 When not using Gwell's account service, the App needs to obtain the information required for SDK login authentication through cloud-to-cloud docking. For details on the cloud interface, please refer to [Cloud-to-Cloud Docking](../cloud/客户云云对接.en.md).
 
 The overall process is as follows:
@@ -125,4 +126,56 @@ data class UserC2CInfo(
     val expend: String
 )
 
+```
+
+
+## Multi-terminal / Single-terminal Login Explanation
+
+The SDK's login terminal is distinguished by the `uniqueId` field in the `thirdCustLogin` interface of [Cloud-to-Cloud Docking](../cloud/客户云云对接.en.md).
+- For multi-terminal login, this field should obtain the unique ID of the mobile device through the App. Ensure uniqueness as much as possible, and it's recommended to cache it after generation to avoid regenerating every time the App starts. You can also use the SDK's `GWIoT.phoneUniqueId()` method to obtain it.
+- For single-terminal login, this field can be set to a fixed value, and it's recommended to pass the same value as unionId.
+
+### Account Event Handling
+
+The SDK will notify the App of account events through `accountEvent` LiveData. The App needs to listen to this event and handle it according to the event type, especially when restricting single-terminal login.
+
+```swift
+        GWIoT.shared.accountEvent.observe(weakRef: self) { event in
+            switch onEnum(of: event) {
+
+            case .kickedOut:
+                // Handle account kicked out event, triggered when account logs in from another terminal in single-terminal login mode
+                break
+                
+            case .accessTokenExpired:
+                // Handle token expiration event, if App doesn't call SDK logout, SDK will automatically refresh token internally, can be ignored for now
+                break
+
+            case .accountUnregistered:
+                // Handle account unregistration event, currently cloud interface doesn't support account unregistration, can be ignored for now
+                break
+
+            default: break
+            }
+        }
+```
+
+Kotlin
+```kotlin
+        GWIoT.accountEvent.observeForever(object : Observer<AccountEvent> {
+            override fun onChanged(value: AccountEvent) {
+                when (value) {
+                    is AccountEvent.KickedOut -> {
+                        // Handle account kicked out event, triggered when account logs in from another terminal in single-terminal login mode
+                    }
+                    is AccountEvent.AccessTokenExpired -> {
+                        // Handle token expiration event, if App doesn't call SDK logout, SDK will automatically refresh token internally, can be ignored for now
+                    }
+                    is AccountEvent.AccountUnregistered -> {
+                        // Handle account unregistration event, currently cloud interface doesn't support account unregistration, can be ignored for now
+                    }
+                }
+                
+            }
+        })
 ```
