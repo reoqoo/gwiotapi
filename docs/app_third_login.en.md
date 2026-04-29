@@ -24,7 +24,9 @@ sequenceDiagram
     AppCloud-->>App: Return UserC2CInfo
     App-->>SDK: Return UserC2CInfo to SDK
 
-    SDK-->> App: Authentication successful, App can now use various device-related functions of the SDK
+    SDK-->> App: Authentication successful
+    
+    App->>SDK: App can now use device-related interfaces/functions
 
 ```
 
@@ -132,12 +134,12 @@ data class UserC2CInfo(
 ## Multi-terminal / Single-terminal Login Explanation
 
 The SDK's login terminal is distinguished by the `uniqueId` field in the `thirdCustLogin` interface of [Cloud-to-Cloud Docking](../cloud/客户云云对接.en.md).
-- For multi-terminal login, this field should obtain the unique ID of the mobile device through the App. Ensure uniqueness as much as possible, and it's recommended to cache it after generation to avoid regenerating every time the App starts. You can also use the SDK's `GWIoT.phoneUniqueId()` method to obtain it.
+- For multi-terminal login, this field should obtain the unique ID of the mobile device through the App. Ensure uniqueness as much as possible, and it's recommended to cache it after generation to avoid regenerating every time the App starts. You can use the SDK's `GWIoT.phoneUniqueId()` method to obtain it, which already includes caching logic.
 - For single-terminal login, this field can be set to a fixed value, and it's recommended to pass the same value as unionId.
 
 ### Account Event Handling
 
-The SDK will notify the App of account events through `accountEvent` LiveData. The App needs to listen to this event and handle it according to the event type, especially when restricting single-terminal login.
+The SDK will notify the App of account events through `accountEvent`. The App can listen to this event and handle it as needed.
 
 ```swift
         GWIoT.shared.accountEvent.observe(weakRef: self) { event in
@@ -145,6 +147,7 @@ The SDK will notify the App of account events through `accountEvent` LiveData. T
 
             case .kickedOut:
                 // Handle account kicked out event, triggered when account logs in from another terminal in single-terminal login mode
+                // If the App relies on SDK callbacks to implement single-terminal login, it needs to log out the App account
                 break
                 
             case .accessTokenExpired:
@@ -167,6 +170,7 @@ Kotlin
                 when (value) {
                     is AccountEvent.KickedOut -> {
                         // Handle account kicked out event, triggered when account logs in from another terminal in single-terminal login mode
+                        // If the App relies on SDK callbacks to implement single-terminal login, it needs to log out the App account
                     }
                     is AccountEvent.AccessTokenExpired -> {
                         // Handle token expiration event, if App doesn't call SDK logout, SDK will automatically refresh token internally, can be ignored for now

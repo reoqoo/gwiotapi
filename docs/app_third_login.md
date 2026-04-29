@@ -24,7 +24,9 @@ sequenceDiagram
     AppCloud-->>App: 返回UserC2CInfo
     App-->>SDK: 返回UserC2CInfo给SDK
 
-    SDK-->> App: 认证成功, App可以正常使用SDK各种设备相关功能
+    SDK-->> App: 认证成功
+    
+    App->>SDK: App可以正常使用设备相关接口/功能
 
 
 ```
@@ -129,18 +131,19 @@ data class UserC2CInfo(
 ## 账号多端/单端登录说明
 
 SDK的登录终端通过[云云对接](../cloud/客户云云对接.md)中的`thirdCustLogin`接口的`uniqueId`字段进行区分。
-- 如果要实现多端登录，这个字段应该通过App获取手机设备的唯一ID，尽量保证唯一即可，建议生成后缓存下来，避免每次启动App都重新生成。也可以使用SDK的`GWIoT.phoneUniqueId()`方法进行获取。
+- 如果要实现多端登录，这个字段应该通过App获取手机设备的唯一ID，尽量保证唯一即可，建议生成后缓存下来，避免每次启动App都重新生成。可以使用SDK的`GWIoT.phoneUniqueId()`方法获取，已包含缓存逻辑。
 - 如果要实现单端登录，这个字段可以固定为一个值，建议传unionId一样的值。
 
 ### 账号事件处理
 
-SDK会通过`accountEvent`LiveData通知App账号事件，App需要监听这个事件，根据事件类型进行处理，特别是限制单端登录时。
+SDK会通过`accountEvent`通知App账号事件，App可以监听这个事件，按需进行处理。
 ```swift
         GWIoT.shared.accountEvent.observe(weakRef: self) { event in
             switch onEnum(of: event) {
 
             case .kickedOut:
                 // 处理账号被踢出事件，单端登录时账号在其他终端登录，则会触发
+                // 如果App依赖SDK的回调实现单端登录，则需要退出App账号
                 break
                 
             case .accessTokenExpired:
