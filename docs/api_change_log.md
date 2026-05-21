@@ -1,7 +1,6 @@
 # Changelog
 
-## 1.6.7.3
-- 修复已知的Bugs
+
 
 ## 1.6.5
 - 合并YooseeKit 6.39
