@@ -695,3 +695,4 @@
 "AA0703" = "Accesso fallito";
 "AA0704" = "Token scaduto, esci e riprova";
 "AA0705" = "Si prega di chiamare prima il numero verde del servizio clienti ipTIME (1544-8695) per una consulenza, quindi seguire le istruzioni/richieste del servizio clienti per \"Inviare Feedback\".";
+"AA0706" = "L'account o la password sono stati inseriti in modo errato %@ volte di seguito. L'accesso è limitato. Riprova tra %@ minuti.";

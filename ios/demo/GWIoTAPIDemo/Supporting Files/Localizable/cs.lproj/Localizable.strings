@@ -698,3 +698,4 @@
 "AA0703" = "Přihlášení selhalo";
 "AA0704" = "Token vypršel, ukončete a zkuste to znovu";
 "AA0705" = "Nejprve prosím zavolejte na zákaznickou linku ipTIME (1544-8695) pro konzultaci a poté postupujte podle pokynů/požadavků zákaznické služby k \"Odeslání zpětné vazby\".";
+"AA0706" = "Účet nebo heslo bylo zadáno nesprávně %@ krát za sebou. Přihlášení je omezeno. Zkuste to znovu za %@ minut.";

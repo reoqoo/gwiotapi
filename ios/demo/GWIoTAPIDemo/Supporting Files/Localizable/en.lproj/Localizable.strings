@@ -698,3 +698,4 @@
 "AA0703" = "Login failed";
 "AA0704" = "Token expired, please exit and retry";
 "AA0705" = "Please first call the ipTIME customer service hotline (1544-8695) for consultation, then follow the customer service instructions/requirements to \"Send Feedback\".";
+"AA0706" = "Too many incorrect login attempts (%@ times). Login has been temporarily locked. Please try again in %@ minutes.";

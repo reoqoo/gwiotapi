@@ -696,3 +696,4 @@
 "AA0703" = "Anmeldung fehlgeschlagen";
 "AA0704" = "Token abgelaufen, bitte beenden und erneut versuchen";
 "AA0705" = "Bitte rufen Sie zuerst die ipTIME-Kundendienst-Hotline (1544-8695) an, um sich beraten zu lassen, und folgen Sie dann den Anweisungen/Anforderungen des Kundendienstes, um \"Feedback senden\" zu klicken.";
+"AA0706" = "Das Konto oder Passwort wurde %@ Mal hintereinander falsch eingegeben. Die Anmeldung ist gesperrt. Bitte versuchen Sie es in %@ Minuten erneut.";
