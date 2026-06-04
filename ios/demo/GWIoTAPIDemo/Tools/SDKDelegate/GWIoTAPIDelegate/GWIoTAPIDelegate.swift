@@ -85,8 +85,8 @@ class GWIoTAPIDelegate {
                 NotificationCenter.default.post(name: User.accessTokenDidExpiredNotification, object: nil)
             case .accountUnregistered:
                 NotificationCenter.default.post(name: User.accountHasBeenDeletedNotification, object: nil)
-            case .none:
-                break
+            case .kickedOut: break
+            default: break
             }
         }
 

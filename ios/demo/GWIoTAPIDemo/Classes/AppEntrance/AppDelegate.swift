@@ -112,7 +112,7 @@ extension AppDelegate {
         GWIoT.shared.initialize(opts: opts)
         GWIoT.shared.setUIConfiguration(configuration: UIApplication.apperanceConfiguration)
 
-        GWBasePlayer.setLogLevel(.verbose)
+        IVLogger.setLogLevel(.verbose)
 
         // Start Observe
         GWIoTAPIDelegate.shared.startObserve()
