@@ -1,4 +1,12 @@
 # Changelog
+## 1.7.1.4
+- Low-power device power limitation acquisition model
+- Added UI prompt for unopened cloud service in interval settings
+- Replaced illustrations in area guard guide 2
+- 4G device monitoring page/device list does not display "Cloud Service" icon entry
+- Device security code
+- Fixed some bugs
+
 ## 1.6.7.3
 - Fixed known bugs
 
