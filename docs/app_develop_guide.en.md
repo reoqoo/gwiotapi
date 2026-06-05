@@ -22,15 +22,7 @@ GWIoT.initialize(opts)
 ## Access Authentication
 Depending on whether to use the Gwell account system/service, SDK login authentication can be divided into two cases.
 ### Not Using Gwell Account Service
-If you do not use the Gwell account service, you need to obtain the `UserC2CInfo` information required for SDK authentication through cloud-to-cloud docking. For details, see [Cloud-to-Cloud Docking](../cloud/客户云云对接.en.md).
-
-After obtaining `UserC2CInfo`, authenticate through the `GWIoT.login()` method.
-```kotlin
-val c2cInfo = UserC2CInfo("accessId", "accessToken", "expireTime", "terminalId", "expand")
-
-val result = GWIoT.login(c2cInfo)
-
-```
+If you do not use the Gwell account service, you need to obtain the information required for SDK authentication through cloud-to-cloud docking to perform login. For details, see [Third-party Login](app_third_login.en.md).
 
 ### Using Gwell Account Service
 If you use the Gwell account service, the App needs to implement account registration, login, logout and other functions through the GWIoT interface.
