@@ -219,7 +219,7 @@ extension LoginViewController {
     func showLoginRateLimitAlert(error: AccountCenter.LoginRateLimitError) {
         let content = error.localizedDescription
         let confirmAction = RQCoreUI.AlertViewController.Action(
-            title: String.localization.localized("AA0018", note: "确认"),
+            title: String.localization.localized("AA0334", note: "我知道了"),
             style: .default,
             handler: { _, alert in
                 alert.dismiss(animated: true)
