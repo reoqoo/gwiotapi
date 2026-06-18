@@ -11,4 +11,7 @@ enum AppFeatureConfiguration {
 
     /// 云录制解耦模式（与 `DHReoqooLaunchPrm.enableCloudRecordDecoupleMode` 对应）。
     static let enableCloudRecordDecoupleMode = true
+    
+    /// true的话，表示禁用，默认打开。
+    static let enableBleScanOnQRCodePage = true
 }
