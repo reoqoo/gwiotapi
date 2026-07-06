@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Colors</title>
     <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
-<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
 <link href="../../../../styles/style.css" rel="Stylesheet">
 <link href="../../../../styles/main.css" rel="Stylesheet">
 <link href="../../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 <link href="../../../../images/logo-icon.svg">
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../../index.html" tabindex="1">
                     GWIoTApi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -47,10 +44,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.6.8        </div>
+1.7.5        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
                         data-filter=":shared/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -60,9 +57,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -77,7 +74,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -85,39 +82,41 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     GWIoTApi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.entities/Theme.Colors///PointingToDeclaration//491975536">
   <div class="breadcrumbs"><a href="../../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../../index.html">com.gw.gwiotapi.entities</a><span class="delimiter">/</span><a href="../index.html">Theme</a><span class="delimiter">/</span><span class="current">Colors</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Colors</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Colors</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>brand<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brandHighlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brandDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2Highlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2Disable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>secondaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tertiaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>lightText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>linkText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>maskBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>hudBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>inputLineDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>inputLineEnable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>separatorLine<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>mainBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>secondaryBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateSafe<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateWarning<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateError<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">颜色配置, 16进制ARGB格式，如<code class="lang-kotlin">#FF000000</code> 表示完全不透明的黑色</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand</span></span></u></div></span></div><div><div class="title"><p class="paragraph">主题色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>brand</span><wbr></wbr><span><span>Highlight</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 主题色 highlight,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>brand</span><wbr></wbr><span><span>Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 主题色 disable,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2Highlight</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色 highlight,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色 disable,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 一级,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>secondary</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 二级,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>tertiary</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 三级,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>light</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 亮色文字, 一般为白色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>link</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 链接文字颜色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>mask</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 不透明背景色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>hud</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: HUD 背景色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 输入线没选中,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Enable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 输入线选中,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>separator</span><wbr></wbr><span><span>Line</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 分割线颜色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>main</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 背景色, 一般为白色,用于页面背景</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>secondary</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 二级背景色, 一般为浅灰,用于列表背景等</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Safe</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 安全色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Warning</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 警告色,</p></div></div></div></div><div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Error</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 错误色</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Colors</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>brand<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brandHighlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brandDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2Highlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>brand2Disable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>secondaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>tertiaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>lightText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>linkText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>maskBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>hudBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>inputLineDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>inputLineEnable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>separatorLine<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>mainBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>secondaryBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateSafe<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateWarning<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>stateError<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">颜色配置, 16进制ARGB格式，如<code class="lang-kotlin">#FF000000</code> 表示完全不透明的黑色</p><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand</span></span></u></div></span></div><div><div class="title"><p class="paragraph">主题色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>brand</span><wbr></wbr><span><span>Highlight</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 主题色 highlight,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>brand</span><wbr></wbr><span><span>Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 主题色 disable,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2Highlight</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色 highlight,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>brand2Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 次主题色 disable,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 一级,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>secondary</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 二级,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>tertiary</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 字体颜色, 一般为黑色 三级,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>light</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 亮色文字, 一般为白色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>link</span><wbr></wbr><span><span>Text</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 链接文字颜色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>mask</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 不透明背景色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>hud</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: HUD 背景色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Disable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 输入线没选中,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Enable</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 输入线选中,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>separator</span><wbr></wbr><span><span>Line</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 分割线颜色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>main</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 背景色, 一般为白色,用于页面背景</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>secondary</span><wbr></wbr><span><span>Background</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 二级背景色, 一般为浅灰,用于列表背景等</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Safe</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 安全色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Warning</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 警告色,</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>state</span><wbr></wbr><span><span>Error</span></span></u></div></span></div><div><div class="title"><p class="paragraph">: 错误色</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
-        <h2 class="">Constructors</h2>
+        <h2 class="tableheader">Constructors</h2>
         <div class="table"><a data-name="-1060236693%2FConstructors%2F491975536" anchor-label="Colors" id="-1060236693%2FConstructors%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-colors.html"><span><span>Colors</span></span></a></div>
@@ -126,7 +125,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">brand<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brandHighlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brandDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2Highlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2Disable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">secondaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">tertiaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">lightText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">linkText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">maskBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">hudBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">inputLineDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">inputLineEnable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">separatorLine<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">mainBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">secondaryBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateSafe<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateWarning<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateError<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">brand<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brandHighlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brandDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2Highlight<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">brand2Disable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">text<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">secondaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">tertiaryText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">lightText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">linkText<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">maskBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">hudBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">inputLineDisable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">inputLineEnable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">separatorLine<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">mainBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">secondaryBackground<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateSafe<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateWarning<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">stateError<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -134,9 +133,9 @@
         </div>
       </div>
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="140113251%2FProperties%2F491975536" anchor-label="brand" id="140113251%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand.html"><span><span>brand</span></span></a></div>
@@ -151,7 +150,7 @@
             </div>
           </div>
 <a data-name="-401489179%2FProperties%2F491975536" anchor-label="brand2" id="-401489179%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand2.html"><span><span>brand2</span></span></a></div>
@@ -166,7 +165,7 @@
             </div>
           </div>
 <a data-name="-1810686515%2FProperties%2F491975536" anchor-label="brand2Disable" id="-1810686515%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand2-disable.html"><span><span>brand2Disable</span></span></a></div>
@@ -181,7 +180,7 @@
             </div>
           </div>
 <a data-name="-1550847103%2FProperties%2F491975536" anchor-label="brand2Highlight" id="-1550847103%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand2-highlight.html"><span><span>brand2Highlight</span></span></a></div>
@@ -196,7 +195,7 @@
             </div>
           </div>
 <a data-name="778224015%2FProperties%2F491975536" anchor-label="brandDisable" id="778224015%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand-disable.html"><span>brand</span><wbr></wbr><span><span>Disable</span></span></a></div>
@@ -211,7 +210,7 @@
             </div>
           </div>
 <a data-name="-393892157%2FProperties%2F491975536" anchor-label="brandHighlight" id="-393892157%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="brand-highlight.html"><span>brand</span><wbr></wbr><span><span>Highlight</span></span></a></div>
@@ -226,7 +225,7 @@
             </div>
           </div>
 <a data-name="1290338341%2FProperties%2F491975536" anchor-label="hudBackground" id="1290338341%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="hud-background.html"><span>hud</span><wbr></wbr><span><span>Background</span></span></a></div>
@@ -241,7 +240,7 @@
             </div>
           </div>
 <a data-name="-1193828506%2FProperties%2F491975536" anchor-label="inputLineDisable" id="-1193828506%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="input-line-disable.html"><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Disable</span></span></a></div>
@@ -256,7 +255,7 @@
             </div>
           </div>
 <a data-name="187377641%2FProperties%2F491975536" anchor-label="inputLineEnable" id="187377641%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="input-line-enable.html"><span>input</span><wbr></wbr><span>Line</span><wbr></wbr><span><span>Enable</span></span></a></div>
@@ -271,7 +270,7 @@
             </div>
           </div>
 <a data-name="1882500743%2FProperties%2F491975536" anchor-label="lightText" id="1882500743%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="light-text.html"><span>light</span><wbr></wbr><span><span>Text</span></span></a></div>
@@ -286,7 +285,7 @@
             </div>
           </div>
 <a data-name="-1985114391%2FProperties%2F491975536" anchor-label="linkText" id="-1985114391%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="link-text.html"><span>link</span><wbr></wbr><span><span>Text</span></span></a></div>
@@ -301,7 +300,7 @@
             </div>
           </div>
 <a data-name="2081946921%2FProperties%2F491975536" anchor-label="mainBackground" id="2081946921%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="main-background.html"><span>main</span><wbr></wbr><span><span>Background</span></span></a></div>
@@ -316,7 +315,7 @@
             </div>
           </div>
 <a data-name="-471296234%2FProperties%2F491975536" anchor-label="maskBackground" id="-471296234%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="mask-background.html"><span>mask</span><wbr></wbr><span><span>Background</span></span></a></div>
@@ -331,7 +330,7 @@
             </div>
           </div>
 <a data-name="-503874360%2FProperties%2F491975536" anchor-label="secondaryBackground" id="-503874360%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="secondary-background.html"><span>secondary</span><wbr></wbr><span><span>Background</span></span></a></div>
@@ -346,7 +345,7 @@
             </div>
           </div>
 <a data-name="73451625%2FProperties%2F491975536" anchor-label="secondaryText" id="73451625%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="secondary-text.html"><span>secondary</span><wbr></wbr><span><span>Text</span></span></a></div>
@@ -361,7 +360,7 @@
             </div>
           </div>
 <a data-name="-1095488591%2FProperties%2F491975536" anchor-label="separatorLine" id="-1095488591%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="separator-line.html"><span>separator</span><wbr></wbr><span><span>Line</span></span></a></div>
@@ -376,7 +375,7 @@
             </div>
           </div>
 <a data-name="-483161991%2FProperties%2F491975536" anchor-label="stateError" id="-483161991%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="state-error.html"><span>state</span><wbr></wbr><span><span>Error</span></span></a></div>
@@ -391,7 +390,7 @@
             </div>
           </div>
 <a data-name="872343180%2FProperties%2F491975536" anchor-label="stateSafe" id="872343180%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="state-safe.html"><span>state</span><wbr></wbr><span><span>Safe</span></span></a></div>
@@ -406,7 +405,7 @@
             </div>
           </div>
 <a data-name="-363267995%2FProperties%2F491975536" anchor-label="stateWarning" id="-363267995%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="state-warning.html"><span>state</span><wbr></wbr><span><span>Warning</span></span></a></div>
@@ -421,7 +420,7 @@
             </div>
           </div>
 <a data-name="334705681%2FProperties%2F491975536" anchor-label="tertiaryText" id="334705681%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="tertiary-text.html"><span>tertiary</span><wbr></wbr><span><span>Text</span></span></a></div>
@@ -436,7 +435,7 @@
             </div>
           </div>
 <a data-name="236230211%2FProperties%2F491975536" anchor-label="text" id="236230211%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="text.html"><span><span>text</span></span></a></div>
@@ -456,17 +455,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>Copyright © 2025 Gwelltimes. All rights reserved.</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright © 2025 Gwelltimes. All rights reserved.</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

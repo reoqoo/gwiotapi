@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>com.gw.gwiotapi.entities</title>
     <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
-<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
 <link href="../../styles/style.css" rel="Stylesheet">
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 <link href="../../images/logo-icon.svg">
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
                     GWIoTApi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -47,14 +44,14 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.6.8        </div>
+1.7.5        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
                         data-filter=":shared/androidMain">android</button>
-                <button class="platform-tag platform-selector common-like" data-active=""
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
                         data-filter=":shared/commonMain">common</button>
-                <button class="platform-tag platform-selector native-like" data-active=""
+                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true"
                         data-filter=":shared/iosMain">ios</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -64,9 +61,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -97,7 +94,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -105,26 +102,28 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     GWIoTApi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="package" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.entities////PointingToDeclaration//-1172730002">
   <div class="breadcrumbs"><a href="../../index.html">GWIoTApi</a><span class="delimiter">/</span><span class="current">com.gw.gwiotapi.entities</span></div>
   <div class="cover ">
@@ -134,9 +133,9 @@
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
-        <h2 class="">Types</h2>
+        <h2 class="tableheader">Types</h2>
         <div class="table"><a data-name="-1570821129%2FClasslikes%2F491975536" anchor-label="AccountEvent" id="-1570821129%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-account-event/index.html"><span>Account</span><wbr></wbr><span><span>Event</span></span></a></div>
@@ -151,7 +150,7 @@
             </div>
           </div>
 <a data-name="-900263657%2FClasslikes%2F491975536" anchor-label="AccountType" id="-900263657%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-account-type/index.html"><span>Account</span><wbr></wbr><span><span>Type</span></span></a></div>
@@ -166,7 +165,7 @@
             </div>
           </div>
 <a data-name="-84902429%2FClasslikes%2F491975536" anchor-label="AlbumAsset" id="-84902429%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-album-asset/index.html"><span>Album</span><wbr></wbr><span><span>Asset</span></span></a></div>
@@ -181,7 +180,7 @@
             </div>
           </div>
 <a data-name="2086990562%2FClasslikes%2F491975536" anchor-label="AlbumCommonConfig" id="2086990562%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-album-common-config/index.html"><span>Album</span><wbr></wbr><span>Common</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -196,7 +195,7 @@
             </div>
           </div>
 <a data-name="452874445%2FClasslikes%2F-1172730002" anchor-label="AlbumConfig" id="452874445%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-album-config/index.html"><span>Album</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -207,13 +206,13 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a> : <a href="-album-common-config/index.html">AlbumCommonConfig</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a> : <a href="-album-common-config/index.html">AlbumCommonConfig</a></div><div class="brief "><p class="paragraph">相册配置实例</p></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a> : <a href="-album-common-config/index.html">AlbumCommonConfig</a></div><div class="brief "><p class="paragraph">相册配置实例</p></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a> : <a href="-album-common-config/index.html">AlbumCommonConfig</a></div><div class="brief "><p class="paragraph">相册配置实例</p></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-album-config/index.html">AlbumConfig</a> : <span data-unresolved-link="com.gw.gwiotapi.entities/AlbumCommonConfig///PointingToDeclaration/">AlbumCommonConfig</span></div><div class="brief "><p class="paragraph">相册配置实例</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="-75563493%2FClasslikes%2F491975536" anchor-label="AppConfig" id="-75563493%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-app-config/index.html"><span>App</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -228,7 +227,7 @@
             </div>
           </div>
 <a data-name="-1735657057%2FClasslikes%2F491975536" anchor-label="AppTexts" id="-1735657057%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-app-texts/index.html"><span>App</span><wbr></wbr><span><span>Texts</span></span></a></div>
@@ -243,7 +242,7 @@
             </div>
           </div>
 <a data-name="-306206639%2FClasslikes%2F491975536" anchor-label="BaseOptions" id="-306206639%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-base-options/index.html"><span>Base</span><wbr></wbr><span><span>Options</span></span></a></div>
@@ -258,7 +257,7 @@
             </div>
           </div>
 <a data-name="-581799999%2FClasslikes%2F491975536" anchor-label="BindEvent" id="-581799999%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-bind-event/index.html"><span>Bind</span><wbr></wbr><span><span>Event</span></span></a></div>
@@ -273,7 +272,7 @@
             </div>
           </div>
 <a data-name="366251118%2FClasslikes%2F491975536" anchor-label="Device" id="366251118%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-device/index.html"><span><span>Device</span></span></a></div>
@@ -288,7 +287,7 @@
             </div>
           </div>
 <a data-name="1898830042%2FClasslikes%2F491975536" anchor-label="DeviceEvent" id="1898830042%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-device-event/index.html"><span>Device</span><wbr></wbr><span><span>Event</span></span></a></div>
@@ -303,7 +302,7 @@
             </div>
           </div>
 <a data-name="796958016%2FClasslikes%2F491975536" anchor-label="DeviceShareOption" id="796958016%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-device-share-option/index.html"><span>Device</span><wbr></wbr><span>Share</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -318,7 +317,7 @@
             </div>
           </div>
 <a data-name="-1270590761%2FClasslikes%2F491975536" anchor-label="DevQRCodePageOption" id="-1270590761%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-dev-q-r-code-page-option/index.html"><span>Dev</span><wbr></wbr><span>QRCode</span><wbr></wbr><span>Page</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -333,7 +332,7 @@
             </div>
           </div>
 <a data-name="130952709%2FClasslikes%2F491975536" anchor-label="DevShareOption" id="130952709%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-dev-share-option/index.html"><span>Dev</span><wbr></wbr><span>Share</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -348,7 +347,7 @@
             </div>
           </div>
 <a data-name="-429473009%2FClasslikes%2F491975536" anchor-label="DevUpgradeInfo" id="-429473009%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-dev-upgrade-info/index.html"><span>Dev</span><wbr></wbr><span>Upgrade</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -363,7 +362,7 @@
             </div>
           </div>
 <a data-name="-1106248538%2FClasslikes%2F-1172730002" anchor-label="GWError" id="-1106248538%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-g-w-error/index.html"><span><span>GWError</span></span></a></div>
@@ -374,13 +373,13 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a>, <a href="-i-g-w-error/index.html">IGWError</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a> : <a href="-i-g-w-error/index.html">IGWError</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a> : <a href="-i-g-w-error/index.html">IGWError</a>, <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a> : <a href="-i-g-w-error/index.html">IGWError</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-g-w-error/index.html">GWError</a> : <span data-unresolved-link="com.gw.gwiotapi.entities/IGWError///PointingToDeclaration/">IGWError</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="2119190743%2FClasslikes%2F491975536" anchor-label="GWResult" id="2119190743%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-g-w-result/index.html"><span><span>GWResult</span></span></a></div>
@@ -395,7 +394,7 @@
             </div>
           </div>
 <a data-name="378203499%2FClasslikes%2F491975536" anchor-label="HostAccountInfo" id="378203499%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-host-account-info/index.html"><span>Host</span><wbr></wbr><span>Account</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -410,7 +409,7 @@
             </div>
           </div>
 <a data-name="-901483334%2FClasslikes%2F491975536" anchor-label="HostConfig" id="-901483334%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-host-config/index.html"><span>Host</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -425,7 +424,7 @@
             </div>
           </div>
 <a data-name="-1212836822%2FClasslikes%2F491975536" anchor-label="HumanVerificationTicket" id="-1212836822%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-human-verification-ticket/index.html"><span>Human</span><wbr></wbr><span>Verification</span><wbr></wbr><span><span>Ticket</span></span></a></div>
@@ -440,7 +439,7 @@
             </div>
           </div>
 <a data-name="-534748053%2FClasslikes%2F-1172730002" anchor-label="Icon" id="-534748053%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-icon/index.html"><span><span>Icon</span></span></a></div>
@@ -451,13 +450,13 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">图标</p></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-icon/index.html">Icon</a></div><div class="brief "><p class="paragraph">图标</p></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span></div><div class="brief "><p class="paragraph">图标</p></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/DrawableRes.html"><span class="token annotation builtin">DrawableRes</span></a> </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="symbol monospace"><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/DrawableRes.html"><span class="token annotation builtin">DrawableRes</span></a> </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">图标</p></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-icon/index.html">Icon</a></div><div class="brief "><p class="paragraph">图标</p></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><span data-unresolved-link="platform.UIKit/UIImage///PointingToDeclaration/">UIImage</span></div><div class="symbol monospace"><span class="token keyword">typealias </span><a href="-icon/index.html">Icon</a><span class="token operator"> = </span><span data-unresolved-link="platform.UIKit/UIImage///PointingToDeclaration/">UIImage</span></div><div class="brief "><p class="paragraph">图标</p></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="-1127259777%2FClasslikes%2F491975536" anchor-label="IDevice" id="-1127259777%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-i-device/index.html"><span><span>IDevice</span></span></a></div>
@@ -472,7 +471,7 @@
             </div>
           </div>
 <a data-name="-160446027%2FClasslikes%2F491975536" anchor-label="IGWError" id="-160446027%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-i-g-w-error/index.html"><span><span>IGWError</span></span></a></div>
@@ -487,7 +486,7 @@
             </div>
           </div>
 <a data-name="-653859012%2FClasslikes%2F491975536" anchor-label="InitCommOptions" id="-653859012%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-init-comm-options/index.html"><span>Init</span><wbr></wbr><span>Comm</span><wbr></wbr><span><span>Options</span></span></a></div>
@@ -502,7 +501,7 @@
             </div>
           </div>
 <a data-name="1357007504%2FClasslikes%2F-1172730002" anchor-label="InitOptions" id="1357007504%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-init-options/index.html"><span>Init</span><wbr></wbr><span><span>Options</span></span></a></div>
@@ -513,13 +512,13 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a> : <a href="-init-comm-options/index.html">InitCommOptions</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a> : <a href="-init-comm-options/index.html">InitCommOptions</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a> : <a href="-init-comm-options/index.html">InitCommOptions</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a> : <a href="-init-comm-options/index.html">InitCommOptions</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">data </span><span class="token keyword">class </span><a href="-init-options/index.html">InitOptions</a> : <span data-unresolved-link="com.gw.gwiotapi.entities/InitCommOptions///PointingToDeclaration/">InitCommOptions</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="1868700002%2FClasslikes%2F491975536" anchor-label="IoTProps" id="1868700002%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-io-t-props/index.html"><span>Io</span><wbr></wbr><span><span>TProps</span></span></a></div>
@@ -534,7 +533,7 @@
             </div>
           </div>
 <a data-name="-1902754714%2FClasslikes%2F491975536" anchor-label="IoTPropsEvent" id="-1902754714%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-io-t-props-event/index.html"><span>Io</span><wbr></wbr><span>TProps</span><wbr></wbr><span><span>Event</span></span></a></div>
@@ -549,7 +548,7 @@
             </div>
           </div>
 <a data-name="494961984%2FClasslikes%2F491975536" anchor-label="IssueFeedback" id="494961984%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-issue-feedback/index.html"><span>Issue</span><wbr></wbr><span><span>Feedback</span></span></a></div>
@@ -564,7 +563,7 @@
             </div>
           </div>
 <a data-name="1925783384%2FClasslikes%2F491975536" anchor-label="IUserAccessInfo" id="1925783384%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-i-user-access-info/index.html"><span>IUser</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -579,7 +578,7 @@
             </div>
           </div>
 <a data-name="1221453345%2FClasslikes%2F491975536" anchor-label="IUserLoginInfo" id="1221453345%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-i-user-login-info/index.html"><span>IUser</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -594,7 +593,7 @@
             </div>
           </div>
 <a data-name="-996041183%2FClasslikes%2F491975536" anchor-label="IUserProfileInfo" id="-996041183%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-i-user-profile-info/index.html"><span>IUser</span><wbr></wbr><span>Profile</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -609,7 +608,7 @@
             </div>
           </div>
 <a data-name="68302335%2FClasslikes%2F491975536" anchor-label="LanguageCode" id="68302335%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-language-code/index.html"><span>Language</span><wbr></wbr><span><span>Code</span></span></a></div>
@@ -624,7 +623,7 @@
             </div>
           </div>
 <a data-name="-375533802%2FClasslikes%2F491975536" anchor-label="LivePlayerCommOption" id="-375533802%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-live-player-comm-option/index.html"><span>Live</span><wbr></wbr><span>Player</span><wbr></wbr><span>Comm</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -639,7 +638,7 @@
             </div>
           </div>
 <a data-name="1888651970%2FClasslikes%2F-1172730002" anchor-label="LivePlayerOption" id="1888651970%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-live-player-option/index.html"><span>Live</span><wbr></wbr><span>Player</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -650,13 +649,13 @@
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
                     <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":shared/androidMain" data-filterable-set=":shared/androidMain" data-active="" data-toggle=":shared/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain" data-toggle=":shared/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":shared/iosMain" data-filterable-set=":shared/iosMain" data-toggle=":shared/iosMain">ios</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a> : <a href="-live-player-comm-option/index.html">LivePlayerCommOption</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a> : <a href="-live-player-comm-option/index.html">LivePlayerCommOption</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a></div></div>                  </div>
+<div class="content sourceset-dependent-content" data-togglable=":shared/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a> : <a href="-live-player-comm-option/index.html">LivePlayerCommOption</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a> : <a href="-live-player-comm-option/index.html">LivePlayerCommOption</a></div></div><div class="content sourceset-dependent-content" data-togglable=":shared/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">class </span><a href="-live-player-option/index.html">LivePlayerOption</a> : <span data-unresolved-link="com.gw.gwiotapi.entities/LivePlayerCommOption///PointingToDeclaration/">LivePlayerCommOption</span></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="1824069284%2FClasslikes%2F491975536" anchor-label="LogLevel" id="1824069284%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-log-level/index.html"><span>Log</span><wbr></wbr><span><span>Level</span></span></a></div>
@@ -671,7 +670,7 @@
             </div>
           </div>
 <a data-name="1518049792%2FClasslikes%2F491975536" anchor-label="MediaType" id="1518049792%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-media-type/index.html"><span>Media</span><wbr></wbr><span><span>Type</span></span></a></div>
@@ -686,7 +685,7 @@
             </div>
           </div>
 <a data-name="166516192%2FClasslikes%2F491975536" anchor-label="MembershipInfo" id="166516192%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-membership-info/index.html"><span>Membership</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -700,8 +699,23 @@
               </div>
             </div>
           </div>
+<a data-name="329789529%2FClasslikes%2F491975536" anchor-label="OpenEventOption" id="329789529%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-open-event-option/index.html"><span>Open</span><wbr></wbr><span>Event</span><wbr></wbr><span><span>Option</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="329789529%2FClasslikes%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-open-event-option/index.html">OpenEventOption</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">device<span class="token operator">: </span><a href="-i-device/index.html">IDevice</a><span class="token punctuation">, </span></span><span class="parameter ">eventId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">startTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-base-options/index.html">BaseOptions</a></div><div class="brief "><p class="paragraph">打开事件选项</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="510450066%2FClasslikes%2F491975536" anchor-label="OpenPluginOption" id="510450066%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-open-plugin-option/index.html"><span>Open</span><wbr></wbr><span>Plugin</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -716,7 +730,7 @@
             </div>
           </div>
 <a data-name="1149313813%2FClasslikes%2F491975536" anchor-label="Page" id="1149313813%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-page/index.html"><span><span>Page</span></span></a></div>
@@ -731,7 +745,7 @@
             </div>
           </div>
 <a data-name="-357840731%2FClasslikes%2F491975536" anchor-label="PageLifecycleEvent" id="-357840731%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-page-lifecycle-event/index.html"><span>Page</span><wbr></wbr><span>Lifecycle</span><wbr></wbr><span><span>Event</span></span></a></div>
@@ -746,7 +760,7 @@
             </div>
           </div>
 <a data-name="491456271%2FClasslikes%2F491975536" anchor-label="PlatformConfig" id="491456271%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-platform-config/index.html"><span>Platform</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -755,13 +769,13 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-platform-config/index.html">PlatformConfig</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brandDomain<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>appVersionPrefix<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>iosApiAppName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>androidApiAppName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>newSharePermissionMode<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">产品配置表里面的平台配置信息</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-platform-config/index.html">PlatformConfig</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>brandDomain<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>appVersionPrefix<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>iosApiAppName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>androidApiAppName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>appFuncMask<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">产品配置表里面的平台配置信息</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="706940564%2FClasslikes%2F491975536" anchor-label="PlaybackOption" id="706940564%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-playback-option/index.html"><span>Playback</span><wbr></wbr><span><span>Option</span></span></a></div>
@@ -770,13 +784,13 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-playback-option/index.html">PlaybackOption</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">device<span class="token operator">: </span><a href="-i-device/index.html">IDevice</a><span class="token punctuation">, </span></span><span class="parameter ">alarmId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">startTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-base-options/index.html">BaseOptions</a></div><div class="brief "><p class="paragraph">PlaybackOption 类表示播放选项的实体。 它继承自 BaseOptions 类，并包含设备、报警ID和开始时间等属性。</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-playback-option/index.html">PlaybackOption</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">device<span class="token operator">: </span><a href="-i-device/index.html">IDevice</a><span class="token punctuation">, </span></span><span class="parameter ">alarmId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">startTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-base-options/index.html">BaseOptions</a></div><div class="brief "><p class="paragraph">播放选项</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
 <a data-name="-80912164%2FClasslikes%2F491975536" anchor-label="PowerSupplyInfo" id="-80912164%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-power-supply-info/index.html"><span>Power</span><wbr></wbr><span>Supply</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -791,7 +805,7 @@
             </div>
           </div>
 <a data-name="-438398303%2FClasslikes%2F491975536" anchor-label="ProductInfo" id="-438398303%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-product-info/index.html"><span>Product</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -806,7 +820,7 @@
             </div>
           </div>
 <a data-name="-704837664%2FClasslikes%2F491975536" anchor-label="PushData" id="-704837664%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-push-data/index.html"><span>Push</span><wbr></wbr><span><span>Data</span></span></a></div>
@@ -821,7 +835,7 @@
             </div>
           </div>
 <a data-name="88445870%2FClasslikes%2F491975536" anchor-label="PushDataSerializer" id="88445870%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-push-data-serializer/index.html"><span>Push</span><wbr></wbr><span>Data</span><wbr></wbr><span><span>Serializer</span></span></a></div>
@@ -836,7 +850,7 @@
             </div>
           </div>
 <a data-name="2141797527%2FClasslikes%2F491975536" anchor-label="PushMsg" id="2141797527%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-push-msg/index.html"><span>Push</span><wbr></wbr><span><span>Msg</span></span></a></div>
@@ -851,7 +865,7 @@
             </div>
           </div>
 <a data-name="-751927105%2FClasslikes%2F-1172730002" anchor-label="PushNotification" id="-751927105%2FClasslikes%2F-1172730002" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain,:shared/androidMain,:shared/iosMain" data-filterable-set=":shared/commonMain,:shared/androidMain,:shared/iosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-push-notification/index.html"><span>Push</span><wbr></wbr><span><span>Notification</span></span></a></div>
@@ -868,7 +882,7 @@
             </div>
           </div>
 <a data-name="538164636%2FClasslikes%2F491975536" anchor-label="QRCodeType" id="538164636%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-q-r-code-type/index.html"><span>QRCode</span><wbr></wbr><span><span>Type</span></span></a></div>
@@ -883,7 +897,7 @@
             </div>
           </div>
 <a data-name="-6504384%2FClasslikes%2F491975536" anchor-label="Reason" id="-6504384%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-reason/index.html"><span><span>Reason</span></span></a></div>
@@ -898,7 +912,7 @@
             </div>
           </div>
 <a data-name="-1915542485%2FClasslikes%2F491975536" anchor-label="ScanQRCodeOptions" id="-1915542485%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-scan-q-r-code-options/index.html"><span>Scan</span><wbr></wbr><span>QRCode</span><wbr></wbr><span><span>Options</span></span></a></div>
@@ -913,7 +927,7 @@
             </div>
           </div>
 <a data-name="-44318155%2FClasslikes%2F491975536" anchor-label="SDCardInfo" id="-44318155%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-s-d-card-info/index.html"><span>SDCard</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -927,8 +941,23 @@
               </div>
             </div>
           </div>
+<a data-name="2097331721%2FClasslikes%2F491975536" anchor-label="SimCardInfo" id="2097331721%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-sim-card-info/index.html"><span>Sim</span><wbr></wbr><span>Card</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2097331721%2FClasslikes%2F491975536"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-sim-card-info/index.html">SimCardInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>iccid<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>iccid2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>imei1<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>imei2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>moduleType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mccmnc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">4G sim卡信息</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-742329877%2FClasslikes%2F491975536" anchor-label="Solution" id="-742329877%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-solution/index.html"><span><span>Solution</span></span></a></div>
@@ -943,7 +972,7 @@
             </div>
           </div>
 <a data-name="968054357%2FClasslikes%2F491975536" anchor-label="Theme" id="968054357%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-theme/index.html"><span><span>Theme</span></span></a></div>
@@ -958,7 +987,7 @@
             </div>
           </div>
 <a data-name="-1275610340%2FClasslikes%2F491975536" anchor-label="UIConfiguration" id="-1275610340%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-u-i-configuration/index.html"><span><span>UIConfiguration</span></span></a></div>
@@ -973,7 +1002,7 @@
             </div>
           </div>
 <a data-name="-1490406055%2FClasslikes%2F491975536" anchor-label="User" id="-1490406055%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user/index.html"><span><span>User</span></span></a></div>
@@ -988,7 +1017,7 @@
             </div>
           </div>
 <a data-name="1434084263%2FClasslikes%2F491975536" anchor-label="UserC2CInfo" id="1434084263%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user-c2-c-info/index.html"><span>User</span><wbr></wbr><span><span>C2CInfo</span></span></a></div>
@@ -1003,7 +1032,7 @@
             </div>
           </div>
 <a data-name="-1665245102%2FClasslikes%2F491975536" anchor-label="UserLoginInfo" id="-1665245102%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user-login-info/index.html"><span>User</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -1018,7 +1047,7 @@
             </div>
           </div>
 <a data-name="-1519459326%2FClasslikes%2F491975536" anchor-label="UserMessage" id="-1519459326%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user-message/index.html"><span>User</span><wbr></wbr><span><span>Message</span></span></a></div>
@@ -1033,7 +1062,7 @@
             </div>
           </div>
 <a data-name="-564375534%2FClasslikes%2F491975536" anchor-label="UserProfileInfo" id="-564375534%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user-profile-info/index.html"><span>User</span><wbr></wbr><span>Profile</span><wbr></wbr><span><span>Info</span></span></a></div>
@@ -1048,7 +1077,7 @@
             </div>
           </div>
 <a data-name="721910864%2FClasslikes%2F491975536" anchor-label="UserToken" id="721910864%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-user-token/index.html"><span>User</span><wbr></wbr><span><span>Token</span></span></a></div>
@@ -1063,7 +1092,7 @@
             </div>
           </div>
 <a data-name="223191448%2FClasslikes%2F491975536" anchor-label="WaterMarkConfig" id="223191448%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-water-mark-config/index.html"><span>Water</span><wbr></wbr><span>Mark</span><wbr></wbr><span><span>Config</span></span></a></div>
@@ -1078,7 +1107,7 @@
             </div>
           </div>
 <a data-name="-574113967%2FClasslikes%2F491975536" anchor-label="WaterMarkPosition" id="-574113967%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-water-mark-position/index.html"><span>Water</span><wbr></wbr><span>Mark</span><wbr></wbr><span><span>Position</span></span></a></div>
@@ -1095,9 +1124,9 @@
         </div>
       </div>
       <div data-togglable="EXTENSION_FUNCTION">
-        <h2 class="">Functions</h2>
+        <h2 class="tableheader">Functions</h2>
         <div class="table"><a data-name="-2017037442%2FFunctions%2F491975536" anchor-label="isExpired" id="-2017037442%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="is-expired.html"><span>is</span><wbr></wbr><span><span>Expired</span></span></a></div>
@@ -1112,7 +1141,7 @@
             </div>
           </div>
 <a data-name="-304707078%2FFunctions%2F491975536" anchor-label="toStringFull" id="-304707078%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="to-string-full.html"><span>to</span><wbr></wbr><span>String</span><wbr></wbr><span><span>Full</span></span></a></div>
@@ -1132,17 +1161,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>Copyright © 2025 Gwelltimes. All rights reserved.</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright © 2025 Gwelltimes. All rights reserved.</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

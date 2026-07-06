@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>BindType</title>
     <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
-<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
 <link href="../../../../styles/style.css" rel="Stylesheet">
 <link href="../../../../styles/main.css" rel="Stylesheet">
 <link href="../../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 <link href="../../../../images/logo-icon.svg">
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../../index.html" tabindex="1">
                     GWIoTApi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -47,10 +44,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.6.8        </div>
+1.7.5        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
                         data-filter=":shared/commonMain">common</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -60,9 +57,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -77,7 +74,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -85,39 +82,41 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     GWIoTApi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageIds="GWIoTApi::com.gw.gwiotapi.entities/ProductInfo.BindType///PointingToDeclaration//491975536">
   <div class="breadcrumbs"><a href="../../../../index.html">GWIoTApi</a><span class="delimiter">/</span><a href="../../index.html">com.gw.gwiotapi.entities</a><span class="delimiter">/</span><a href="../index.html">ProductInfo</a><span class="delimiter">/</span><span class="current">BindType</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Bind</span><wbr></wbr><span><span>Type</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><p class="paragraph">设备联网功能 用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。 PC产测软件从固件上读取<strong>设备联网功能码</strong>,生成设备二维码标签。(==讨论==) PC产测软件将<strong>设备联网功能码</strong>回传云端，以便今后的扩展应用</p><table><thead><tr><th>位</th><th>配网方式</th><th>版本</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>Smartlink</td><td>1.0</td><td>智能联机 （7601Wifi模块）</td></tr><tr><td>1</td><td>声波1.0</td><td>1.0</td><td>声波配网 （海思、联咏、国科）</td></tr><tr><td>2</td><td>AP</td><td>1.0</td></tr><tr><td>3</td><td>Simpeconfig</td><td>1.0</td></tr><tr><td>4</td><td>蓝牙</td><td>1.0</td></tr><tr><td>5</td><td>二维码</td><td>1.0</td></tr><tr><td>6</td><td>4G配网绑定</td><td>1.0</td><td>设备通知APP走4G配网绑定</td></tr><tr><td>7</td><td>声波2.0</td><td>2.0</td></tr><tr><td>8</td><td>支持2.4G wifi</td><td>2.0</td></tr><tr><td>9</td><td>支持5G wifi</td><td>2.0</td></tr><tr><td>10</td><td>4G设备支持APN设置</td><td>2.0</td></tr><tr><td>11</td><td>4G优先(双模设备)</td><td>2.0</td></tr><tr><td>12</td><td>预留扩展</td><td></td></tr><tr><td>13</td><td>4G设备(外置卡)</td><td>2.0</td></tr><tr><td>14</td><td>4G设备(内置卡)</td><td>2.0</td></tr><tr><td>15</td><td>设备存在有线网口</td><td>2.0</td></tr></tbody></table></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">BindType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="index.html">ProductInfo.BindType</a><span class="token operator">&gt; </span></div><p class="paragraph">设备联网功能 用2字节二进制数表示支持的配网/联网功能,每个位代表一种配网/联网的能力。 PC产测软件从固件上读取<strong>设备联网功能码</strong>,生成设备二维码标签。(==讨论==) PC产测软件将<strong>设备联网功能码</strong>回传云端，以便今后的扩展应用</p><div class="table--container"><table><thead><tr><th>位</th><th>配网方式</th><th>版本</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>Smartlink</td><td>1.0</td><td>智能联机 （7601Wifi模块）</td></tr><tr><td>1</td><td>声波1.0</td><td>1.0</td><td>声波配网 （海思、联咏、国科）</td></tr><tr><td>2</td><td>AP</td><td>1.0</td></tr><tr><td>3</td><td>Simpeconfig</td><td>1.0</td></tr><tr><td>4</td><td>蓝牙</td><td>1.0</td></tr><tr><td>5</td><td>二维码</td><td>1.0</td></tr><tr><td>6</td><td>4G配网绑定</td><td>1.0</td><td>设备通知APP走4G配网绑定</td></tr><tr><td>7</td><td>声波2.0</td><td>2.0</td></tr><tr><td>8</td><td>支持2.4G wifi</td><td>2.0</td></tr><tr><td>9</td><td>支持5G wifi</td><td>2.0</td></tr><tr><td>10</td><td>4G设备支持APN设置</td><td>2.0</td></tr><tr><td>11</td><td>4G优先(双模设备)</td><td>2.0</td></tr><tr><td>12</td><td>预留扩展</td><td></td></tr><tr><td>13</td><td>4G设备(外置卡)</td><td>2.0</td></tr><tr><td>14</td><td>4G设备(内置卡)</td><td>2.0</td></tr><tr><td>15</td><td>设备存在有线网口</td><td>2.0</td></tr></tbody></table></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
     <div class="tabs-section-body">
       <div data-togglable="ENTRY">
-        <h2 class="">Entries</h2>
+        <h2 class="tableheader">Entries</h2>
         <div class="table"><a data-name="1880662757%2FClasslikes%2F491975536" anchor-label="Unknown" id="1880662757%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-unknown/index.html">Unknown</a></div>
@@ -132,7 +131,7 @@
             </div>
           </div>
 <a data-name="364675198%2FClasslikes%2F491975536" anchor-label="SmartLink" id="364675198%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-smart-link/index.html">SmartLink</a></div>
@@ -147,7 +146,7 @@
             </div>
           </div>
 <a data-name="1895842051%2FClasslikes%2F491975536" anchor-label="SoundWave" id="1895842051%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-sound-wave/index.html">SoundWave</a></div>
@@ -162,7 +161,7 @@
             </div>
           </div>
 <a data-name="-1609740676%2FClasslikes%2F491975536" anchor-label="AP" id="-1609740676%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-a-p/index.html">AP</a></div>
@@ -177,7 +176,7 @@
             </div>
           </div>
 <a data-name="1728239617%2FClasslikes%2F491975536" anchor-label="SimpleConfig" id="1728239617%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-simple-config/index.html">SimpleConfig</a></div>
@@ -192,7 +191,7 @@
             </div>
           </div>
 <a data-name="-1091781495%2FClasslikes%2F491975536" anchor-label="Bluetooth" id="-1091781495%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-bluetooth/index.html">Bluetooth</a></div>
@@ -207,7 +206,7 @@
             </div>
           </div>
 <a data-name="-333235909%2FClasslikes%2F491975536" anchor-label="QRCode" id="-333235909%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-q-r-code/index.html">QRCode</a></div>
@@ -222,7 +221,7 @@
             </div>
           </div>
 <a data-name="560172540%2FClasslikes%2F491975536" anchor-label="FourG" id="560172540%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-four-g/index.html">FourG</a></div>
@@ -237,7 +236,7 @@
             </div>
           </div>
 <a data-name="298443487%2FClasslikes%2F491975536" anchor-label="SoundWaveV2" id="298443487%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-sound-wave-v2/index.html">SoundWaveV2</a></div>
@@ -252,7 +251,7 @@
             </div>
           </div>
 <a data-name="2025569506%2FClasslikes%2F491975536" anchor-label="WiFi" id="2025569506%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-wi-fi/index.html">WiFi</a></div>
@@ -267,7 +266,7 @@
             </div>
           </div>
 <a data-name="-943551340%2FClasslikes%2F491975536" anchor-label="WiFi5G" id="-943551340%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-wi-fi5-g/index.html">WiFi5G</a></div>
@@ -282,7 +281,7 @@
             </div>
           </div>
 <a data-name="-910886421%2FClasslikes%2F491975536" anchor-label="FourGAPN" id="-910886421%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-four-g-a-p-n/index.html">FourGAPN</a></div>
@@ -297,7 +296,7 @@
             </div>
           </div>
 <a data-name="-895884096%2FClasslikes%2F491975536" anchor-label="FourGPriority" id="-895884096%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-four-g-priority/index.html">FourGPriority</a></div>
@@ -312,7 +311,7 @@
             </div>
           </div>
 <a data-name="-1699055679%2FClasslikes%2F491975536" anchor-label="FourGOutSideCard" id="-1699055679%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-four-g-out-side-card/index.html">FourGOutSideCard</a></div>
@@ -327,7 +326,7 @@
             </div>
           </div>
 <a data-name="1874529352%2FClasslikes%2F491975536" anchor-label="FourGInsideCard" id="1874529352%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-four-g-inside-card/index.html">FourGInsideCard</a></div>
@@ -342,7 +341,7 @@
             </div>
           </div>
 <a data-name="-731511270%2FClasslikes%2F491975536" anchor-label="Wired" id="-731511270%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-wired/index.html">Wired</a></div>
@@ -359,9 +358,9 @@
         </div>
       </div>
       <div data-togglable="TYPE">
-        <h2 class="">Types</h2>
+        <h2 class="tableheader">Types</h2>
         <div class="table"><a data-name="-640451202%2FClasslikes%2F491975536" anchor-label="Companion" id="-640451202%2FClasslikes%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
@@ -378,9 +377,9 @@
         </div>
       </div>
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="-1228193753%2FProperties%2F491975536" anchor-label="entries" id="-1228193753%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="entries.html"><span><span>entries</span></span></a></div>
@@ -395,7 +394,7 @@
             </div>
           </div>
 <a data-name="-917999110%2FProperties%2F491975536" anchor-label="rawValue" id="-917999110%2FProperties%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="raw-value.html"><span>raw</span><wbr></wbr><span><span>Value</span></span></a></div>
@@ -412,9 +411,9 @@
         </div>
       </div>
       <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
+        <h2 class="tableheader">Functions</h2>
         <div class="table"><a data-name="-1005431595%2FFunctions%2F491975536" anchor-label="valueOf" id="-1005431595%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="value-of.html"><span>value</span><wbr></wbr><span><span>Of</span></span></a></div>
@@ -429,7 +428,7 @@
             </div>
           </div>
 <a data-name="1824131745%2FFunctions%2F491975536" anchor-label="values" id="1824131745%2FFunctions%2F491975536" data-filterable-set=":shared/commonMain"></a>
-          <div class="table-row" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
+          <div class="table-row table-row_content" data-filterable-current=":shared/commonMain" data-filterable-set=":shared/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="values.html"><span><span>values</span></span></a></div>
@@ -449,17 +448,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>Copyright © 2025 Gwelltimes. All rights reserved.</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright © 2025 Gwelltimes. All rights reserved.</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
