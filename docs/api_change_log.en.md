@@ -3,6 +3,16 @@
 > [!NOTE]
 > Only iterations of feature changes are recorded here, small versions for bug fixes are not recorded.
 
+## 1.9.0
+- Mobile application security issue fixes
+- Support for [custom plugin cloud service and 4G traffic page navigation](app_custom_services_page.en.md)
+- Support for custom plugin theme colors
+- Merged Yoosee 6.44 baseline features
+  - AOV 2.0 features
+  - Added cry detection related feature settings
+  - Optimized setting names and purposes after binding
+- Other experience optimizations and debug improvements
+
 ## 1.8.0
 - Added Bluetooth permission request on scan page
 - Optimized network switching for dual-module devices
