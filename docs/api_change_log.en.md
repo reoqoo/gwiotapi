@@ -4,7 +4,6 @@
 > Only iterations of feature changes are recorded here, small versions for bug fixes are not recorded.
 
 ## 1.9.0
-- Mobile application security issue fixes
 - Support for [custom plugin cloud service and 4G traffic page navigation](app_custom_services_page.en.md)
 - Support for custom plugin theme colors
 - Merged Yoosee 6.44 baseline features
